@@ -9,8 +9,15 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  *
@@ -19,11 +26,41 @@ import javafx.scene.control.Label;
 public class FXMLDocumentController implements Initializable {
     
     @FXML
-    private Label label;
+    private Label login,haslo,label ;
+    private Button button; 
+    private TextField loginTekst;
+    private PasswordField hasloTekst;
     
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
+    private void handleButtonAction(ActionEvent event) throws Exception {
+        
+        if(loginTekst.getText().equals("student")&& hasloTekst.getText().equals("student")) {
+      Parent parent = FXMLLoader.load(getClass().getResource("/wu/Student_window.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(parent);
+        
+       stage.setScene(scene);
+       stage.setTitle("Okno studenta");
+       stage.show();
+       
+        }
+        else {
+   
+       }
+        
+         if(loginTekst.getText().equals("admin")&& hasloTekst.getText().equals("admin")) {
+      Parent parent = FXMLLoader.load(getClass().getResource("/wu/Admin_window.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(parent);
+        
+       stage.setScene(scene);
+       stage.setTitle("Okno studenta");
+       stage.show();
+       
+        }
+        else {
+   
+       }
     }
     
     @Override
@@ -31,4 +68,5 @@ public class FXMLDocumentController implements Initializable {
         // TODO
     }    
     
+
 }

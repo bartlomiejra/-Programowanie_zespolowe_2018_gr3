@@ -29,3 +29,10 @@ wszystkich funkcji dostępnych dla pozostałych użytkowników
 ## Schemat UML 
 
 ![alt text](https://github.com/mjochab/-Programowanie_zespolowe_2018_gr3/blob/master/UML.PNG)
+
+
+## Wygląd okna logowania:
+- okno będzie zawierać 2 komunikaty (Label) Login i Hasło
+- przycisk (Button) Zaloguj!
+- jedno pole do wpisywania (TextField) username
+- jedno szyfrowane pole do wpisywania (PasswordField) password

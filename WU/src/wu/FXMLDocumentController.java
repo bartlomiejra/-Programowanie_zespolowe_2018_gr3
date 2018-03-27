@@ -55,7 +55,7 @@ public class FXMLDocumentController implements Initializable {
         Scene scene = new Scene(parent);
         
        stage.setScene(scene);
-       stage.setTitle("Okno studenta");
+       stage.setTitle("Okno administratora");
        stage.show();
        
         }

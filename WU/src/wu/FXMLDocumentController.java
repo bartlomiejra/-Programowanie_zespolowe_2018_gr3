@@ -28,35 +28,39 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private Label login,haslo,label ;
-    private Button button; 
+    @FXML
+    private Button button;
+    @FXML
     private TextField loginTekst;
+    @FXML
     private PasswordField hasloTekst;
     
     @FXML
     private void handleButtonAction(ActionEvent event) throws Exception {
         
-        if(loginTekst.getText().equals("student")&& hasloTekst.getText().equals("student")) {
-        ((Node) (event.getSource())).getScene().getWindow().hide();
-      Parent parent = FXMLLoader.load(getClass().getResource("/wu/Student_window.fxml"));
-        Stage stage = new Stage();
-        Scene scene = new Scene(parent);
+        Parent student_window = FXMLLoader.load(getClass().getResource("Student_window.fxml"));
+        Scene student_window_scene = new Scene(student_window);
+        Stage app_stage_student_window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         
-       stage.setScene(scene);
-       stage.setTitle("Okno studenta");
-       stage.show();
+        if((loginTekst.getText().equals("student"))&& (hasloTekst.getText().equals("student"))) 
+        {
+                
+                app_stage_student_window.hide(); //optional
+                app_stage_student_window.setScene(student_window_scene);
+                app_stage_student_window.show();
        
         }
       
+        Parent home_page_parent = FXMLLoader.load(getClass().getResource("Admin_window.fxml"));
+        Scene home_page_scene = new Scene(home_page_parent);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         
-         if(loginTekst.getText().equals("admin")&& hasloTekst.getText().equals("admin")) {
-                     ((Node) (event.getSource())).getScene().getWindow().hide();
-      Parent parent = FXMLLoader.load(getClass().getResource("/wu/Admin_window.fxml"));
-        Stage stage = new Stage();
-        Scene scene = new Scene(parent);
-        
-       stage.setScene(scene);
-       stage.setTitle("Okno administratora");
-       stage.show();
+        if((loginTekst.getText().equals("admin"))&& (hasloTekst.getText().equals("admin"))) 
+        {
+                
+                app_stage.hide(); //optional
+                app_stage.setScene(home_page_scene);
+                app_stage.show();
        
         }
         else {

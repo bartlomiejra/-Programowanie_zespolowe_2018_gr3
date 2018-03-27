@@ -19,7 +19,7 @@ public class WU extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocumentController.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Login_window.fxml"));
         
         Scene scene = new Scene(root);
         

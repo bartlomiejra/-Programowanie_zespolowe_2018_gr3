@@ -38,8 +38,8 @@ wszystkich funkcji dostępnych dla pozostałych użytkowników
 - jedno szyfrowane pole do wpisywania (PasswordField) password
 
 ## Wygląd okna studenta:
-- okno zawierać będzie przycisk do wylogowanie użytkownika
+- okno zawierać będzie przycisk do wylogowania użytkownika
 - przycisk do sprawdzenia ocen
-- przycisk do sprawdzani Planu zajęc dla zalogowanego studenta
+- przycisk do sprawdzania Planu zajęc dla zalogowanego studenta
 - przyciska przekierowujący do sceny z danymi osobowymi
-- wyświetlany będzie nazwa użytkownika (imie, nazwisko, nr albumu)
+- wyświetlana będzie nazwa użytkownika (imie, nazwisko, nr albumu)

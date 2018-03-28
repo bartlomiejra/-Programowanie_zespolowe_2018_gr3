@@ -43,3 +43,11 @@ wszystkich funkcji dostępnych dla pozostałych użytkowników
 - przycisk do sprawdzania Planu zajęc dla zalogowanego studenta
 - przyciska przekierowujący do sceny z danymi osobowymi
 - wyświetlana będzie nazwa użytkownika (imie, nazwisko, nr albumu)
+
+## Wygląd okna Administratora:
+- okno zawierać będzie przycisko do wylogowania
+- przycisk do sekcji Użytkownicy (edycja użytkowników)
+- Przycisk do sekcji Plan zajęć (edycja planów zajęć)
+- Przycisk do sekcji z historią logowań użytkowników
+- przycisk do sekcji Oceny (edycja, przepisywanie ocen)
+

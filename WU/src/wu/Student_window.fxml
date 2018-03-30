@@ -4,14 +4,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="622.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="622.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="556.0" layoutY="14.0" mnemonicParsing="false" text="Wyloguj" />
+      <Button layoutX="463.0" layoutY="23.0" mnemonicParsing="false" text="Wyloguj" />
       <Button layoutX="21.0" layoutY="143.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="174.0" text="Oceny" />
       <Button layoutX="217.0" layoutY="143.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="181.0" text="Plan Zajęć" />
       <Button layoutX="411.0" layoutY="143.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="181.0" text="Dane osobowe" />
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <Text layoutX="11.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zalogowany jako:" wrappingWidth="106.13671875" />
       <Text layoutX="108.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student" wrappingWidth="152.13671875" />
+      <Button layoutX="534.0" layoutY="23.0" mnemonicParsing="false" text="Zamknij" />
    </children>
 </AnchorPane>

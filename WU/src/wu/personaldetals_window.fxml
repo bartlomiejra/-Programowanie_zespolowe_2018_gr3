@@ -10,7 +10,7 @@
       <Button layoutX="386.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Menu" />
       <Button layoutX="455.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Wyloguj" />
       <Button layoutX="520.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Zamknij" />
-      <Text layoutX="39.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dane osobiste" wrappingWidth="214.13671875">
+      <Text layoutX="39.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dane osobowe" wrappingWidth="214.13671875">
          <font>
             <Font size="31.0" />
          </font>

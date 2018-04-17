@@ -5,7 +5,12 @@
  */
 package wu;
 
+import Connection.ConnectionClass;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -35,37 +40,61 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private PasswordField hasloTekst;
     
+    
+    
     @FXML
     private void handleButtonAction(ActionEvent event) throws Exception {
         
-        Parent student_window = FXMLLoader.load(getClass().getResource("Student_window.fxml"));
-        Scene student_window_scene = new Scene(student_window);
-        Stage app_stage_student_window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         
-        if((loginTekst.getText().equals("student"))&& (hasloTekst.getText().equals("student"))) 
-        {
-                
-                app_stage_student_window.hide(); //optional
+        ConnectionClass connectionClass=new ConnectionClass();
+        Connection connection=connectionClass.getConnection();
+
+        try {
+            Statement statement=connection.createStatement();           
+            String sql="SELECT * FROM STUDENCI WHERE LOGIN_S = '"+loginTekst.getText()+"' AND HASLO_S = '"+hasloTekst.getText()+"';";
+            ResultSet resultSet=statement.executeQuery(sql);
+            Parent student_window = FXMLLoader.load(getClass().getResource("Student_window.fxml"));
+            Scene student_window_scene = new Scene(student_window);
+            Stage app_stage_student_window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage_student_window.hide(); //optional
                 app_stage_student_window.setScene(student_window_scene);
                 app_stage_student_window.show();
-       
-        }
-      
-        Parent home_page_parent = FXMLLoader.load(getClass().getResource("Admin_window.fxml"));
-        Scene home_page_scene = new Scene(home_page_parent);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        
-        if((loginTekst.getText().equals("admin"))&& (hasloTekst.getText().equals("admin"))) 
-        {
                 
-                app_stage.hide(); //optional
-                app_stage.setScene(home_page_scene);
-                app_stage.show();
-       
+            } catch (SQLException e) 
+            
+        {
+            e.printStackTrace();
         }
-        else {
-   
-       }
+        
+        
+//        Parent student_window = FXMLLoader.load(getClass().getResource("Student_window.fxml"));
+//        Scene student_window_scene = new Scene(student_window);
+//        Stage app_stage_student_window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//        
+//        if((loginTekst.getText().equals("student"))&& (hasloTekst.getText().equals("student"))) 
+//        {
+//                
+//                app_stage_student_window.hide(); //optional
+//                app_stage_student_window.setScene(student_window_scene);
+//                app_stage_student_window.show();
+//       
+//        }
+//      
+//        Parent home_page_parent = FXMLLoader.load(getClass().getResource("Admin_window.fxml"));
+//        Scene home_page_scene = new Scene(home_page_parent);
+//        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//        
+//        if((loginTekst.getText().equals("admin"))&& (hasloTekst.getText().equals("admin"))) 
+//        {
+//                
+//                app_stage.hide(); //optional
+//                app_stage.setScene(home_page_scene);
+//                app_stage.show();
+//       
+//        }
+//        else {
+//   
+//       }
     }
     
     @Override

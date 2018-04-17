@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2018 at 08:10 PM
+-- Generation Time: Apr 17, 2018 at 09:22 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -65,7 +65,9 @@ CREATE TABLE `oceny` (
 
 INSERT INTO `oceny` (`id_oceny`, `id_przedmiotu`, `id_studenta`, `id_pracownika`, `ocena`) VALUES
 (1, 3, 6, 2, 5),
-(2, 2, 3, 1, 4);
+(2, 2, 3, 1, 4),
+(3, 4, 5, 3, 4),
+(4, 2, 3, 2, 4);
 
 -- --------------------------------------------------------
 
@@ -118,7 +120,13 @@ INSERT INTO `przedmioty` (`id_przedmiotu`, `nazwa_przedmiotu`) VALUES
 (3, 'Podstawy Programowania'),
 (4, 'Programowanie Zespolowe'),
 (5, 'Matematyka '),
-(6, 'Matematyka Dyskretna');
+(6, 'Matematyka Dyskretna'),
+(7, 'Metody numeryczne'),
+(8, 'Technologie internetowe'),
+(9, 'Jezyk Angielski'),
+(10, 'Jezyk Skryptowy'),
+(11, 'Metody eksploracji baz danych'),
+(12, 'Projekt inzynierski');
 
 -- --------------------------------------------------------
 
@@ -139,7 +147,9 @@ CREATE TABLE `specjalizacja_studenci` (
 
 INSERT INTO `specjalizacja_studenci` (`id_specjalizacji`, `id_studenta`, `kierunek`, `rok`) VALUES
 (1, 6, 'Informatyka', 2),
-(2, 5, 'Informatyka', 3);
+(2, 5, 'Informatyka', 3),
+(3, 11, 'Ekonometria', 1),
+(4, 10, 'Fizyka', 3);
 
 -- --------------------------------------------------------
 
@@ -170,7 +180,11 @@ INSERT INTO `studenci` (`id_studenta`, `imie_s`, `nazwisko_s`, `pesel_s`, `email
 (4, 'Celsa', 'Luna', 94584738594, 'Luna@teleworm.us', '01.06.1994', 685395483, 'Tooduked', 'AhFah0hup5f', '110394', '11.11.2001 22:11'),
 (5, 'Weronika ', 'Chmielewska', 96110239586, 'Chmielewska@rhyta.com', '07.07.1996', 758049582, 'Therencough', 'ooL8raixei2', '110011', '11.05.2017 15:30 '),
 (6, 'Ubaida', 'Jalal ', 91110295483, 'alBata@jourrapide.com', '29.11.1991', 768493012, 'Onsid1987', 'eiJuepei5th', '111395', '11.12.2017 16:55'),
-(7, 'Abdul-Salam', 'Maroun', 95840195832, 'aroun@armyspy.com', '01.01.1958', 777694857, 'Oppostis', 'pie2Uwaa2o', '123451', '11.07.2017 17:20');
+(7, 'Abdul-Salam', 'Maroun', 95840195832, 'aroun@armyspy.com', '01.01.1958', 777694857, 'Oppostis', 'pie2Uwaa2o', '123451', '11.07.2017 17:20'),
+(8, 'Tadzio', 'Duda', 95843920594, 'Duda@dayrep.com', '12.14.1995', 884665382, 'Porknowle', 'bahg0Bei6o', '111333', '12.12.2017 11:20'),
+(9, 'Jakub ', 'Pawlak', 96584948123, 'Pawlak@armyspy.com', '11.11.1994', 711394867, 'Lins1951', 'oakai5Dil', '112002', '02.03.2018 11:33'),
+(10, 'Antoni ', 'Wozniak', 96123059586, 'zniak@rhyta.com', '11.04.1994', 666857463, 'Carch1990', 'Moowoo5ucah', '112395', '04.12.2017 14:27'),
+(11, 'Longin', 'Olszewski', 96584759112, 'wski@armyspy.com', '04.04.1992', 687594823, 'Shmisting', 'beirae6aeD', '114059', '22.04.2018 17:33');
 
 --
 -- Indexes for dumped tables
@@ -233,7 +247,7 @@ ALTER TABLE `harmonogram`
 -- AUTO_INCREMENT for table `oceny`
 --
 ALTER TABLE `oceny`
-  MODIFY `id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `pracownicy`
@@ -245,19 +259,19 @@ ALTER TABLE `pracownicy`
 -- AUTO_INCREMENT for table `przedmioty`
 --
 ALTER TABLE `przedmioty`
-  MODIFY `id_przedmiotu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_przedmiotu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `specjalizacja_studenci`
 --
 ALTER TABLE `specjalizacja_studenci`
-  MODIFY `id_specjalizacji` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_specjalizacji` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `studenci`
 --
 ALTER TABLE `studenci`
-  MODIFY `id_studenta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_studenta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables

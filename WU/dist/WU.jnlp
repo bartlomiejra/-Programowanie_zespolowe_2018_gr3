@@ -8,8 +8,12 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+<<<<<<< HEAD
     <jar href="WU.jar" size="15747" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.46.jar" size="1004838" download="eager" />
+=======
+    <jar href="WU.jar" size="13055" download="eager" />
+>>>>>>> 6aa741831f5c383a1bc37db55343c7cc3cb41cc6
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="WU" >
     <param name="requiredFXVersion" value="8.0+"/>

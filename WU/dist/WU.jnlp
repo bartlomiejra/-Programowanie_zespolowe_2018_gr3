@@ -8,7 +8,11 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+<<<<<<< HEAD
     <jar href="WU.jar" size="10143" download="eager" />
+=======
+    <jar href="WU.jar" size="8293" download="eager" />
+>>>>>>> 979de2ae4b7d94f687cfe61e278e66de6210d222
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="WU" >
     <param name="requiredFXVersion" value="8.0+"/>

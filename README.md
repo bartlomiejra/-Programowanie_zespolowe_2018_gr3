@@ -51,3 +51,6 @@ wszystkich funkcji dostępnych dla pozostałych użytkowników
 - Przycisk do sekcji z historią logowań użytkowników
 - przycisk do sekcji Oceny (edycja, przepisywanie ocen)
 
+
+## Diagram ERD 
+![alt text](https://github.com/mjochab/-Programowanie_zespolowe_2018_gr3/blob/master/30713038_1819959841376505_2636789429284372480_n.jpg)

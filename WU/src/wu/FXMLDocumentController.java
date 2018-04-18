@@ -53,12 +53,23 @@ public class FXMLDocumentController implements Initializable {
         Scene student_window_scene = new Scene(student_window);
         Stage app_stage_student_window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         
+        Parent admin_window = FXMLLoader.load(getClass().getResource("Admin_window.fxml"));
+        Scene admin_window_scene = new Scene(admin_window);
+        Stage app_stage_admin_window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         
-        if (isValidCredentials())
+        
+        if (isValidCredentialsStudent())
             {
                 app_stage_student_window.hide(); //optional
                 app_stage_student_window.setScene(student_window_scene);
                 app_stage_student_window.show();  
+            }
+        
+         if (isValidCredentialsAdmin())
+            {
+                app_stage_admin_window.hide(); //optional
+                app_stage_admin_window.setScene(admin_window_scene);
+                app_stage_admin_window.show();  
             }
         
         else
@@ -101,7 +112,7 @@ public class FXMLDocumentController implements Initializable {
     
     }
     
-     public boolean isValidCredentials()
+     public boolean isValidCredentialsStudent()
     {
         boolean let_in = false;
         ConnectionClass connectionClass=new ConnectionClass();
@@ -119,6 +130,40 @@ public class FXMLDocumentController implements Initializable {
                      String  username = rs.getString("login_s");
                      System.out.println( "login = " + username );
                      String password = rs.getString("haslo_s");
+                     System.out.println("haslo = " + password);
+                     let_in = true;
+                 }  
+            }
+            rs.close();
+            statement.close();
+            connection.close();
+            } catch ( Exception e ) {
+                System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+                System.exit(0);
+            }
+            System.out.println("isValidCredentials operation done successfully");
+            return let_in;
+    
+    }
+     
+     public boolean isValidCredentialsAdmin()
+    {
+        boolean let_in = false;
+        ConnectionClass connectionClass=new ConnectionClass();
+        Connection connection=connectionClass.getConnection();
+        
+        try {
+            Statement statement=connection.createStatement();           
+            String sql="SELECT * FROM pracownicy WHERE login_p = '"+loginTekst.getText()+"' AND haslo_p = '"+hasloTekst.getText()+"';";
+            ResultSet rs=statement.executeQuery(sql);
+            
+            
+                
+            while ( rs.next() ) {
+                 if (rs.getString("login_p") != null && rs.getString("haslo_p") != null) { 
+                     String  username = rs.getString("login_p");
+                     System.out.println( "login = " + username );
+                     String password = rs.getString("haslo_p");
                      System.out.println("haslo = " + password);
                      let_in = true;
                  }  

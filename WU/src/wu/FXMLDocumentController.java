@@ -6,8 +6,10 @@
 package wu;
 
 import Connection.ConnectionClass;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -46,25 +48,26 @@ public class FXMLDocumentController implements Initializable {
     private void handleButtonAction(ActionEvent event) throws Exception {
         
         
-        ConnectionClass connectionClass=new ConnectionClass();
-        Connection connection=connectionClass.getConnection();
-
-        try {
-            Statement statement=connection.createStatement();           
-            String sql="SELECT * FROM STUDENCI WHERE LOGIN_S = '"+loginTekst.getText()+"' AND HASLO_S = '"+hasloTekst.getText()+"';";
-            ResultSet resultSet=statement.executeQuery(sql);
-            Parent student_window = FXMLLoader.load(getClass().getResource("Student_window.fxml"));
-            Scene student_window_scene = new Scene(student_window);
-            Stage app_stage_student_window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            app_stage_student_window.hide(); //optional
+        
+        Parent student_window = FXMLLoader.load(getClass().getResource("Student_window.fxml"));
+        Scene student_window_scene = new Scene(student_window);
+        Stage app_stage_student_window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        
+        
+        if (isValidCredentials())
+            {
+                app_stage_student_window.hide(); //optional
                 app_stage_student_window.setScene(student_window_scene);
-                app_stage_student_window.show();
-                
-            } catch (SQLException e) 
-            
-        {
-            e.printStackTrace();
-        }
+                app_stage_student_window.show();  
+            }
+        
+        else
+            {
+                loginTekst.clear();
+                hasloTekst.clear();
+            }
+        
+       
         
         
 //        Parent student_window = FXMLLoader.load(getClass().getResource("Student_window.fxml"));
@@ -95,12 +98,46 @@ public class FXMLDocumentController implements Initializable {
 //        else {
 //   
 //       }
+    
     }
     
+     public boolean isValidCredentials()
+    {
+        boolean let_in = false;
+        ConnectionClass connectionClass=new ConnectionClass();
+        Connection connection=connectionClass.getConnection();
+        
+        try {
+            Statement statement=connection.createStatement();           
+            String sql="SELECT * FROM studenci WHERE login_s = '"+loginTekst.getText()+"' AND haslo_s = '"+hasloTekst.getText()+"';";
+            ResultSet rs=statement.executeQuery(sql);
+            
+            
+                
+            while ( rs.next() ) {
+                 if (rs.getString("login_s") != null && rs.getString("haslo_s") != null) { 
+                     String  username = rs.getString("login_s");
+                     System.out.println( "login = " + username );
+                     String password = rs.getString("haslo_s");
+                     System.out.println("haslo = " + password);
+                     let_in = true;
+                 }  
+            }
+            rs.close();
+            statement.close();
+            connection.close();
+            } catch ( Exception e ) {
+                System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+                System.exit(0);
+            }
+            System.out.println("isValidCredentials operation done successfully");
+            return let_in;
+    
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+     
 
 }

@@ -22,7 +22,7 @@
       <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zalogowany jako: " />
       <HBox layoutX="404.0" layoutY="15.0" prefHeight="31.0" prefWidth="220.0" spacing="3.0">
          <children>
-            <Button fx:id="generate_dziekanat" mnemonicParsing="false" text="Generuj do PDF" />
+            <Button fx:id="generate_dziekanat" mnemonicParsing="false" onAction="#generate_dziekanatButtonAction" text="Generuj do PDF" />
             <Button fx:id="assesment_menu" mnemonicParsing="false" onAction="#assesment_menuActionButton" text="Menu" />
             <Button fx:id="assesment_logout" mnemonicParsing="false" onAction="#assesment_logoutActionButton" prefHeight="23.0" prefWidth="60.0" text="Wyloguj" />
          </children>
@@ -32,9 +32,9 @@
       </HBox>
       <VBox alignment="CENTER" layoutX="514.0" layoutY="155.0" prefHeight="109.0" prefWidth="89.0" spacing="10.0">
          <children>
-            <Button fx:id="add_dziekanat" mnemonicParsing="false" text="Dodaj" />
-            <Button fx:id="edit_dziekanat" mnemonicParsing="false" text="Edytuj" />
-            <Button fx:id="delete_dziekanat" mnemonicParsing="false" text="Usuń" />
+            <Button fx:id="add_dziekanat" mnemonicParsing="false" onAction="#add_dziekanatButtonAction" text="Dodaj" />
+            <Button fx:id="edit_dziekanat" mnemonicParsing="false" onAction="#edit_dziekanatButtonAction" text="Edytuj" />
+            <Button fx:id="delete_dziekanat" mnemonicParsing="false" onAction="#delete_dziekanatButtonAction" text="Usuń" />
          </children>
          <padding>
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />

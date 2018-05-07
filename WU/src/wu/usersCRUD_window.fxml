@@ -11,9 +11,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="close_users" layoutX="519.0" layoutY="28.0" mnemonicParsing="false" text="Zamknij" />
-      <Button fx:id="assesment_logout" layoutX="453.0" layoutY="28.0" mnemonicParsing="false" text="Wyloguj" />
-      <Button fx:id="assesment_menu" layoutX="386.0" layoutY="28.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" text="Menu" />
+      <Button fx:id="close_users" layoutX="519.0" layoutY="28.0" mnemonicParsing="false" onAction="#close_usersButtonAction" text="Zamknij" />
+      <Button fx:id="assesment_logout" layoutX="453.0" layoutY="28.0" mnemonicParsing="false" onAction="#assesment_logoutButtonAction" text="Wyloguj" />
+      <Button fx:id="assesment_menu" layoutX="386.0" layoutY="28.0" mnemonicParsing="false" onAction="#assesment_menuButtonAction" prefHeight="25.0" prefWidth="60.0" text="Menu" />
       <TextField layoutX="14.0" layoutY="68.0" prefHeight="29.0" prefWidth="149.0" promptText="Id" />
       <TextField layoutX="14.0" layoutY="99.0" prefHeight="29.0" prefWidth="149.0" promptText="Imię" />
       <TextField layoutX="14.0" layoutY="131.0" prefHeight="25.0" prefWidth="149.0" promptText="Nazwisko" />
@@ -26,9 +26,9 @@
             <Font size="13.0" />
          </font>
       </Text>
-      <Button fx:id="add_users" layoutX="14.0" layoutY="308.0" mnemonicParsing="false" text="Dodaj" />
-      <Button fx:id="edit_users" layoutX="64.0" layoutY="308.0" mnemonicParsing="false" text="Edytuj" />
-      <Button fx:id="delete_users" layoutX="113.0" layoutY="308.0" mnemonicParsing="false" text="Usuń" />
+      <Button fx:id="add_users" layoutX="14.0" layoutY="308.0" mnemonicParsing="false" onAction="#add_usersButtonAction" text="Dodaj" />
+      <Button fx:id="edit_users" layoutX="64.0" layoutY="308.0" mnemonicParsing="false" onAction="#edit_usersButtonAction" text="Edytuj" />
+      <Button fx:id="delete_users" layoutX="113.0" layoutY="308.0" mnemonicParsing="false" onAction="#delete_usersButtonAction" text="Usuń" />
       <TableView layoutX="142.0" layoutY="73.0" prefHeight="255.0" prefWidth="519.0" AnchorPane.leftAnchor="142.0">
         <columns>
           <TableColumn prefWidth="24.0" text="Id" />
@@ -41,8 +41,8 @@
         </columns>
       </TableView>
       <TextField layoutX="172.0" layoutY="341.0" prefHeight="29.0" prefWidth="159.0" promptText="Szukaj" />
-      <Button fx:id="search_users" layoutX="351.0" layoutY="343.0" mnemonicParsing="false" text="Szukaj" />
-      <Button fx:id="load_users" layoutX="406.0" layoutY="343.0" mnemonicParsing="false" text="Wczytaj " />
-      <Button fx:id="clear_users" layoutX="476.0" layoutY="343.0" mnemonicParsing="false" text="Wyczyść" />
+      <Button fx:id="search_users" layoutX="351.0" layoutY="343.0" mnemonicParsing="false" onAction="#search_usersButtonAction" text="Szukaj" />
+      <Button fx:id="load_users" layoutX="406.0" layoutY="343.0" mnemonicParsing="false" onAction="#load_usersButonAction" text="Wczytaj " />
+      <Button fx:id="clear_users" layoutX="476.0" layoutY="343.0" mnemonicParsing="false" onAction="#clear_usersButtonAction" text="Wyczyść" />
    </children>
 </AnchorPane>

@@ -16,11 +16,11 @@
         </columns>
       </TableView>
       <TextField layoutX="182.0" layoutY="351.0" prefHeight="29.0" prefWidth="159.0" promptText="Szukaj" />
-      <Button fx:id="search" layoutX="350.0" layoutY="353.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Szukaj" />
-      <Button fx:id="load" layoutX="416.0" layoutY="353.0" mnemonicParsing="false" text="Wczytaj " />
-      <Button fx:id="clear" layoutX="486.0" layoutY="353.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Wyczyść" />
-      <Button fx:id="assesment_menu" layoutX="386.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Menu" />
-      <Button fx:id="assesment_logout" layoutX="455.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Wyloguj" />
-      <Button fx:id="close_history" layoutX="520.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Zamknij" />
+      <Button fx:id="search" layoutX="350.0" layoutY="353.0" mnemonicParsing="false" onAction="#searchButtonAction" prefHeight="25.0" prefWidth="61.0" text="Szukaj" />
+      <Button fx:id="load" layoutX="416.0" layoutY="353.0" mnemonicParsing="false" onAction="#loadButtonAction" text="Wczytaj " />
+      <Button fx:id="clear" layoutX="486.0" layoutY="353.0" mnemonicParsing="false" onAction="#clearButtonAction" prefHeight="25.0" prefWidth="61.0" text="Wyczyść" />
+      <Button fx:id="assesment_menu" layoutX="386.0" layoutY="14.0" mnemonicParsing="false" onAction="#assesment_menuButtonAction" prefHeight="25.0" prefWidth="61.0" text="Menu" />
+      <Button fx:id="assesment_logout" layoutX="455.0" layoutY="14.0" mnemonicParsing="false" onAction="#assesment_logoutButtonAction" prefHeight="25.0" prefWidth="61.0" text="Wyloguj" />
+      <Button fx:id="close_history" layoutX="520.0" layoutY="14.0" mnemonicParsing="false" onAction="#close_historyButtonAction" prefHeight="25.0" prefWidth="61.0" text="Zamknij" />
    </children>
 </AnchorPane>

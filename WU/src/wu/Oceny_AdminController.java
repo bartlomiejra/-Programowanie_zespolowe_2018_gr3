@@ -45,5 +45,10 @@ public class Oceny_AdminController implements Initializable {
         app_stage.setScene(logout_page_scene);
         app_stage.show();
     }
+    
+     @FXML
+    private void close_usersButtonAction(ActionEvent event) throws IOException {
+        System.exit(0);
+    }
 
 }

@@ -22,13 +22,8 @@
       <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zalogowany jako: " />
       <HBox layoutX="404.0" layoutY="15.0" prefHeight="31.0" prefWidth="220.0" spacing="3.0">
          <children>
-<<<<<<< HEAD
-            <Button fx:id="generate_dziekanat" mnemonicParsing="false" text="Generuj do PDF" />
             <Button fx:id="assesment_menu" mnemonicParsing="false" onAction="#assesmentDziekanat_menuActionButton" text="Menu" />
-=======
             <Button fx:id="generate_dziekanat" mnemonicParsing="false" onAction="#generate_dziekanatButtonAction" text="Generuj do PDF" />
-            <Button fx:id="assesment_menu" mnemonicParsing="false" onAction="#assesment_menuActionButton" text="Menu" />
->>>>>>> 107ee65514f699ff08ef5b8bf9cf4ecafe7c87f7
             <Button fx:id="assesment_logout" mnemonicParsing="false" onAction="#assesment_logoutActionButton" prefHeight="23.0" prefWidth="60.0" text="Wyloguj" />
          </children>
          <padding>

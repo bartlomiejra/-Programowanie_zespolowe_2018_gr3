@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.OcenyController">
+<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.OcenyController">
    <children>
       <TableView layoutX="240.0" layoutY="65.0" prefHeight="343.0" prefWidth="518.0">
          <columns>
@@ -22,16 +22,12 @@
          </columns>
       </TableView>
       <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zalogowany jako: " />
-      <HBox layoutX="404.0" layoutY="15.0" prefHeight="31.0" prefWidth="220.0" spacing="3.0">
+      <HBox layoutX="450.0" layoutY="15.0" prefHeight="31.0" prefWidth="297.0" spacing="3.0">
          <children>
-<<<<<<< HEAD
-            <Button fx:id="generate_admin" mnemonicParsing="false" text="Generuj do PDF" />
-            <Button fx:id="assesment_menu" mnemonicParsing="false" onAction="#assesmentAdmin_menuActionButton" text="Menu" />
-=======
             <Button fx:id="generate_wykladowca" mnemonicParsing="false" onAction="#generate_wykladowcaButtonAction" text="Generuj do PDF" />
-            <Button fx:id="assesment_menu" mnemonicParsing="false" onAction="#assesment_menuActionButton" text="Menu" />
->>>>>>> 107ee65514f699ff08ef5b8bf9cf4ecafe7c87f7
+            <Button fx:id="assesment_menu" mnemonicParsing="false" onAction="#assesmentAdmin_menuActionButton" text="Menu" />
             <Button fx:id="assesment_logout" mnemonicParsing="false" onAction="#assesment_logoutActionButton" prefHeight="23.0" prefWidth="60.0" text="Wyloguj" />
+            <Button fx:id="close_users" mnemonicParsing="false" onAction="#close_usersButtonAction" prefHeight="25.0" prefWidth="64.0" text="Zamknij" />
          </children>
          <padding>
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
@@ -42,7 +38,6 @@
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
          </padding>
       </VBox>
-      <Button fx:id="close_users" layoutX="624.0" layoutY="18.0" mnemonicParsing="false" onAction="#close_usersButtonAction" text="Zamknij" />
       <Button fx:id="delete_wykładowca" layoutX="145.0" layoutY="373.0" mnemonicParsing="false" onAction="#delete_wykładowcaButtonAction" text="Usuń" />
       <Button fx:id="edit_wykladowca" layoutX="84.0" layoutY="373.0" mnemonicParsing="false" onAction="#edit_wykladowcaButtonAction" text="Edytuj" />
       <Button fx:id="add_wykladowca" layoutX="19.0" layoutY="373.0" mnemonicParsing="false" onAction="#add_wykladowcaButtonAction" text="Dodaj" />

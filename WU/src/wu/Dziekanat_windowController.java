@@ -59,4 +59,20 @@ public class Dziekanat_windowController implements Initializable {
         app_stage.show();             
     }
     
+    @FXML
+    private void schedule_dziekanatButtonAction(ActionEvent event) throws IOException {
+
+        Parent logout_page_parent = FXMLLoader.load(getClass().getResource("Planzajec_prowadzacy.fxml"));
+        Scene logout_page_scene = new Scene(logout_page_parent);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.hide();
+        app_stage.setScene(logout_page_scene);
+        app_stage.show();             
+    }
+    
+     @FXML
+    private void close_adminButtonAction(ActionEvent event) throws IOException {
+        System.exit(0);
+    }
+    
 }

@@ -7,7 +7,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="622.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Student_windowController">
    <children>
       <Button fx:id="logout_student" layoutX="463.0" layoutY="23.0" mnemonicParsing="false" onAction="#logut_studentButtonAction" text="Wyloguj" />
-      <Button fx:id="assessment_student" layoutX="21.0" layoutY="143.0" mnemonicParsing="false" onAction="#assessment_studentButtonAction" prefHeight="70.0" prefWidth="174.0" text="Oceny" />
+      <Button fx:id="assessment_student" layoutX="11.0" layoutY="143.0" mnemonicParsing="false" onAction="#assessment_studentButtonAction" prefHeight="70.0" prefWidth="174.0" text="Oceny" />
       <Button fx:id="schedule_student" layoutX="217.0" layoutY="143.0" mnemonicParsing="false" onAction="#schedule_studentButtonAction" prefHeight="70.0" prefWidth="181.0" text="Plan Zajęć" />
       <Button fx:id="dane_student" layoutX="411.0" layoutY="143.0" mnemonicParsing="false" onAction="#users_studentButtonAction" prefHeight="70.0" prefWidth="181.0" text="Dane osobowe" />
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />

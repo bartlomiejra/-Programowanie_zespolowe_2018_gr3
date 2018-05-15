@@ -45,7 +45,7 @@ public class FXMLDocumentController implements Initializable {
     
     
     @FXML
-    private void handleButtonAction(ActionEvent event) throws Exception {
+    private void loginButtonAction(ActionEvent event) throws Exception {
         
         
         

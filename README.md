@@ -37,12 +37,30 @@ wszystkich funkcji dostępnych dla pozostałych użytkowników
 - jedno pole do wpisywania (TextField) username
 - jedno szyfrowane pole do wpisywania (PasswordField) password
 
+
 ## Wygląd okna studenta:
 - okno zawierać będzie przycisk do wylogowania użytkownika
 - przycisk do sprawdzenia ocen
 - przycisk do sprawdzania Planu zajęc dla zalogowanego studenta
 - przyciska przekierowujący do sceny z danymi osobowymi
 - wyświetlana będzie nazwa użytkownika (imie, nazwisko, nr albumu)
+
+## Wygląd Okna Planu zajęć dla studenta
+- wyświetla w tabeli informacje o terminie i rodzaju zajęć
+- zawiera przyciski pozwalające na wyświetlanie zajęć na kolejne tygodnie 
+- przycisk Menu do sekcji z oknem menu studenta
+- przyciski do zamknięcia aplikacji oraz wylogowania użytkownia
+
+## Wygląd Okna dane osobowe
+- umożliwa sprawdzenie studentowi swoich danych personalnych i modyfikacje ich
+- zawiera przycisk do zapisu zmienionych danycyh użytkownika
+- standardowe przyciski do poruszania się po aplikacji (Menu, Wyloguj, Zamknij)
+
+## Wygląd Okna Ocen dla studenta
+- w tabeli otrzymujemy informacje przedmiotach oraz jakie ocene otrzymaliśmy u danego prowadzącego oraz liczbie godzin
+- przycisk umożliwające wygenerowanie ocen w PDF
+- standardowe przyciski do poruszania się po aplikacji (Menu, Wyloguj, Zamknij)
+
 
 ## Wygląd okna Administratora:
 - okno zawierać będzie przycisko do wylogowania

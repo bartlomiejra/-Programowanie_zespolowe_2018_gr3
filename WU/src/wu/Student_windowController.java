@@ -42,6 +42,7 @@ public class Student_windowController implements Initializable {
         app_stage.setScene(assessment_page_scene);
         app_stage.show();        
      }
+     
      @FXML
        private void close_studentButtonAction(ActionEvent event) throws IOException{
         System.exit(0);  

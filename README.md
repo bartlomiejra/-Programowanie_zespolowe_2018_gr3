@@ -58,7 +58,9 @@ wszystkich funkcji dostępnych dla pozostałych użytkowników
 - przycisk do sekcji Oceny (edycja, przepisywanie ocen)
 
 ## Wygląd okna Wykładowcy:
-
+- okno zawierać będzie przycisko do wylogowania
+- Przycisk do sekcji Plan zajęć (edycja planów zajęć)
+- przycisk do sekcji Oceny (edycja, przepisywanie ocen)
 
 
 ## Diagram ERD 

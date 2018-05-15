@@ -47,4 +47,10 @@ public class OcenyController implements Initializable {
         app_stage.show();             
     }
     
+   @FXML
+    private void generate_studentButtonAction(ActionEvent event) throws IOException {
+           
+    } 
+    
+    
 }

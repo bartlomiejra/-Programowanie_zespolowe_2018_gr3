@@ -50,5 +50,41 @@ public class Oceny_AdminController implements Initializable {
     private void close_usersButtonAction(ActionEvent event) throws IOException {
         System.exit(0);
     }
+    
+     @FXML
+    private void generate_wykladowcaButtonAction(ActionEvent event) throws IOException {
 
+    }
+    
+    
+    @FXML
+    private void search_usersButtonAction(ActionEvent event) throws IOException{
+        
+    }
+    
+   @FXML
+    private void load_usersButonAction(ActionEvent event) throws IOException{
+        
+    } 
+    
+   @FXML
+    private void clear_usersButtonAction(ActionEvent event) throws IOException{
+        
+    }  
+    
+    @FXML
+    private void delete_wykładowcaButtonAction(ActionEvent event) throws IOException{
+        
+    }  
+    
+     @FXML
+    private void edit_wykladowcaButtonAction(ActionEvent event) throws IOException{
+        
+    }  
+    
+     @FXML
+    private void add_wykladowcaButtonAction(ActionEvent event) throws IOException{
+        
+    }  
+    
 }

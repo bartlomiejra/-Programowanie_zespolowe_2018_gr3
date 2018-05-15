@@ -47,4 +47,24 @@ public class Oceny_DziekanatController implements Initializable {
         app_stage.show();             
     }
     
+     @FXML
+    private void generate_dziekanatButtonAction(ActionEvent event) throws IOException {
+            
+    }
+    
+     @FXML
+    private void add_dziekanatButtonAction(ActionEvent event) throws IOException {
+            
+    }
+    
+    @FXML
+    private void edit_dziekanatButtonAction(ActionEvent event) throws IOException {
+            
+    }
+    
+    @FXML
+    private void delete_dziekanatButtonAction(ActionEvent event) throws IOException {
+            
+    }
+       
 }

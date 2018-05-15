@@ -75,10 +75,23 @@ wszystkich funkcji dostępnych dla pozostałych użytkowników
 - Przycisk do sekcji Plan zajęć (edycja planów zajęć)
 - przycisk do sekcji Oceny (edycja, przepisywanie ocen)
 
+
 ## Wygląd okna Wykładowcy:
 - okno zawierać będzie przycisko do wylogowania
 - Przycisk do sekcji Plan zajęć (edycja planów zajęć)
 - przycisk do sekcji Oceny (edycja, przepisywanie ocen)
+
+## Wygląd okna Plan zajęć dla wykładowcy
+- wyświetla w tabeli informacje o terminie i rodzaju zajęć
+- zawiera przyciski pozwalające na wyświetlanie zajęć na kolejne tygodnie 
+- standardowe przyciski do poruszania się po aplikacji (Menu, Wyloguj, Zamknij)
+
+## Wygląd okna Oceny dla wykładowcy
+- Wyświetla w tabeli wpisane oceny
+- zawiera przyciski oraz pola umożliwiajace wprowadzania ocen studentom, edycje orazu usuwanie ich
+- możliwość wygenerowania tabeli z ocenami
+- standardowe przyciski do poruszania się po aplikacji (Menu, Wyloguj, Zamknij)
+
 
 
 ## Diagram ERD 

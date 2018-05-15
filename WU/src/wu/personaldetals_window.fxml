@@ -8,9 +8,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="386.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Menu" />
-      <Button layoutX="455.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Wyloguj" />
-      <Button layoutX="520.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Zamknij" />
+      <Button fx:id="assesment_menu" layoutX="386.0" layoutY="14.0" mnemonicParsing="false" onAction="#assesment_menuButtonAction" prefHeight="25.0" prefWidth="61.0" text="Menu" />
+      <Button fx:id="assesment_logout" layoutX="455.0" layoutY="14.0" mnemonicParsing="false" onAction="#assesment_logoutButtonAction" prefHeight="25.0" prefWidth="61.0" text="Wyloguj" />
+      <Button fx:id="close_history" layoutX="520.0" layoutY="14.0" mnemonicParsing="false" onAction="#close_historyButtonAction" prefHeight="25.0" prefWidth="61.0" text="Zamknij" />
       <Text layoutX="39.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dane osobowe" wrappingWidth="214.13671875">
          <font>
             <Font size="31.0" />
@@ -130,7 +130,7 @@
       </Label>
       <Text layoutX="16.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data ostatniego logowania:" wrappingWidth="148.1367182135582" />
       <Label layoutX="164.0" layoutY="367.0" prefHeight="21.0" prefWidth="136.0" text="Label" />
-      <Button layoutX="404.0" layoutY="355.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Edytuj" />
-      <Button layoutX="468.0" layoutY="355.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Zapisz" />
+      <Button fx:id="edit_detals" layoutX="404.0" layoutY="355.0" mnemonicParsing="false" onAction="#edit_detalsButtonAction" prefHeight="25.0" prefWidth="61.0" text="Edytuj" />
+      <Button fx:id="save_detals" layoutX="468.0" layoutY="355.0" mnemonicParsing="false" onAction="#save_detalsButtonAction" prefHeight="25.0" prefWidth="61.0" text="Zapisz" />
    </children>
 </AnchorPane>

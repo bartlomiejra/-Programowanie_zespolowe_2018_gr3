@@ -51,5 +51,15 @@ wszystkich funkcji dostępnych dla pozostałych użytkowników
 - Przycisk do sekcji z historią logowań użytkowników
 - przycisk do sekcji Oceny (edycja, przepisywanie ocen)
 
+## Wygląd okna Dziekanatu:
+- okno zawierać będzie przycisko do wylogowania
+- przycisk do sekcji Użytkownicy (edycja użytkowników)
+- Przycisk do sekcji Plan zajęć (edycja planów zajęć)
+- przycisk do sekcji Oceny (edycja, przepisywanie ocen)
+
+## Wygląd okna Wykładowcy:
+
+
+
 ## Diagram ERD 
 ![alt text](https://github.com/mjochab/-Programowanie_zespolowe_2018_gr3/blob/master/30713038_1819959841376505_2636789429284372480_n.jpg)

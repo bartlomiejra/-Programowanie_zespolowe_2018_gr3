@@ -71,7 +71,7 @@ public class Admin_windowController implements Initializable {
         app_stage.setScene(logout_page_scene);
         app_stage.show();
     }
-
+    @FXML
     private void users_adminButtonAction(ActionEvent event) throws IOException {
 
         Parent logout_page_parent = FXMLLoader.load(getClass().getResource("usersCRUD_window.fxml"));
@@ -81,7 +81,7 @@ public class Admin_windowController implements Initializable {
         app_stage.setScene(logout_page_scene);
         app_stage.show();
     }
-
+    @FXML
     private void logged_history_adminButtonAction(ActionEvent event) throws IOException {
 
         Parent logged_history_parent = FXMLLoader.load(getClass().getResource("loghistory_window.fxml"));
@@ -91,7 +91,7 @@ public class Admin_windowController implements Initializable {
         app_stage.setScene(logged_history_scene);
         app_stage.show();
     }
-    
+    @FXML
     private void schedule_adminButtonAction(ActionEvent event) throws IOException {
 
         Parent logout_page_parent = FXMLLoader.load(getClass().getResource("Planzajec_prowadzacy.fxml"));

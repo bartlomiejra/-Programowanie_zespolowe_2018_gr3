@@ -18,12 +18,20 @@ public class Prowadzacy_windowController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
     }
-    
+    /**
+     * metody zamykająca okno aplikacji
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void close_adminButtonAction(ActionEvent event) throws IOException {
         System.exit(0);
     }
-    
+    /**
+     * metoda służy do wylogowania z aplikacji, przejście do okna logowania do aplikacji
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void logout_adminButtonAction(ActionEvent event) throws IOException {
 
@@ -35,7 +43,11 @@ public class Prowadzacy_windowController implements Initializable {
         app_stage.show();
 
     }
-    
+    /**
+     * metoda odpowiedzialna za przejście do sceny z planem zajęć
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void schedule_ProwadzacyButtonAction(ActionEvent event) throws IOException {
 
@@ -46,7 +58,11 @@ public class Prowadzacy_windowController implements Initializable {
         app_stage.setScene(logout_page_scene);
         app_stage.show();             
     }
-    
+    /**
+     * metoda odpowiedzialna za przejśćie do okna Wystawianie ocen dla wykładowy
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void assessment_ProwadzacyButtonAction(ActionEvent event) throws IOException {
 

@@ -32,7 +32,11 @@ public class Student_windowController implements Initializable {
         // TODO
     }    
     /**
+<<<<<<< HEAD
      * Metoda odpowiada za wyswietlanie okna z ocenami
+=======
+     * metoda odpowiedzialna za przejście do okna Oceny
+>>>>>>> 1a79dd4062cce38ed1dbbb4e4c34376b8c1845d5
      * @param event
      * @throws IOException 
      */
@@ -47,7 +51,11 @@ public class Student_windowController implements Initializable {
         app_stage.show();        
      }
      /**
+<<<<<<< HEAD
       * Metoda odpowiada za zamkniecie programu
+=======
+      * metoda odpowiedzialna za wyjście z aplikacji
+>>>>>>> 1a79dd4062cce38ed1dbbb4e4c34376b8c1845d5
       * @param event
       * @throws IOException 
       */
@@ -56,7 +64,11 @@ public class Student_windowController implements Initializable {
         System.exit(0);  
     }
        /**
+<<<<<<< HEAD
         * Metoda odpowiada za otwarcie sceny z uzytkownikami
+=======
+        * przejśćie do okna z danymi personalnymi studenta
+>>>>>>> 1a79dd4062cce38ed1dbbb4e4c34376b8c1845d5
         * @param event
         * @throws IOException 
         */
@@ -72,7 +84,11 @@ public class Student_windowController implements Initializable {
     }
     
     /**
+<<<<<<< HEAD
      * Metoda odpowiada za wylogowanie uzytkownika
+=======
+     * metoda odpowiedzialna za wylogowanie studenta, przejście do okna logowania
+>>>>>>> 1a79dd4062cce38ed1dbbb4e4c34376b8c1845d5
      * @param event
      * @throws IOException 
      */
@@ -87,7 +103,11 @@ public class Student_windowController implements Initializable {
         app_stage.show();             
     }
    /**
+<<<<<<< HEAD
     * Metoda odpowiada z wyjscie uzytkownia z planu zajec
+=======
+    * metoda odpowiedzialna za przejście do okna z planem zajęć
+>>>>>>> 1a79dd4062cce38ed1dbbb4e4c34376b8c1845d5
     * @param event
     * @throws IOException 
     */

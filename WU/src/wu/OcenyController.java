@@ -13,7 +13,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * Klasa obsługująca oceny studenta
  *
  * @author Zbyszek
  */
@@ -25,6 +25,11 @@ public class OcenyController implements Initializable {
         // TODO
     }    
     
+    /**
+     * Metoda powracająca do menu
+     * @param event
+     * @throws IOException 
+     */
      @FXML
      private void assesment_menuActionButton(ActionEvent event) throws IOException {
     
@@ -36,6 +41,11 @@ public class OcenyController implements Initializable {
         app_stage.show();        
      }
      
+     /**
+      * Metoda wylogowująca
+      * @param event
+      * @throws IOException 
+      */
      @FXML
     private void assesment_logoutActionButton(ActionEvent event) throws IOException {
 
@@ -47,6 +57,11 @@ public class OcenyController implements Initializable {
         app_stage.show();             
     }
     
+   /**
+    * Metoda generująca pdf z ocenami
+    * @param event
+    * @throws IOException 
+    */
    @FXML
     private void generate_studentButtonAction(ActionEvent event) throws IOException {
            

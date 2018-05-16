@@ -28,10 +28,15 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
- *
- * @author student
+ * Klasa obsługująca menu logowania
+ * @author Zbyszek
  */
+
 public class FXMLDocumentController implements Initializable {
+    
+    /**
+     * Przyciski, pola oraz labele występujące w klasie
+     */
     
     @FXML
     private Label login,haslo,label ;
@@ -43,7 +48,11 @@ public class FXMLDocumentController implements Initializable {
     private PasswordField hasloTekst;
     
     
-    
+    /**
+     * Metoda obsługująca przycisk "loguj"
+     * @param event
+     * @throws Exception 
+     */
     @FXML
     private void loginButtonAction(ActionEvent event) throws Exception {
         
@@ -111,7 +120,10 @@ public class FXMLDocumentController implements Initializable {
 //       }
     
     }
-    
+    /**
+     * Metoda sprawdzająca czy dane logowania studenta są poprawne
+     * @return zwraca true jeśli dane są poprawne, a jeśli nie to false
+     */
      public boolean isValidCredentialsStudent()
     {
         boolean let_in = false;
@@ -146,6 +158,10 @@ public class FXMLDocumentController implements Initializable {
     
     }
      
+     /**
+      * Metoda sprawdzająca czy dane logowania admina są poprawne
+      * @return zwraca true jeśli dane są poprawne, a jeśli nie to false
+      */
      public boolean isValidCredentialsAdmin()
     {
         boolean let_in = false;

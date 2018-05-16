@@ -19,12 +19,14 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * Klasa Personaldetals
  *
  * @author Teo
  */
 public class Personaldetals_windowController implements Initializable {
-
+/**
+ * Przyciski wykorzystane w scenie
+ */
     @FXML
     private Button assesment_menu;
     @FXML
@@ -43,7 +45,11 @@ public class Personaldetals_windowController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
+/**
+ * Metoda odopowiedzialna za przejscie do okna studenta
+ * @param event
+ * @throws IOException 
+ */
     @FXML
      private void personalDetailsActionButton(ActionEvent event) throws IOException {
     
@@ -54,12 +60,21 @@ public class Personaldetals_windowController implements Initializable {
         app_stage.setScene(assessment_page_scene);
         app_stage.show();        
      }
+     /**
+      * Metoda odpowiedzialna za zamknięcie programu 
+      * @param event
+      * @throws IOException 
+      */
 
     @FXML
     private void close_adminButtonAction(ActionEvent event) throws IOException {
         System.exit(0);
     }
-    
+    /**
+     * Metoda odpowiedzialna za wylogowanie i przejscie do okna logowania
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void logout_adminButtonAction(ActionEvent event) throws IOException {
 
@@ -71,11 +86,17 @@ public class Personaldetals_windowController implements Initializable {
         app_stage.show();
 
     }
-    
+    /**
+     * Metoda odpowiedzialna za edycje danych 
+     * @param event 
+     */
     @FXML
     private void edit_detalsButtonAction(ActionEvent event) {
     }
-
+/**
+ * Metoda odpowiedzialna za zapisanie danych
+ * @param event 
+ */
     @FXML
     private void save_detalsButtonAction(ActionEvent event) {
     }

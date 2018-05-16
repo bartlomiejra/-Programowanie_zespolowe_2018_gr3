@@ -13,7 +13,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ *  * Klasa odpowiedzialna za wyswietlenie okna Oceny_Wykladowca 
  *
  * @author Teo
  */
@@ -25,12 +25,21 @@ public class Oceny_WykladowcaController implements Initializable {
         
         
     }   
-    
+    /**
+     * Metoda do zamkniecia programu
+     * @param event
+     * @throws IOException 
+     */
      @FXML
     private void close_usersButtonAction(ActionEvent event) throws IOException {
         System.exit(0);
     }
     
+    /**
+     * metoda do przejscia do okna dziekanat_window po kliknieciu menu
+     * @param event
+     * @throws IOException 
+     */
     @FXML
      private void assesmentWykladowca_menuActionButton(ActionEvent event) throws IOException {
     
@@ -41,7 +50,11 @@ public class Oceny_WykladowcaController implements Initializable {
         app_stage.setScene(assessment_page_scene);
         app_stage.show();        
      }
-     
+     /**
+      * metoda odpowiedzialna za przejscie do okna logowania
+      * @param event
+      * @throws IOException 
+      */
     @FXML
     private void assesment_logoutActionButton(ActionEvent event) throws IOException {
 
@@ -52,22 +65,38 @@ public class Oceny_WykladowcaController implements Initializable {
         app_stage.setScene(logout_page_scene);
         app_stage.show();             
     }
-    
+    /**
+     * Metoda do generowania pdf dla wykładowcy
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void generate_wykladowcaButtonAction(ActionEvent event) throws IOException {
             
     }
-    
+    /**
+     * Metoda do usuniecia wykladowcy z bazy 
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void delete_wykładowcaButtonAction(ActionEvent event) throws IOException {
             
     }
-    
+    /**
+     * Metoda do edycji danych wykładowcy w bazie
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void edit_wykladowcaButtonAction(ActionEvent event) throws IOException {
             
     }
-    
+    /**
+     * Metoda do dodania wykladowcy do bazy 
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void add_wykladowcaButtonAction(ActionEvent event) throws IOException {
             

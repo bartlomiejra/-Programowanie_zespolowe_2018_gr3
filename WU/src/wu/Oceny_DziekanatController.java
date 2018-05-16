@@ -13,7 +13,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * Klasa odpowiedzialna za wyswietlenie okna Oceny_Dziekanat
  *
  * @author Teo
  */
@@ -24,7 +24,11 @@ public class Oceny_DziekanatController implements Initializable {
       
         
     }  
-    
+    /**
+     * Metoda odpowiedzialna za ładowanie sceny z oknem dziekanatu
+     * @param event
+     * @throws IOException 
+     */
     @FXML
      private void assesmentDziekanat_menuActionButton(ActionEvent event) throws IOException {
     
@@ -35,7 +39,11 @@ public class Oceny_DziekanatController implements Initializable {
         app_stage.setScene(assessment_page_scene);
         app_stage.show();        
      }
-     
+     /**
+      * Metoda odpowiedzialna za ładowanie sceny Login_window 
+      * @param event
+      * @throws IOException 
+      */
       @FXML
     private void assesment_logoutActionButton(ActionEvent event) throws IOException {
 
@@ -46,21 +54,38 @@ public class Oceny_DziekanatController implements Initializable {
         app_stage.setScene(logout_page_scene);
         app_stage.show();             
     }
-    
+    /**
+     * Metoda odpowiedzialna za generowanie pdf dla dziekanatu 
+     * @param event
+     * @throws IOException 
+     */
      @FXML
     private void generate_dziekanatButtonAction(ActionEvent event) throws IOException {
             
     }
-    
+    /**
+     * Metoda odpowiedzialna za dodanie oceny do bazy
+     * @param event
+     * @throws IOException 
+     */
      @FXML
     private void add_dziekanatButtonAction(ActionEvent event) throws IOException {
             
     }
-    
+    /**
+     * Metoda odpowiedzialna za edycje oceny w oknie Dziekanat
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void edit_dziekanatButtonAction(ActionEvent event) throws IOException {
             
     }
+    /**
+     * Metoda odpowiedzialna za usuniecie oceny z bazy w oknie Dziekanatu 
+     * @param event
+     * @throws IOException 
+     */
     
     @FXML
     private void delete_dziekanatButtonAction(ActionEvent event) throws IOException {

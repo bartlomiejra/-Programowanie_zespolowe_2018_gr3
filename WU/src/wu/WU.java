@@ -12,7 +12,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- *
+ * Klasa glowna odpowiadajaca za uruchomienie programu
  * @author student
  */
 public class WU extends Application {

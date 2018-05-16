@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 
 /**
  * FXML Controller class
- *
+ * Klasa odpowiedzialna za obsluge sceny z menu studenta
  * @author Zbyszek
  */
 public class Student_windowController implements Initializable {
@@ -31,7 +31,11 @@ public class Student_windowController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+    /**
+     * Metoda odpowiada za wyswietlanie okna z ocenami
+     * @param event
+     * @throws IOException 
+     */
     @FXML
      private void assessment_studentButtonAction(ActionEvent event) throws IOException {
     
@@ -42,12 +46,20 @@ public class Student_windowController implements Initializable {
         app_stage.setScene(assessment_page_scene);
         app_stage.show();        
      }
-     
+     /**
+      * Metoda odpowiada za zamkniecie programu
+      * @param event
+      * @throws IOException 
+      */
      @FXML
        private void close_studentButtonAction(ActionEvent event) throws IOException{
         System.exit(0);  
     }
-       
+       /**
+        * Metoda odpowiada za otwarcie sceny z uzytkownikami
+        * @param event
+        * @throws IOException 
+        */
        @FXML
     private void users_studentButtonAction(ActionEvent event) throws IOException {
 
@@ -59,7 +71,11 @@ public class Student_windowController implements Initializable {
         app_stage.show();                           
     }
     
-    
+    /**
+     * Metoda odpowiada za wylogowanie uzytkownika
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void logout_studentButtonAction(ActionEvent event) throws IOException {
 
@@ -70,7 +86,11 @@ public class Student_windowController implements Initializable {
         app_stage.setScene(logout_page_scene);
         app_stage.show();             
     }
-   
+   /**
+    * Metoda odpowiada z wyjscie uzytkownia z planu zajec
+    * @param event
+    * @throws IOException 
+    */
     @FXML
     private void schedule_studentButtonAction(ActionEvent event) throws IOException {
 

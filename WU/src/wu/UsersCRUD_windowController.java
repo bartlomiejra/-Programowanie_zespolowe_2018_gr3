@@ -20,13 +20,16 @@ import javafx.stage.Stage;
 
 /**
  * FXML Controller class
- *
+ * Klasa odpowiadajaca za wyswietlenie 
  * @author Teo
  */
 public class UsersCRUD_windowController implements Initializable {
-
+    /**
+     * Przycisk wykorzystane w scenie
+     */
     @FXML
     private Button close_users;
+    
     @FXML
     private Button assesment_logout;
     @FXML
@@ -51,7 +54,11 @@ public class UsersCRUD_windowController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
+    /**
+     * Metoda odpowiedzialna za przejscie do okna administratora
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void usersMenuActionButton(ActionEvent event) throws IOException {
 
@@ -62,7 +69,11 @@ public class UsersCRUD_windowController implements Initializable {
         app_stage.setScene(assessment_page_scene);
         app_stage.show();
     }
-    
+    /**
+     * Metoda odpowiedziala za przejscie do okna logowania
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void logout_adminButtonAction(ActionEvent event) throws IOException {
 
@@ -73,32 +84,54 @@ public class UsersCRUD_windowController implements Initializable {
         app_stage.setScene(logout_page_scene);
         app_stage.show();
     }
-    
+    /**
+     * Metoda odpowiedziala za zamkniecie programu
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void close_adminButtonAction(ActionEvent event) throws IOException {
         System.exit(0);
     }
-
+    /**
+     * Metoda odpowiedzialna za dodanie uzytkownika
+     * @param event 
+     */
     @FXML
     private void add_usersButtonAction(ActionEvent event) {
     }
-
+    /**
+     * Metoda odpowiedzialna za edycje uzytkownia
+     * @param event 
+     */
     @FXML
     private void edit_usersButtonAction(ActionEvent event) {
     }
-
+    /**
+     * Metoda odpowiedzialna za usuniecie uzytkownia
+     * @param event 
+     */
     @FXML
     private void delete_usersButtonAction(ActionEvent event) {
     }
-
+    /**
+     * Metoda odpowiedzialna za wyszukiwanie uzytkownika
+     * @param event 
+     */
     @FXML
     private void search_usersButtonAction(ActionEvent event) {
     }
-
+    /**
+     * Metoda odpowiedzialna za wczytanie danych uzytkownika
+     * @param event 
+     */
     @FXML
     private void load_usersButonAction(ActionEvent event) {
     }
-
+    /**
+     * Metoda odpowiedzialna za wyczyszczenie danych z uzytkownika
+     * @param event 
+     */
     @FXML
     private void clear_usersButtonAction(ActionEvent event) {
     }

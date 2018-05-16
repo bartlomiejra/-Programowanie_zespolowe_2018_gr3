@@ -24,9 +24,10 @@ import javafx.stage.Stage;
  * @author Teo
  */
 public class UsersCRUD_windowController implements Initializable {
-
+    
     @FXML
     private Button close_users;
+    
     @FXML
     private Button assesment_logout;
     @FXML
@@ -51,7 +52,11 @@ public class UsersCRUD_windowController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
+     /**
+      * metoda pzowalające na przejście do okna menu Admina
+      * @param event
+      * @throws IOException 
+      */
     @FXML
     private void usersMenuActionButton(ActionEvent event) throws IOException {
 
@@ -62,7 +67,11 @@ public class UsersCRUD_windowController implements Initializable {
         app_stage.setScene(assessment_page_scene);
         app_stage.show();
     }
-    
+    /**
+     * metoda odpowiedzalna za wylogowanie uzytkownika
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void logout_adminButtonAction(ActionEvent event) throws IOException {
 
@@ -73,32 +82,54 @@ public class UsersCRUD_windowController implements Initializable {
         app_stage.setScene(logout_page_scene);
         app_stage.show();
     }
-    
+    /**
+     * metoda odpowiedzalna za zamknięcie aplikacji
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void close_adminButtonAction(ActionEvent event) throws IOException {
         System.exit(0);
     }
-
+    /**
+     * metoda odpowiedzalna za dodawanie uzytkowników
+     * @param event 
+     */
     @FXML
     private void add_usersButtonAction(ActionEvent event) {
     }
-
+    /**
+     * metoda odpowiedzalna za edycja użytkowników
+     * @param event 
+     */
     @FXML
     private void edit_usersButtonAction(ActionEvent event) {
     }
-
+    /**
+     * metoda odpowiedzalna za usuwanie użytkowników
+     * @param event 
+     */
     @FXML
     private void delete_usersButtonAction(ActionEvent event) {
     }
-
+    /**
+     *  metoda odpowiedzalna za wyszukiwanie uzytkowników
+     * @param event 
+     */
     @FXML
     private void search_usersButtonAction(ActionEvent event) {
     }
-
+    /**
+     * metoda ładowanie bazych danych z listą użytkowników
+     * @param event 
+     */
     @FXML
     private void load_usersButonAction(ActionEvent event) {
     }
-
+    /**
+     * czyszczenie okna wyników
+     * @param event 
+     */
     @FXML
     private void clear_usersButtonAction(ActionEvent event) {
     }

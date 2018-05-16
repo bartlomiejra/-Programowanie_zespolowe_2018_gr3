@@ -24,7 +24,7 @@ public class Planzajec_studentController implements Initializable {
         
     }  
     
-    
+   
     @FXML
     private void scheduleSMenuActionButton(ActionEvent event) throws IOException {
 
@@ -36,7 +36,11 @@ public class Planzajec_studentController implements Initializable {
         app_stage.show();
 
     }
-    
+    /**
+     * metoda odpowiedzalna za wylogowanie studenta
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void logout_adminButtonAction(ActionEvent event) throws IOException {
 
@@ -48,7 +52,11 @@ public class Planzajec_studentController implements Initializable {
         app_stage.show();
 
     }
-    
+    /**
+     * metoda odpowiedzalna za zamknięcie aplikacji
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void close_adminButtonAction(ActionEvent event) throws IOException {
         System.exit(0);

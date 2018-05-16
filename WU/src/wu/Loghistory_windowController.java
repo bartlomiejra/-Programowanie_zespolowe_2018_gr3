@@ -14,12 +14,15 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * Klasa obslugujaca dzialanie okna z historia logowania uzytkownikow
  *
  * @author Teo
  */
 public class Loghistory_windowController implements Initializable {
 
+    /**
+     * Przyciski wystepujace w tej scenie
+     */
     @FXML
     private Button search;
     @FXML
@@ -39,7 +42,11 @@ public class Loghistory_windowController implements Initializable {
         // TODO
     } 
     
-    
+    /**
+     * Metoda odpowiedzialna za przejscie do menu administratora
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void menuAdminButtonAction(ActionEvent event) throws IOException {
 
@@ -51,6 +58,11 @@ public class Loghistory_windowController implements Initializable {
         app_stage.show();
     }
     
+    /**
+     * Metoda odpowiedzialna za wylogowanie uzytkownika i przejscie do okna logowania
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void logoutAdminButtonAction(ActionEvent event) throws IOException {
 
@@ -62,22 +74,41 @@ public class Loghistory_windowController implements Initializable {
         app_stage.show();
     }
     
+    /**
+     * Metoda odpowiedzialna za zamkniecie programu
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void closeAdminButtonAction(ActionEvent event) throws IOException {
         System.exit(0);
     }
     
-    
+    /**
+     * Metoda odpowiedzialna za czyszczenie zapytan
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void clearButtonAction(ActionEvent event) throws IOException {
         
     }
     
+    /**
+     * Metoda odpowiedzialna za zaladowanie danych po wcisnieciu przycisku
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void loadButtonAction(ActionEvent event) throws IOException {
         
     }
     
+    /**
+     * Metoda odpowiedzialna za wyszukanie uzytkownika po wcisnieciu przycisku
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void searchButtonAction(ActionEvent event) throws IOException {
         

@@ -13,7 +13,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * Klasa obslugujaca dzialanie okna dziekanatu
  *
  * @author Teo
  */
@@ -21,11 +21,14 @@ public class Dziekanat_windowController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        
+               
     }  
     
-    
+    /**
+     * Metoda odpowiedzialna za ladowanie sceny z ocenami dla dziekanatu i ukrywa scene z menu dziekanatu
+     * @param event
+     * @throws IOException 
+     */
     @FXML
      private void assessment_dziekanatButtonAction(ActionEvent event) throws IOException {
     
@@ -37,6 +40,11 @@ public class Dziekanat_windowController implements Initializable {
         app_stage.show();        
      }
      
+     /**
+      * Metoda odpowiedzialna za ladowanie sceny z uzytkownikami i ukrycie okna z menu dziekanatu
+      * @param event
+      * @throws IOException 
+      */
      @FXML
      private void users_dziekanatButtonAction(ActionEvent event) throws IOException {
     
@@ -48,6 +56,11 @@ public class Dziekanat_windowController implements Initializable {
         app_stage.show();        
      }
      
+     /**
+      * Metoda odpowiedzialna za wylogowanie uzytkownika i przejscie do okna logowania
+      * @param event
+      * @throws IOException 
+      */
       @FXML
     private void logout_adminButtonAction(ActionEvent event) throws IOException {
 
@@ -59,6 +72,11 @@ public class Dziekanat_windowController implements Initializable {
         app_stage.show();             
     }
     
+    /**
+     * Metoda odpowiedzialna za ladowanie sceny z planem zajec i ukryciem sceny z menu dziekanatu
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void schedule_dziekanatButtonAction(ActionEvent event) throws IOException {
 
@@ -70,6 +88,11 @@ public class Dziekanat_windowController implements Initializable {
         app_stage.show();             
     }
     
+    /**
+     * Metoda odpowiedzialna za zamkniecie programu po nacisnieciu przycisku
+     * @param event
+     * @throws IOException 
+     */
      @FXML
     private void close_adminButtonAction(ActionEvent event) throws IOException {
         System.exit(0);

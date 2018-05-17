@@ -50,6 +50,7 @@ public class Oceny_WykladowcaController implements Initializable {
         app_stage.setScene(assessment_page_scene);
         app_stage.show();        
      }
+     
      /**
       * metoda odpowiedzialna za przejscie do okna logowania
       * @param event
@@ -65,6 +66,7 @@ public class Oceny_WykladowcaController implements Initializable {
         app_stage.setScene(logout_page_scene);
         app_stage.show();             
     }
+    
     /**
      * Metoda do generowania pdf dla wykładowcy
      * @param event
@@ -74,6 +76,7 @@ public class Oceny_WykladowcaController implements Initializable {
     private void generate_wykladowcaButtonAction(ActionEvent event) throws IOException {
             
     }
+    
     /**
      * Metoda do usuniecia wykladowcy z bazy 
      * @param event
@@ -83,6 +86,7 @@ public class Oceny_WykladowcaController implements Initializable {
     private void delete_wykładowcaButtonAction(ActionEvent event) throws IOException {
             
     }
+    
     /**
      * Metoda do edycji danych wykładowcy w bazie
      * @param event
@@ -92,6 +96,7 @@ public class Oceny_WykladowcaController implements Initializable {
     private void edit_wykladowcaButtonAction(ActionEvent event) throws IOException {
             
     }
+    
     /**
      * Metoda do dodania wykladowcy do bazy 
      * @param event
@@ -102,16 +107,31 @@ public class Oceny_WykladowcaController implements Initializable {
             
     }
     
+    /**
+     * metoda szukajaca 
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void search_usersButtonAction(ActionEvent event) throws IOException {
             
     }
     
+    /**
+     * metoda ladujaca
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void load_usersButonAction(ActionEvent event) throws IOException {
             
     }
     
+    /**
+     * metoda czyszczaca
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void clear_usersButtonAction(ActionEvent event) throws IOException {
             

@@ -13,7 +13,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * Klasa obslugujaca dzialanie planu zajec dla studenta
  *
  * @author Teo
  */
@@ -24,7 +24,11 @@ public class Planzajec_studentController implements Initializable {
         
     }  
     
-   
+   /**
+    * Metoda odpowiedzialna za przejscie do sceny z menu studenta
+    * @param event
+    * @throws IOException 
+    */
     @FXML
     private void scheduleSMenuActionButton(ActionEvent event) throws IOException {
 
@@ -34,8 +38,8 @@ public class Planzajec_studentController implements Initializable {
         app_stage.hide();
         app_stage.setScene(assessment_page_scene);
         app_stage.show();
-
     }
+    
     /**
      * metoda odpowiedzalna za wylogowanie studenta
      * @param event
@@ -50,8 +54,8 @@ public class Planzajec_studentController implements Initializable {
         app_stage.hide();
         app_stage.setScene(logout_page_scene);
         app_stage.show();
-
     }
+    
     /**
      * metoda odpowiedzalna za zamknięcie aplikacji
      * @param event

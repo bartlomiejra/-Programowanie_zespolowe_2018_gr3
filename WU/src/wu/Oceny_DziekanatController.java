@@ -21,9 +21,9 @@ public class Oceny_DziekanatController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-      
-        
-    }  
+            
+    } 
+    
     /**
      * Metoda odpowiedzialna za ładowanie sceny z oknem dziekanatu
      * @param event
@@ -39,6 +39,7 @@ public class Oceny_DziekanatController implements Initializable {
         app_stage.setScene(assessment_page_scene);
         app_stage.show();        
      }
+     
      /**
       * Metoda odpowiedzialna za ładowanie sceny Login_window 
       * @param event
@@ -54,6 +55,7 @@ public class Oceny_DziekanatController implements Initializable {
         app_stage.setScene(logout_page_scene);
         app_stage.show();             
     }
+    
     /**
      * Metoda odpowiedzialna za generowanie pdf dla dziekanatu 
      * @param event
@@ -63,6 +65,7 @@ public class Oceny_DziekanatController implements Initializable {
     private void generate_dziekanatButtonAction(ActionEvent event) throws IOException {
             
     }
+    
     /**
      * Metoda odpowiedzialna za dodanie oceny do bazy
      * @param event
@@ -72,6 +75,7 @@ public class Oceny_DziekanatController implements Initializable {
     private void add_dziekanatButtonAction(ActionEvent event) throws IOException {
             
     }
+    
     /**
      * Metoda odpowiedzialna za edycje oceny w oknie Dziekanat
      * @param event
@@ -81,12 +85,12 @@ public class Oceny_DziekanatController implements Initializable {
     private void edit_dziekanatButtonAction(ActionEvent event) throws IOException {
             
     }
+    
     /**
      * Metoda odpowiedzialna za usuniecie oceny z bazy w oknie Dziekanatu 
      * @param event
      * @throws IOException 
-     */
-    
+     */ 
     @FXML
     private void delete_dziekanatButtonAction(ActionEvent event) throws IOException {
             

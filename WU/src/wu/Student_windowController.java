@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package wu;
 
 import java.io.IOException;
@@ -18,7 +13,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
  * Klasa odpowiedzialna za obsluge sceny z menu studenta
  * @author Zbyszek
  */
@@ -32,11 +26,7 @@ public class Student_windowController implements Initializable {
         // TODO
     }    
     /**
-<<<<<<< HEAD
-     * Metoda odpowiada za wyswietlanie okna z ocenami
-=======
      * metoda odpowiedzialna za przejście do okna Oceny
->>>>>>> 1a79dd4062cce38ed1dbbb4e4c34376b8c1845d5
      * @param event
      * @throws IOException 
      */
@@ -50,12 +40,9 @@ public class Student_windowController implements Initializable {
         app_stage.setScene(assessment_page_scene);
         app_stage.show();        
      }
+     
      /**
-<<<<<<< HEAD
-      * Metoda odpowiada za zamkniecie programu
-=======
       * metoda odpowiedzialna za wyjście z aplikacji
->>>>>>> 1a79dd4062cce38ed1dbbb4e4c34376b8c1845d5
       * @param event
       * @throws IOException 
       */
@@ -63,12 +50,9 @@ public class Student_windowController implements Initializable {
        private void close_studentButtonAction(ActionEvent event) throws IOException{
         System.exit(0);  
     }
+       
        /**
-<<<<<<< HEAD
-        * Metoda odpowiada za otwarcie sceny z uzytkownikami
-=======
         * przejśćie do okna z danymi personalnymi studenta
->>>>>>> 1a79dd4062cce38ed1dbbb4e4c34376b8c1845d5
         * @param event
         * @throws IOException 
         */
@@ -84,11 +68,7 @@ public class Student_windowController implements Initializable {
     }
     
     /**
-<<<<<<< HEAD
-     * Metoda odpowiada za wylogowanie uzytkownika
-=======
      * metoda odpowiedzialna za wylogowanie studenta, przejście do okna logowania
->>>>>>> 1a79dd4062cce38ed1dbbb4e4c34376b8c1845d5
      * @param event
      * @throws IOException 
      */
@@ -102,12 +82,9 @@ public class Student_windowController implements Initializable {
         app_stage.setScene(logout_page_scene);
         app_stage.show();             
     }
+    
    /**
-<<<<<<< HEAD
-    * Metoda odpowiada z wyjscie uzytkownia z planu zajec
-=======
     * metoda odpowiedzialna za przejście do okna z planem zajęć
->>>>>>> 1a79dd4062cce38ed1dbbb4e4c34376b8c1845d5
     * @param event
     * @throws IOException 
     */

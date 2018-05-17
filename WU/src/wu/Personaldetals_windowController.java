@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package wu;
 
 import java.io.IOException;
@@ -19,7 +14,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /**
- * Klasa Personaldetals
+ * Klasa obslugujaca dzialanie sceny personaldetails
  *
  * @author Teo
  */
@@ -44,12 +39,13 @@ public class Personaldetals_windowController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-/**
- * Metoda odopowiedzialna za przejscie do okna studenta
- * @param event
- * @throws IOException 
- */
+    }
+    
+    /**
+     * Metoda odopowiedzialna za przejscie do okna studenta
+     * @param event
+     * @throws IOException 
+     */
     @FXML
      private void personalDetailsActionButton(ActionEvent event) throws IOException {
     
@@ -60,16 +56,17 @@ public class Personaldetals_windowController implements Initializable {
         app_stage.setScene(assessment_page_scene);
         app_stage.show();        
      }
+     
      /**
       * Metoda odpowiedzialna za zamknięcie programu 
       * @param event
       * @throws IOException 
       */
-
     @FXML
     private void close_adminButtonAction(ActionEvent event) throws IOException {
         System.exit(0);
     }
+    
     /**
      * Metoda odpowiedzialna za wylogowanie i przejscie do okna logowania
      * @param event
@@ -84,8 +81,8 @@ public class Personaldetals_windowController implements Initializable {
         app_stage.hide();
         app_stage.setScene(logout_page_scene);
         app_stage.show();
-
     }
+    
     /**
      * Metoda odpowiedzialna za edycje danych 
      * @param event 
@@ -93,10 +90,11 @@ public class Personaldetals_windowController implements Initializable {
     @FXML
     private void edit_detalsButtonAction(ActionEvent event) {
     }
-/**
- * Metoda odpowiedzialna za zapisanie danych
- * @param event 
- */
+    
+    /**
+     * Metoda odpowiedzialna za zapisanie danych
+     * @param event 
+     */
     @FXML
     private void save_detalsButtonAction(ActionEvent event) {
     }

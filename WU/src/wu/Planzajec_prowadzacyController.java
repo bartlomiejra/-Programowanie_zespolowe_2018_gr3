@@ -13,7 +13,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * Klasa odpowiedzialna za obsluge sceny z planem zajec dla prowadzacego
  *
  * @author Teo
  */
@@ -25,6 +25,11 @@ public class Planzajec_prowadzacyController implements Initializable {
         // TODO
     }    
     
+    /**
+     * Metoda odpowiedzialna za przejscie do okna z menu prowadzacego
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void schedulePMenuActionButton(ActionEvent event) throws IOException {
 
@@ -34,9 +39,13 @@ public class Planzajec_prowadzacyController implements Initializable {
         app_stage.hide();
         app_stage.setScene(assessment_page_scene);
         app_stage.show();
-
     }
     
+    /**
+     * Metoda odpowiedzialna za wylogowanie uzytkownika i przejscie do sceny logowania
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void logout_adminButtonAction(ActionEvent event) throws IOException {
 
@@ -46,9 +55,13 @@ public class Planzajec_prowadzacyController implements Initializable {
         app_stage.hide();
         app_stage.setScene(logout_page_scene);
         app_stage.show();
-
     }
     
+    /**
+     * Metoda odpowiedzialna za zamkniecie aplikacji
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void close_adminButtonAction(ActionEvent event) throws IOException {
         System.exit(0);

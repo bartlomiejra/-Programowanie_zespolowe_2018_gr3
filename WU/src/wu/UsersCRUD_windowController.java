@@ -29,6 +29,7 @@ public class UsersCRUD_windowController implements Initializable {
     private Button assesment_logout;
     @FXML
     private Button assesment_menu;
+     // buttony dopowiedzialne za obsługę cześci seeny dotyczącej studentów
     @FXML
     private Button add_users;
     @FXML
@@ -41,6 +42,20 @@ public class UsersCRUD_windowController implements Initializable {
     private Button load_users;
     @FXML
     private Button clear_users;
+    
+    // buttony dopowiedzialne za obsługę cześci seeny dotyczącej pracowników
+    @FXML
+    private Button add_usersp;
+    @FXML
+    private Button edit_usersp;
+    @FXML
+    private Button delete_usersp;
+    @FXML
+    private Button search_usersp;
+    @FXML
+    private Button load_usersp;
+    @FXML
+    private Button clear_usersp;
 
     /**
      * Initializes the controller class.

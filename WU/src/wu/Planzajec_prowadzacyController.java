@@ -13,59 +13,58 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * Klasa obsługująca oceny studenta
+ * Klasa odpowiedzialna za obsluge sceny z planem zajec dla prowadzacego
  *
- * @author Zbyszek
+ * @author Teo
  */
-public class OcenyController implements Initializable {
+public class Planzajec_prowadzacyController implements Initializable {
 
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
     
     /**
-     * Metoda powracająca do menu
+     * Metoda odpowiedzialna za przejscie do okna z menu prowadzacego
      * @param event
      * @throws IOException 
      */
-     @FXML
-     private void assesment_menuActionButton(ActionEvent event) throws IOException {
-    
-        Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("Student_window.fxml"));
+    @FXML
+    private void schedulePMenuActionButton(ActionEvent event) throws IOException {
+
+        Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("Prowadzacy_window.fxml"));
         Scene assessment_page_scene = new Scene(assessment_page_parent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.hide();
         app_stage.setScene(assessment_page_scene);
-        app_stage.show();        
-     }
-     
-     /**
-      * Metoda wylogowująca
-      * @param event
-      * @throws IOException 
-      */
-     @FXML
-    private void assesment_logoutActionButton(ActionEvent event) throws IOException {
+        app_stage.show();
+    }
+    
+    /**
+     * Metoda odpowiedzialna za wylogowanie uzytkownika i przejscie do sceny logowania
+     * @param event
+     * @throws IOException 
+     */
+    @FXML
+    private void logout_adminButtonAction(ActionEvent event) throws IOException {
 
         Parent logout_page_parent = FXMLLoader.load(getClass().getResource("Login_window.fxml"));
         Scene logout_page_scene = new Scene(logout_page_parent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.hide();
         app_stage.setScene(logout_page_scene);
-        app_stage.show();             
+        app_stage.show();
     }
     
-   /**
-    * Metoda generująca pdf z ocenami
-    * @param event
-    * @throws IOException 
-    */
-   @FXML
-    private void generate_studentButtonAction(ActionEvent event) throws IOException {
-           
-    } 
-    
+    /**
+     * Metoda odpowiedzialna za zamkniecie aplikacji
+     * @param event
+     * @throws IOException 
+     */
+    @FXML
+    private void close_adminButtonAction(ActionEvent event) throws IOException {
+        System.exit(0);
+    }
     
 }

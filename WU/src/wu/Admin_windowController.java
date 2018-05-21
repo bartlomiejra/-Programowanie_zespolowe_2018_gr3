@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package wu;
 
 import java.io.IOException;
@@ -20,12 +15,16 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * Klasa obslugujaca dzialanie okna z menu administratora
  *
  * @author Zbyszek
  */
 public class Admin_windowController implements Initializable {
 
+
+    /**
+     * Przyciski, ktore wystepuja w tej scenie
+     */
     @FXML
     private Button close_admin;
     @FXML
@@ -35,20 +34,21 @@ public class Admin_windowController implements Initializable {
     @FXML
     private Button assessment_admin;
     @FXML
-    private Button users_admin;
-    @FXML
     private Button schedule_admin;
-    @FXML
-    private Button logged_history_admin;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     }
 
+    /**
+     * Metoda odpowiedzialna za ladowanie sceny z ocenami dla administratora i ukrycie sceny z menu administratora
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void assessment_adminButtonAction(ActionEvent event) throws IOException {
 
@@ -58,14 +58,23 @@ public class Admin_windowController implements Initializable {
         app_stage.hide();
         app_stage.setScene(assessment_page_scene);
         app_stage.show();
-
     }
 
+    /**
+     * Metoda, ktora zamyka program po nacisnieciu przycisku 
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void close_adminButtonAction(ActionEvent event) throws IOException {
         System.exit(0);
     }
-
+    
+    /**
+     * Metoda odpowiedzialna za wylogowanie z danego konta i przejscie do okna logowania
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void logout_adminButtonAction(ActionEvent event) throws IOException {
 
@@ -75,9 +84,13 @@ public class Admin_windowController implements Initializable {
         app_stage.hide();
         app_stage.setScene(logout_page_scene);
         app_stage.show();
-
     }
-
+    
+    /**
+     * Metoda odpowiedzialna za ladowanie sceny z uzytkownikami i ukrycie sceny z menu administratora
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void users_adminButtonAction(ActionEvent event) throws IOException {
 
@@ -87,9 +100,13 @@ public class Admin_windowController implements Initializable {
         app_stage.hide();
         app_stage.setScene(logout_page_scene);
         app_stage.show();
-
     }
-
+    
+    /**
+     * Metoda odpowiedzialna za ladowanie sceny z historia logowania uzytkownikow i ukrycie sceny z menu administratora
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void logged_history_adminButtonAction(ActionEvent event) throws IOException {
 
@@ -99,9 +116,13 @@ public class Admin_windowController implements Initializable {
         app_stage.hide();
         app_stage.setScene(logged_history_scene);
         app_stage.show();
-
     }
     
+    /**
+     * Metoda odpowiedzialna za ladowanie sceny z planem zajec i ukrycie sceny z menu administratora
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void schedule_adminButtonAction(ActionEvent event) throws IOException {
 

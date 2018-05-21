@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 
 <<<<<<< HEAD
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
@@ -21,12 +23,26 @@
             <TableColumn prefWidth="381.0" text="Ostatnie Logowanie" />
         </columns>
       </TableView>
-      <TextField layoutX="182.0" layoutY="351.0" prefHeight="29.0" prefWidth="159.0" promptText="Szukaj" />
-      <Button fx:id="search" layoutX="350.0" layoutY="353.0" mnemonicParsing="false" onAction="#searchButtonAction" prefHeight="25.0" prefWidth="61.0" text="Szukaj" />
-      <Button fx:id="load" layoutX="416.0" layoutY="353.0" mnemonicParsing="false" onAction="#loadButtonAction" text="Wczytaj " />
-      <Button fx:id="clear" layoutX="486.0" layoutY="353.0" mnemonicParsing="false" onAction="#clearButtonAction" prefHeight="25.0" prefWidth="61.0" text="Wyczyść" />
-      <Button fx:id="assesment_menu" layoutX="386.0" layoutY="14.0" mnemonicParsing="false" onAction="#assesment_menuButtonAction" prefHeight="25.0" prefWidth="61.0" text="Menu" />
-      <Button fx:id="assesment_logout" layoutX="455.0" layoutY="14.0" mnemonicParsing="false" onAction="#assesment_logoutButtonAction" prefHeight="25.0" prefWidth="61.0" text="Wyloguj" />
-      <Button fx:id="close_history" layoutX="520.0" layoutY="14.0" mnemonicParsing="false" onAction="#close_historyButtonAction" prefHeight="25.0" prefWidth="61.0" text="Zamknij" />
+      <HBox layoutX="350.0" layoutY="14.0" prefHeight="35.0" prefWidth="224.0" spacing="10.0">
+         <children>
+            <Button fx:id="menuLogHistory" mnemonicParsing="false" onAction="#menuAdminButtonAction" prefHeight="25.0" prefWidth="61.0" text="Menu" />
+            <Button fx:id="logoutAdmin" mnemonicParsing="false" onAction="#logoutAdminButtonAction" prefHeight="25.0" prefWidth="61.0" text="Wyloguj" />
+            <Button fx:id="closeAdmin" mnemonicParsing="false" onAction="#closeAdminButtonAction" prefHeight="25.0" prefWidth="61.0" text="Zamknij" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+      <HBox layoutX="168.0" layoutY="342.0" prefHeight="35.0" prefWidth="395.0" spacing="10.0">
+         <children>
+            <TextField prefHeight="29.0" prefWidth="159.0" promptText="Szukaj" />
+            <Button fx:id="search" mnemonicParsing="false" onAction="#searchButtonAction" prefHeight="25.0" prefWidth="61.0" text="Szukaj" />
+            <Button fx:id="load" mnemonicParsing="false" onAction="#loadButtonAction" text="Wczytaj " />
+            <Button fx:id="clear" mnemonicParsing="false" onAction="#clearButtonAction" prefHeight="25.0" prefWidth="61.0" text="Wyczyść" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
    </children>
 </AnchorPane>

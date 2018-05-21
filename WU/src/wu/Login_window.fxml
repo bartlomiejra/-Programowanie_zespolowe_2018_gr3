@@ -3,9 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
@@ -13,18 +11,12 @@
     <children>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
         <Button fx:id="loginB" layoutX="308.0" layoutY="200.0" onAction="#loginButtonAction" text="Zaloguj!" />
-        <Label fx:id="login" layoutX="99.0" layoutY="84.0" prefHeight="17.0" prefWidth="98.0" text="Login:" />
-        <Label fx:id="haslo" layoutX="99.0" layoutY="140.0" text="Hasło: " />
-        <TextField fx:id="loginTekst" layoutX="160.0" layoutY="80.0" promptText="username" />
-        <PasswordField fx:id="hasloTekst" layoutX="160.0" layoutY="136.0" promptText="password" />
-      <VBox layoutX="99.0" layoutY="170.0" prefHeight="86.0" prefWidth="98.0" spacing="6.0">
+      <VBox layoutX="104.0" layoutY="65.0" prefHeight="93.0" prefWidth="223.0">
          <children>
-            <RadioButton fx:id="wykladowcaRadioButton" mnemonicParsing="false" text="Wykładowca">
-               <toggleGroup>
-                  <ToggleGroup fx:id="spec" />
-               </toggleGroup></RadioButton>
-            <RadioButton fx:id="dziekanatRadioButton" mnemonicParsing="false" text="Dziekanat" toggleGroup="$spec" />
-            <RadioButton fx:id="adminRadioButton" mnemonicParsing="false" text="Admin" toggleGroup="$spec" />
+              <Label fx:id="login" prefHeight="17.0" prefWidth="98.0" text="Login:" />
+              <TextField fx:id="loginTekst" promptText="username" />
+              <Label fx:id="haslo" text="Hasło: " />
+              <PasswordField fx:id="hasloTekst" promptText="password" />
          </children>
       </VBox>
     </children>

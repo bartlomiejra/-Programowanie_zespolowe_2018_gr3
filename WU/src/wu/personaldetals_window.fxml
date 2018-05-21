@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Personaldetals_windowController">
    <children>
-      <Button fx:id="assesment_menu" layoutX="386.0" layoutY="14.0" mnemonicParsing="false" onAction="#assesment_menuButtonAction" prefHeight="25.0" prefWidth="61.0" text="Menu" />
-      <Button fx:id="assesment_logout" layoutX="455.0" layoutY="14.0" mnemonicParsing="false" onAction="#assesment_logoutButtonAction" prefHeight="25.0" prefWidth="61.0" text="Wyloguj" />
-      <Button fx:id="close_history" layoutX="520.0" layoutY="14.0" mnemonicParsing="false" onAction="#close_historyButtonAction" prefHeight="25.0" prefWidth="61.0" text="Zamknij" />
       <Text layoutX="39.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dane osobowe" wrappingWidth="214.13671875">
          <font>
             <Font size="31.0" />
@@ -132,5 +131,15 @@
       <Label layoutX="164.0" layoutY="367.0" prefHeight="21.0" prefWidth="136.0" text="Label" />
       <Button fx:id="edit_detals" layoutX="404.0" layoutY="355.0" mnemonicParsing="false" onAction="#edit_detalsButtonAction" prefHeight="25.0" prefWidth="61.0" text="Edytuj" />
       <Button fx:id="save_detals" layoutX="468.0" layoutY="355.0" mnemonicParsing="false" onAction="#save_detalsButtonAction" prefHeight="25.0" prefWidth="61.0" text="Zapisz" />
+      <HBox layoutX="368.0" layoutY="11.0" prefHeight="41.0" prefWidth="214.0" spacing="5.0">
+         <children>
+            <Button fx:id="personalDetails" mnemonicParsing="false" onAction="#personalDetailsActionButton" prefHeight="25.0" prefWidth="61.0" text="Menu" />
+            <Button fx:id="logout_admin" mnemonicParsing="false" onAction="#logout_adminButtonAction" prefHeight="25.0" prefWidth="61.0" text="Wyloguj" />
+            <Button fx:id="close_admin" mnemonicParsing="false" onAction="#close_adminButtonAction" prefHeight="25.0" prefWidth="61.0" text="Zamknij" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
    </children>
 </AnchorPane>

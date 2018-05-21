@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package wu;
 
 import java.io.IOException;
@@ -18,8 +13,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
- *
+ * Klasa odpowiedzialna za obsluge sceny z menu studenta
  * @author Zbyszek
  */
 public class Student_windowController implements Initializable {
@@ -31,7 +25,11 @@ public class Student_windowController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+    /**
+     * metoda odpowiedzialna za przejście do okna Oceny
+     * @param event
+     * @throws IOException 
+     */
     @FXML
      private void assessment_studentButtonAction(ActionEvent event) throws IOException {
     
@@ -42,11 +40,22 @@ public class Student_windowController implements Initializable {
         app_stage.setScene(assessment_page_scene);
         app_stage.show();        
      }
+     
+     /**
+      * metoda odpowiedzialna za wyjście z aplikacji
+      * @param event
+      * @throws IOException 
+      */
      @FXML
        private void close_studentButtonAction(ActionEvent event) throws IOException{
         System.exit(0);  
     }
        
+       /**
+        * przejśćie do okna z danymi personalnymi studenta
+        * @param event
+        * @throws IOException 
+        */
        @FXML
     private void users_studentButtonAction(ActionEvent event) throws IOException {
 
@@ -58,7 +67,11 @@ public class Student_windowController implements Initializable {
         app_stage.show();                           
     }
     
-    
+    /**
+     * metoda odpowiedzialna za wylogowanie studenta, przejście do okna logowania
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void logout_studentButtonAction(ActionEvent event) throws IOException {
 
@@ -69,7 +82,12 @@ public class Student_windowController implements Initializable {
         app_stage.setScene(logout_page_scene);
         app_stage.show();             
     }
-   
+    
+   /**
+    * metoda odpowiedzialna za przejście do okna z planem zajęć
+    * @param event
+    * @throws IOException 
+    */
     @FXML
     private void schedule_studentButtonAction(ActionEvent event) throws IOException {
 

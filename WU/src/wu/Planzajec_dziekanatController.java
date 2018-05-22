@@ -13,17 +13,18 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * Klasa obslugujaca dzialanie sceny z planem zajec dla administratora
+ * Klasa obslugujaca scene z planem zajec dla dziekanatu
  * @author Teo
  */
-public class Planzajec_adminController implements Initializable {
+public class Planzajec_dziekanatController implements Initializable {
     
-    @Override
+    
+     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
     }
     
-    /**
+        /**
      * Metoda edytujaca 
      * @param event
      * @throws IOException 
@@ -90,9 +91,9 @@ public class Planzajec_adminController implements Initializable {
      * @throws IOException 
      */
     @FXML
-    private void assesmentAdmin_menuActionButton(ActionEvent event) throws IOException {
+    private void assesmentDziekanat_menuActionButton(ActionEvent event) throws IOException {
 
-        Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("Admin_window.fxml"));
+        Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("Dziekanat_window.fxml"));
         Scene assessment_page_scene = new Scene(assessment_page_parent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.hide();
@@ -125,5 +126,6 @@ public class Planzajec_adminController implements Initializable {
     private void close_usersButtonAction(ActionEvent event) throws IOException {
         System.exit(0);
     }
+    
     
 }

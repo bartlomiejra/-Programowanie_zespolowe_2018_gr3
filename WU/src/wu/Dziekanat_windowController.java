@@ -80,7 +80,7 @@ public class Dziekanat_windowController implements Initializable {
     @FXML
     private void schedule_dziekanatButtonAction(ActionEvent event) throws IOException {
 
-        Parent logout_page_parent = FXMLLoader.load(getClass().getResource("Planzajec_prowadzacy.fxml"));
+        Parent logout_page_parent = FXMLLoader.load(getClass().getResource("Planzajec_dziekanatwindow.fxml"));
         Scene logout_page_scene = new Scene(logout_page_parent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.hide();

@@ -8,7 +8,7 @@ public Connection connection;
     public  Connection getConnection(){
 
 
-        String dbName="mysql";
+        String dbName="sss";
 
 
         try {

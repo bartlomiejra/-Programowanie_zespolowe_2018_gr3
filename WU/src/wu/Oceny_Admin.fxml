@@ -14,11 +14,10 @@
    <children>
       <TableView fx:id="table_oceny" layoutX="240.0" layoutY="65.0" prefHeight="343.0" prefWidth="518.0">
          <columns>
-            <TableColumn fx:id="columnProwadzacy" prefWidth="103.0" text="Prowadzący" />
-            <TableColumn fx:id="columnPrzedmiot" prefWidth="109.0" text="Przedmiot" />
-            <TableColumn fx:id="columnGodziny" prefWidth="95.0" text="Liczba Godzin" />
-            <TableColumn fx:id="columnOcena" prefWidth="58.0" text="Ocena" />
-            <TableColumn fx:id="columnStudent" prefWidth="148.0" text="Student" />
+            <TableColumn fx:id="columnProwadzacy" prefWidth="148.5" text="Prowadzący" />
+            <TableColumn fx:id="columnPrzedmiot" prefWidth="129.0" text="Przedmiot" />
+            <TableColumn fx:id="columnOcena" prefWidth="99.5" text="Ocena" />
+            <TableColumn fx:id="columnStudent" prefWidth="140.0" text="Student" />
          </columns>
       </TableView>
       <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zalogowany jako: " />

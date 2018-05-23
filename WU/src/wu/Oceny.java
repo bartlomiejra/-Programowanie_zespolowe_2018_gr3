@@ -18,19 +18,15 @@ public class Oceny {
 
        private final IntegerProperty  ocena;
  private final StringProperty nazwa_przedmiotu;
-      private final StringProperty imie_s;
-    private final StringProperty naziwsko_s;
-    private final StringProperty imie_p;
-    private final StringProperty nazwisko_p;
+      private final StringProperty student;
+    private final StringProperty prowadzacy;
     
     
-    public Oceny(Integer ocena, String nazwa_przedmiotu, String imie_s, String nazwisko_s, String imie_p, String nazwisko_p){
+    public Oceny(Integer ocena, String nazwa_przedmiotu, String student, String prowadzacy){
         this.ocena = new SimpleIntegerProperty(ocena);
         this.nazwa_przedmiotu = new SimpleStringProperty(nazwa_przedmiotu);
-        this.imie_s = new SimpleStringProperty(imie_s);
-        this.naziwsko_s = new SimpleStringProperty(nazwisko_s);
-        this.imie_p = new SimpleStringProperty(imie_p);
-        this.nazwisko_p = new SimpleStringProperty(nazwisko_p);
+        this.student = new SimpleStringProperty(student);
+        this.prowadzacy = new SimpleStringProperty(prowadzacy);
         
         
     }
@@ -40,19 +36,26 @@ public class Oceny {
         public String getnazwa_przedmiotu(){
         return nazwa_przedmiotu.get();
     }
-    public String getimie_s(){
-        return imie_s.get();      
+    public String getStudent(){
+        return student.get();      
     }
-    public String getnaziwsko_s(){
-        return naziwsko_s.get();
+    public String getProwadzacy(){
+        return prowadzacy.get();
     }
 
-    public String getimie_p(){
-        return imie_p.get();
-    }
-    public String getnazwisko_p(){
-        return nazwisko_p.get();
-    }
+
     
-    
+     public IntegerProperty ocenaProperty() {
+        return ocena;
+    }
+     public StringProperty nazwa_przedmiotuProperty(){
+         return nazwa_przedmiotu;
+     }
+     public StringProperty studentProperty(){
+         return student;
+     }
+     public StringProperty prowadzacyProperty(){
+         return prowadzacy;
+     }
+
 }

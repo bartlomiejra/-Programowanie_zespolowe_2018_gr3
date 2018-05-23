@@ -8,10 +8,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="650.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="wu.OcenyController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.OcenyController">
    <children>
-      <TableView layoutX="2.0" layoutY="55.0" prefHeight="343.0" prefWidth="592.0">
+      <TableView layoutX="2.0" layoutY="55.0" prefHeight="343.0" prefWidth="433.0">
         <columns>
           <TableColumn prefWidth="146.0" text="Przedmiot" />
           <TableColumn prefWidth="84.0" text="Wystawił" />
@@ -22,9 +21,9 @@
       <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zalogowany jako: " />
       <HBox layoutX="404.0" layoutY="15.0" prefHeight="31.0" prefWidth="220.0" spacing="3.0">
          <children>
-            <Button mnemonicParsing="false" text="Generuj do PDF" />
-            <Button mnemonicParsing="false" text="Menu" />
-            <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="60.0" text="Wyloguj" />
+            <Button fx:id="generate_student" mnemonicParsing="false" onAction="#generate_studentButtonAction" text="Generuj do PDF" />
+            <Button fx:id="assesment_menu" mnemonicParsing="false" onAction="#assesment_menuActionButton" text="Menu" />
+            <Button fx:id="assesment_logout" mnemonicParsing="false" onAction="#assesment_logoutActionButton" prefHeight="23.0" prefWidth="60.0" text="Wyloguj" />
          </children>
          <padding>
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />

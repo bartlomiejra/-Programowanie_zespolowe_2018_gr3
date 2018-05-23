@@ -51,7 +51,7 @@ public class Student {
     public Integer getpesel_s(){
         return pesel_s.get();
     }
-    public String geemial_s(){
+    public String getemial_s(){
         return emial_s.get();
     }
     public String getlogin_sn(){

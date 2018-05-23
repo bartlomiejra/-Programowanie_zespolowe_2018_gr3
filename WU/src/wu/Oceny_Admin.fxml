@@ -10,15 +10,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Oceny_AdminController">
+<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Oceny_AdminController">
    <children>
-      <TableView layoutX="240.0" layoutY="65.0" prefHeight="343.0" prefWidth="518.0">
+      <TableView fx:id="table_oceny" layoutX="240.0" layoutY="65.0" prefHeight="343.0" prefWidth="518.0">
          <columns>
-            <TableColumn prefWidth="103.0" text="Prowadzący" />
-            <TableColumn prefWidth="109.0" text="Przedmiot" />
-            <TableColumn prefWidth="95.0" text="Liczba Godzin" />
-            <TableColumn prefWidth="58.0" text="Ocena" />
-            <TableColumn prefWidth="148.0" text="Student" />
+            <TableColumn fx:id="columnProwadzacy" prefWidth="103.0" text="Prowadzący" />
+            <TableColumn fx:id="columnPrzedmiot" prefWidth="109.0" text="Przedmiot" />
+            <TableColumn fx:id="columnGodziny" prefWidth="95.0" text="Liczba Godzin" />
+            <TableColumn fx:id="columnOcena" prefWidth="58.0" text="Ocena" />
+            <TableColumn fx:id="columnStudent" prefWidth="148.0" text="Student" />
          </columns>
       </TableView>
       <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zalogowany jako: " />
@@ -36,11 +36,11 @@
       <VBox layoutX="31.0" layoutY="65.0" prefHeight="313.0" prefWidth="191.0" spacing="15.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj Oceny:" wrappingWidth="131.1171875" />
-            <TextField prefHeight="25.0" prefWidth="169.0" promptText="Prowadzący" />
-            <TextField prefHeight="25.0" prefWidth="169.0" promptText="przedmiot" />
-            <TextField prefHeight="25.0" prefWidth="169.0" promptText="Liczba godzin" />
-            <TextField prefHeight="25.0" prefWidth="169.0" promptText="Ocena" />
-            <TextField prefHeight="25.0" prefWidth="169.0" promptText="Imie nazwisko studenta (id)" />
+            <TextField fx:id="tfProwadzacy" prefHeight="25.0" prefWidth="169.0" promptText="Prowadzący" />
+            <TextField fx:id="tfPrzedmiot" prefHeight="25.0" prefWidth="169.0" promptText="przedmiot" />
+            <TextField fx:id="tfLiczba_godzin" prefHeight="25.0" prefWidth="169.0" promptText="Liczba godzin" />
+            <TextField fx:id="tfOcena" prefHeight="25.0" prefWidth="169.0" promptText="Ocena" />
+            <TextField fx:id="tf_student" prefHeight="25.0" prefWidth="169.0" promptText="Imie nazwisko studenta (id)" />
             <HBox alignment="TOP_CENTER" prefHeight="46.0" prefWidth="191.0" spacing="10.0" VBox.vgrow="NEVER">
                <children>
                   <Button fx:id="add_wykladowca" mnemonicParsing="false" onAction="#add_wykladowcaButtonAction" text="Dodaj" />

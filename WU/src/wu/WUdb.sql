@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2018 at 09:22 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.4
+-- Czas generowania: 21 Maj 2018, 15:22
+-- Wersja serwera: 10.1.31-MariaDB
+-- Wersja PHP: 7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
-
+-- Baza danych: `sss`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `harmonogram`
+-- Struktura tabeli dla tabeli `harmonogram`
 --
 
 CREATE TABLE `harmonogram` (
@@ -38,7 +38,7 @@ CREATE TABLE `harmonogram` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `harmonogram`
+-- Zrzut danych tabeli `harmonogram`
 --
 
 INSERT INTO `harmonogram` (`id_harmonogramu`, `id_przedmiotu`, `id_pracownika`, `data_zajec_h`, `godzina_h`, `id_specjalizacji`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `harmonogram` (`id_harmonogramu`, `id_przedmiotu`, `id_pracownika`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oceny`
+-- Struktura tabeli dla tabeli `oceny`
 --
 
 CREATE TABLE `oceny` (
@@ -60,7 +60,7 @@ CREATE TABLE `oceny` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `oceny`
+-- Zrzut danych tabeli `oceny`
 --
 
 INSERT INTO `oceny` (`id_oceny`, `id_przedmiotu`, `id_studenta`, `id_pracownika`, `ocena`) VALUES
@@ -72,7 +72,7 @@ INSERT INTO `oceny` (`id_oceny`, `id_przedmiotu`, `id_studenta`, `id_pracownika`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pracownicy`
+-- Struktura tabeli dla tabeli `pracownicy`
 --
 
 CREATE TABLE `pracownicy` (
@@ -84,13 +84,13 @@ CREATE TABLE `pracownicy` (
   `data_urodzenia_p` varchar(30) NOT NULL,
   `nr_tel_p` int(11) NOT NULL,
   `login_p` varchar(30) NOT NULL,
-  `haslo_p` varchar(30) NOT NULL,
+  `haslo_p` varchar(35) NOT NULL,
   `specjalizacja_p` varchar(30) NOT NULL,
   `ostatnie_logowanie_pracownicy` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pracownicy`
+-- Zrzut danych tabeli `pracownicy`
 --
 
 INSERT INTO `pracownicy` (`id_pracownika`, `imie_p`, `nazwisko_p`, `pesel_p`, `email_p`, `data_urodzenia_p`, `nr_tel_p`, `login_p`, `haslo_p`, `specjalizacja_p`, `ostatnie_logowanie_pracownicy`) VALUES
@@ -102,7 +102,7 @@ INSERT INTO `pracownicy` (`id_pracownika`, `imie_p`, `nazwisko_p`, `pesel_p`, `e
 -- --------------------------------------------------------
 
 --
--- Table structure for table `przedmioty`
+-- Struktura tabeli dla tabeli `przedmioty`
 --
 
 CREATE TABLE `przedmioty` (
@@ -111,7 +111,7 @@ CREATE TABLE `przedmioty` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `przedmioty`
+-- Zrzut danych tabeli `przedmioty`
 --
 
 INSERT INTO `przedmioty` (`id_przedmiotu`, `nazwa_przedmiotu`) VALUES
@@ -131,7 +131,7 @@ INSERT INTO `przedmioty` (`id_przedmiotu`, `nazwa_przedmiotu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `specjalizacja_studenci`
+-- Struktura tabeli dla tabeli `specjalizacja_studenci`
 --
 
 CREATE TABLE `specjalizacja_studenci` (
@@ -142,7 +142,7 @@ CREATE TABLE `specjalizacja_studenci` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `specjalizacja_studenci`
+-- Zrzut danych tabeli `specjalizacja_studenci`
 --
 
 INSERT INTO `specjalizacja_studenci` (`id_specjalizacji`, `id_studenta`, `kierunek`, `rok`) VALUES
@@ -154,7 +154,7 @@ INSERT INTO `specjalizacja_studenci` (`id_specjalizacji`, `id_studenta`, `kierun
 -- --------------------------------------------------------
 
 --
--- Table structure for table `studenci`
+-- Struktura tabeli dla tabeli `studenci`
 --
 
 CREATE TABLE `studenci` (
@@ -172,7 +172,7 @@ CREATE TABLE `studenci` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `studenci`
+-- Zrzut danych tabeli `studenci`
 --
 
 INSERT INTO `studenci` (`id_studenta`, `imie_s`, `nazwisko_s`, `pesel_s`, `email_s`, `data_urodzenia_s`, `nr_tel_s`, `login_s`, `haslo_s`, `nr_albumu_s`, `ostatnie_logowanie_studenta`) VALUES
@@ -187,11 +187,11 @@ INSERT INTO `studenci` (`id_studenta`, `imie_s`, `nazwisko_s`, `pesel_s`, `email
 (11, 'Longin', 'Olszewski', 96584759112, 'wski@armyspy.com', '04.04.1992', 687594823, 'Shmisting', 'beirae6aeD', '114059', '22.04.2018 17:33');
 
 --
--- Indexes for dumped tables
+-- Indeksy dla zrzutów tabel
 --
 
 --
--- Indexes for table `harmonogram`
+-- Indeksy dla tabeli `harmonogram`
 --
 ALTER TABLE `harmonogram`
   ADD PRIMARY KEY (`id_harmonogramu`),
@@ -200,7 +200,7 @@ ALTER TABLE `harmonogram`
   ADD KEY `id_specjalizacji` (`id_specjalizacji`);
 
 --
--- Indexes for table `oceny`
+-- Indeksy dla tabeli `oceny`
 --
 ALTER TABLE `oceny`
   ADD PRIMARY KEY (`id_oceny`),
@@ -209,26 +209,25 @@ ALTER TABLE `oceny`
   ADD KEY `id_studenta` (`id_studenta`) USING BTREE;
 
 --
--- Indexes for table `pracownicy`
+-- Indeksy dla tabeli `pracownicy`
 --
 ALTER TABLE `pracownicy`
   ADD PRIMARY KEY (`id_pracownika`);
 
 --
--- Indexes for table `przedmioty`
+-- Indeksy dla tabeli `przedmioty`
 --
 ALTER TABLE `przedmioty`
   ADD PRIMARY KEY (`id_przedmiotu`);
 
 --
--- Indexes for table `specjalizacja_studenci`
+-- Indeksy dla tabeli `specjalizacja_studenci`
 --
 ALTER TABLE `specjalizacja_studenci`
-  ADD PRIMARY KEY (`id_specjalizacji`),
-  ADD KEY `id_studenta` (`id_studenta`) USING BTREE;
+  ADD PRIMARY KEY (`id_specjalizacji`);
 
 --
--- Indexes for table `studenci`
+-- Indeksy dla tabeli `studenci`
 --
 ALTER TABLE `studenci`
   ADD PRIMARY KEY (`id_studenta`);
@@ -238,66 +237,28 @@ ALTER TABLE `studenci`
 --
 
 --
--- AUTO_INCREMENT for table `harmonogram`
+-- AUTO_INCREMENT dla tabeli `harmonogram`
 --
 ALTER TABLE `harmonogram`
   MODIFY `id_harmonogramu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `oceny`
+-- AUTO_INCREMENT dla tabeli `oceny`
 --
 ALTER TABLE `oceny`
   MODIFY `id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `pracownicy`
+-- AUTO_INCREMENT dla tabeli `pracownicy`
 --
 ALTER TABLE `pracownicy`
   MODIFY `id_pracownika` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `przedmioty`
+-- AUTO_INCREMENT dla tabeli `przedmioty`
 --
 ALTER TABLE `przedmioty`
   MODIFY `id_przedmiotu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT for table `specjalizacja_studenci`
---
-ALTER TABLE `specjalizacja_studenci`
-  MODIFY `id_specjalizacji` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `studenci`
---
-ALTER TABLE `studenci`
-  MODIFY `id_studenta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `harmonogram`
---
-ALTER TABLE `harmonogram`
-  ADD CONSTRAINT `harmonogram_ibfk_1` FOREIGN KEY (`id_pracownika`) REFERENCES `pracownicy` (`id_pracownika`),
-  ADD CONSTRAINT `harmonogram_ibfk_2` FOREIGN KEY (`id_przedmiotu`) REFERENCES `przedmioty` (`id_przedmiotu`),
-  ADD CONSTRAINT `harmonogram_ibfk_3` FOREIGN KEY (`id_specjalizacji`) REFERENCES `specjalizacja_studenci` (`id_specjalizacji`);
-
---
--- Constraints for table `oceny`
---
-ALTER TABLE `oceny`
-  ADD CONSTRAINT `oceny_ibfk_1` FOREIGN KEY (`id_pracownika`) REFERENCES `pracownicy` (`id_pracownika`),
-  ADD CONSTRAINT `oceny_ibfk_2` FOREIGN KEY (`id_przedmiotu`) REFERENCES `przedmioty` (`id_przedmiotu`),
-  ADD CONSTRAINT `oceny_ibfk_3` FOREIGN KEY (`id_studenta`) REFERENCES `studenci` (`id_studenta`);
-
---
--- Constraints for table `specjalizacja_studenci`
---
-ALTER TABLE `specjalizacja_studenci`
-  ADD CONSTRAINT `specjalizacja_studenci_ibfk_1` FOREIGN KEY (`id_studenta`) REFERENCES `studenci` (`id_studenta`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

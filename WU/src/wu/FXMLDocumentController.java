@@ -131,8 +131,10 @@ public class FXMLDocumentController implements Initializable {
         Connection connection=connectionClass.getConnection();
         
         try {
+            String passwordH = hasloTekst.getText();
+
             Statement statement=connection.createStatement();           
-            String sql="SELECT * FROM studenci WHERE login_s = '"+loginTekst.getText()+"' AND haslo_s = '"+hasloTekst.getText()+"';";
+            String sql="SELECT * FROM studenci WHERE login_s = '"+loginTekst.getText()+"' AND haslo_s = '"+getHash(passwordH, "md5")+"';";
             ResultSet rs=statement.executeQuery(sql);
             
             
@@ -169,18 +171,20 @@ public class FXMLDocumentController implements Initializable {
         Connection connection=connectionClass.getConnection();
         
         try {
+            String passwordH = hasloTekst.getText();
             Statement statement=connection.createStatement();           
-            String sql="SELECT * FROM pracownicy WHERE login_p = '"+loginTekst.getText()+"' AND haslo_p = '"+hasloTekst.getText()+"';";
+            String sql="SELECT * FROM pracownicy WHERE login_p = '"+loginTekst.getText()+"' AND haslo_p = '"+getHash(passwordH, "md5")+"';";
             ResultSet rs=statement.executeQuery(sql);
             
             
                 
             while ( rs.next() ) {
-                 if (rs.getString("login_p") != null && rs.getString("haslo_p") != null) { 
+                 if (rs.getString("login_p") != null)// && rs.getString("haslo_p") != null) 
+                 { 
                      String  username = rs.getString("login_p");
                      System.out.println( "login = " + username );
-                     String password = rs.getString("haslo_p");
-                     System.out.println("haslo = " + password);
+                    // String password = rs.getString("haslo_p");
+                   //  System.out.println("haslo = " + password);
                      let_in = true;
                  }  
             }
@@ -194,6 +198,20 @@ public class FXMLDocumentController implements Initializable {
             System.out.println("isValidCredentials operation done successfully");
             return let_in;
     
+    }
+     public String getHash(String password, String hashType) {
+        try {
+            java.security.MessageDigest md = java.security.MessageDigest.getInstance(hashType);
+            byte[] array = md.digest(password.getBytes());
+            StringBuffer sb = new StringBuffer();
+            for (int i = 0; i < array.length; ++i) {
+                sb.append(Integer.toHexString((array[i] & 0xFF) | 0x100).substring(1, 3));
+            }
+            return sb.toString();
+        } catch (java.security.NoSuchAlgorithmException e) {
+            //error action
+        }
+        return null;
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {

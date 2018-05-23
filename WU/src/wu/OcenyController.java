@@ -11,6 +11,20 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import javafx.application.Application;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellDataFeatures;
+import javafx.scene.control.TableView;
+import javafx.stage.Stage;
+import javafx.util.Callback;
+
 
 /**
  * Klasa obsługująca oceny studenta
@@ -18,7 +32,13 @@ import javafx.stage.Stage;
  * @author Zbyszek
  */
 public class OcenyController implements Initializable {
-
+    
+    private ObservableList<ObservableList> data;
+    private TableView tableview;
+    
+    
+    
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -66,6 +86,8 @@ public class OcenyController implements Initializable {
     private void generate_studentButtonAction(ActionEvent event) throws IOException {
            
     } 
+    
+    
     
     
 }

@@ -59,7 +59,7 @@ public class Student_windowController implements Initializable {
        @FXML
     private void users_studentButtonAction(ActionEvent event) throws IOException {
 
-        Parent logout_page_parent = FXMLLoader.load(getClass().getResource("usersCRUD_window.fxml"));
+        Parent logout_page_parent = FXMLLoader.load(getClass().getResource("personaldetals_window.fxml"));
         Scene logout_page_scene = new Scene(logout_page_parent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.hide();

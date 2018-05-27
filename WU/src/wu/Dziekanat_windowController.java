@@ -48,7 +48,7 @@ public class Dziekanat_windowController implements Initializable {
      @FXML
      private void users_dziekanatButtonAction(ActionEvent event) throws IOException {
     
-        Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("usersCRUD_window.fxml"));
+        Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("usersCRUD_Dziekanatwindow.fxml"));
         Scene assessment_page_scene = new Scene(assessment_page_parent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.hide();

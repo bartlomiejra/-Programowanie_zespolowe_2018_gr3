@@ -159,6 +159,8 @@ public class Oceny_AdminController implements Initializable {
             System.err.println("ERR" + ex);
         }
         
+        
+        
         //podstawowy combobox z wartosciami od 2 do 5 
 
     }

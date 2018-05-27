@@ -50,14 +50,14 @@ public class usersCRUD_DziekanatwindowController implements Initializable {
     }
     
     /**
-     * nnetoda odpowiedzialna za za przejscie do okna admina
+     * nnetoda odpowiedzialna za za przejscie do okna dziekanatu
      * @param event
      * @throws IOException 
      */
     @FXML
     private void usersDziekanatMenuActionButton (ActionEvent event) throws IOException {
         
-        Parent logout_page_parent = FXMLLoader.load(getClass().getResource("Admin_window.fxml"));
+        Parent logout_page_parent = FXMLLoader.load(getClass().getResource("Dziekanat_window.fxml"));
         Scene logout_page_scene = new Scene(logout_page_parent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.hide();
@@ -66,61 +66,121 @@ public class usersCRUD_DziekanatwindowController implements Initializable {
         
     }
     
+    /**
+     * metoda usuwajaca uzytkownika
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void delete_usersDButtonAction(ActionEvent event) throws IOException {
         
     }
     
+    /**
+     * metoda dodajaca uzytkownika
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void add_usersDButtonAction(ActionEvent event) throws IOException {
         
     }
     
+    /**
+     * metoda edytujaca dane uzytkownika
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void edit_usersDButtonAction(ActionEvent event) throws IOException {
         
     }
     
+    /**
+     * metoda usuwajaca pracownika
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void delete_usersButtonActionPrac(ActionEvent event) throws IOException {
         
     }
     
+    /**
+     * metoda dodajaca pracownika
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void add_usersButtonActionPrac(ActionEvent event) throws IOException {
         
     }
     
+    /**
+     * metoda edytujaca pracownika
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void edit_usersButtonActionPrac(ActionEvent event) throws IOException {
         
     }
     
+    /**
+     * metoda szukajaca pracownika
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void search_usersDButtonAction(ActionEvent event) throws IOException {
         
     }
     
+    /**
+     * metoda ladujaca uzytkownikow
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void load_usersDButonAction(ActionEvent event) throws IOException {
         
     }
     
+    /**
+     * metoda czyszczaca okno
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void clear_usersDButtonAction(ActionEvent event) throws IOException {
         
     }
     
+    /**
+     * metoda szukajaca pracownikow
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void search_usersButtonActionPrac(ActionEvent event) throws IOException {
         
     }
     
+    /**
+     * metoda ladujaca pracownikow
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void load_usersButonActionPrac(ActionEvent event) throws IOException {
         
     }
     
+    /**
+     * metoda czyszczaca okno 
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void clear_usersButtonActionPrac(ActionEvent event) throws IOException {
         

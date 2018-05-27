@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -17,6 +18,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -24,7 +26,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 /**
- * Klasa obsługująca oceny, scena admina 
+ * Klasa obsługująca oceny, scena admina
  *
  * @author Zbyszek
  */
@@ -70,60 +72,103 @@ public class Oceny_AdminController implements Initializable {
     private Button load_users;
     @FXML
     private Button clear_users;
+    @FXML
+    private ComboBox comboProwadzacy;
+    @FXML
+    private ComboBox comboPrzedmiot;
+    @FXML
+    private ComboBox comboOcena;
 
-        ConnectionClass PolaczenieDB = new ConnectionClass();
+    ConnectionClass PolaczenieDB = new ConnectionClass();
 
     Connection sesja = PolaczenieDB.getConnection();
     private ObservableList<Oceny> data;
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        
-         
-         data = FXCollections.observableArrayList();
+
+        data = FXCollections.observableArrayList();
+        ObservableList<String> ProwadzacyList = FXCollections.observableArrayList();
+        ObservableList<String> przedmiotList = FXCollections.observableArrayList();
         Statement stmt = null;
 
         try {
 
             stmt = sesja.createStatement();
-            
-            
-            
+
             ResultSet rs = stmt.executeQuery("Select CONCAT(imie_s,\" \",nazwisko_s) as student,CONCAT(imie_p,\" \",nazwisko_p) as prowadzacy ,ocena, nazwa_przedmiotu from oceny,pracownicy,przedmioty,studenci where oceny.id_przedmiotu=przedmioty.id_przedmiotu and oceny.id_studenta=studenci.id_studenta and oceny.id_pracownika=pracownicy.id_pracownika;");
 
-         
             //System.out.println("Dane:"+ rs.getString(2));
-           
             while (rs.next()) {
-              data.add(new Oceny(rs.getInt(3),rs.getString(4),rs.getString(1),rs.getString(2)));
-              System.out.println(rs.getString(3));
+                data.add(new Oceny(rs.getInt(3), rs.getString(4), rs.getString(1), rs.getString(2)));
+                System.out.println(rs.getString(3));
 
             }
-               
+
             columnStudent.setCellValueFactory(new PropertyValueFactory<>("student"));
             columnOcena.setCellValueFactory(new PropertyValueFactory<>("ocena"));
             columnPrzedmiot.setCellValueFactory(new PropertyValueFactory<>("nazwa_przedmiotu"));
             columnProwadzacy.setCellValueFactory(new PropertyValueFactory<>("prowadzacy"));
-      
-       
-             table_oceny.setItems(null);
+            table_oceny.setItems(null);
             table_oceny.setItems(data);
 
         } catch (Exception e) {
 
-        }  
+        }
+
+        String prowadzacyFullName = " select CONCAT(imie_p,\" \",nazwisko_p) as prowadzacy from pracownicy ";
+
+        try {
+            
+            stmt = sesja.createStatement();
+            ResultSet rs = stmt.executeQuery(prowadzacyFullName);
+
+            while (rs.next()) {
+
+                ProwadzacyList.add(rs.getString("prowadzacy"));
+                
+                comboProwadzacy.setItems(ProwadzacyList);
+
+            }
+
+            rs.close();
+ 
+
+        } catch (SQLException ex) {
+            System.err.println("ERR" + ex);
+        }
         
+        String przedmiot = "select nazwa_przedmiotu from przedmioty";
+
+        try {
+            
+            stmt = sesja.createStatement();
+            ResultSet rs = stmt.executeQuery(przedmiot);
+
+            while (rs.next()) {
+
+                przedmiotList.add(rs.getString("nazwa_przedmiotu"));              
+                comboPrzedmiot.setItems(przedmiotList);
+
+            }
+
+            rs.close();
+ 
+
+        } catch (SQLException ex) {
+            System.err.println("ERR" + ex);
+        }
         
-        
-        
+        //podstawowy combobox z wartosciami od 2 do 5 
 
     }
     
+
     /**
      * Metoda powracająca do menu
+     *
      * @param event
-     * @throws IOException 
+     * @throws IOException
      */
     @FXML
     private void assesmentAdmin_menuActionButton(ActionEvent event) throws IOException {
@@ -135,12 +180,13 @@ public class Oceny_AdminController implements Initializable {
         app_stage.setScene(assessment_page_scene);
         app_stage.show();
     }
-    
+
     /**
-      * Metoda wylogowująca
-      * @param event
-      * @throws IOException 
-      */
+     * Metoda wylogowująca
+     *
+     * @param event
+     * @throws IOException
+     */
     @FXML
     private void assesment_logoutActionButton(ActionEvent event) throws IOException {
 
@@ -151,85 +197,93 @@ public class Oceny_AdminController implements Initializable {
         app_stage.setScene(logout_page_scene);
         app_stage.show();
     }
-    
+
     /**
      * Metoda wyłączająca program
+     *
      * @param event
-     * @throws IOException 
+     * @throws IOException
      */
-     @FXML
+    @FXML
     private void close_usersButtonAction(ActionEvent event) throws IOException {
         System.exit(0);
     }
-    
+
     /**
      * Metoda generująca pdf
+     *
      * @param event
-     * @throws IOException 
+     * @throws IOException
      */
-     @FXML
+    @FXML
     private void generate_wykladowcaButtonAction(ActionEvent event) throws IOException {
 
     }
-    
+
     /**
      * Metoda wyszukująca użytkowników
+     *
      * @param event
-     * @throws IOException 
+     * @throws IOException
      */
     @FXML
-    private void search_usersButtonAction(ActionEvent event) throws IOException{
-        
+    private void search_usersButtonAction(ActionEvent event) throws IOException {
+
     }
-    
+
     /**
      * Metoda ładująca użytkowników
+     *
      * @param event
-     * @throws IOException 
-     */
-   @FXML
-    private void load_usersButonAction(ActionEvent event) throws IOException{
-        
-    } 
-    
-    /**
-     * Metoda czyszcząca pole
-     * @param event
-     * @throws IOException 
-     */
-   @FXML
-    private void clear_usersButtonAction(ActionEvent event) throws IOException{
-        
-    }  
-    
-    /**
-     * Medoda usuwająca pole
-     * @param event
-     * @throws IOException 
+     * @throws IOException
      */
     @FXML
-    private void delete_wykładowcaButtonAction(ActionEvent event) throws IOException{
-        
-    }  
-    
+    private void load_usersButonAction(ActionEvent event) throws IOException {
+
+    }
+
+    /**
+     * Metoda czyszcząca pole
+     *
+     * @param event
+     * @throws IOException
+     */
+    @FXML
+    private void clear_usersButtonAction(ActionEvent event) throws IOException {
+
+    }
+
+    /**
+     * Medoda usuwająca pole
+     *
+     * @param event
+     * @throws IOException
+     */
+    @FXML
+    private void delete_wykładowcaButtonAction(ActionEvent event) throws IOException {
+
+    }
+
     /**
      * Metoda edytująca pole
+     *
      * @param event
-     * @throws IOException 
+     * @throws IOException
      */
-     @FXML
-    private void edit_wykladowcaButtonAction(ActionEvent event) throws IOException{
-        
-    }  
-    
+    @FXML
+    private void edit_wykladowcaButtonAction(ActionEvent event) throws IOException {
+
+    }
+
     /**
      * Metoda dodająca pole
+     *
      * @param event
-     * @throws IOException 
+     * @throws IOException
      */
-     @FXML
-    private void add_wykladowcaButtonAction(ActionEvent event) throws IOException{
-        
-    }  
-    
+    @FXML
+    private void add_wykladowcaButtonAction(ActionEvent event) throws IOException {
+
+    }
+
 }

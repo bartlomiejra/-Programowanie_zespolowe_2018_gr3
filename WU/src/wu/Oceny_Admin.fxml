@@ -2,6 +2,8 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -10,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Oceny_AdminController">
+<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Oceny_AdminController">
    <children>
       <TableView fx:id="table_oceny" layoutX="240.0" layoutY="65.0" prefHeight="343.0" prefWidth="518.0">
          <columns>
@@ -32,13 +34,15 @@
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
          </padding>
       </HBox>
-      <VBox layoutX="31.0" layoutY="65.0" prefHeight="313.0" prefWidth="191.0" spacing="15.0">
+      <VBox layoutX="31.0" layoutY="65.0" prefHeight="313.0" prefWidth="191.0" spacing="10.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj Oceny:" wrappingWidth="131.1171875" />
-            <TextField fx:id="tfProwadzacy" prefHeight="25.0" prefWidth="169.0" promptText="Prowadzący" />
-            <TextField fx:id="tfPrzedmiot" prefHeight="25.0" prefWidth="169.0" promptText="przedmiot" />
-            <TextField fx:id="tfLiczba_godzin" prefHeight="25.0" prefWidth="169.0" promptText="Liczba godzin" />
-            <TextField fx:id="tfOcena" prefHeight="25.0" prefWidth="169.0" promptText="Ocena" />
+            <Label text="Prowadzący:" />
+            <ComboBox fx:id="comboProwadzacy" prefWidth="150.0" />
+            <Label text="Przedmiot:" />
+            <ComboBox fx:id="comboPrzedmiot" prefWidth="150.0" />
+            <Label text="Ocena:" />
+            <ComboBox fx:id="comboOcena" prefWidth="150.0" />
             <TextField fx:id="tf_student" prefHeight="25.0" prefWidth="169.0" promptText="Imie nazwisko studenta (id)" />
             <HBox alignment="TOP_CENTER" prefHeight="46.0" prefWidth="191.0" spacing="10.0" VBox.vgrow="NEVER">
                <children>

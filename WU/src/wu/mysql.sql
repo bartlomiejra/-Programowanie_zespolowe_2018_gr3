@@ -94,9 +94,9 @@ CREATE TABLE `pracownicy` (
 --
 
 INSERT INTO `pracownicy` (`id_pracownika`, `imie_p`, `nazwisko_p`, `pesel_p`, `email_p`, `data_urodzenia_p`, `nr_tel_p`, `login_p`, `haslo_p`, `specjalizacja_p`, `ostatnie_logowanie_pracownicy`) VALUES
-(1, 'Cong', 'Lu', 96120394586, 'Lu@armyspy.com', '11.12.1995', 768192405, 'Holt1995', 'ohB1aeghie', 'Bazy Danych', '03.12.2018 10:20'),
-(2, 'Ping', 'Li', 75941039586, 'PingLi@rhyta.com', '11.07.1975', 798112998, 'Ablither', 'ai3seiShoo', 'Sieci', '11.04.2018 15:30'),
-(3, 'Betancourt', 'Mares', 94304958192, 'ares@armyspy.com', '01.01.1984', 687192003, 'Butionfoned1983', 'Eir2ong3iu', 'Aplikacje Internetowe', '12.12.2017 23:24'),
+(1, 'Cong', 'Lu', 96120394586, 'Lu@armyspy.com', '11.12.1995', 768192405, 'admin', 'admin', 'Bazy Danych', '03.12.2018 10:20'),
+(2, 'Ping', 'Li', 75941039586, 'PingLi@rhyta.com', '11.07.1975', 798112998, 'dziekanat', 'dziekanat', 'Sieci', '11.04.2018 15:30'),
+(3, 'Betancourt', 'Mares', 94304958192, 'ares@armyspy.com', '01.01.1984', 687192003, 'pracownik', 'pracownik', 'Aplikacje Internetowe', '12.12.2017 23:24'),
 (4, 'Anna ', 'Rutkowska', 90185948192, 'wska@dayrep.com', '11.03.1990', 345968010, 'Nowest', 'chei4xuN', 'Informatyka w Medycynie', '23.11.2017 14:30');
 
 -- --------------------------------------------------------
@@ -176,7 +176,7 @@ CREATE TABLE `studenci` (
 --
 
 INSERT INTO `studenci` (`id_studenta`, `imie_s`, `nazwisko_s`, `pesel_s`, `email_s`, `data_urodzenia_s`, `nr_tel_s`, `login_s`, `haslo_s`, `nr_albumu_s`, `ostatnie_logowanie_studenta`) VALUES
-(3, 'Richard', ' Roseboro', 96345301293, 'Rich@jourrapide.com', '03.23.1996', 758329106, 'Againto', 'oojoTep3ah', '110491', '17.03.2018 16:45'),
+(3, 'Richard', ' Roseboro', 96345301293, 'Rich@jourrapide.com', '03.23.1996', 758329106, 'student', 'student', '110491', '17.03.2018 16:45'),
 (4, 'Celsa', 'Luna', 94584738594, 'Luna@teleworm.us', '01.06.1994', 685395483, 'Tooduked', 'AhFah0hup5f', '110394', '11.11.2001 22:11'),
 (5, 'Weronika ', 'Chmielewska', 96110239586, 'Chmielewska@rhyta.com', '07.07.1996', 758049582, 'Therencough', 'ooL8raixei2', '110011', '11.05.2017 15:30 '),
 (6, 'Ubaida', 'Jalal ', 91110295483, 'alBata@jourrapide.com', '29.11.1991', 768493012, 'Onsid1987', 'eiJuepei5th', '111395', '11.12.2017 16:55'),

@@ -8,11 +8,9 @@ public Connection connection;
     public  Connection getConnection(){
 
 
-<<<<<<< HEAD
-        String dbName="baza";
-=======
+
         String dbName="WUdb";
->>>>>>> Admin
+
 
 
         try {

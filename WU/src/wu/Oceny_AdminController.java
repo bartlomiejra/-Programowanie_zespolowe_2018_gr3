@@ -1,12 +1,12 @@
 package wu;
 
 import Connection.ConnectionClass;
-import generatorpdf.GeneratorPDF;
-import java.io.FileOutputStream;
+import generatorpdf.Raporty;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -24,7 +24,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import javax.swing.text.Document;
 
 
 /**
@@ -172,26 +171,25 @@ public class Oceny_AdminController implements Initializable {
      * @throws IOException 
      */
      @FXML
-    private void generate_wykladowcaButtonAction(ActionEvent event) throws IOException {
+    private void generate_wykladowcaButtonAction(ActionEvent event) throws IOException, ClassNotFoundException, SQLException {
      
-        //        cos jest jeszcze nie tak jak powinno 
+             //   cos jest jeszcze nie tak jak powinno 
         
-//        Raporty asd=new Raporty();
+//        Raporty raporty=new Raporty();
 //        Raporty.rs=Raporty.executeDefaultQuery();
 //        Raporty.rs.first();
 //        Raporty.savePdf();
 //        
-//        Raporty.document=raporty.Raporty.setDocumentInfo( raporty.Raporty.setDocumentInfo(raporty.Raporty.document, "autor", "x ", "x", "x")) ;
+//       
+//        Raporty.document=Raporty.setDocumentInfo( Raporty.setDocumentInfo(Raporty.document, "autor", "x ", "x", "x")) ;
 //        Raporty.document.open();
-//        Raporty.document.add(raporty.Raporty.setHeaderTab());
-//        Raporty.document.add(raporty.Raporty.setInfoTable(raporty.Raporty.setInfoCell("Nadawca", "Zespół", "Numer 3")
-//                , v.setInfoCell("Nadawca", "Zespół", "Numer 3")));
-//        Raporty.document.add(raporty.Raporty.setItemTable());
+//        Raporty.document.add(generatorPDF.Raporty.setHeaderTab());
+//        Raporty.document.add(Raporty.setInfoTable(Raporty.setInfoCell("Nadawca", "Zespół", "Numer 3")
+//                , generatorPDF.setInfoCell("Odbiorca","UR", "Sp.z o.o.")));
+//        Raporty.document.add(generatorPDF.Raporty.setItemTable());
 //        Raporty.document.close();
 //    
-       
-
-
+      
     }
 
 

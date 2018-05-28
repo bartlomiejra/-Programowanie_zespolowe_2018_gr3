@@ -4,10 +4,13 @@ import Connection.ConnectionClass;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -190,7 +193,13 @@ public class Oceny_AdminController implements Initializable {
         } catch (SQLException ex) {
             System.err.println("ERR" + ex);
         }
-          tf_student.getText();
+          tf_student.setText("Przykladowy Student");
+          String fullname = tf_student.getText();
+          String[] parts = fullname.split(" ");
+          String name = parts[0];
+          String surname = parts[1];
+          System.out.println(name);
+          System.out.println(surname);
           
   
 
@@ -336,36 +345,66 @@ public class Oceny_AdminController implements Initializable {
      */
     @FXML
     private void add_wykladowcaButtonAction(ActionEvent event) throws IOException {
-         
         
+        Statement stmt = null;
+         try{
+        
+        stmt = sesja.createStatement();
+        String fullname = tf_student.getText();
+        String[] parts = fullname.split(" ");
+        String name = parts[0];
+        String surname = parts[1];
+        System.out.println(name);
+        System.out.println(surname);
+          
 //        String query = "INSERT INTO OCENY (id_przedmiotu,id_studenta,id_pracownika,ocena) VALUES (" + "'" + comboPrzedmiot.getSelectionModel().selectedIndexProperty().getValue()+1+ 
-//                "'," + "'" + SELECT + "'," + "'" + notes_text.getText() + "'," + "'" +
-//                date_picker.getValue() + " " + hour_value + ":" + 
-//                minute_menubutton.getText() + ":00" + "',"+ "'" + selected_item.substring(selected_item.lastIndexOf("\t") + 1, selected_item.length()) + "');";
-//        
-//        
-//        
-//        
-//        insertStatement(query);
-//
-//        
-//        Parent date_page_parent = FXMLLoader.load(getClass().getResource("FXMLHomePage.fxml"));
-//        Scene date_page_scene = new Scene(date_page_parent);
-//        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//        app_stage.hide(); //optional
-//        app_stage.setScene(date_page_scene);
-//        app_stage.show(); 
-//        }
-//        catch (IOException e)
-//        {
-//        Parent date_page_parent = FXMLLoader.load(getClass().getResource("FXMLHomePage.fxml"));
-//        Scene date_page_scene = new Scene(date_page_parent);
-//        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//        app_stage.hide(); 
-//        app_stage.setScene(date_page_scene);
-//        app_stage.show(); 
-//        }
+//                "'," + "'" + "SELECT id_studenta FROM studenci WHERE CONCAT (imie_s=name,' ',nazwisko_s=surname)"  + "'," + "'" + comboProwadzacy.getSelectionModel().selectedIndexProperty().getValue()+1 + "'," + "'" +
+//                comboOcena.getValue() + "');";
+        
+        
+          
+          String query=("INSERT INTO OCENY (id_przedmiotu,id_studenta,id_pracownika,ocena) VALUES (" + "'" + comboPrzedmiot.getSelectionModel().selectedIndexProperty().getValue()+1+ 
+                "'," + "'" + "SELECT id_studenta FROM studenci WHERE CONCAT (imie_s="+"'"+name+"'"+",' ',nazwisko_s="+"'"+surname+"'"+")" + "'," + "'" + comboProwadzacy.getSelectionModel().selectedIndexProperty().getValue()+1 + "'," + "'" +
+                comboOcena.getValue() + "');");
+          
+          insertStatement(query);
+        
+
+        
+        Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("Oceny_Admin.fxml"));
+        Scene assessment_page_scene = new Scene(assessment_page_parent);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.hide();
+        app_stage.setScene(assessment_page_scene);
+        app_stage.show();
+        }
+        catch (IOException e)
+        {
+        Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("Oceny_Admin.fxml"));
+        Scene assessment_page_scene = new Scene(assessment_page_parent);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.hide();
+        app_stage.setScene(assessment_page_scene);
+        app_stage.show();
+        } catch (SQLException ex) {
+            Logger.getLogger(Oceny_AdminController.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
+    private void insertStatement(String insert_query){
+        
+    Connection c = null;
+    Statement stmt = null;
+    try {
+      
+      stmt = sesja.createStatement(); 
+      
+      stmt.executeUpdate(insert_query);
+      stmt.close();
+    }catch ( Exception e ) {
+                System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+                 
+        }
 
+}
 }

@@ -133,4 +133,6 @@ public class Admin_windowController implements Initializable {
         app_stage.setScene(logout_page_scene);
         app_stage.show();             
     }
+    
+    
 }

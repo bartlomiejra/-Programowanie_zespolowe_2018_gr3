@@ -90,6 +90,7 @@ public class Oceny_AdminController implements Initializable {
         data = FXCollections.observableArrayList();
         ObservableList<String> ProwadzacyList = FXCollections.observableArrayList();
         ObservableList<String> przedmiotList = FXCollections.observableArrayList();
+        ObservableList<String> ocenyList = FXCollections.observableArrayList();
         Statement stmt = null;
 
         try {
@@ -101,7 +102,6 @@ public class Oceny_AdminController implements Initializable {
             //System.out.println("Dane:"+ rs.getString(2));
             while (rs.next()) {
                 data.add(new Oceny(rs.getInt(3), rs.getString(4), rs.getString(1), rs.getString(2)));
-                System.out.println(rs.getString(3));
 
             }
 
@@ -144,27 +144,78 @@ public class Oceny_AdminController implements Initializable {
             
             stmt = sesja.createStatement();
             ResultSet rs = stmt.executeQuery(przedmiot);
+            
 
             while (rs.next()) {
-
-                przedmiotList.add(rs.getString("nazwa_przedmiotu"));              
+                
+                
+                przedmiotList.add(rs.getString("nazwa_przedmiotu")); 
                 comboPrzedmiot.setItems(przedmiotList);
 
             }
-
             rs.close();
- 
-
+            
+        
+            
         } catch (SQLException ex) {
             System.err.println("ERR" + ex);
         }
         
         
+                       
+                ocenyList.add("2");
+                ocenyList.add("3");
+                ocenyList.add("4");
+                ocenyList.add("5");
+                comboOcena.setItems(ocenyList);
+
+                
+        try {
+            
+            stmt = sesja.createStatement();
+            ResultSet rs = stmt.executeQuery(przedmiot);
+            
+
+            while (rs.next()) {
+                
+                
+                przedmiotList.add(rs.getString("nazwa_przedmiotu")); 
+                comboPrzedmiot.setItems(przedmiotList);
+
+            }
+            rs.close();
+            
         
-        //podstawowy combobox z wartosciami od 2 do 5 
+            
+        } catch (SQLException ex) {
+            System.err.println("ERR" + ex);
+        }
+          tf_student.getText();
+          
+  
 
     }
     
+    @FXML
+    private void comboprzedmiotAction(ActionEvent event) throws IOException {
+        
+        int id = comboPrzedmiot.getSelectionModel().selectedIndexProperty().getValue()+1;
+         System.out.println(id);             
+    }
+    @FXML
+    private void comboprowadzacyAction(ActionEvent event) throws IOException {
+        
+        int id = comboProwadzacy.getSelectionModel().selectedIndexProperty().getValue()+1;
+         System.out.println(id);             
+    }
+    @FXML
+    private void comboocenaAction(ActionEvent event) throws IOException {
+        
+        
+        Object ocena = comboOcena.getValue();
+        System.out.println(ocena);
+                      
+    }
 
     /**
      * Metoda powracająca do menu
@@ -285,6 +336,35 @@ public class Oceny_AdminController implements Initializable {
      */
     @FXML
     private void add_wykladowcaButtonAction(ActionEvent event) throws IOException {
+         
+        
+//        String query = "INSERT INTO OCENY (id_przedmiotu,id_studenta,id_pracownika,ocena) VALUES (" + "'" + comboPrzedmiot.getSelectionModel().selectedIndexProperty().getValue()+1+ 
+//                "'," + "'" + SELECT + "'," + "'" + notes_text.getText() + "'," + "'" +
+//                date_picker.getValue() + " " + hour_value + ":" + 
+//                minute_menubutton.getText() + ":00" + "',"+ "'" + selected_item.substring(selected_item.lastIndexOf("\t") + 1, selected_item.length()) + "');";
+//        
+//        
+//        
+//        
+//        insertStatement(query);
+//
+//        
+//        Parent date_page_parent = FXMLLoader.load(getClass().getResource("FXMLHomePage.fxml"));
+//        Scene date_page_scene = new Scene(date_page_parent);
+//        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//        app_stage.hide(); //optional
+//        app_stage.setScene(date_page_scene);
+//        app_stage.show(); 
+//        }
+//        catch (IOException e)
+//        {
+//        Parent date_page_parent = FXMLLoader.load(getClass().getResource("FXMLHomePage.fxml"));
+//        Scene date_page_scene = new Scene(date_page_parent);
+//        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//        app_stage.hide(); 
+//        app_stage.setScene(date_page_scene);
+//        app_stage.show(); 
+//        }
 
     }
 

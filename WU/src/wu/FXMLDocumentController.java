@@ -66,6 +66,14 @@ public class FXMLDocumentController implements Initializable {
         Scene admin_window_scene = new Scene(admin_window);
         Stage app_stage_admin_window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         
+        Parent dziekanat_window = FXMLLoader.load(getClass().getResource("Dziekanat_window.fxml"));
+        Scene dziekanat_window_scene = new Scene(dziekanat_window);
+        Stage app_stage_dziekanat_window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        
+        Parent wykladowca_window = FXMLLoader.load(getClass().getResource("Prowadzacy_window.fxml"));
+        Scene wykladowca_window_scene = new Scene(wykladowca_window);
+        Stage app_stage_wykladowca_window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        
         
         if (isValidCredentialsStudent())
             {
@@ -75,12 +83,25 @@ public class FXMLDocumentController implements Initializable {
             }
         
          if (isValidCredentialsAdmin())
-            {
+            {   
+                
                 app_stage_admin_window.hide(); //optional
                 app_stage_admin_window.setScene(admin_window_scene);
                 app_stage_admin_window.show();  
             }
         
+         if (isValidCredentialsWykladowca())
+            {
+                app_stage_wykladowca_window.hide(); //optional
+                app_stage_wykladowca_window.setScene(wykladowca_window_scene);
+                app_stage_wykladowca_window.show();  
+            }
+         if (isValidCredentialsDziekanat())
+            {
+                app_stage_dziekanat_window.hide(); //optional
+                app_stage_dziekanat_window.setScene(dziekanat_window_scene);
+                app_stage_dziekanat_window.show();  
+            }
         else
             {
                 loginTekst.clear();
@@ -173,7 +194,80 @@ public class FXMLDocumentController implements Initializable {
         try {
             String passwordH = hasloTekst.getText();
             Statement statement=connection.createStatement();           
-            String sql="SELECT * FROM pracownicy WHERE login_p = '"+loginTekst.getText()+"' AND haslo_p = '"+getHash(passwordH, "md5")+"';";
+            String sql="SELECT * FROM pracownicy WHERE specjalizacja_p = '1' AND login_p = '"+loginTekst.getText()+"' AND haslo_p = '"+getHash(passwordH, "md5")+"';";
+            ResultSet rs=statement.executeQuery(sql);
+            
+            
+                
+            while ( rs.next() ) {
+                 if (rs.getString("login_p") != null)// && rs.getString("haslo_p") != null) 
+                 { 
+                     String  username = rs.getString("login_p");
+                     System.out.println( "login = " + username );
+                    // String password = rs.getString("haslo_p");
+                   //  System.out.println("haslo = " + password);
+                     let_in = true;
+                 }  
+            }
+            rs.close();
+            statement.close();
+            connection.close();
+            } catch ( Exception e ) {
+                System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+                System.exit(0);
+            }
+            System.out.println("isValidCredentials operation done successfully");
+            return let_in;
+    
+    }
+     
+      
+     public boolean isValidCredentialsWykladowca()
+    {
+        boolean let_in = false;
+        ConnectionClass connectionClass=new ConnectionClass();
+        Connection connection=connectionClass.getConnection();
+        
+        try {
+            String passwordH = hasloTekst.getText();
+            Statement statement=connection.createStatement();           
+            String sql="SELECT * FROM pracownicy WHERE specjalizacja_p = '2' AND login_p = '"+loginTekst.getText()+"' AND haslo_p = '"+getHash(passwordH, "md5")+"';";
+            ResultSet rs=statement.executeQuery(sql);
+            
+            
+                
+            while ( rs.next() ) {
+                 if (rs.getString("login_p") != null)// && rs.getString("haslo_p") != null) 
+                 { 
+                     String  username = rs.getString("login_p");
+                     System.out.println( "login = " + username );
+                    // String password = rs.getString("haslo_p");
+                   //  System.out.println("haslo = " + password);
+                     let_in = true;
+                 }  
+            }
+            rs.close();
+            statement.close();
+            connection.close();
+            } catch ( Exception e ) {
+                System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+                System.exit(0);
+            }
+            System.out.println("isValidCredentials operation done successfully");
+            return let_in;
+    
+    }
+     
+     public boolean isValidCredentialsDziekanat()
+    {
+        boolean let_in = false;
+        ConnectionClass connectionClass=new ConnectionClass();
+        Connection connection=connectionClass.getConnection();
+        
+        try {
+            String passwordH = hasloTekst.getText();
+            Statement statement=connection.createStatement();           
+            String sql="SELECT * FROM pracownicy WHERE specjalizacja_p = '3' AND login_p = '"+loginTekst.getText()+"' AND haslo_p = '"+getHash(passwordH, "md5")+"';";
             ResultSet rs=statement.executeQuery(sql);
             
             

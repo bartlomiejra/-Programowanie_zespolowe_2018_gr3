@@ -43,7 +43,7 @@ public class Oceny_WykladowcaController implements Initializable {
     @FXML
      private void assesmentWykladowca_menuActionButton(ActionEvent event) throws IOException {
     
-        Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("Dziekanat_window.fxml"));
+        Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("Prowadzacy_window.fxml"));
         Scene assessment_page_scene = new Scene(assessment_page_parent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.hide();

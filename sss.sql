@@ -94,7 +94,7 @@ CREATE TABLE `pracownicy` (
 --
 
 INSERT INTO `pracownicy` (`id_pracownika`, `imie_p`, `nazwisko_p`, `pesel_p`, `email_p`, `data_urodzenia_p`, `nr_tel_p`, `login_p`, `haslo_p`, `specjalizacja_p`, `ostatnie_logowanie_pracownicy`) VALUES
-(1, 'Cong', 'Lu', 96120394586, 'Lu@armyspy.com', '11.12.1995', 768192405, 'Holt1995', '098f6bcd4621d373cade4e832627b4f6', 'Bazy Danych', '03.12.2018 10:20'),
+(1, 'Cong', 'Lu', 96120394586, 'Lu@armyspy.com', '11.12.1995', 768192405, 'Holt1995', 'ohB1aeghie', 'Bazy Danych', '03.12.2018 10:20'),
 (2, 'Ping', 'Li', 75941039586, 'PingLi@rhyta.com', '11.07.1975', 798112998, 'Ablither', 'ai3seiShoo', 'Sieci', '11.04.2018 15:30'),
 (3, 'Betancourt', 'Mares', 94304958192, 'ares@armyspy.com', '01.01.1984', 687192003, 'Butionfoned1983', 'Eir2ong3iu', 'Aplikacje Internetowe', '12.12.2017 23:24'),
 (4, 'Anna ', 'Rutkowska', 90185948192, 'wska@dayrep.com', '11.03.1990', 345968010, 'Nowest', 'chei4xuN', 'Informatyka w Medycynie', '23.11.2017 14:30');

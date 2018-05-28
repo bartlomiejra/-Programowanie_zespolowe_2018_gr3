@@ -8,8 +8,12 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+<<<<<<< HEAD
     <jar href="WU.jar" size="50786" download="eager" />
     <jar href="lib\generatorPDF.jar" size="3030" download="eager" />
+=======
+    <jar href="WU.jar" size="41562" download="eager" />
+>>>>>>> Admin
     <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="843090" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="WU" >

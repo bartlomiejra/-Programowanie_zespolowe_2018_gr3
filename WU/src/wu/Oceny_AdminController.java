@@ -1,6 +1,8 @@
 package wu;
 
 import Connection.ConnectionClass;
+import com.itextpdf.text.BadElementException;
+import com.itextpdf.text.DocumentException;
 import generatorpdf.Raporty;
 import java.io.IOException;
 import java.net.URL;
@@ -171,24 +173,23 @@ public class Oceny_AdminController implements Initializable {
      * @throws IOException 
      */
      @FXML
-    private void generate_wykladowcaButtonAction(ActionEvent event) throws IOException, ClassNotFoundException, SQLException {
+    private void generate_wykladowcaButtonAction(ActionEvent event) throws IOException, ClassNotFoundException, SQLException, DocumentException{
      
-             //   cos jest jeszcze nie tak jak powinno 
+           
         
-//        Raporty raporty=new Raporty();
-//        Raporty.rs=Raporty.executeDefaultQuery();
-//        Raporty.rs.first();
-//        Raporty.savePdf();
-//        
-//       
-//        Raporty.document=Raporty.setDocumentInfo( Raporty.setDocumentInfo(Raporty.document, "autor", "x ", "x", "x")) ;
-//        Raporty.document.open();
-//        Raporty.document.add(generatorPDF.Raporty.setHeaderTab());
-//        Raporty.document.add(Raporty.setInfoTable(Raporty.setInfoCell("Nadawca", "Zespół", "Numer 3")
-//                , generatorPDF.setInfoCell("Odbiorca","UR", "Sp.z o.o.")));
-//        Raporty.document.add(generatorPDF.Raporty.setItemTable());
-//        Raporty.document.close();
-//    
+        Raporty rap=new Raporty();
+        Raporty.rs=Raporty.executeDefaultQuery();
+        Raporty.rs.first();
+        Raporty.savePdf();
+        
+        Raporty.document=Raporty.setDocumentInfo(generatorpdf.Raporty.document, "autor", "title", "language", "creator");
+        Raporty.document.open();
+        Raporty.document.add(Raporty.setHeaderTab());
+        Raporty.document.add(Raporty.setInfoTable(Raporty.setInfoCell("Nadawca", "Zespół", "Numer 3")
+                , Raporty.setInfoCell("Odbiorca","UR", "Sp.z o.o.")));
+        Raporty.document.add(Raporty.setItemTable());
+        Raporty.document.close();
+    
       
     }
 

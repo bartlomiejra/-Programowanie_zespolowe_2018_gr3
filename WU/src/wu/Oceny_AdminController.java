@@ -1,6 +1,8 @@
 package wu;
 
 import Connection.ConnectionClass;
+import generatorpdf.GeneratorPDF;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -22,6 +24,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javax.swing.text.Document;
+
 
 /**
  * Klasa obsługująca oceny, scena admina 
@@ -169,9 +173,29 @@ public class Oceny_AdminController implements Initializable {
      */
      @FXML
     private void generate_wykladowcaButtonAction(ActionEvent event) throws IOException {
+     
+        //        cos jest jeszcze nie tak jak powinno 
+        
+//        Raporty asd=new Raporty();
+//        Raporty.rs=Raporty.executeDefaultQuery();
+//        Raporty.rs.first();
+//        Raporty.savePdf();
+//        
+//        Raporty.document=raporty.Raporty.setDocumentInfo( raporty.Raporty.setDocumentInfo(raporty.Raporty.document, "autor", "x ", "x", "x")) ;
+//        Raporty.document.open();
+//        Raporty.document.add(raporty.Raporty.setHeaderTab());
+//        Raporty.document.add(raporty.Raporty.setInfoTable(raporty.Raporty.setInfoCell("Nadawca", "Zespół", "Numer 3")
+//                , v.setInfoCell("Nadawca", "Zespół", "Numer 3")));
+//        Raporty.document.add(raporty.Raporty.setItemTable());
+//        Raporty.document.close();
+//    
+       
+
 
     }
-    
+
+
+  
     /**
      * Metoda wyszukująca użytkowników
      * @param event

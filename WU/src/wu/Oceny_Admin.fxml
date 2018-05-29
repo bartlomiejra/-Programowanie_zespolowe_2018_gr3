@@ -40,16 +40,17 @@
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
          </padding>
       </HBox>
-      <VBox layoutX="31.0" layoutY="65.0" prefHeight="313.0" prefWidth="191.0" spacing="10.0">
+      <VBox layoutX="31.0" layoutY="65.0" prefHeight="313.0" prefWidth="191.0" spacing="5.0">
          <children>
             <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj Oceny:" wrappingWidth="131.1171875" />
-            <Label text="Prowadzący:" />
+            <Label text="Prowadzący:" textFill="#fcfcfc" />
             <ComboBox fx:id="comboProwadzacy" onAction="#comboprowadzacyAction" prefWidth="150.0" />
-            <Label text="Przedmiot:" />
+            <Label text="Przedmiot:" textFill="WHITE" />
             <ComboBox fx:id="comboPrzedmiot" onAction="#comboprzedmiotAction" prefWidth="150.0" />
-            <Label text="Ocena:" />
+            <Label text="Ocena:" textFill="WHITE" />
             <ComboBox fx:id="comboOcena" onAction="#comboocenaAction" prefWidth="150.0" />
-            <TextField fx:id="tf_student" prefHeight="25.0" prefWidth="169.0" promptText="Imie nazwisko studenta (id)" />
+            <Label text="Student:" textFill="WHITE" />
+            <ComboBox fx:id="comboStudent" onAction="#comboAdminStudent" prefWidth="150.0" />
             <HBox alignment="TOP_CENTER" prefHeight="46.0" prefWidth="191.0" spacing="10.0" VBox.vgrow="NEVER">
                <children>
                   <Button fx:id="add_wykladowca" mnemonicParsing="false" onAction="#add_wykladowcaButtonAction" text="Dodaj" />
@@ -62,7 +63,7 @@
             </HBox>
          </children>
          <padding>
-            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+            <Insets bottom="3.0" left="3.0" right="3.0" top="2.0" />
          </padding>
       </VBox>
       <HBox layoutX="262.0" layoutY="415.0" prefHeight="31.0" prefWidth="376.0" spacing="10.0">

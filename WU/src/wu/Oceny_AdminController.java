@@ -81,6 +81,8 @@ public class Oceny_AdminController implements Initializable {
     private ComboBox comboPrzedmiot;
     @FXML
     private ComboBox comboOcena;
+    @FXML
+    private ComboBox comboStudent;
 
     ConnectionClass PolaczenieDB = new ConnectionClass();
 
@@ -223,6 +225,11 @@ public class Oceny_AdminController implements Initializable {
         
         Object ocena = comboOcena.getValue();
         System.out.println(ocena);
+                      
+    }
+    
+    @FXML
+    private void comboAdminStudent(ActionEvent event) throws IOException {   
                       
     }
 

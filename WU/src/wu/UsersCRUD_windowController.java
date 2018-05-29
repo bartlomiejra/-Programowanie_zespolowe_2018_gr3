@@ -25,11 +25,13 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 /**
- * Klasa odpowiadajaca za wyswietlenie 
+ * Klasa odpowiadajaca za wyswietlenie
+ *
  * @author Teo
  */
 public class UsersCRUD_windowController implements Initializable {
-     // buttony dopowiedzialne za obsługę cześci seeny dotyczącej studentów
+    // buttony dopowiedzialne za obsługę cześci seeny dotyczącej studentów
+
     @FXML
     private Button add_users;
     @FXML
@@ -42,7 +44,7 @@ public class UsersCRUD_windowController implements Initializable {
     private Button load_users;
     @FXML
     private Button clear_users;
-    
+
     // buttony dopowiedzialne za obsługę cześci seeny dotyczącej pracowników
     @FXML
     private Button add_usersp;
@@ -71,19 +73,21 @@ public class UsersCRUD_windowController implements Initializable {
     @FXML
     private TableColumn<Student, String> columnImieStudent;
     @FXML
-    private TableColumn<Student, String> columntNaziwskoStudent;
+    private TableColumn<Student, String> columntNazwiskoStudent;
     @FXML
-    private TableColumn<Student, String> columnPeselStuent;
+    private TableColumn<Student, String> columnPeselStudent;
     @FXML
-    private TableColumn<Student, String> ColumnEmailStaudent;
+    private TableColumn<Student, String> ColumnEmailStudent;
     @FXML
-    private TableColumn<Student, String> columnNrStudent;
+    private TableColumn<Student, String> ColumnDataurodzeniaStudent;
     @FXML
-    private TableColumn<Student, String> columnLoginStudent;
+    private TableColumn<Student, String> ColumnNrtelStudent;
     @FXML
-    private TableColumn<Student, String> columnHasloStudent;
+    private TableColumn<Student, String> ColumnLoginStudent;
     @FXML
-    private TableColumn<Student, String> columnAlbumStudent;
+    private TableColumn<Student, String> ColumnHasloStudent;
+    @FXML
+    private TableColumn<Student, String> ColumnAlbumStudent;
     @FXML
     private Button close_admin;
     @FXML
@@ -125,51 +129,48 @@ public class UsersCRUD_windowController implements Initializable {
 
     Connection sesja = PolaczenieDB.getConnection();
     private ObservableList<Student> data;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       
-        
-         data = FXCollections.observableArrayList();
+
+        data = FXCollections.observableArrayList();
         Statement stmt = null;
 
         try {
 
             stmt = sesja.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from studenci;");
+            ResultSet rs = stmt.executeQuery("select imie_s , nazwisko_s, pesel_s, email_s, data_urodzenia_s, nr_tel_s, login_s, haslo_s, nr_albumu_s from studenci;");
             while (rs.next()) {
-               data.add(new Student(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getInt(9)));
+                data.add(new Student(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5), rs.getInt(6),rs.getString(7), rs.getString(8), rs.getString(9)));
 
             }
-                System.out.println(rs);
+            System.out.println(rs);
             columnImieStudent.setCellValueFactory(new PropertyValueFactory<>("imie_s"));
-            columntNaziwskoStudent.setCellValueFactory(new PropertyValueFactory<>("naziwsko_s"));
-            columnPeselStuent.setCellValueFactory(new PropertyValueFactory<>("pesel_s"));
-            ColumnEmailStaudent.setCellValueFactory(new PropertyValueFactory<>("email_s"));
-            columnDataUrStudent.setCellValueFactory(new PropertyValueFactory<>("data_urodzenia_s"));
-             columnNrStudent.setCellValueFactory(new PropertyValueFactory<>("nr_tel_s"));
-             columnLoginStudent.setCellValueFactory(new PropertyValueFactory<>("login_s"));
-             columnHasloStudent.setCellValueFactory(new PropertyValueFactory<>("haslo_s"));
-             columnAlbumStudent.setCellValueFactory(new PropertyValueFactory<>("nr_albumu_s"));
-       
-             table_student.setItems(null);
+            columntNazwiskoStudent.setCellValueFactory(new PropertyValueFactory<>("nazwisko_s"));
+            columnPeselStudent.setCellValueFactory(new PropertyValueFactory<>("pesel_s"));
+            ColumnEmailStudent.setCellValueFactory(new PropertyValueFactory<>("email_s"));
+            ColumnDataurodzeniaStudent.setCellValueFactory(new PropertyValueFactory<>("data_urodzenia_s"));
+            ColumnNrtelStudent.setCellValueFactory(new PropertyValueFactory<>("nr_tel_s"));
+            ColumnLoginStudent.setCellValueFactory(new PropertyValueFactory<>("login_s"));
+            ColumnHasloStudent.setCellValueFactory(new PropertyValueFactory<>("haslo_s"));
+            ColumnAlbumStudent.setCellValueFactory(new PropertyValueFactory<>("nr_albumu_s"));
+
+            table_student.setItems(null);
             table_student.setItems(data);
 
         } catch (Exception e) {
 
-        }  
+        }
     }
-        
-        
-        
-        
-    
+
     /**
      * Metoda odpowiedzialna za przejscie do okna administratora
+     *
      * @param event
-     * @throws IOException 
+     * @throws IOException
      */
     @FXML
     private void usersMenuActionButton(ActionEvent event) throws IOException {
@@ -181,11 +182,12 @@ public class UsersCRUD_windowController implements Initializable {
         app_stage.setScene(assessment_page_scene);
         app_stage.show();
     }
-    
+
     /**
      * metoda odpowiedzalna za wylogowanie uzytkownika
+     *
      * @param event
-     * @throws IOException 
+     * @throws IOException
      */
     @FXML
     private void logout_adminButtonAction(ActionEvent event) throws IOException {
@@ -197,69 +199,76 @@ public class UsersCRUD_windowController implements Initializable {
         app_stage.setScene(logout_page_scene);
         app_stage.show();
     }
-    
+
     /**
      * metoda odpowiedzalna za zamknięcie aplikacji
+     *
      * @param event
-     * @throws IOException 
+     * @throws IOException
      */
     @FXML
     private void close_adminButtonAction(ActionEvent event) throws IOException {
         System.exit(0);
     }
-    
+
     /**
      * metoda odpowiedzalna za dodawanie uzytkowników
-     * @param event 
+     *
+     * @param event
      */
     @FXML
     private void add_usersButtonAction(ActionEvent event) {
-        
+
     }
-    
+
     /**
      * metoda odpowiedzalna za edycje użytkowników
-     * @param event 
+     *
+     * @param event
      */
     @FXML
     private void edit_usersButtonAction(ActionEvent event) {
-        
+
     }
-    
+
     /**
      * metoda odpowiedzalna za usuwanie użytkowników
-     * @param event 
+     *
+     * @param event
      */
     @FXML
     private void delete_usersButtonAction(ActionEvent event) {
-        
+
     }
-    
+
     /**
-     *  metoda odpowiedzalna za wyszukiwanie uzytkowników
-     * @param event 
+     * metoda odpowiedzalna za wyszukiwanie uzytkowników
+     *
+     * @param event
      */
     @FXML
     private void search_usersButtonAction(ActionEvent event) {
-        
+
     }
-    
+
     /**
      * metoda ładowanie bazych danych z listą użytkowników
-     * @param event 
-     */  
+     *
+     * @param event
+     */
     @FXML
     private void load_usersButonAction(ActionEvent event) {
-        
+
     }
-    
+
     /**
      * czyszczenie okna wyników
-     * @param event 
-     */    
+     *
+     * @param event
+     */
     @FXML
     private void clear_usersButtonAction(ActionEvent event) {
-        
+
     }
-    
+
 }

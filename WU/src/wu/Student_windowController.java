@@ -18,6 +18,9 @@ import javafx.stage.Stage;
  */
 public class Student_windowController implements Initializable {
 
+    
+    
+    
     /**
      * Initializes the controller class.
      */

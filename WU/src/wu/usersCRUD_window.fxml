@@ -24,18 +24,17 @@
             <Font size="13.0" />
          </font>
       </Text>
-      <TableView layoutX="173.0" layoutY="46.0" prefHeight="300.0" prefWidth="890.0" AnchorPane.leftAnchor="173.0">
+      <TableView fx:id="table_student" layoutX="173.0" layoutY="46.0" prefHeight="300.0" prefWidth="890.0" AnchorPane.leftAnchor="173.0">
         <columns>
-          <TableColumn prefWidth="47.0" text="Id" />
-          <TableColumn prefWidth="94.0" text="Imie" />
-            <TableColumn prefWidth="96.0" text="Nazwisko" />
-            <TableColumn prefWidth="139.0" text="Pesel" />
-            <TableColumn prefWidth="110.0" text="Email" />
-            <TableColumn prefWidth="102.0" text="Data urodzenia" />
-            <TableColumn prefWidth="84.0" text="Nr telefonu" />
-            <TableColumn prefWidth="84.0" text="Login" />
-            <TableColumn prefWidth="50.0" text="Hasło" />
-            <TableColumn prefWidth="77.0" text="Nr albumu" />
+          <TableColumn fx:id="columnImieStudent" prefWidth="94.0" text="Imie" />
+            <TableColumn fx:id="columntNazwiskoStudent" prefWidth="96.0" text="Nazwisko" />
+            <TableColumn fx:id="columnPeselStudent" prefWidth="139.0" text="Pesel" />
+            <TableColumn fx:id="ColumnEmailStudent" prefWidth="110.0" text="Email" />
+            <TableColumn fx:id="ColumnDataurodzeniaStudent" prefWidth="102.0" text="Data urodzenia" />
+            <TableColumn fx:id="ColumnNrtelStudent" prefWidth="84.0" text="Nr telefonu" />
+            <TableColumn fx:id="ColumnLoginStudent" prefWidth="84.0" text="Login" />
+            <TableColumn fx:id="ColumnHasloStudent" prefWidth="89.0" text="Hasło" />
+            <TableColumn fx:id="ColumnAlbumStudent" prefWidth="91.0" text="Nr albumu" />
         </columns>
       </TableView>
       <TextField layoutX="681.0" layoutY="362.0" prefHeight="29.0" prefWidth="159.0" promptText="Szukaj" />

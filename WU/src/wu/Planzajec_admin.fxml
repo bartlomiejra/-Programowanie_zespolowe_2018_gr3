@@ -2,6 +2,9 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -10,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Planzajec_adminController">
+<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Planzajec_adminController">
    <children>
       <TableView fx:id="tableHarmonogramAdmin" layoutX="207.0" layoutY="65.0" prefHeight="343.0" prefWidth="551.0">
          <columns>
@@ -33,14 +36,19 @@
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
          </padding>
       </HBox>
-      <VBox layoutX="14.0" layoutY="46.0" prefHeight="313.0" prefWidth="191.0" spacing="15.0">
+      <VBox layoutX="14.0" layoutY="46.0" prefHeight="313.0" prefWidth="191.0" spacing="5.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj zajęcia do harmonogramu" wrappingWidth="178.1171875" />
-            <TextField prefHeight="25.0" prefWidth="169.0" promptText="Id przedmiotu" />
-            <TextField prefHeight="25.0" prefWidth="169.0" promptText="Id pracownika" />
-            <TextField prefHeight="25.0" prefWidth="169.0" promptText="data zajeć" />
-            <TextField prefHeight="25.0" prefWidth="169.0" promptText="Godzina zajeć" />
-            <TextField prefHeight="25.0" prefWidth="169.0" promptText="ID specjalizacji" />
+            <Label text="Id przedmiotu:" />
+            <ComboBox onAction="#comboAdminPrzedmiot" prefWidth="150.0" />
+            <Label text="Id pracownika:" />
+            <ComboBox onAction="#comboAdminPracownik" prefWidth="150.0" />
+            <Label text="Data:" />
+            <DatePicker onAction="#dataAdmin" />
+            <Label text="Godzina zajec:" />
+            <ComboBox onAction="#comboAdminGodziny" prefWidth="150.0" />
+            <Label text="Id specjalizacji:" />
+            <ComboBox onAction="#comboAdminSpec" prefWidth="150.0" />
             <HBox alignment="TOP_CENTER" prefHeight="46.0" prefWidth="191.0" spacing="10.0" VBox.vgrow="NEVER">
                <children>
                   <Button fx:id="add_wykladowca" mnemonicParsing="false" onAction="#add_wykladowcaButtonAction" text="Dodaj" />

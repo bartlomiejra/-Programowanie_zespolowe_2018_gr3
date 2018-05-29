@@ -172,23 +172,23 @@ public class Oceny_AdminController implements Initializable {
      * @param event
      * @throws IOException 
      */
+    
      @FXML
-    private void generate_wykladowcaButtonAction(ActionEvent event) throws IOException, ClassNotFoundException, SQLException, DocumentException{
      
-          
+    private void generate_wykladowcaButtonAction(ActionEvent event) throws IOException, ClassNotFoundException, SQLException, DocumentException{
         
         Raporty rap=new Raporty();
         Raporty.rs=Raporty.executeDefaultQuery();
         Raporty.rs.first();
         Raporty.savePdf();
-        
-      //  Raporty.document=generatorpdf.Raporty.setDocumentInfo(generatorpdf.Raporty.setDocumentInfo(generatorpdf.Raporty.document, "autor", "title", "language", "creator"));
+        Raporty.document=Raporty.setDocumentInfo( Raporty.document, "autor", "title ", "language", "creator") ;
         Raporty.document.open();
-        Raporty.document.add(generatorpdf.Raporty.setHeaderTab());
-        Raporty.document.add(generatorpdf.Raporty.setInfoTable(Raporty.setInfoCell("Nadawca", "Zespół", "Numer 3")
-                , Raporty.setInfoCell("Odbiorca","UR", "Sp.z o.o.")));
+        Raporty.document.add(Raporty.setHeaderTab());
+        Raporty.document.add(Raporty.setInfoTable(Raporty.setInfoCell("Nadawca", "Zespół ", "Numer 3") ,Raporty.setInfoCell("Nadawca", "Zespół", "Numer 3")));
         Raporty.document.add(Raporty.setItemTable());
         Raporty.document.close();
+        
+       
     
       
       

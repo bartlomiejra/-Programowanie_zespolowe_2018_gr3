@@ -177,6 +177,7 @@ public class Oceny_AdminController implements Initializable {
      
            
         
+         
         Raporty rap=new Raporty();
         Raporty.rs=Raporty.executeDefaultQuery();
         Raporty.rs.first();
@@ -190,6 +191,7 @@ public class Oceny_AdminController implements Initializable {
         Raporty.document.add(Raporty.setItemTable());
         Raporty.document.close();
     
+      
       
     }
 

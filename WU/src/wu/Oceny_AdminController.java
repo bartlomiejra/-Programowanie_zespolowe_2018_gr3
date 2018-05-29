@@ -82,7 +82,7 @@ public class Oceny_AdminController implements Initializable {
     @FXML
     private ComboBox comboOcena;
     @FXML
-    private ComboBox comboStudent;
+    private ComboBox comboAdminStudent;
 
     ConnectionClass PolaczenieDB = new ConnectionClass();
 
@@ -195,13 +195,13 @@ public class Oceny_AdminController implements Initializable {
         } catch (SQLException ex) {
             System.err.println("ERR" + ex);
         }
-          tf_student.setText("Przykladowy Student");
-          String fullname = tf_student.getText();
-          String[] parts = fullname.split(" ");
-          String name = parts[0];
-          String surname = parts[1];
-          System.out.println(name);
-          System.out.println(surname);
+//          tf_student.setText("Przykladowy Student");
+//          String fullname = tf_student.getText();
+//          String[] parts = fullname.split(" ");
+//          String name = parts[0];
+//          String surname = parts[1];
+//          System.out.println(name);
+//          System.out.println(surname);
           
   
 

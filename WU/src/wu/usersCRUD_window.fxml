@@ -58,18 +58,17 @@
       <TextField layoutX="14.0" layoutY="235.0" prefHeight="29.0" prefWidth="149.0" promptText="Login" />
       <TextField layoutX="14.0" layoutY="264.0" prefHeight="29.0" prefWidth="149.0" promptText="Hasło" />
       <TextField layoutX="14.0" layoutY="293.0" prefHeight="29.0" prefWidth="149.0" promptText="Nr albumu" />
-      <TableView layoutX="173.0" layoutY="401.0" prefHeight="269.0" prefWidth="890.0">
+      <TableView fx:id="table_pracownik" layoutX="173.0" layoutY="401.0" prefHeight="269.0" prefWidth="890.0">
          <columns>
-            <TableColumn prefWidth="47.0" text="Id " />
-            <TableColumn prefWidth="94.0" text="Imie" />
-            <TableColumn prefWidth="96.0" text="Nazwisko" />
-            <TableColumn prefWidth="139.0" text="Pesel" />
-            <TableColumn prefWidth="110.0" text="Email" />
-            <TableColumn prefWidth="102.0" text="Data urodzenia" />
-            <TableColumn prefWidth="84.0" text="Nr telefonu" />
-            <TableColumn prefWidth="84.0" text="Login" />
-            <TableColumn prefWidth="50.0" text="Hasło" />
-            <TableColumn prefWidth="77.0" text="Specjalizacja" />
+            <TableColumn fx:id="columnImiePracownik" prefWidth="94.0" text="Imie" />
+            <TableColumn fx:id="columntNazwiskoPracownik" prefWidth="96.0" text="Nazwisko" />
+            <TableColumn fx:id="columnPeselPracownik" prefWidth="139.0" text="Pesel" />
+            <TableColumn fx:id="ColumnEmailPracownik" prefWidth="110.0" text="Email" />
+            <TableColumn fx:id="ColumnDataurodzeniaPracownik" prefWidth="102.0" text="Data urodzenia" />
+            <TableColumn fx:id="ColumnNrtelPracownik" prefWidth="84.0" text="Nr telefonu" />
+            <TableColumn fx:id="ColumnLoginPracownik" prefWidth="84.0" text="Login" />
+            <TableColumn fx:id="ColumnHasloPracownik" prefWidth="81.0" text="Hasło" />
+            <TableColumn fx:id="Columnspecjalizacja_pPracownik" prefWidth="99.0" text="Specjalizacja" />
          </columns>
       </TableView>
       <TextField layoutX="14.0" layoutY="401.0" prefHeight="29.0" prefWidth="149.0" promptText="Id" />

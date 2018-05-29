@@ -89,6 +89,26 @@ public class UsersCRUD_windowController implements Initializable {
     @FXML
     private TableColumn<Student, String> ColumnAlbumStudent;
     @FXML
+    private TableView<Pracownicy> table_pracownik;
+    @FXML
+    private TableColumn<Pracownicy, String> columnImiePracownik;
+    @FXML
+    private TableColumn<Pracownicy, String> columntNazwiskoPracownik;
+    @FXML
+    private TableColumn<Pracownicy, String> columnPeselPracownik;
+    @FXML
+    private TableColumn<Pracownicy, String> ColumnEmailPracownik;
+    @FXML
+    private TableColumn<Pracownicy, String> ColumnDataurodzeniaPracownik;
+    @FXML
+    private TableColumn<Pracownicy, String> ColumnNrtelPracownik;
+    @FXML
+    private TableColumn<Pracownicy, String> ColumnLoginPracownik;
+    @FXML
+    private TableColumn<Pracownicy, String> ColumnHasloPracownik;
+    @FXML
+    private TableColumn<Pracownicy, String> Columnspecjalizacja_pPracownik;
+    @FXML
     private Button close_admin;
     @FXML
     private Button logout_admin;
@@ -129,6 +149,7 @@ public class UsersCRUD_windowController implements Initializable {
 
     Connection sesja = PolaczenieDB.getConnection();
     private ObservableList<Student> data;
+    private ObservableList<Pracownicy> data1;
 
     /**
      * Initializes the controller class.
@@ -160,6 +181,35 @@ public class UsersCRUD_windowController implements Initializable {
 
             table_student.setItems(null);
             table_student.setItems(data);
+
+        } catch (Exception e) {
+
+        }
+        
+         data1 = FXCollections.observableArrayList();
+        Statement stmt1 = null;
+
+        try {
+
+            stmt1 = sesja.createStatement();
+            ResultSet rs = stmt1.executeQuery("select imie_p , nazwisko_p, pesel_p, email_p, data_urodzenia_p, nr_tel_p, login_p, haslo_p,specjalizacja_p from pracownicy;");
+            while (rs.next()) {
+                data1.add(new Pracownicy(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5), rs.getInt(6),rs.getString(7), rs.getString(8), rs.getString(9)));
+
+            }
+            System.out.println(rs);
+            columnImiePracownik.setCellValueFactory(new PropertyValueFactory<>("imie_p"));
+            columntNazwiskoPracownik.setCellValueFactory(new PropertyValueFactory<>("nazwisko_p"));
+            columnPeselPracownik.setCellValueFactory(new PropertyValueFactory<>("pesel_p"));
+            ColumnEmailPracownik.setCellValueFactory(new PropertyValueFactory<>("email_p"));
+            ColumnDataurodzeniaPracownik.setCellValueFactory(new PropertyValueFactory<>("data_urodzenia_p"));
+            ColumnNrtelPracownik.setCellValueFactory(new PropertyValueFactory<>("nr_tel_p"));
+            ColumnLoginPracownik.setCellValueFactory(new PropertyValueFactory<>("login_p"));
+            ColumnHasloPracownik.setCellValueFactory(new PropertyValueFactory<>("haslo_p"));
+            Columnspecjalizacja_pPracownik.setCellValueFactory(new PropertyValueFactory<>("specjalizacja_p"));
+
+            table_pracownik.setItems(null);
+            table_pracownik.setItems(data1);
 
         } catch (Exception e) {
 

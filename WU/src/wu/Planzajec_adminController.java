@@ -17,6 +17,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -79,6 +81,18 @@ public class Planzajec_adminController implements Initializable {
     private TextField KierunekUpdate;
     @FXML
     private TextField RokUpdate;
+    @FXML
+    private ComboBox cAPrzedmiot;
+    @FXML
+    private ComboBox cIPracownik;
+    @FXML
+    private ComboBox cGAdmin;
+    @FXML
+    private ComboBox cISpec;
+    @FXML
+    private DatePicker dataAdmin;
+    
+    
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -198,6 +212,31 @@ public class Planzajec_adminController implements Initializable {
      */
     @FXML
     private void clear_usersButtonAction(ActionEvent event) throws IOException {
+
+    }
+    
+    @FXML
+    private void comboAdminPrzedmiot(ActionEvent event) throws IOException {
+
+    }
+    
+    @FXML
+    private void comboAdminPracownik(ActionEvent event) throws IOException {
+
+    }
+    
+    @FXML
+    private void comboAdminGodziny(ActionEvent event) throws IOException {
+
+    }
+    
+    @FXML
+    private void comboAdminSpec(ActionEvent event) throws IOException {
+
+    }
+    
+    @FXML
+    private void dataAdmin(ActionEvent event) throws IOException {
 
     }
 

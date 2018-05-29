@@ -40,29 +40,25 @@
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj zajęcia do harmonogramu" wrappingWidth="178.1171875" />
             <Label text="Id przedmiotu:" />
-            <ComboBox onAction="#comboAdminPrzedmiot" prefWidth="150.0" />
+            <ComboBox fx:id="cAPrzedmiot" onAction="#comboAdminPrzedmiot" prefWidth="150.0" />
             <Label text="Id pracownika:" />
-            <ComboBox onAction="#comboAdminPracownik" prefWidth="150.0" />
+            <ComboBox fx:id="cIPracownik" onAction="#comboAdminPracownik" prefWidth="150.0" />
             <Label text="Data:" />
-            <DatePicker onAction="#dataAdmin" />
+            <DatePicker fx:id="dataAdmin" onAction="#dataAdmin" />
             <Label text="Godzina zajec:" />
-            <ComboBox onAction="#comboAdminGodziny" prefWidth="150.0" />
+            <ComboBox fx:id="cGAdmin" onAction="#comboAdminGodziny" prefWidth="150.0" />
             <Label text="Id specjalizacji:" />
-            <ComboBox onAction="#comboAdminSpec" prefWidth="150.0" />=
-            <TextField fx:id="PrzedmiotUpdate" prefHeight="25.0" prefWidth="169.0" promptText="Przedmiot" />
-            <TextField fx:id="ProwadzacyUpdate" prefHeight="25.0" prefWidth="169.0" promptText="Prowadzący" />
-            <TextField fx:id="DataUpdate" prefHeight="25.0" prefWidth="169.0" promptText="data zajeć" />
-            <TextField fx:id="GodzinaUpdate" prefHeight="25.0" prefWidth="169.0" promptText="Godzina zajeć" />
-            <TextField fx:id="KierunekUpdate" prefHeight="25.0" prefWidth="169.0" promptText="Kierunek zajęć" />
-            <TextField fx:id="RokUpdate" prefHeight="25.0" prefWidth="169.0" promptText="Rok" />
-            <Button fx:id="delete_wykładowca" mnemonicParsing="false" onAction="#delete_wykładowcaButtonAction" text="Usuń" />
-            <Button fx:id="edit_wykladowca" mnemonicParsing="false" onAction="#edit_wykladowcaButtonAction" text="Edytuj" />
+            <ComboBox fx:id="cISpec" onAction="#comboAdminSpec" prefWidth="150.0" />
             <HBox alignment="TOP_CENTER" prefHeight="46.0" prefWidth="191.0" spacing="10.0" VBox.vgrow="NEVER">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
+               <children>
+                  <Button fx:id="add_wykladowca" mnemonicParsing="false" onAction="#add_wykladowcaButtonAction" text="Dodaj" />
+                  <Button fx:id="edit_wykladowca" mnemonicParsing="false" onAction="#edit_wykladowcaButtonAction" text="Edytuj" />
+                  <Button fx:id="delete_wykładowca" mnemonicParsing="false" onAction="#delete_wykładowcaButtonAction" text="Usuń" />
+               </children>
             </HBox>
-            <Button fx:id="add_wykladowca" mnemonicParsing="false" onAction="#add_wykladowcaButtonAction" text="Dodaj" />
          </children>
          <padding>
             <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />

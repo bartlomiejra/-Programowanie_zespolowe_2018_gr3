@@ -14,12 +14,12 @@
    <children>
       <TableView fx:id="tableHarmonogramAdmin" layoutX="207.0" layoutY="65.0" prefHeight="343.0" prefWidth="551.0">
          <columns>
-            <TableColumn fx:id="columnIdharmonogramuAdmin" prefWidth="116.0" text="Id Harmonogramu" />
-            <TableColumn fx:id="columnIdprzedmiotuAdmin" prefWidth="96.0" text="Id przedmiotu" />
-            <TableColumn fx:id="columnIdpracownikaAdmin" prefWidth="113.0" text="Id Pracownika" />
-            <TableColumn fx:id="columnDataAdmin" prefWidth="87.0" text="Data" />
-            <TableColumn fx:id="columnGodzinaAdmin" prefWidth="136.0" text="Godzina" />
-            <TableColumn prefWidth="87.0" text="Data" />
+            <TableColumn fx:id="columnIdprzedmiotuAdmin" prefWidth="70.0" text="Przedmiot" />
+            <TableColumn fx:id="columnIdpracownikaAdmin" prefWidth="93.0" text="Prowadzący" />
+            <TableColumn fx:id="columnDataAdmin" text="Data" />
+            <TableColumn fx:id="columnGodzinaAdmin" minWidth="0.0" prefWidth="86.0" text="Godzina" />
+            <TableColumn fx:id="columnKierunekAdmin" prefWidth="91.0" text="Kierunek" />
+            <TableColumn fx:id="columnRokAdmin" prefWidth="94.0" text="Rok" />
          </columns>
       </TableView>
       <Text layoutX="17.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zalogowany jako: Administrator" wrappingWidth="184.9999958872795" />

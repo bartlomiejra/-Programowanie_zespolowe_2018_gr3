@@ -21,13 +21,17 @@ public class Harmonogram {
     private final StringProperty idPracownika;
     private final StringProperty Data;
     private final StringProperty Godzina;
+    private final StringProperty kierunek;
+    private final IntegerProperty rok;
 
-    public Harmonogram(Integer idHarmonogramu, String idPrzedmiotu, String idPracownika, String Data, String Godzina) {
+    public Harmonogram(Integer idHarmonogramu, String idPrzedmiotu, String idPracownika, String Data, String Godzina, String kierunek, Integer rok) {
         this.idHarmonogramu = new SimpleIntegerProperty(idHarmonogramu);
         this.idPrzedmiotu = new SimpleStringProperty(idPrzedmiotu);
         this.idPracownika = new SimpleStringProperty(idPracownika);
         this.Data = new SimpleStringProperty(Data);
         this.Godzina = new SimpleStringProperty(Godzina);
+        this.kierunek = new SimpleStringProperty(kierunek);
+        this.rok = new SimpleIntegerProperty(rok);
 
     }
 
@@ -46,9 +50,17 @@ public class Harmonogram {
     public String getData() {
         return Data.get();
     }
-    
+
     public String getGodzina() {
         return Godzina.get();
+    }
+
+    public String getkierunek() {
+        return kierunek.get();
+    }
+
+    public Integer getrok() {
+        return rok.get();
     }
 
     public IntegerProperty idHarmonogramuProperty() {
@@ -66,8 +78,17 @@ public class Harmonogram {
     public StringProperty DataProperty() {
         return Data;
     }
-     public StringProperty GodzinaProperty() {
+
+    public StringProperty GodzinaProperty() {
         return Godzina;
+    }
+
+    public StringProperty kierunekProperty() {
+        return kierunek;
+    }
+
+    public IntegerProperty rokProperty() {
+        return rok;
     }
 
 }

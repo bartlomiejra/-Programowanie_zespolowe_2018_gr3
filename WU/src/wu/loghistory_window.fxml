@@ -13,7 +13,7 @@
    <children>
       <TableView fx:id="table_logHistory" layoutX="81.0" layoutY="58.0" prefHeight="269.0" prefWidth="500.0">
         <columns>
-          <TableColumn fx:id="Columnlogin" prefWidth="120.0" text="Id użytkownika" />
+          <TableColumn fx:id="Columnlogin" prefWidth="120.0" text="Login" />
             <TableColumn fx:id="ColumnLastLogin" prefWidth="379.0" text="Ostatnie Logowanie" />
         </columns>
       </TableView>

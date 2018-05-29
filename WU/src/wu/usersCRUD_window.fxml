@@ -13,7 +13,6 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="757.0" prefWidth="1067.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.UsersCRUD_windowController">
    <children>
-      <TextField layoutX="14.0" layoutY="44.0" prefHeight="29.0" prefWidth="149.0" promptText="Id" />
       <TextField layoutX="14.0" layoutY="73.0" prefHeight="29.0" prefWidth="149.0" promptText="Imię" />
       <TextField layoutX="14.0" layoutY="102.0" prefHeight="25.0" prefWidth="149.0" promptText="Nazwisko" />
       <TextField layoutX="14.0" layoutY="127.0" prefHeight="29.0" prefWidth="149.0" promptText="Pesel (hasło)" />
@@ -40,9 +39,9 @@
       <TextField layoutX="681.0" layoutY="362.0" prefHeight="29.0" prefWidth="159.0" promptText="Szukaj" />
       <HBox layoutX="14.0" layoutY="326.0" prefHeight="40.0" prefWidth="149.0" spacing="2.0">
          <children>
-            <Button fx:id="delete_users" mnemonicParsing="false" onAction="#delete_usersButtonAction" text="Usuń" />
             <Button fx:id="add_users" mnemonicParsing="false" onAction="#add_usersButtonAction" text="Dodaj" />
             <Button fx:id="edit_users" mnemonicParsing="false" onAction="#edit_usersButtonAction" text="Edytuj" />
+            <Button fx:id="delete_users" mnemonicParsing="false" onAction="#delete_usersButtonAction" text="Usuń" />
          </children>
          <padding>
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
@@ -71,7 +70,6 @@
             <TableColumn fx:id="Columnspecjalizacja_pPracownik" prefWidth="99.0" text="Specjalizacja" />
          </columns>
       </TableView>
-      <TextField layoutX="14.0" layoutY="401.0" prefHeight="29.0" prefWidth="149.0" promptText="Id" />
       <TextField layoutX="14.0" layoutY="430.0" prefHeight="29.0" prefWidth="149.0" promptText="Imię" />
       <TextField layoutX="14.0" layoutY="459.0" prefHeight="29.0" prefWidth="149.0" promptText="Nazwisko" />
       <TextField layoutX="14.0" layoutY="488.0" prefHeight="29.0" prefWidth="149.0" promptText="Pesel" />
@@ -91,9 +89,9 @@
       <Button fx:id="clear_usersp" layoutX="971.0" layoutY="681.0" mnemonicParsing="false" onAction="#clear_usersButtonAction" text="Wyczyść" />
       <HBox layoutX="14.0" layoutY="693.0" prefHeight="40.0" prefWidth="149.0" spacing="2.0">
          <children>
-            <Button fx:id="delete_usersp" mnemonicParsing="false" onAction="#delete_usersButtonAction" text="Usuń" />
             <Button fx:id="add_usersp" mnemonicParsing="false" onAction="#add_usersButtonAction" text="Dodaj" />
             <Button fx:id="edit_usersp" mnemonicParsing="false" onAction="#edit_usersButtonAction" text="Edytuj" />
+            <Button fx:id="delete_usersp" mnemonicParsing="false" onAction="#delete_usersButtonAction" text="Usuń" />
          </children>
          <padding>
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />

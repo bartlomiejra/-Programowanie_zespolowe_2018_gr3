@@ -50,9 +50,7 @@ public class Planzajec_adminController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
         data = FXCollections.observableArrayList();
-        ObservableList<String> ProwadzacyList = FXCollections.observableArrayList();
-        ObservableList<String> przedmiotList = FXCollections.observableArrayList();
-        ObservableList<String> ocenyList = FXCollections.observableArrayList();
+        
         Statement stmt = null;
 
         try {

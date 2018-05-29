@@ -68,9 +68,9 @@ public class Raporty {
                 + " and oceny.id_studenta=studenci.id_studenta and oceny.id_pracownika=pracownicy.id_pracownika;");
         
  try {
-            GeneratorPDF base = new GeneratorPDF();
+            ConnectionClass base = new ConnectionClass();
             Connection conn;
-            conn = base.generatorPDF();
+            conn = base.ConnectionClass();
             rs = conn.createStatement().executeQuery(query);
         } catch (SQLException sqle) {
             System.out.println("problem z zapytaniem" + query);
@@ -85,10 +85,10 @@ public class Raporty {
         nazwaRaportu = nazwaRaportu + ".pdf";
         System.out.println(nazwaRaportu);
         try {
-            if(!Files.exists(Paths.get("raports"))){
-                Files.createDirectory(Paths.get("raports"));
+            if(!Files.exists(Paths.get("raports/admin"))){
+                Files.createDirectory(Paths.get("raports/admin"));
             }
-            writer = PdfWriter.getInstance(document, new FileOutputStream("raports/" + nazwaRaportu));
+            writer = PdfWriter.getInstance(document, new FileOutputStream("raports/admin" + nazwaRaportu));
             writer.setPdfVersion(PdfWriter.VERSION_1_7);
         } catch (FileNotFoundException e) {
             System.out.println("Proces nie może uzyskać dostępu do pliku,- używany przez inny proces-");
@@ -124,7 +124,10 @@ public class Raporty {
         tabInfo.addCell(column2);
         
         return tabInfo;
-    }  public static PdfPCell setInfoCell(String firstBold,String secondLine,String thirdLine){
+        
+        
+    } 
+        public static PdfPCell setInfoCell(String firstBold,String secondLine,String thirdLine){
         PdfPCell cell= new PdfPCell();
         cell.setBorderColor(BaseColor.WHITE);
         cell.addElement(new Paragraph(firstBold, font14b));
@@ -187,6 +190,9 @@ public class Raporty {
 
 
  public static void createDefaultDocument(ResultSet rs) throws BadElementException, IOException, DocumentException, SQLException, ClassNotFoundException  {
+      
+             document=setDocumentInfo(document,"wu","raport ocen z dnia ","pl-PL","WUAdmin");
+
         document.open();
         document.add(setHeaderTab());
         document.add(setInfoTable(setInfoCell("Nadawca", "Grupa projektu zespołowego", "Numer 3"),setInfoCell("Odbiorca","UR", "Sp.z o.o.")));

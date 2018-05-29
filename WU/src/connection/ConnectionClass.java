@@ -9,7 +9,7 @@ public Connection connection;
 
 
 
-        String dbName="WUdb";
+        String dbName="wuuuu";
 
 
 

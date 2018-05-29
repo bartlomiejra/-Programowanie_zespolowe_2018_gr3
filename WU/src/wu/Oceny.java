@@ -16,46 +16,49 @@ import javafx.beans.property.StringProperty;
  */
 public class Oceny {
 
-       private final IntegerProperty  ocena;
- private final StringProperty nazwa_przedmiotu;
-      private final StringProperty student;
+    private final IntegerProperty ocena;
+    private final StringProperty nazwa_przedmiotu;
+    private final StringProperty student;
     private final StringProperty prowadzacy;
-    
-    
-    public Oceny(Integer ocena, String nazwa_przedmiotu, String student, String prowadzacy){
+
+    public Oceny(Integer ocena, String nazwa_przedmiotu, String student, String prowadzacy) {
         this.ocena = new SimpleIntegerProperty(ocena);
         this.nazwa_przedmiotu = new SimpleStringProperty(nazwa_przedmiotu);
         this.student = new SimpleStringProperty(student);
         this.prowadzacy = new SimpleStringProperty(prowadzacy);
-        
-        
+
     }
-     public Integer getocena(){
+
+    public Integer getocena() {
         return ocena.get();
     }
-        public String getnazwa_przedmiotu(){
+
+    public String getnazwa_przedmiotu() {
         return nazwa_przedmiotu.get();
     }
-    public String getStudent(){
-        return student.get();      
+
+    public String getStudent() {
+        return student.get();
     }
-    public String getProwadzacy(){
+
+    public String getProwadzacy() {
         return prowadzacy.get();
     }
 
-
-    
-     public IntegerProperty ocenaProperty() {
+    public IntegerProperty ocenaProperty() {
         return ocena;
     }
-     public StringProperty nazwa_przedmiotuProperty(){
-         return nazwa_przedmiotu;
-     }
-     public StringProperty studentProperty(){
-         return student;
-     }
-     public StringProperty prowadzacyProperty(){
-         return prowadzacy;
-     }
+
+    public StringProperty nazwa_przedmiotuProperty() {
+        return nazwa_przedmiotu;
+    }
+
+    public StringProperty studentProperty() {
+        return student;
+    }
+
+    public StringProperty prowadzacyProperty() {
+        return prowadzacy;
+    }
 
 }

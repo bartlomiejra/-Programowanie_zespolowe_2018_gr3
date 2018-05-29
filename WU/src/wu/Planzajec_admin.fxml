@@ -10,15 +10,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Planzajec_adminController">
+<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Planzajec_adminController">
    <children>
-      <TableView layoutX="207.0" layoutY="65.0" prefHeight="343.0" prefWidth="551.0">
+      <TableView fx:id="tableHarmonogramAdmin" layoutX="207.0" layoutY="65.0" prefHeight="343.0" prefWidth="551.0">
          <columns>
-            <TableColumn prefWidth="116.0" text="Id Harmonogramu" />
-            <TableColumn prefWidth="96.0" text="Id przedmiotu" />
-            <TableColumn prefWidth="113.0" text="Id Pracownika" />
+            <TableColumn fx:id="columnIdharmonogramuAdmin" prefWidth="116.0" text="Id Harmonogramu" />
+            <TableColumn fx:id="columnIdprzedmiotuAdmin" prefWidth="96.0" text="Id przedmiotu" />
+            <TableColumn fx:id="columnIdpracownikaAdmin" prefWidth="113.0" text="Id Pracownika" />
+            <TableColumn fx:id="columnDataAdmin" prefWidth="87.0" text="Data" />
+            <TableColumn fx:id="columnGodzinaAdmin" prefWidth="136.0" text="Godzina" />
             <TableColumn prefWidth="87.0" text="Data" />
-            <TableColumn prefWidth="136.0" text="Godzina" />
          </columns>
       </TableView>
       <Text layoutX="17.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zalogowany jako: Administrator" wrappingWidth="184.9999958872795" />

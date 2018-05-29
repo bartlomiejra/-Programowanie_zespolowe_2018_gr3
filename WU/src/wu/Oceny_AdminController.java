@@ -346,16 +346,21 @@ public class Oceny_AdminController implements Initializable {
     @FXML
     private void add_wykladowcaButtonAction(ActionEvent event) throws IOException {
         
-        Statement stmt = null;
-         try{
-        
-        stmt = sesja.createStatement();
         String fullname = tf_student.getText();
         String[] parts = fullname.split(" ");
         String name = parts[0];
         String surname = parts[1];
         System.out.println(name);
         System.out.println(surname);
+        
+        Statement stmt = null;
+         try{
+        int id = comboPrzedmiot.getSelectionModel().selectedIndexProperty().getValue()+1;
+        int id2 = comboPrzedmiot.getSelectionModel().selectedIndexProperty().getValue()+1;
+
+        stmt = sesja.createStatement();
+        
+        
           
 //        String query = "INSERT INTO OCENY (id_przedmiotu,id_studenta,id_pracownika,ocena) VALUES (" + "'" + comboPrzedmiot.getSelectionModel().selectedIndexProperty().getValue()+1+ 
 //                "'," + "'" + "SELECT id_studenta FROM studenci WHERE CONCAT (imie_s=name,' ',nazwisko_s=surname)"  + "'," + "'" + comboProwadzacy.getSelectionModel().selectedIndexProperty().getValue()+1 + "'," + "'" +
@@ -363,8 +368,8 @@ public class Oceny_AdminController implements Initializable {
         
         
           
-          String query=("INSERT INTO OCENY (id_przedmiotu,id_studenta,id_pracownika,ocena) VALUES (" + "'" + comboPrzedmiot.getSelectionModel().selectedIndexProperty().getValue()+1+ 
-                "'," + "'" + "SELECT id_studenta FROM studenci WHERE CONCAT (imie_s="+"'"+name+"'"+",' ',nazwisko_s="+"'"+surname+"'"+")" + "'," + "'" + comboProwadzacy.getSelectionModel().selectedIndexProperty().getValue()+1 + "'," + "'" +
+          String query=("INSERT INTO OCENY (id_przedmiotu,id_studenta,id_pracownika,ocena) VALUES (" + "'" + id+ 
+                "'," + "'" + "SELECT id_studenta FROM studenci WHERE CONCAT (imie_s= "+" '"+name+"'"+",' ',nazwisko_s="+"'"+surname+"'"+")"+ "," + "'" + id2 + "'," + "'" +
                 comboOcena.getValue() + "');");
           
           insertStatement(query);

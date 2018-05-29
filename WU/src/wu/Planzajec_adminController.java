@@ -19,6 +19,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -66,6 +67,18 @@ public class Planzajec_adminController implements Initializable {
     private Button load_users;
     @FXML
     private Button clear_users;
+    @FXML
+    private TextField PrzedmiotUpdate;
+    @FXML
+    private TextField ProwadzacyUpdate;
+    @FXML
+    private TextField DataUpdate;
+    @FXML
+    private TextField GodzinaUpdate;
+    @FXML
+    private TextField KierunekUpdate;
+    @FXML
+    private TextField RokUpdate;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -124,7 +137,24 @@ public class Planzajec_adminController implements Initializable {
      */
     @FXML
     private void add_wykladowcaButtonAction(ActionEvent event) throws IOException {
+        
+        
+        
+        Statement stmt = null;
 
+        try {
+
+            stmt = sesja.createStatement();
+
+            stmt.executeUpdate("INSERT INTO `przedmioty` (`id_przedmiotu`, `nazwa_przedmiotu`) VALUES (null,'"+PrzedmiotUpdate.getText()+"');");
+            
+
+          
+
+           
+        } catch (Exception e) {
+
+        }
     }
 
     /**

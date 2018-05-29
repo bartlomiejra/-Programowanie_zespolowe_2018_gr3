@@ -8,7 +8,15 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+<<<<<<< HEAD
     <jar href="WU.jar" size="1172011" download="eager" />
+=======
+<<<<<<< HEAD
+    <jar href="WU.jar" size="63918" download="eager" />
+=======
+    <jar href="WU.jar" size="1171967" download="eager" />
+>>>>>>> 937c0f73cd197e897ddc0b36b5be6c0a208e76df
+>>>>>>> a4ab7cec9f3991b5f4ff8ef7558ace8d1dca607f
     <jar href="lib\generatorPDF.jar" size="3030" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="843090" download="eager" />
   </resources>

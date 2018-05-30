@@ -146,11 +146,11 @@ public class Raporty {
         
         //font12b
     } public static PdfPTable setItemTableInfo(PdfPTable infoRecord) throws SQLException{
-        infoRecord.addCell(new Paragraph("Imie_studenta"));
-        infoRecord.addCell(new Paragraph("Nazwisko_studenta"));
-        infoRecord.addCell(new Paragraph("Imie_prowadzacego"));
-        infoRecord.addCell(new Paragraph("Nazwisko_prowadzacego"));
+        infoRecord.addCell(new Paragraph("Imie i nazwisko studenta"));
+        infoRecord.addCell(new Paragraph("Imie i nazwisko prowadzącego"));
         infoRecord.addCell(new Paragraph("Ocena"));
+        infoRecord.addCell(new Paragraph("Przedmiot"));
+
         return infoRecord;
     }
     
@@ -160,9 +160,7 @@ public class Raporty {
             p.addCell("" + rs.getString(1));
             p.addCell("" + rs.getString(2));
             p.addCell("" + rs.getString(3));
-            p.addCell("" + rs.getString(4));
-            p.addCell("" + rs. getString(5));
-            p.addCell("" + rs. getString(6));
+            p.addCell("" + rs.getString(4));         
             rs.next();
         }
         return p;
@@ -173,7 +171,7 @@ public class Raporty {
       PdfPCell cell = new PdfPCell();
       headerTab.setWidthPercentage(100);
       Image img = Image.getInstance("resources/images/ur.png");
-        img.scaleAbsolute(new Rectangle(190, 50));
+        img.scaleAbsolute(new Rectangle(50, 50));
         cell.setImage(img);
         cell.setBorderColor(BaseColor.WHITE);
         headerTab.addCell(cell);

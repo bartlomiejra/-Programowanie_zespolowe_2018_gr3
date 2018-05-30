@@ -288,10 +288,7 @@ public class Oceny_AdminController implements Initializable {
      * @param event
      * @throws IOException
      */
-<<<<<<< HEAD
-    
-     @FXML
-     
+     @FXML  
     private void generate_wykladowcaButtonAction(ActionEvent event) throws IOException, ClassNotFoundException, SQLException, DocumentException{
         
         Raporty rap=new Raporty();
@@ -304,22 +301,11 @@ public class Oceny_AdminController implements Initializable {
         Raporty.document.add(Raporty.setInfoTable(Raporty.setInfoCell("Nadawca", "Grupa ", "Numer 3") ,Raporty.setInfoCell("Odbiorca","UR", "Wydział MAtematyczno- przyrodniczy")));
         Raporty.document.add(Raporty.setItemTable());
         Raporty.document.close();
-        
-       
-    
-      
+
       
     }
 
 
-  
-=======
-    @FXML
-    private void generate_wykladowcaButtonAction(ActionEvent event) throws IOException {
-
-    }
-
->>>>>>> Student
     /**
      * Metoda wyszukująca użytkowników
      *

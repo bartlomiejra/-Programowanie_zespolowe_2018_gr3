@@ -8,13 +8,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Loghistory_windowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Loghistory_windowController">
+
    <children>
-      <TableView layoutX="86.0" layoutY="59.0" prefHeight="269.0" prefWidth="500.0">
+      <TableView fx:id="table_logHistory" layoutX="81.0" layoutY="58.0" prefHeight="269.0" prefWidth="500.0">
         <columns>
-          <TableColumn prefWidth="118.0" text="Id użytkownika" />
-          <TableColumn prefWidth="186.0" text="Data i czas akcji" />
-            <TableColumn prefWidth="194.0" text="Akcja (login, logout)" />
+          <TableColumn fx:id="Columnlogin" prefWidth="120.0" text="Login" />
+            <TableColumn fx:id="ColumnLastLogin" prefWidth="379.0" text="Ostatnie Logowanie" />
         </columns>
       </TableView>
       <HBox layoutX="350.0" layoutY="14.0" prefHeight="35.0" prefWidth="224.0" spacing="10.0">

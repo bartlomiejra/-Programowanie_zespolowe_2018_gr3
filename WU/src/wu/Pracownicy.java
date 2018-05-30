@@ -16,16 +16,16 @@ import javafx.beans.property.StringProperty;
  */
 public class Pracownicy {
 
-    
-    private final StringProperty imie_p;
-    private final StringProperty nazwisko_p;
-    private final IntegerProperty pesel_p;
-    private final StringProperty email_p;
-    private final StringProperty data_urodzenia_p;
-    private final IntegerProperty nr_tel_p;
-    private final StringProperty login_p;
-    private final StringProperty haslo_p;
-    private final StringProperty specjalizacja_p;
+    private IntegerProperty id_pracownika;
+    private  StringProperty imie_p;
+    private  StringProperty nazwisko_p;
+    private  IntegerProperty pesel_p;
+    private  StringProperty email_p;
+    private  StringProperty data_urodzenia_p;
+    private  IntegerProperty nr_tel_p;
+    private  StringProperty login_p;
+    private  StringProperty haslo_p;
+    private  StringProperty specjalizacja_p;
     
 
     public Pracownicy( String imie_p, String nazwisko_p, Integer pesel_p, String email_p, String data_urodzenia_p, Integer nr_tel_p, String login_p,  String haslo_p, String specjalizacja_p) {
@@ -38,6 +38,14 @@ public class Pracownicy {
         this.login_p = new SimpleStringProperty(login_p);
         this.haslo_p = new SimpleStringProperty(haslo_p);
         this.specjalizacja_p = new SimpleStringProperty(specjalizacja_p);
+
+    }
+    
+    public Pracownicy( Integer id_pracownika, String imie_p, String nazwisko_p) {
+        this.id_pracownika = new SimpleIntegerProperty(id_pracownika);
+        this.imie_p = new SimpleStringProperty(imie_p);
+        this.nazwisko_p = new SimpleStringProperty(nazwisko_p);
+        
 
     }
 
@@ -70,7 +78,9 @@ public class Pracownicy {
     public String getspecjalizacja_p() {
         return specjalizacja_p.get();
     }
-    
+    public Integer getid_pracownika() {
+        return id_pracownika.get();
+    }
     
     
 
@@ -108,6 +118,9 @@ public class Pracownicy {
     
     public StringProperty specjalizacja_pProperty() {
         return specjalizacja_p;
+    }
+    public IntegerProperty id_pracownikaProperty() {
+        return id_pracownika;
     }
     
 }

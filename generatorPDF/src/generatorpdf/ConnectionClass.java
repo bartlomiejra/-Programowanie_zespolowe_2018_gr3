@@ -10,9 +10,9 @@ import java.sql.SQLException;
  */
 public class ConnectionClass {
 
-    Connection ConnectionClass() {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
+  
+  
+    
 
         public Connection connection;
         
@@ -31,7 +31,10 @@ public class ConnectionClass {
         }
         return null;
         
-    }}
+    }
+
+  
+}
         
       
      

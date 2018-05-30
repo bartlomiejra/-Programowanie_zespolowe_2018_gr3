@@ -70,7 +70,7 @@ public class Raporty {
  try {
             ConnectionClass base = new ConnectionClass();
             Connection conn;
-            conn = base.ConnectionClass();
+            conn = base.getConnection();
             rs = conn.createStatement().executeQuery(query);
         } catch (SQLException sqle) {
             System.out.println("problem z zapytaniem" + query);
@@ -161,7 +161,8 @@ public class Raporty {
             p.addCell("" + rs.getString(2));
             p.addCell("" + rs.getString(3));
             p.addCell("" + rs.getString(4));
-            p.addCell("" + rs.getString(5));
+            p.addCell("" + rs. getString(5));
+            p.addCell("" + rs. getString(6));
             rs.next();
         }
         return p;

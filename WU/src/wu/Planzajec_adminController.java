@@ -19,11 +19,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.util.Callback;
+import javafx.util.StringConverter;
 
 /**
  * Klasa obslugujaca dzialanie sceny z planem zajec dla administratora
@@ -82,23 +86,27 @@ public class Planzajec_adminController implements Initializable {
     @FXML
     private TextField RokUpdate;
     @FXML
-    private ComboBox cAPrzedmiot;
+    private ComboBox<Przedmioty> cAPrzedmiot;
     @FXML
-    private ComboBox cIPracownik;
+    private ComboBox<Pracownicy> cIPracownik;
     @FXML
     private ComboBox cGAdmin;
     @FXML
     private ComboBox cISpec;
     @FXML
     private DatePicker dataAdmin;
-    
-    
+
+    ObservableList<Pracownicy> dataPracownicy;
+    ObservableList<Przedmioty> dataPrzedmioty;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
+        dataPracownicy = FXCollections.observableArrayList();
+        dataPrzedmioty = FXCollections.observableArrayList();
+
         data = FXCollections.observableArrayList();
-        
+
         Statement stmt = null;
 
         try {
@@ -109,8 +117,8 @@ public class Planzajec_adminController implements Initializable {
 
             //System.out.println("Dane:"+ rs.getString(2));
             while (rs.next()) {
-                
-                data.add(new Harmonogram(rs.getInt(1), rs.getString(2), rs.getString(3),rs.getString(4),rs.getString(5), rs.getString(6),rs.getInt(7)));
+
+                data.add(new Harmonogram(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7)));
 
             }
 
@@ -121,15 +129,141 @@ public class Planzajec_adminController implements Initializable {
             columnGodzinaAdmin.setCellValueFactory(new PropertyValueFactory<>("Godzina"));
             columnKierunekAdmin.setCellValueFactory(new PropertyValueFactory<>("kierunek"));
             columnRokAdmin.setCellValueFactory(new PropertyValueFactory<>("rok"));
-            
+
             tableHarmonogramAdmin.setItems(null);
             tableHarmonogramAdmin.setItems(data);
 
-           
+        } catch (Exception e) {
+
+        }
+        // wyswietlanie combox pracownicy
+
+        Statement stmt2 = null;
+
+        try {
+
+            stmt2 = sesja.createStatement();
+
+            ResultSet rs = stmt2.executeQuery("SELECT * from pracownicy;");
+
+            //System.out.println("Dane:"+ rs.getString(2));
+            while (rs.next()) {
+
+                dataPracownicy.add(new Pracownicy(rs.getInt(1), rs.getString(2), rs.getString(3)));
+
+            }
+
         } catch (Exception e) {
 
         }
 
+        cIPracownik.setItems(null);
+        cIPracownik.setItems(dataPracownicy);
+
+        cIPracownik.setCellFactory(new Callback<ListView<Pracownicy>, ListCell<Pracownicy>>() {
+
+            @Override
+            public ListCell<Pracownicy> call(ListView<Pracownicy> p) {
+
+                final ListCell<Pracownicy> cell = new ListCell<Pracownicy>() {
+
+                    @Override
+                    protected void updateItem(Pracownicy t, boolean bln) {
+                        super.updateItem(t, bln);
+
+                        if (t != null) {
+                            setText(t.getimie_p() + " " + t.getnazwisko_p());
+                        } else {
+                            setText(null);
+                        }
+                    }
+                };
+                return cell;
+            }
+        });
+
+        cIPracownik.setConverter(new StringConverter<Pracownicy>() {
+            @Override
+            public String toString(Pracownicy object) {
+                if (object == null) {
+                    return "";
+                } else {
+                    return object.getimie_p() + " " + object.getnazwisko_p();
+                }
+            }
+
+            @Override
+            public Pracownicy fromString(String string) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        });
+
+        //KONIEC pracownicy
+        
+         // wyswietlanie combox pracownicy
+
+        Statement stmt3 = null;
+
+        try {
+
+            stmt3 = sesja.createStatement();
+
+            ResultSet rs = stmt3.executeQuery("SELECT * from przedmioty;");
+
+            //System.out.println("Dane:"+ rs.getString(2));
+            while (rs.next()) {
+
+                dataPrzedmioty.add(new Przedmioty(rs.getInt(1), rs.getString(2)));
+
+            }
+
+        } catch (Exception e) {
+
+        }
+
+        cAPrzedmiot.setItems(null);
+        cAPrzedmiot.setItems(dataPrzedmioty);
+
+        cAPrzedmiot.setCellFactory(new Callback<ListView<Przedmioty>, ListCell<Przedmioty>>() {
+
+            @Override
+            public ListCell<Przedmioty> call(ListView<Przedmioty> p) {
+
+                final ListCell<Przedmioty> cell = new ListCell<Przedmioty>() {
+
+                    @Override
+                    protected void updateItem(Przedmioty t, boolean bln) {
+                        super.updateItem(t, bln);
+
+                        if (t != null) {
+                            setText(t.getnazwa_przedmiotu());
+                        } else {
+                            setText(null);
+                        }
+                    }
+                };
+                return cell;
+            }
+        });
+
+        cAPrzedmiot.setConverter(new StringConverter<Przedmioty>() {
+            @Override
+            public String toString(Przedmioty object) {
+                if (object == null) {
+                    return "";
+                } else {
+                    return object.getnazwa_przedmiotu();
+                }
+            }
+
+            @Override
+            public Przedmioty fromString(String string) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        });
+
+        //KONIEC pracownicy
+        
     }
 
     /**
@@ -151,21 +285,15 @@ public class Planzajec_adminController implements Initializable {
      */
     @FXML
     private void add_wykladowcaButtonAction(ActionEvent event) throws IOException {
-        
-        
-        
+
         Statement stmt = null;
 
         try {
 
             stmt = sesja.createStatement();
 
-            stmt.executeUpdate("INSERT INTO `przedmioty` (`id_przedmiotu`, `nazwa_przedmiotu`) VALUES (null,'"+PrzedmiotUpdate.getText()+"');");
-            
+            stmt.executeUpdate("INSERT INTO `przedmioty` (`id_przedmiotu`, `nazwa_przedmiotu`) VALUES (null,'" + PrzedmiotUpdate.getText() + "');");
 
-          
-
-           
         } catch (Exception e) {
 
         }
@@ -214,27 +342,27 @@ public class Planzajec_adminController implements Initializable {
     private void clear_usersButtonAction(ActionEvent event) throws IOException {
 
     }
-    
+
     @FXML
     private void comboAdminPrzedmiot(ActionEvent event) throws IOException {
 
     }
-    
+
     @FXML
     private void comboAdminPracownik(ActionEvent event) throws IOException {
 
     }
-    
+
     @FXML
     private void comboAdminGodziny(ActionEvent event) throws IOException {
 
     }
-    
+
     @FXML
     private void comboAdminSpec(ActionEvent event) throws IOException {
 
     }
-    
+
     @FXML
     private void dataAdmin(ActionEvent event) throws IOException {
 

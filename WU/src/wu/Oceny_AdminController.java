@@ -184,7 +184,7 @@ public class Oceny_AdminController implements Initializable {
         Raporty.document=Raporty.setDocumentInfo( Raporty.document, "autor", "title ", "language", "creator") ;
         Raporty.document.open();
         Raporty.document.add(Raporty.setHeaderTab());
-        Raporty.document.add(Raporty.setInfoTable(Raporty.setInfoCell("Nadawca", "Zespół ", "Numer 3") ,Raporty.setInfoCell("Nadawca", "Zespół", "Numer 3")));
+        Raporty.document.add(Raporty.setInfoTable(Raporty.setInfoCell("Nadawca", "Grupa ", "Numer 3") ,Raporty.setInfoCell("Odbiorca","UR", "Wydział MAtematyczno- przyrodniczy")));
         Raporty.document.add(Raporty.setItemTable());
         Raporty.document.close();
         

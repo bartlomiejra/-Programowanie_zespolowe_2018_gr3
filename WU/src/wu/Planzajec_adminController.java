@@ -6,6 +6,7 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -92,18 +93,71 @@ public class Planzajec_adminController implements Initializable {
     @FXML
     private ComboBox cGAdmin;
     @FXML
-    private ComboBox cISpec;
+    private ComboBox<Specjalizacja> cISpec;
     @FXML
     private DatePicker dataAdmin;
 
     ObservableList<Pracownicy> dataPracownicy;
     ObservableList<Przedmioty> dataPrzedmioty;
+    ObservableList<Specjalizacja> dataSpecjalizacja;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
+        // combox godziny
+        cGAdmin.getItems().addAll(
+                "00:00",
+                "00:30",
+                "01:00",
+                "01:30",
+                "02:00",
+                "02:30",
+                "03:00",
+                "03:30",
+                "04:00",
+                "04:30",
+                "05:00",
+                "05:30",
+                "06:00",
+                "06:30",
+                "07:00",
+                "07:30",
+                "08:00",
+                "08:30",
+                "09:00",
+                "09:30",
+                "10:00",
+                "10:30",
+                "11:00",
+                "11:30",
+                "12:00",
+                "12:30",
+                "13:00",
+                "13:30",
+                "14:00",
+                "14:30",
+                "15:00",
+                "15:30",
+                "16:00",
+                "16:30",
+                "17:00",
+                "17:30",
+                "18:00",
+                "18:30",
+                "19:00",
+                "19:30",
+                "20:00",
+                "20:30",
+                "21:00",
+                "21:30",
+                "22:00",
+                "22:30",
+                "23:00",
+                "23:30"
+        );
         dataPracownicy = FXCollections.observableArrayList();
         dataPrzedmioty = FXCollections.observableArrayList();
+        dataSpecjalizacja = FXCollections.observableArrayList();
 
         data = FXCollections.observableArrayList();
 
@@ -199,9 +253,7 @@ public class Planzajec_adminController implements Initializable {
         });
 
         //KONIEC pracownicy
-        
-         // wyswietlanie combox pracownicy
-
+        // wyswietlanie combox przedmioty
         Statement stmt3 = null;
 
         try {
@@ -262,8 +314,69 @@ public class Planzajec_adminController implements Initializable {
             }
         });
 
-        //KONIEC pracownicy
-        
+        //KONIEC przedmioty
+        // wyswietlanie combox specjalizacja
+        Statement stmt4 = null;
+
+        try {
+
+            stmt4 = sesja.createStatement();
+
+            ResultSet rs = stmt4.executeQuery("SELECT id_specjalizacji,kierunek,rok from specjalizacja_studenci;");
+
+            //System.out.println("Dane:"+ rs.getString(2));
+            while (rs.next()) {
+
+                dataSpecjalizacja.add(new Specjalizacja(rs.getInt(1), rs.getString(2), rs.getString(3)));
+
+            }
+
+        } catch (Exception e) {
+
+        }
+
+        cISpec.setItems(null);
+        cISpec.setItems(dataSpecjalizacja);
+
+        cISpec.setCellFactory(new Callback<ListView<Specjalizacja>, ListCell<Specjalizacja>>() {
+
+            @Override
+            public ListCell<Specjalizacja> call(ListView<Specjalizacja> p) {
+
+                final ListCell<Specjalizacja> cell = new ListCell<Specjalizacja>() {
+
+                    @Override
+                    protected void updateItem(Specjalizacja t, boolean bln) {
+                        super.updateItem(t, bln);
+
+                        if (t != null) {
+                            setText(t.getkierunek() + " - " + t.getrok() + " rok");
+                        } else {
+                            setText(null);
+                        }
+                    }
+                };
+                return cell;
+            }
+        });
+
+        cISpec.setConverter(new StringConverter<Specjalizacja>() {
+            @Override
+            public String toString(Specjalizacja object) {
+                if (object == null) {
+                    return "";
+                } else {
+                    return object.getkierunek() + " - " + object.getrok() + " rok";
+                }
+            }
+
+            @Override
+            public Specjalizacja fromString(String string) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        });
+
+        //KONIEC specjalizacja
     }
 
     /**
@@ -291,9 +404,10 @@ public class Planzajec_adminController implements Initializable {
         try {
 
             stmt = sesja.createStatement();
+            LocalDate value = dataAdmin.getValue();
+            stmt.executeUpdate("INSERT INTO `harmonogram` (`id_harmonogramu`, `id_przedmiotu`, `id_pracownika`, `data_zajec_h`, `godzina_h`, `id_specjalizacji`) VALUES (null,'" + cAPrzedmiot.getSelectionModel().getSelectedItem().getid_przedmiotu()+ "','"  + cIPracownik.getSelectionModel().getSelectedItem().getid_pracownika() + "','" + value + "','"  + cGAdmin.getSelectionModel().getSelectedItem().toString() + "','" + cISpec.getSelectionModel().getSelectedItem().getid_specjalizacji() + "');");
 
-            stmt.executeUpdate("INSERT INTO `przedmioty` (`id_przedmiotu`, `nazwa_przedmiotu`) VALUES (null,'" + PrzedmiotUpdate.getText() + "');");
-
+            // cIPracownik.getSelectionModel().getSelectedItem().getid_pracownika()
         } catch (Exception e) {
 
         }

@@ -8,13 +8,16 @@ public Connection connection;
     public  Connection getConnection(){
 
 
-        String dbName="sss";
+
+        String dbName="bazawu";
+
+
 
 
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
 
-        connection= DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dbName,"root","");
+        connection= DriverManager.getConnection("jdbc:mysql://localhost/"+dbName,"root","");
         
 
 

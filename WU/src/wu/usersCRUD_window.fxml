@@ -13,7 +13,6 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="757.0" prefWidth="1067.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.UsersCRUD_windowController">
    <children>
-      <TextField layoutX="14.0" layoutY="44.0" prefHeight="29.0" prefWidth="149.0" promptText="Id" />
       <TextField layoutX="14.0" layoutY="73.0" prefHeight="29.0" prefWidth="149.0" promptText="Imię" />
       <TextField layoutX="14.0" layoutY="102.0" prefHeight="25.0" prefWidth="149.0" promptText="Nazwisko" />
       <TextField layoutX="14.0" layoutY="127.0" prefHeight="29.0" prefWidth="149.0" promptText="Pesel (hasło)" />
@@ -24,26 +23,25 @@
             <Font size="13.0" />
          </font>
       </Text>
-      <TableView layoutX="173.0" layoutY="46.0" prefHeight="300.0" prefWidth="890.0" AnchorPane.leftAnchor="173.0">
+      <TableView fx:id="table_student" layoutX="173.0" layoutY="46.0" prefHeight="300.0" prefWidth="890.0" AnchorPane.leftAnchor="173.0">
         <columns>
-          <TableColumn prefWidth="47.0" text="Id" />
-          <TableColumn prefWidth="94.0" text="Imie" />
-            <TableColumn prefWidth="96.0" text="Nazwisko" />
-            <TableColumn prefWidth="139.0" text="Pesel" />
-            <TableColumn prefWidth="110.0" text="Email" />
-            <TableColumn prefWidth="102.0" text="Data urodzenia" />
-            <TableColumn prefWidth="84.0" text="Nr telefonu" />
-            <TableColumn prefWidth="84.0" text="Login" />
-            <TableColumn prefWidth="50.0" text="Hasło" />
-            <TableColumn prefWidth="77.0" text="Nr albumu" />
+          <TableColumn fx:id="columnImieStudent" prefWidth="94.0" text="Imie" />
+            <TableColumn fx:id="columntNazwiskoStudent" prefWidth="96.0" text="Nazwisko" />
+            <TableColumn fx:id="columnPeselStudent" prefWidth="139.0" text="Pesel" />
+            <TableColumn fx:id="ColumnEmailStudent" prefWidth="110.0" text="Email" />
+            <TableColumn fx:id="ColumnDataurodzeniaStudent" prefWidth="102.0" text="Data urodzenia" />
+            <TableColumn fx:id="ColumnNrtelStudent" prefWidth="84.0" text="Nr telefonu" />
+            <TableColumn fx:id="ColumnLoginStudent" prefWidth="84.0" text="Login" />
+            <TableColumn fx:id="ColumnHasloStudent" prefWidth="89.0" text="Hasło" />
+            <TableColumn fx:id="ColumnAlbumStudent" prefWidth="91.0" text="Nr albumu" />
         </columns>
       </TableView>
       <TextField layoutX="681.0" layoutY="362.0" prefHeight="29.0" prefWidth="159.0" promptText="Szukaj" />
       <HBox layoutX="14.0" layoutY="326.0" prefHeight="40.0" prefWidth="149.0" spacing="2.0">
          <children>
-            <Button fx:id="delete_users" mnemonicParsing="false" onAction="#delete_usersButtonAction" text="Usuń" />
             <Button fx:id="add_users" mnemonicParsing="false" onAction="#add_usersButtonAction" text="Dodaj" />
             <Button fx:id="edit_users" mnemonicParsing="false" onAction="#edit_usersButtonAction" text="Edytuj" />
+            <Button fx:id="delete_users" mnemonicParsing="false" onAction="#delete_usersButtonAction" text="Usuń" />
          </children>
          <padding>
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
@@ -59,21 +57,19 @@
       <TextField layoutX="14.0" layoutY="235.0" prefHeight="29.0" prefWidth="149.0" promptText="Login" />
       <TextField layoutX="14.0" layoutY="264.0" prefHeight="29.0" prefWidth="149.0" promptText="Hasło" />
       <TextField layoutX="14.0" layoutY="293.0" prefHeight="29.0" prefWidth="149.0" promptText="Nr albumu" />
-      <TableView layoutX="173.0" layoutY="401.0" prefHeight="269.0" prefWidth="890.0">
+      <TableView fx:id="table_pracownik" layoutX="173.0" layoutY="401.0" prefHeight="269.0" prefWidth="890.0">
          <columns>
-            <TableColumn prefWidth="47.0" text="Id " />
-            <TableColumn prefWidth="94.0" text="Imie" />
-            <TableColumn prefWidth="96.0" text="Nazwisko" />
-            <TableColumn prefWidth="139.0" text="Pesel" />
-            <TableColumn prefWidth="110.0" text="Email" />
-            <TableColumn prefWidth="102.0" text="Data urodzenia" />
-            <TableColumn prefWidth="84.0" text="Nr telefonu" />
-            <TableColumn prefWidth="84.0" text="Login" />
-            <TableColumn prefWidth="50.0" text="Hasło" />
-            <TableColumn prefWidth="77.0" text="Specjalizacja" />
+            <TableColumn fx:id="columnImiePracownik" prefWidth="94.0" text="Imie" />
+            <TableColumn fx:id="columntNazwiskoPracownik" prefWidth="96.0" text="Nazwisko" />
+            <TableColumn fx:id="columnPeselPracownik" prefWidth="139.0" text="Pesel" />
+            <TableColumn fx:id="ColumnEmailPracownik" prefWidth="110.0" text="Email" />
+            <TableColumn fx:id="ColumnDataurodzeniaPracownik" prefWidth="102.0" text="Data urodzenia" />
+            <TableColumn fx:id="ColumnNrtelPracownik" prefWidth="84.0" text="Nr telefonu" />
+            <TableColumn fx:id="ColumnLoginPracownik" prefWidth="84.0" text="Login" />
+            <TableColumn fx:id="ColumnHasloPracownik" prefWidth="81.0" text="Hasło" />
+            <TableColumn fx:id="Columnspecjalizacja_pPracownik" prefWidth="99.0" text="Specjalizacja" />
          </columns>
       </TableView>
-      <TextField layoutX="14.0" layoutY="401.0" prefHeight="29.0" prefWidth="149.0" promptText="Id" />
       <TextField layoutX="14.0" layoutY="430.0" prefHeight="29.0" prefWidth="149.0" promptText="Imię" />
       <TextField layoutX="14.0" layoutY="459.0" prefHeight="29.0" prefWidth="149.0" promptText="Nazwisko" />
       <TextField layoutX="14.0" layoutY="488.0" prefHeight="29.0" prefWidth="149.0" promptText="Pesel" />
@@ -93,9 +89,9 @@
       <Button fx:id="clear_usersp" layoutX="971.0" layoutY="681.0" mnemonicParsing="false" onAction="#clear_usersButtonAction" text="Wyczyść" />
       <HBox layoutX="14.0" layoutY="693.0" prefHeight="40.0" prefWidth="149.0" spacing="2.0">
          <children>
-            <Button fx:id="delete_usersp" mnemonicParsing="false" onAction="#delete_usersButtonAction" text="Usuń" />
             <Button fx:id="add_usersp" mnemonicParsing="false" onAction="#add_usersButtonAction" text="Dodaj" />
             <Button fx:id="edit_usersp" mnemonicParsing="false" onAction="#edit_usersButtonAction" text="Edytuj" />
+            <Button fx:id="delete_usersp" mnemonicParsing="false" onAction="#delete_usersButtonAction" text="Usuń" />
          </children>
          <padding>
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />

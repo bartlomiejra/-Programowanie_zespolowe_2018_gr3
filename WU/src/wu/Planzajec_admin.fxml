@@ -2,26 +2,37 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Planzajec_adminController">
+<AnchorPane id="AnchorPane" prefHeight="436.0" prefWidth="771.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Planzajec_adminController">
    <children>
-      <TableView layoutX="207.0" layoutY="65.0" prefHeight="343.0" prefWidth="551.0">
+      <ImageView fitHeight="499.0" fitWidth="772.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@planAdmin.jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tableHarmonogramAdmin" layoutX="205.0" layoutY="55.0" prefHeight="343.0" prefWidth="551.0">
          <columns>
-            <TableColumn prefWidth="116.0" text="Id Harmonogramu" />
-            <TableColumn prefWidth="96.0" text="Id przedmiotu" />
-            <TableColumn prefWidth="113.0" text="Id Pracownika" />
-            <TableColumn prefWidth="87.0" text="Data" />
-            <TableColumn prefWidth="136.0" text="Godzina" />
+            <TableColumn fx:id="columnIdprzedmiotuAdmin" prefWidth="70.0" text="Przedmiot" />
+            <TableColumn fx:id="columnIdpracownikaAdmin" prefWidth="93.0" text="Prowadzący" />
+            <TableColumn fx:id="columnDataAdmin" text="Data" />
+            <TableColumn fx:id="columnGodzinaAdmin" minWidth="0.0" prefWidth="86.0" text="Godzina" />
+            <TableColumn fx:id="columnKierunekAdmin" prefWidth="91.0" text="Kierunek" />
+            <TableColumn fx:id="columnRokAdmin" prefWidth="94.0" text="Rok" />
          </columns>
       </TableView>
-      <Text layoutX="17.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zalogowany jako: Administrator" wrappingWidth="184.9999958872795" />
+      <Text fill="WHITE" layoutX="17.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zalogowany jako: Administrator" wrappingWidth="184.9999958872795" />
       <HBox layoutX="545.0" layoutY="15.0" prefHeight="31.0" prefWidth="204.0" spacing="3.0">
          <children>
             <Button fx:id="assesment_menu" mnemonicParsing="false" onAction="#assesmentAdmin_menuActionButton" text="Menu" />
@@ -32,30 +43,35 @@
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
          </padding>
       </HBox>
-      <VBox layoutX="14.0" layoutY="46.0" prefHeight="313.0" prefWidth="191.0" spacing="15.0">
+      <VBox layoutX="14.0" layoutY="46.0" prefHeight="313.0" prefWidth="191.0" spacing="5.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj zajęcia do harmonogramu" wrappingWidth="178.1171875" />
-            <TextField prefHeight="25.0" prefWidth="169.0" promptText="Id przedmiotu" />
-            <TextField prefHeight="25.0" prefWidth="169.0" promptText="Id pracownika" />
-            <TextField prefHeight="25.0" prefWidth="169.0" promptText="data zajeć" />
-            <TextField prefHeight="25.0" prefWidth="169.0" promptText="Godzina zajeć" />
-            <TextField prefHeight="25.0" prefWidth="169.0" promptText="ID specjalizacji" />
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj zajęcia do harmonogramu" wrappingWidth="178.1171875" />
+            <Label text="Id przedmiotu:" textFill="WHITE" />
+            <ComboBox fx:id="cAPrzedmiot" onAction="#comboAdminPrzedmiot" prefWidth="150.0" />
+            <Label text="Id pracownika:" textFill="WHITE" />
+            <ComboBox fx:id="cIPracownik" onAction="#comboAdminPracownik" prefWidth="150.0" />
+            <Label text="Data:" textFill="WHITE" />
+            <DatePicker fx:id="dataAdmin" onAction="#dataAdmin" />
+            <Label text="Godzina zajec:" textFill="WHITE" />
+            <ComboBox fx:id="cGAdmin" onAction="#comboAdminGodziny" prefWidth="150.0" />
+            <Label text="Id specjalizacji:" textFill="WHITE" />
+            <ComboBox fx:id="cISpec" onAction="#comboAdminSpec" prefWidth="150.0" />
             <HBox alignment="TOP_CENTER" prefHeight="46.0" prefWidth="191.0" spacing="10.0" VBox.vgrow="NEVER">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
                <children>
                   <Button fx:id="add_wykladowca" mnemonicParsing="false" onAction="#add_wykladowcaButtonAction" text="Dodaj" />
                   <Button fx:id="edit_wykladowca" mnemonicParsing="false" onAction="#edit_wykladowcaButtonAction" text="Edytuj" />
                   <Button fx:id="delete_wykładowca" mnemonicParsing="false" onAction="#delete_wykładowcaButtonAction" text="Usuń" />
                </children>
-               <padding>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </padding>
             </HBox>
          </children>
          <padding>
             <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
          </padding>
       </VBox>
-      <HBox layoutX="262.0" layoutY="415.0" prefHeight="31.0" prefWidth="376.0" spacing="10.0">
+      <HBox layoutX="259.0" layoutY="403.0" prefHeight="31.0" prefWidth="376.0" spacing="10.0">
          <children>
             <TextField prefHeight="29.0" prefWidth="140.0" promptText="Szukaj" />
             <Button fx:id="search_users" mnemonicParsing="false" onAction="#search_usersButtonAction" text="Szukaj" />

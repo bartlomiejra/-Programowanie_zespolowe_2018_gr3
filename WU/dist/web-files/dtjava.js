@@ -1,5 +1,9 @@
 /*
+<<<<<<< HEAD
  * Copyright (c) 2006, 2016, Oracle and/or its affiliates. All rights reserved.
+=======
+ * Copyright (c) 2006, 2017, Oracle and/or its affiliates. All rights reserved.
+>>>>>>> Student
  * ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 
@@ -171,23 +175,36 @@ var dtjava = function() {
         var edge = false;
         var noActiveX = false;
         edge = (navigator.userAgent.match(/Edge/i) != null);
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> Student
         // If IE and Windows 8 or Windows 8.1 then check for Metro mode
         if(ie && navigator.userAgent.match(/Windows NT 6\.[23]/i) != null) {
             try {
                 // try to create a known ActiveX object
                 new ActiveXObject("htmlfile");
             } catch(e) {
+<<<<<<< HEAD
 		// ActiveX is disabled or not supported. 
                 noActiveX = true;
             } 
+=======
+		// ActiveX is disabled or not supported.
+                noActiveX = true;
+            }
+>>>>>>> Student
         }
 
         if(edge || noActiveX) {
             ie = false;
 	}
 
+<<<<<<< HEAD
 	var noPluginWebBrowser = edge || chrome || noActiveX;
+=======
+>>>>>>> Student
 
         //we are not required to detect everything and can leave values null as
         // long as we later treat them accordingly.
@@ -208,7 +225,11 @@ var dtjava = function() {
         // trim() is not supported by IE10 and before
         if(typeof String.prototype.trim !== 'function') {
            String.prototype.trim = function() {
+<<<<<<< HEAD
                return this.replace(/^\s+|\s+$/g, ''); 
+=======
+               return this.replace(/^\s+|\s+$/g, '');
+>>>>>>> Student
            }
         }
 
@@ -247,7 +268,11 @@ var dtjava = function() {
                 if (m.indexOf("application/x-java-applet;version") != -1 && m.indexOf('=') != -1) {
                     var v = m.substring(m.indexOf('=') + 1);
                     // Use the existing version comparison mechanism to ensure that
+<<<<<<< HEAD
                     // the latest JRE is selected ( "versionA"<="VersionB" equals to 
+=======
+                    // the latest JRE is selected ( "versionA"<="VersionB" equals to
+>>>>>>> Student
                     // versionCheck("versionA+","versionB") returns "true")
                     if(jre == null || versionCheck(jre + "+", v)){
 			jre = v;
@@ -263,7 +288,16 @@ var dtjava = function() {
                 }
             }
         }
+<<<<<<< HEAD
 		
+=======
+
+       var firefox = (navigator.userAgent.match(/Firefox/i) != null);
+
+       var noPluginWebBrowser = edge || chrome || noActiveX || (firefox && (jre == null));
+
+
+>>>>>>> Student
         return {haveDom:dom, wk:webkit, ie:ie, win:windows,
                 linux:linux, mac:mac, op: opera, chrome:chrome, edge:edge,
                 jre:jre, deploy:deploy, fx:fx, noPluginWebBrowser:noPluginWebBrowser,
@@ -282,7 +316,11 @@ var dtjava = function() {
         divTag.id = "messagebox";
         divTag.setAttribute('style', mbStyle);
         divTag.innerHTML = messageBox;
+<<<<<<< HEAD
         document.body.appendChild(divTag);              
+=======
+        document.body.appendChild(divTag);
+>>>>>>> Student
 
     }
     //partially derived from swfobject.js
@@ -390,7 +428,11 @@ var dtjava = function() {
             installNativePlugin();
         }
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> Student
    function getAbsoluteUrl(jnlp){
         var absoluteUrl;
         if(isAbsoluteUrl(jnlp)) {
@@ -407,7 +449,11 @@ var dtjava = function() {
     function launchWithJnlpProtocol(jnlp) {
         document.location="jnlp:"+ getAbsoluteUrl(jnlp);
     }
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> Student
 
     function isAbsoluteUrl(url){
        var protocols = ["http://", "https://", "file://"];
@@ -2743,7 +2789,11 @@ var dtjava = function() {
             }
         }
         if (notNull(platform.jvmargs)) {
+<<<<<<< HEAD
             sparams["java_arguments"] = platform.jvmargs;
+=======
+            sparams["java_arguments"] = listToString(platform.jvmargs);
+>>>>>>> Student
         }
 
         //prepare parameters first

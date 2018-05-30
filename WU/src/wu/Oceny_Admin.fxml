@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Oceny_AdminController">
+   <children>
+      <ImageView fitHeight="452.0" fitWidth="772.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@urz2.jpg" />
+         </image></ImageView>
+      <TableView fx:id="table_oceny" layoutX="240.0" layoutY="65.0" prefHeight="343.0" prefWidth="518.0">
+         <columns>
+            <TableColumn fx:id="columnProwadzacy" prefWidth="148.5" text="Prowadzący" />
+            <TableColumn fx:id="columnPrzedmiot" prefWidth="129.0" text="Przedmiot" />
+            <TableColumn fx:id="columnOcena" prefWidth="99.5" text="Ocena" />
+            <TableColumn fx:id="columnStudent" prefWidth="140.0" text="Student" />
+         </columns>
+      </TableView>
+      <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zalogowany jako: " />
+      <HBox layoutX="450.0" layoutY="15.0" prefHeight="31.0" prefWidth="297.0" spacing="3.0">
+         <children>
+            <Button fx:id="generate_wykladowca" mnemonicParsing="false" onAction="#generate_wykladowcaButtonAction" text="Generuj do PDF" />
+            <Button fx:id="assesment_menu" mnemonicParsing="false" onAction="#assesmentAdmin_menuActionButton" text="Menu" />
+            <Button fx:id="assesment_logout" mnemonicParsing="false" onAction="#assesment_logoutActionButton" prefHeight="23.0" prefWidth="60.0" text="Wyloguj" />
+            <Button fx:id="close_users" mnemonicParsing="false" onAction="#close_usersButtonAction" prefHeight="25.0" prefWidth="64.0" text="Zamknij" />
+         </children>
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
+      </HBox>
+      <VBox layoutX="31.0" layoutY="65.0" prefHeight="313.0" prefWidth="191.0" spacing="5.0">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj Oceny:" wrappingWidth="131.1171875" />
+            <Label text="Prowadzący:" textFill="#fcfcfc" />
+            <ComboBox fx:id="comboProwadzacy" onAction="#comboprowadzacyAction" prefWidth="150.0" />
+            <Label text="Przedmiot:" textFill="WHITE" />
+            <ComboBox fx:id="comboPrzedmiot" onAction="#comboprzedmiotAction" prefWidth="150.0" />
+            <Label text="Ocena:" textFill="WHITE" />
+            <ComboBox fx:id="comboOcena" onAction="#comboocenaAction" prefWidth="150.0" />
+            <Label text="Student:" textFill="WHITE" />
+            <ComboBox fx:id="comboStudent" onAction="#comboAdminStudent" prefWidth="150.0" />
+            <HBox alignment="TOP_CENTER" prefHeight="46.0" prefWidth="191.0" spacing="10.0" VBox.vgrow="NEVER">
+               <children>
+                  <Button fx:id="add_wykladowca" mnemonicParsing="false" onAction="#add_wykladowcaButtonAction" text="Dodaj" />
+                  <Button fx:id="edit_wykladowca" mnemonicParsing="false" onAction="#edit_wykladowcaButtonAction" text="Edytuj" />
+                  <Button fx:id="delete_wykładowca" mnemonicParsing="false" onAction="#delete_wykładowcaButtonAction" text="Usuń" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="2.0" />
+         </padding>
+      </VBox>
+      <HBox layoutX="262.0" layoutY="415.0" prefHeight="31.0" prefWidth="376.0" spacing="10.0">
+         <children>
+            <TextField prefHeight="29.0" prefWidth="140.0" promptText="Szukaj" />
+            <Button fx:id="search_users" mnemonicParsing="false" onAction="#search_usersButtonAction" text="Szukaj" />
+            <Button fx:id="load_users" mnemonicParsing="false" onAction="#load_usersButonAction" text="Wczytaj " />
+            <Button fx:id="clear_users" mnemonicParsing="false" onAction="#clear_usersButtonAction" text="Wyczyść" />
+         </children>
+         <padding>
+            <Insets top="3.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

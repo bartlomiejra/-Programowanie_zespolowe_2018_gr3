@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="757.0" prefWidth="1067.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.usersCRUD_DziekanatwindowController">
+   <children>
+      <TextField layoutX="14.0" layoutY="44.0" prefHeight="29.0" prefWidth="149.0" promptText="Id" />
+      <TextField fx:id="tf_Imie" layoutX="14.0" layoutY="73.0" prefHeight="29.0" prefWidth="149.0" promptText="Imię" />
+      <TextField fx:id="tf_Nazwisko" layoutX="14.0" layoutY="102.0" prefHeight="25.0" prefWidth="149.0" promptText="Nazwisko" />
+      <TextField fx:id="tf_Pesel" layoutX="14.0" layoutY="127.0" prefHeight="29.0" prefWidth="149.0" promptText="Pesel (hasło)" />
+      <TextField fx:id="tf_Email" layoutX="14.0" layoutY="156.0" prefHeight="25.0" prefWidth="149.0" promptText="Email" />
+      <DatePicker fx:id="data_urodzenia" layoutX="14.0" layoutY="181.0" prefHeight="25.0" prefWidth="149.0" promptText="Data urodzenia" />
+      <Text layoutX="2.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj Nowego studenta" textAlignment="CENTER" wrappingWidth="173.67578125">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <TableView fx:id="table_student" layoutX="173.0" layoutY="46.0" prefHeight="300.0" prefWidth="890.0" AnchorPane.leftAnchor="173.0">
+        <columns>
+          <TableColumn fx:id="columnImieStudent" prefWidth="94.0" text="Imie" />
+            <TableColumn fx:id="columntNazwiskoStudent" prefWidth="96.0" text="Nazwisko" />
+            <TableColumn fx:id="columnPeselStudent" prefWidth="139.0" text="Pesel" />
+            <TableColumn fx:id="ColumnEmailStudent" prefWidth="110.0" text="Email" />
+            <TableColumn fx:id="ColumnDataurodzeniaStudent" prefWidth="102.0" text="Data urodzenia" />
+            <TableColumn fx:id="ColumnNrtelStudent" prefWidth="84.0" text="Nr telefonu" />
+            <TableColumn fx:id="ColumnLoginStudent" prefWidth="84.0" text="Login" />
+            <TableColumn fx:id="ColumnHasloStudent" prefWidth="50.0" text="Hasło" />
+            <TableColumn fx:id="ColumnAlbumStudent" prefWidth="130.0" text="Nr albumu" />
+        </columns>
+      </TableView>
+      <TextField layoutX="681.0" layoutY="362.0" prefHeight="29.0" prefWidth="159.0" promptText="Szukaj" />
+      <HBox layoutX="14.0" layoutY="326.0" prefHeight="40.0" prefWidth="149.0" spacing="2.0">
+         <children>
+            <Button fx:id="delete_users" mnemonicParsing="false" onAction="#delete_usersDButtonAction" text="Usuń" />
+            <Button fx:id="add_users" mnemonicParsing="false" onAction="#add_usersDButtonAction" text="Dodaj" />
+            <Button fx:id="edit_users" mnemonicParsing="false" onAction="#edit_usersDButtonAction" text="Edytuj" />
+         </children>
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
+      </HBox>
+      <Button fx:id="close_admin" layoutX="984.0" layoutY="17.0" mnemonicParsing="false" onAction="#close_adminButtonAction" text="Zamknij" />
+      <Button fx:id="logout_admin" layoutX="924.0" layoutY="17.0" mnemonicParsing="false" onAction="#logout_adminButtonAction" text="Wyloguj" />
+      <Button fx:id="usersMenuD" layoutX="868.0" layoutY="17.0" mnemonicParsing="false" onAction="#usersDziekanatMenuActionButton" prefHeight="25.0" prefWidth="60.0" text="Menu" />
+      <Button fx:id="clear_users" layoutX="982.0" layoutY="365.0" mnemonicParsing="false" onAction="#clear_usersDButtonAction" text="Wyczyść" />
+      <Button fx:id="load_users" layoutX="923.0" layoutY="365.0" mnemonicParsing="false" onAction="#load_usersDButonAction" text="Wczytaj " />
+      <Button fx:id="search_users" layoutX="873.0" layoutY="365.0" mnemonicParsing="false" onAction="#search_usersDButtonAction" text="Szukaj" />
+      <TextField fx:id="tf_Numer_tel" layoutX="14.0" layoutY="206.0" prefHeight="29.0" prefWidth="149.0" promptText="Nr telefonu" />
+      <TextField fx:id="tf_login" layoutX="14.0" layoutY="235.0" prefHeight="29.0" prefWidth="149.0" promptText="Login" />
+      <TextField fx:id="tf_haslo" layoutX="14.0" layoutY="264.0" prefHeight="29.0" prefWidth="149.0" promptText="Hasło" />
+      <TextField fx:id="tf_allbumu" layoutX="14.0" layoutY="293.0" prefHeight="29.0" prefWidth="149.0" promptText="Nr albumu" />
+      <TableView fx:id="table_pracownik" layoutX="173.0" layoutY="401.0" prefHeight="269.0" prefWidth="890.0">
+         <columns>
+            <TableColumn fx:id="columnImiePracownik" prefWidth="94.0" text="Imie" />
+            <TableColumn fx:id="columntNazwiskoPracownik" prefWidth="96.0" text="Nazwisko" />
+            <TableColumn fx:id="columnPeselPracownik" prefWidth="139.0" text="Pesel" />
+            <TableColumn fx:id="ColumnEmailPracownik" prefWidth="110.0" text="Email" />
+            <TableColumn fx:id="ColumnDataurodzeniaPracownik" prefWidth="102.0" text="Data urodzenia" />
+            <TableColumn fx:id="ColumnNrtelPracownik" prefWidth="84.0" text="Nr telefonu" />
+            <TableColumn fx:id="ColumnLoginPracownik" prefWidth="84.0" text="Login" />
+            <TableColumn fx:id="ColumnHasloPracownik" prefWidth="50.0" text="Hasło" />
+            <TableColumn fx:id="Columnspecjalizacja_pPracownik" prefWidth="130.0" text="Specjalizacja" />
+         </columns>
+      </TableView>
+      <TextField layoutX="14.0" layoutY="401.0" prefHeight="29.0" prefWidth="149.0" promptText="Id" />
+      <TextField fx:id="tf_Imie_p" layoutX="14.0" layoutY="430.0" prefHeight="29.0" prefWidth="149.0" promptText="Imię" />
+      <TextField fx:id="tf_nazwisko_p" layoutX="14.0" layoutY="459.0" prefHeight="29.0" prefWidth="149.0" promptText="Nazwisko" />
+      <TextField fx:id="tf_pesel_p" layoutX="14.0" layoutY="488.0" prefHeight="29.0" prefWidth="149.0" promptText="Pesel" />
+      <TextField fx:id="tf_email_p" layoutX="14.0" layoutY="517.0" prefHeight="29.0" prefWidth="149.0" promptText="Email" />
+      <TextField fx:id="tf_haslo_p" layoutX="14.0" layoutY="629.0" prefHeight="29.0" prefWidth="149.0" promptText="Hasło" />
+      <TextField fx:id="tf_NumerTel_p" layoutX="14.0" layoutY="571.0" prefHeight="29.0" prefWidth="149.0" promptText="Numer Telefonu" />
+      <TextField fx:id="tf_login_p" layoutX="14.0" layoutY="600.0" prefHeight="29.0" prefWidth="149.0" promptText="Login" />
+      <Text layoutX="2.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj Nowego pracownika" textAlignment="CENTER" wrappingWidth="173.67578125">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <DatePicker fx:id="data_ur_p" layoutX="14.0" layoutY="546.0" prefHeight="25.0" prefWidth="149.0" promptText="Data urodzenia" />
+      <TextField layoutX="681.0" layoutY="678.0" prefHeight="29.0" prefWidth="159.0" promptText="Szukaj" />
+      <Button fx:id="search_usersp" layoutX="860.0" layoutY="681.0" mnemonicParsing="false" onAction="#search_usersButtonActionPrac" text="Szukaj" />
+      <Button fx:id="load_usersp" layoutX="910.0" layoutY="681.0" mnemonicParsing="false" onAction="#load_usersButonActionPrac" text="Wczytaj " />
+      <Button fx:id="clear_usersp" layoutX="971.0" layoutY="681.0" mnemonicParsing="false" onAction="#clear_usersButtonActionPrac" text="Wyczyść" />
+      <HBox layoutX="14.0" layoutY="693.0" prefHeight="40.0" prefWidth="149.0" spacing="2.0">
+         <children>
+            <Button fx:id="delete_usersp" mnemonicParsing="false" onAction="#delete_usersButtonActionPrac" text="Usuń" />
+            <Button fx:id="add_usersp" mnemonicParsing="false" onAction="#add_usersButtonActionPrac" text="Dodaj" />
+            <Button fx:id="edit_usersp" mnemonicParsing="false" onAction="#edit_usersButtonActionPrac" text="Edytuj" />
+         </children>
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
+      </HBox>
+      <TextField fx:id="tf_specjalizacja_p" layoutX="14.0" layoutY="656.0" prefHeight="29.0" prefWidth="149.0" promptText="Specjalizacja" />
+   </children>
+</AnchorPane>

@@ -29,3 +29,25 @@ wszystkich funkcji dostępnych dla pozostałych użytkowników
 ## Schemat UML 
 
 ![alt text](https://github.com/mjochab/-Programowanie_zespolowe_2018_gr3/blob/master/UML.PNG)
+
+
+## Wygląd okna logowania:
+- okno będzie zawierać 2 komunikaty (Label) Login i Hasło
+- przycisk (Button) Zaloguj!
+- jedno pole do wpisywania (TextField) username
+- jedno szyfrowane pole do wpisywania (PasswordField) password
+
+## Wygląd okna studenta:
+- okno zawierać będzie przycisk do wylogowania użytkownika
+- przycisk do sprawdzenia ocen
+- przycisk do sprawdzania Planu zajęc dla zalogowanego studenta
+- przyciska przekierowujący do sceny z danymi osobowymi
+- wyświetlana będzie nazwa użytkownika (imie, nazwisko, nr albumu)
+
+## Wygląd okna Administratora:
+- okno zawierać będzie przycisko do wylogowania
+- przycisk do sekcji Użytkownicy (edycja użytkowników)
+- Przycisk do sekcji Plan zajęć (edycja planów zajęć)
+- Przycisk do sekcji z historią logowań użytkowników
+- przycisk do sekcji Oceny (edycja, przepisywanie ocen)
+

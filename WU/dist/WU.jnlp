@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="WU.jnlp">
   <information>
@@ -19,3 +20,25 @@
   <jfx:javafx-desc  width="800" height="600" main-class="wu.WU"  name="WU" />
   <update check="always"/>
 </jnlp>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="WU.jnlp">
+  <information>
+    <title>WU</title>
+    <vendor>student</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="WU.jar" size="3336354" download="eager" />
+    <jar href="lib\generatorPDF.jar" size="3030" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="843090" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="WU" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="wu.WU"  name="WU" />
+  <update check="always"/>
+</jnlp>
+>>>>>>> Student

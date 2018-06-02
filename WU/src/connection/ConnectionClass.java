@@ -9,11 +9,9 @@ public Connection connection;
 
 
 
-<<<<<<< HEAD
+
         String dbName="sss";
-=======
-        String dbName="wuuuu";
->>>>>>> Student
+
 
 
 

@@ -78,6 +78,7 @@ public class FXMLDocumentController implements Initializable {
         
         if (isValidCredentialsStudent())
             {
+                logged_s();
                 app_stage_student_window.hide(); //optional
                 app_stage_student_window.setScene(student_window_scene);
                 app_stage_student_window.show();  
@@ -327,6 +328,29 @@ public class FXMLDocumentController implements Initializable {
             
 
             String query1 = "Update pracownicy set zalogowany_p='1' where login_p=" + "'" + username + "'";
+            statement.executeUpdate(query1);
+            statement.close();
+
+            connection.close();
+
+        } catch (SQLException e) {
+            System.err.println("Nie można wykonać tego zapytania: " + e.getMessage());
+
+        }
+    }
+    
+    @FXML
+    public void logged_s() throws SQLException {
+        
+        ConnectionClass connectionClass=new ConnectionClass();
+        Connection connection=connectionClass.getConnection();
+        Statement statement=connection.createStatement();  
+        
+        String username = loginTekst.getText();
+        try {
+            
+
+            String query1 = "Update studenci set zalogowany_s='1' where login_s=" + "'" + username + "'";
             statement.executeUpdate(query1);
             statement.close();
 

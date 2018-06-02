@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -37,7 +38,7 @@ public class FXMLDocumentController implements Initializable {
     /**
      * Przyciski, pola oraz labele występujące w klasie
      */
-    
+
     @FXML
     private Label login,haslo,label ;
     @FXML
@@ -84,7 +85,7 @@ public class FXMLDocumentController implements Initializable {
         
          if (isValidCredentialsAdmin())
             {   
-                
+                logged_p();
                 app_stage_admin_window.hide(); //optional
                 app_stage_admin_window.setScene(admin_window_scene);
                 app_stage_admin_window.show();  
@@ -92,12 +93,14 @@ public class FXMLDocumentController implements Initializable {
         
          if (isValidCredentialsWykladowca())
             {
+                logged_p();
                 app_stage_wykladowca_window.hide(); //optional
                 app_stage_wykladowca_window.setScene(wykladowca_window_scene);
                 app_stage_wykladowca_window.show();  
             }
          if (isValidCredentialsDziekanat())
             {
+                logged_p();
                 app_stage_dziekanat_window.hide(); //optional
                 app_stage_dziekanat_window.setScene(dziekanat_window_scene);
                 app_stage_dziekanat_window.show();  
@@ -311,6 +314,28 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-     
+    
+    @FXML
+    public void logged_p() throws SQLException {
+        
+        ConnectionClass connectionClass=new ConnectionClass();
+        Connection connection=connectionClass.getConnection();
+        Statement statement=connection.createStatement();  
+        
+        String username = loginTekst.getText();
+        try {
+            
+
+            String query1 = "Update pracownicy set zalogowany_p='1' where login_p=" + "'" + username + "'";
+            statement.executeUpdate(query1);
+            statement.close();
+
+            connection.close();
+
+        } catch (SQLException e) {
+            System.err.println("Nie można wykonać tego zapytania: " + e.getMessage());
+
+        }
+    }
 
 }

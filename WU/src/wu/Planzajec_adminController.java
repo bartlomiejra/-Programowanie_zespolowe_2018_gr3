@@ -4,7 +4,9 @@ import Connection.ConnectionClass;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
@@ -406,7 +408,13 @@ public class Planzajec_adminController implements Initializable {
             stmt = sesja.createStatement();
             LocalDate value = dataAdmin.getValue();
             stmt.executeUpdate("INSERT INTO `harmonogram` (`id_harmonogramu`, `id_przedmiotu`, `id_pracownika`, `data_zajec_h`, `godzina_h`, `id_specjalizacji`) VALUES (null,'" + cAPrzedmiot.getSelectionModel().getSelectedItem().getid_przedmiotu()+ "','"  + cIPracownik.getSelectionModel().getSelectedItem().getid_pracownika() + "','" + value + "','"  + cGAdmin.getSelectionModel().getSelectedItem().toString() + "','" + cISpec.getSelectionModel().getSelectedItem().getid_specjalizacji() + "');");
-
+            
+            Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("Planzajec_admin.fxml"));
+            Scene assessment_page_scene = new Scene(assessment_page_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.hide();
+            app_stage.setScene(assessment_page_scene);
+            app_stage.show();
             // cIPracownik.getSelectionModel().getSelectedItem().getid_pracownika()
         } catch (Exception e) {
 
@@ -420,8 +428,29 @@ public class Planzajec_adminController implements Initializable {
      * @throws IOException
      */
     @FXML
-    private void delete_wykładowcaButtonAction(ActionEvent event) throws IOException {
+    private void delete_wykładowcaButtonAction(ActionEvent event) throws IOException, SQLException {
 
+        
+        int id = (tableHarmonogramAdmin.getSelectionModel().getSelectedItem().getidHarmonogramu());
+
+        try {
+           
+            PreparedStatement statement = sesja.prepareStatement("DELETE FROM harmonogram WHERE id_harmonogramu = ?");
+            statement.setInt(1, id);
+            statement.executeUpdate();
+            
+            Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("Planzajec_admin.fxml"));
+            Scene assessment_page_scene = new Scene(assessment_page_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.hide();
+            app_stage.setScene(assessment_page_scene);
+            app_stage.show();
+}
+         catch (Exception e) {
+
+        }
+        
+        
     }
 
     /**

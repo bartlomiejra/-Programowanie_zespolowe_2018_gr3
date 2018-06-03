@@ -16,13 +16,13 @@ import javafx.beans.property.StringProperty;
  */
 public class Harmonogram {
 
-    private final IntegerProperty idHarmonogramu;
-    private final StringProperty idPrzedmiotu;
-    private final StringProperty idPracownika;
-    private final StringProperty Data;
-    private final StringProperty Godzina;
-    private final StringProperty kierunek;
-    private final IntegerProperty rok;
+    private  IntegerProperty idHarmonogramu;
+    private  StringProperty idPrzedmiotu;
+    private  StringProperty idPracownika;
+    private  StringProperty Data;
+    private  StringProperty Godzina;
+    private  StringProperty kierunek;
+    private  IntegerProperty rok;
 
     public Harmonogram(Integer idHarmonogramu, String idPrzedmiotu, String idPracownika, String Data, String Godzina, String kierunek, Integer rok) {
         this.idHarmonogramu = new SimpleIntegerProperty(idHarmonogramu);

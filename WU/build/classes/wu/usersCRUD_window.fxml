@@ -70,7 +70,7 @@
             <TableColumn fx:id="Columnspecjalizacja_pPracownik" prefWidth="99.0" text="Specjalizacja" />
          </columns>
       </TableView>
-      <TextField layoutX="14.0" layoutY="430.0" prefHeight="29.0" prefWidth="149.0" promptText="Imię" />
+      <TextField fx:id="pracownikimiebutton" layoutX="14.0" layoutY="430.0" prefHeight="29.0" prefWidth="149.0" promptText="Imię" />
       <TextField layoutX="14.0" layoutY="459.0" prefHeight="29.0" prefWidth="149.0" promptText="Nazwisko" />
       <TextField layoutX="14.0" layoutY="488.0" prefHeight="29.0" prefWidth="149.0" promptText="Pesel" />
       <TextField layoutX="14.0" layoutY="517.0" prefHeight="29.0" prefWidth="149.0" promptText="Email" />

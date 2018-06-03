@@ -14,6 +14,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -326,9 +328,12 @@ public class FXMLDocumentController implements Initializable {
         String username = loginTekst.getText();
         try {
             
-
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
+            LocalDateTime now = LocalDateTime.now();
+            String query2 = "Update pracownicy set ostatnie_logowanie_pracownicy="+"'"+dtf.format(now)+"'"+" where login_p=" + "'" + username + "'";
             String query1 = "Update pracownicy set zalogowany_p='1' where login_p=" + "'" + username + "'";
             statement.executeUpdate(query1);
+            statement.executeUpdate(query2);
             statement.close();
 
             connection.close();
@@ -349,9 +354,12 @@ public class FXMLDocumentController implements Initializable {
         String username = loginTekst.getText();
         try {
             
-
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
+            LocalDateTime now = LocalDateTime.now();
+            String query2 = "Update studenci set ostatnie_logowanie_studenta="+"'"+dtf.format(now)+"'"+" where login_s=" + "'" + username + "'";
             String query1 = "Update studenci set zalogowany_s='1' where login_s=" + "'" + username + "'";
             statement.executeUpdate(query1);
+            statement.executeUpdate(query2);
             statement.close();
 
             connection.close();

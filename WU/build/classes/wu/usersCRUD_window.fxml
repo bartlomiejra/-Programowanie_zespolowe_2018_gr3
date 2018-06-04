@@ -70,19 +70,19 @@
             <TableColumn fx:id="Columnspecjalizacja_pPracownik" prefWidth="99.0" text="Specjalizacja" />
          </columns>
       </TableView>
-      <TextField fx:id="pracownikimiebutton" layoutX="14.0" layoutY="430.0" prefHeight="29.0" prefWidth="149.0" promptText="Imię" />
-      <TextField layoutX="14.0" layoutY="459.0" prefHeight="29.0" prefWidth="149.0" promptText="Nazwisko" />
-      <TextField layoutX="14.0" layoutY="488.0" prefHeight="29.0" prefWidth="149.0" promptText="Pesel" />
-      <TextField layoutX="14.0" layoutY="517.0" prefHeight="29.0" prefWidth="149.0" promptText="Email" />
-      <TextField layoutX="14.0" layoutY="629.0" prefHeight="29.0" prefWidth="149.0" promptText="Hasło" />
-      <TextField layoutX="14.0" layoutY="571.0" prefHeight="29.0" prefWidth="149.0" promptText="Numer Telefonu" />
-      <TextField layoutX="14.0" layoutY="600.0" prefHeight="29.0" prefWidth="149.0" promptText="Login" />
+      <TextField fx:id="tf_Imie_p" layoutX="14.0" layoutY="430.0" prefHeight="29.0" prefWidth="149.0" promptText="Imię" />
+      <TextField fx:id="tf_nazwisko_p" layoutX="14.0" layoutY="459.0" prefHeight="29.0" prefWidth="149.0" promptText="Nazwisko" />
+      <TextField fx:id="tf_pesel_p" layoutX="14.0" layoutY="488.0" prefHeight="29.0" prefWidth="149.0" promptText="Pesel" />
+      <TextField fx:id="tf_email_p" layoutX="14.0" layoutY="517.0" prefHeight="29.0" prefWidth="149.0" promptText="Email" />
+      <TextField fx:id="tf_haslo_p" layoutX="14.0" layoutY="629.0" prefHeight="29.0" prefWidth="149.0" promptText="Hasło" />
+      <TextField fx:id="tf_NumerTel_p" layoutX="14.0" layoutY="571.0" prefHeight="29.0" prefWidth="149.0" promptText="Numer Telefonu" />
+      <TextField fx:id="tf_login_p" layoutX="14.0" layoutY="600.0" prefHeight="29.0" prefWidth="149.0" promptText="Login" />
       <Text layoutX="2.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj Nowego pracownika" textAlignment="CENTER" wrappingWidth="173.67578125">
          <font>
             <Font size="13.0" />
          </font>
       </Text>
-      <DatePicker layoutX="14.0" layoutY="546.0" prefHeight="25.0" prefWidth="149.0" promptText="Data urodzenia" />
+      <DatePicker fx:id="dataAdmin" layoutX="14.0" layoutY="546.0" prefHeight="25.0" prefWidth="149.0" promptText="Data urodzenia" />
       <TextField layoutX="681.0" layoutY="678.0" prefHeight="29.0" prefWidth="159.0" promptText="Szukaj" />
       <Button fx:id="search_usersp" layoutX="860.0" layoutY="681.0" mnemonicParsing="false" onAction="#search_usersButtonAction" text="Szukaj" />
       <Button fx:id="load_usersp" layoutX="910.0" layoutY="681.0" mnemonicParsing="false" onAction="#load_usersButonAction" text="Wczytaj " />
@@ -97,6 +97,6 @@
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
          </padding>
       </HBox>
-      <TextField layoutX="14.0" layoutY="656.0" prefHeight="29.0" prefWidth="149.0" promptText="Specjalizacja" />
+      <TextField fx:id="tf_specjalizacja_p" layoutX="14.0" layoutY="656.0" prefHeight="29.0" prefWidth="149.0" promptText="Specjalizacja" />
    </children>
 </AnchorPane>

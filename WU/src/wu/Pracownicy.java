@@ -29,6 +29,7 @@ public class Pracownicy {
     
 
     public Pracownicy( String imie_p, String nazwisko_p, Integer pesel_p, String email_p, String data_urodzenia_p, Integer nr_tel_p, String login_p,  String haslo_p, String specjalizacja_p) {
+       
         this.imie_p = new SimpleStringProperty(imie_p);
         this.nazwisko_p = new SimpleStringProperty(nazwisko_p);
         this.pesel_p = new SimpleIntegerProperty(pesel_p);
@@ -47,6 +48,9 @@ public class Pracownicy {
         this.nazwisko_p = new SimpleStringProperty(nazwisko_p);
         
 
+    }
+    public Pracownicy( Integer id_pracownika) {
+        this.id_pracownika = new SimpleIntegerProperty(id_pracownika);
     }
     // Konstruktor pracownicy admin 
     public Pracownicy( Integer id_pracownika, String imie_p, String nazwisko_p, Integer pesel_p, String email_p, String data_urodzenia_p, Integer nr_tel_p, String login_p,  String haslo_p, String specjalizacja_p) {

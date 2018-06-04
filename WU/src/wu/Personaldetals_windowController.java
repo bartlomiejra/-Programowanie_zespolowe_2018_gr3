@@ -1,5 +1,5 @@
 package wu;
-
+ 
 import Connection.ConnectionClass;
 import java.io.IOException;
 import java.net.URL;
@@ -22,7 +22,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-
+ 
 /**
  * Klasa obslugujaca dzialanie sceny personaldetails
  *
@@ -67,11 +67,11 @@ public class Personaldetals_windowController implements Initializable {
     @FXML 
     private Label rok_label;
     ConnectionClass PolaczenieDB = new ConnectionClass();
-
+ 
     Connection sesja = PolaczenieDB.getConnection();
     ObservableList<String> DaneList = FXCollections.observableArrayList();
-
-
+ 
+ 
     /**
      * Initializes the controller class.
      */
@@ -80,11 +80,11 @@ public class Personaldetals_windowController implements Initializable {
          
         
         Statement stmt = null;
-
+ 
         try {
             stmt = sesja.createStatement();
             ResultSet rs = stmt.executeQuery("select studenci.id_studenta, imie_s, nazwisko_s, pesel_s, email_s, data_urodzenia_s, nr_tel_s, login_s, haslo_s, nr_albumu_s, kierunek, rok from studenci, specjalizacja_studenci  where zalogowany_s='1' and studenci.id_studenta=specjalizacja_studenci.id_studenta");
-
+ 
             while (rs.next()) {
                 id_label.setText(rs.getString("studenci.id_studenta"));
                 imie_label.setText(rs.getString("imie_s"));
@@ -97,17 +97,17 @@ public class Personaldetals_windowController implements Initializable {
                 rok_label.setText(rs.getString("rok"));              
                 kierunek_label.setText(rs.getString("kierunek"));
                 haslo_label.setText(rs.getString("haslo_s"));
-
+ 
                 
             }
-
+ 
             rs.close();
             
         } catch (SQLException ex) {
             Logger.getLogger(Personaldetals_windowController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-
+ 
+ 
         
         
         
@@ -146,7 +146,7 @@ public class Personaldetals_windowController implements Initializable {
      */
     @FXML
     private void logout_adminButtonAction(ActionEvent event) throws IOException {
-
+ 
         Parent logout_page_parent = FXMLLoader.load(getClass().getResource("Login_window.fxml"));
         Scene logout_page_scene = new Scene(logout_page_parent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

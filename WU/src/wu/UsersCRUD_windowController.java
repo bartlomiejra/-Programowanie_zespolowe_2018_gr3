@@ -122,7 +122,7 @@ public class UsersCRUD_windowController implements Initializable {
     @FXML
     private TextField tf_haslo;
     @FXML
-    private TextField tf_allbumu;
+    private TextField tf_nr_albumu;
     @FXML
     private TableView<?> table_pracownicy;
     @FXML
@@ -140,14 +140,14 @@ public class UsersCRUD_windowController implements Initializable {
     @FXML
     private TextField tf_login_p;
     @FXML
-    private DatePicker data_ur_p;
-    @FXML
     private TextField tf_specjalizacja_p;
     @FXML
     private TableColumn<Student, String> columnDataUrStudent;
-  
-    
-    
+    @FXML
+    private DatePicker data_ur_p;
+    @FXML
+    private DatePicker dataStudent;
+
     ConnectionClass PolaczenieDB = new ConnectionClass();
 
     Connection sesja = PolaczenieDB.getConnection();
@@ -168,7 +168,7 @@ public class UsersCRUD_windowController implements Initializable {
             stmt = sesja.createStatement();
             ResultSet rs = stmt.executeQuery("select imie_s , nazwisko_s, pesel_s, email_s, data_urodzenia_s, nr_tel_s, login_s, haslo_s, nr_albumu_s from studenci;");
             while (rs.next()) {
-                data.add(new Student(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5), rs.getInt(6),rs.getString(7), rs.getString(8), rs.getString(9)));
+                data.add(new Student(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5), rs.getInt(6), rs.getString(7), rs.getString(8), rs.getString(9)));
 
             }
             System.out.println(rs);
@@ -188,8 +188,8 @@ public class UsersCRUD_windowController implements Initializable {
         } catch (Exception e) {
 
         }
-        
-         data1 = FXCollections.observableArrayList();
+
+        data1 = FXCollections.observableArrayList();
         Statement stmt1 = null;
 
         try {
@@ -197,7 +197,7 @@ public class UsersCRUD_windowController implements Initializable {
             stmt1 = sesja.createStatement();
             ResultSet rs = stmt1.executeQuery("select imie_p , nazwisko_p, pesel_p, email_p, data_urodzenia_p, nr_tel_p, login_p, haslo_p,specjalizacja_p from pracownicy;");
             while (rs.next()) {
-                data1.add(new Pracownicy(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5), rs.getInt(6),rs.getString(7), rs.getString(8), rs.getString(9)));
+                data1.add(new Pracownicy(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5), rs.getInt(6), rs.getString(7), rs.getString(8), rs.getString(9)));
 
             }
             System.out.println(rs);
@@ -271,14 +271,14 @@ public class UsersCRUD_windowController implements Initializable {
      */
     @FXML
     private void add_usersButtonActionPrac(ActionEvent event) {
-
-          Statement stmt = null;
+        System.out.println("Dodawanie pracownika");
+        //System.out.println(data_ur_p.getEditor().getText());
 
         try {
-
-            stmt = sesja.createStatement();
             LocalDate value = data_ur_p.getValue();
-            stmt.executeUpdate("INSERT INTO `pracownicy` (`id_pracownika`, `imie_p`, `nazwisko_p`, `pesel_p`, `email_p`, `data_urodzenia_p`,`nr_tel_p`,`login_p`,`haslo_p`,`specjalizacja_p`) VALUES (null,'" + tf_Imie_p.getText() + "','" + tf_nazwisko_p.getText()  + "','" + tf_pesel_p.getText()  + "','" + tf_email_p.getText()+ "','" + value + "','" + tf_NumerTel_p.getText()+ "','" + tf_login_p.getText()+ "','" + tf_haslo_p.getText()+ "','" + tf_specjalizacja_p.getText()+  "')");
+            //Statement stmt = sesja.createStatement();
+            //System.out.println(data_ur_p.getEditor().getText());
+            sesja.createStatement().executeUpdate("INSERT INTO pracownicy (id_pracownika, imie_p, nazwisko_p, pesel_p, email_p, data_urodzenia_p,nr_tel_p,login_p,haslo_p,specjalizacja_p,ostatnie_logowanie_pracownicy,zalogowany_p) VALUES (null,'" + tf_Imie_p.getText() + "','" + tf_nazwisko_p.getText() + "','" + tf_pesel_p.getText() + "','" + tf_email_p.getText() + "','" + value + "','" + tf_NumerTel_p.getText() + "','" + tf_login_p.getText() + "','" + tf_haslo_p.getText() + "','" + tf_specjalizacja_p.getText() + "',null,null);");
 
             Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("usersCRUD_window.fxml"));
             Scene assessment_page_scene = new Scene(assessment_page_parent);
@@ -341,32 +341,52 @@ public class UsersCRUD_windowController implements Initializable {
     private void clear_usersButtonAction(ActionEvent event) {
 
     }
-    
+
     @FXML
     private void search_usersButtonActionPrac(ActionEvent event) {
 
     }
-    
+
     @FXML
     private void load_usersButonActionPrac(ActionEvent event) {
 
     }
-    
+
     @FXML
     private void clear_usersButtonActionPrac(ActionEvent event) {
 
     }
-    
+
     @FXML
+    
+    //dodawanie studenta
     private void add_usersButtonAction(ActionEvent event) {
+        System.out.println("Dodawanie studenta");
+        
+        try {
+            LocalDate value = dataStudent.getValue();
+            //Statement stmt = sesja.createStatement();
+            //System.out.println(data_ur_p.getEditor().getText());
+            sesja.createStatement().executeUpdate("INSERT INTO studenci (id_studenta, imie_s, nazwisko_s, pesel_s, email_s, data_urodzenia_s,nr_tel_s,login_s,haslo_s,nr_albumu_s,ostatnie_logowanie_studenta,zalogowany_s) VALUES (null,'" + tf_Imie.getText() + "','" + tf_Nazwisko.getText() + "','" + tf_Pesel.getText() + "','" + tf_Email.getText() + "','" + value + "','" + tf_Numer_tel.getText() + "','" + tf_login.getText() + "','" + tf_haslo.getText() + "','" + tf_nr_albumu.getText() + "',null,null);");
+                                                // INSERT INTO studenci (`id_studenta`,`imie_s`,`nazwisko_s`,`pesel_s`,`email_s`,`data_urodzenia_s`,`nr_tel_s`,`login_s`,`haslo_s`,`nr_albumu_s`,`ostatnie_logowanie_studenta`,`zalogowany_s`) VALUES (null,'ghjghgjg"','hjgjghj','43242','sdadasd','567567','6576767','fghhgfh','jhkhk','546 ',null,null)
+            Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("usersCRUD_window.fxml"));
+            Scene assessment_page_scene = new Scene(assessment_page_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.hide();
+            app_stage.setScene(assessment_page_scene);
+            app_stage.show();
+            // cIPracownik.getSelectionModel().getSelectedItem().getid_pracownika()
+        } catch (Exception e) {
+
+        }
 
     }
-    
+
     @FXML
     private void edit_usersButtonActionPrac(ActionEvent event) {
 
     }
-    
+
     @FXML
     private void delete_usersButtonActionPrac(ActionEvent event) {
 

@@ -11,12 +11,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="757.0" prefWidth="1067.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.UsersCRUD_windowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="757.0" prefWidth="1067.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.UsersCRUD_windowController">
    <children>
-      <TextField fx:id="tf_Imie_s" layoutX="14.0" layoutY="73.0" prefHeight="29.0" prefWidth="149.0" promptText="Imię" />
-      <TextField fx:id="tf_Nazwisko_s" layoutX="14.0" layoutY="102.0" prefHeight="25.0" prefWidth="149.0" promptText="Nazwisko" />
-      <TextField fx:id="tf_Pesel_s" layoutX="14.0" layoutY="127.0" prefHeight="29.0" prefWidth="149.0" promptText="Pesel (hasło)" />
-      <TextField fx:id="tf_Email_s" layoutX="14.0" layoutY="156.0" prefHeight="25.0" prefWidth="149.0" promptText="Email" />
+      <TextField fx:id="tf_Imie" layoutX="14.0" layoutY="73.0" prefHeight="29.0" prefWidth="149.0" promptText="Imię" />
+      <TextField fx:id="tf_Nazwisko" layoutX="14.0" layoutY="102.0" prefHeight="25.0" prefWidth="149.0" promptText="Nazwisko" />
+      <TextField fx:id="tf_Pesel" layoutX="14.0" layoutY="127.0" prefHeight="29.0" prefWidth="149.0" promptText="Pesel (hasło)" />
+      <TextField fx:id="tf_Email" layoutX="14.0" layoutY="156.0" prefHeight="25.0" prefWidth="149.0" promptText="Email" />
       <DatePicker fx:id="dataStudent" layoutX="14.0" layoutY="181.0" prefHeight="25.0" prefWidth="149.0" promptText="Data urodzenia" />
       <Text layoutX="2.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj Nowego studenta" textAlignment="CENTER" wrappingWidth="173.67578125">
          <font>
@@ -53,9 +53,9 @@
       <Button fx:id="clear_users" layoutX="982.0" layoutY="365.0" mnemonicParsing="false" onAction="#clear_usersButtonAction" text="Wyczyść" />
       <Button fx:id="load_users" layoutX="923.0" layoutY="365.0" mnemonicParsing="false" onAction="#load_usersButonAction" text="Wczytaj " />
       <Button fx:id="search_users" layoutX="873.0" layoutY="365.0" mnemonicParsing="false" onAction="#search_usersButtonAction" text="Szukaj" />
-      <TextField fx:id="tf_Numer_tel_s" layoutX="14.0" layoutY="206.0" prefHeight="29.0" prefWidth="149.0" promptText="Nr telefonu" />
-      <TextField fx:id="tf_login_s" layoutX="14.0" layoutY="235.0" prefHeight="29.0" prefWidth="149.0" promptText="Login" />
-      <TextField fx:id="tf_haslo_s" layoutX="14.0" layoutY="264.0" prefHeight="29.0" prefWidth="149.0" promptText="Hasło" />
+      <TextField fx:id="tf_Numer_tel" layoutX="14.0" layoutY="206.0" prefHeight="29.0" prefWidth="149.0" promptText="Nr telefonu" />
+      <TextField fx:id="tf_login" layoutX="14.0" layoutY="235.0" prefHeight="29.0" prefWidth="149.0" promptText="Login" />
+      <TextField fx:id="tf_haslo" layoutX="14.0" layoutY="264.0" prefHeight="29.0" prefWidth="149.0" promptText="Hasło" />
       <TextField fx:id="tf_nr_albumu" layoutX="14.0" layoutY="293.0" prefHeight="29.0" prefWidth="149.0" promptText="Nr albumu" />
       <TableView fx:id="table_pracownik" layoutX="173.0" layoutY="401.0" prefHeight="269.0" prefWidth="890.0">
          <columns>
@@ -82,7 +82,7 @@
             <Font size="13.0" />
          </font>
       </Text>
-      <DatePicker fx:id="dataAdmin" layoutX="14.0" layoutY="546.0" prefHeight="25.0" prefWidth="149.0" promptText="Data urodzenia" />
+      <DatePicker fx:id="data_ur_p" layoutX="14.0" layoutY="546.0" prefHeight="25.0" prefWidth="149.0" promptText="Data urodzenia" />
       <TextField layoutX="681.0" layoutY="678.0" prefHeight="29.0" prefWidth="159.0" promptText="Szukaj" />
       <Button fx:id="search_usersp" layoutX="860.0" layoutY="681.0" mnemonicParsing="false" onAction="#search_usersButtonActionPrac" text="Szukaj" />
       <Button fx:id="load_usersp" layoutX="910.0" layoutY="681.0" mnemonicParsing="false" onAction="#load_usersButonActionPrac" text="Wczytaj " />

@@ -4,6 +4,7 @@ import Connection.ConnectionClass;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDate;
@@ -389,7 +390,24 @@ public class UsersCRUD_windowController implements Initializable {
 
     @FXML
     private void delete_usersButtonActionPrac(ActionEvent event) {
+        
+        int id = (table_pracownik.getSelectionModel().getSelectedItem().getid_pracownika());
 
+        try {
+
+            PreparedStatement statement = sesja.prepareStatement("DELETE FROM pracownicy WHERE id_pracownika = ?");
+            statement.setInt(1, id);
+            statement.executeUpdate();
+
+            Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("usersCRUD_window.fxml"));
+            Scene assessment_page_scene = new Scene(assessment_page_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.hide();
+            app_stage.setScene(assessment_page_scene);
+            app_stage.show();
+        } catch (Exception e) {
+
+        }
     }
 
 }

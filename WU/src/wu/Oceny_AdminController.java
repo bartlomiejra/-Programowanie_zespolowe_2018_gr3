@@ -123,11 +123,11 @@ public class Oceny_AdminController implements Initializable {
 
             stmt = sesja.createStatement();
 
-            ResultSet rs = stmt.executeQuery("Select CONCAT(imie_s,\" \",nazwisko_s) as student,CONCAT(imie_p,\" \",nazwisko_p) as prowadzacy ,ocena, nazwa_przedmiotu from oceny,pracownicy,przedmioty,studenci where oceny.id_przedmiotu=przedmioty.id_przedmiotu and oceny.id_studenta=studenci.id_studenta and oceny.id_pracownika=pracownicy.id_pracownika;");
+            ResultSet rs = stmt.executeQuery("Select id_oceny,CONCAT(imie_s,\" \",nazwisko_s) as student,CONCAT(imie_p,\" \",nazwisko_p) as prowadzacy ,ocena, nazwa_przedmiotu from oceny,pracownicy,przedmioty,studenci where oceny.id_przedmiotu=przedmioty.id_przedmiotu and oceny.id_studenta=studenci.id_studenta and oceny.id_pracownika=pracownicy.id_pracownika;");
 
             //System.out.println("Dane:"+ rs.getString(2));
             while (rs.next()) {
-                data.add(new Oceny(rs.getInt(3), rs.getString(4), rs.getString(1), rs.getString(2)));
+                data.add(new Oceny(rs.getInt(1),rs.getInt(4), rs.getString(5), rs.getString(2), rs.getString(3)));
 
             }
 

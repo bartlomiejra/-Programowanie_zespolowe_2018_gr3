@@ -61,7 +61,7 @@ public class Oceny_DziekanatController implements Initializable {
 
             //System.out.println("Dane:"+ rs.getString(2));
             while (rs.next()) {
-                data.add(new Oceny(rs.getInt(3), rs.getString(4), rs.getString(1), rs.getString(2)));
+               // data.add(new Oceny(rs.getInt(3), rs.getString(4), rs.getString(1), rs.getString(2)));
 
             }
 

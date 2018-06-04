@@ -97,9 +97,7 @@ public class Oceny_AdminController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
         data = FXCollections.observableArrayList();
-        ObservableList<String> ProwadzacyList = FXCollections.observableArrayList();
-        ObservableList<String> przedmiotList = FXCollections.observableArrayList();
-        ObservableList<String> ocenyList = FXCollections.observableArrayList();
+        
         Statement stmt = null;
 
         try {
@@ -124,111 +122,23 @@ public class Oceny_AdminController implements Initializable {
         } catch (Exception e) {
 
         }
-
-        String prowadzacyFullName = " select CONCAT(imie_p,\" \",nazwisko_p) as prowadzacy from pracownicy ";
-
-        try {
-            
-            stmt = sesja.createStatement();
-            ResultSet rs = stmt.executeQuery(prowadzacyFullName);
-
-            while (rs.next()) {
-
-                ProwadzacyList.add(rs.getString("prowadzacy"));
-                
-                comboProwadzacy.setItems(ProwadzacyList);
-
-            }
-
-            rs.close();
- 
-
-        } catch (SQLException ex) {
-            System.err.println("ERR" + ex);
-        }
-        
-        String przedmiot = "select nazwa_przedmiotu from przedmioty";
-
-        try {
-            
-            stmt = sesja.createStatement();
-            ResultSet rs = stmt.executeQuery(przedmiot);
-            
-
-            while (rs.next()) {
-                
-                
-                przedmiotList.add(rs.getString("nazwa_przedmiotu")); 
-                comboPrzedmiot.setItems(przedmiotList);
-
-            }
-            rs.close();
-            
-        
-            
-        } catch (SQLException ex) {
-            System.err.println("ERR" + ex);
-        }
-        
-        
-                       
-                ocenyList.add("2");
-                ocenyList.add("3");
-                ocenyList.add("4");
-                ocenyList.add("5");
-                comboOcena.setItems(ocenyList);
-
-                
-        try {
-            
-            stmt = sesja.createStatement();
-            ResultSet rs = stmt.executeQuery(przedmiot);
-            
-
-            while (rs.next()) {
-                
-                
-                przedmiotList.add(rs.getString("nazwa_przedmiotu")); 
-                comboPrzedmiot.setItems(przedmiotList);
-
-            }
-            rs.close();
-            
-        
-            
-        } catch (SQLException ex) {
-            System.err.println("ERR" + ex);
-        }
-//          tf_student.setText("Przykladowy Student");
-//          String fullname = tf_student.getText();
-//          String[] parts = fullname.split(" ");
-//          String name = parts[0];
-//          String surname = parts[1];
-//          System.out.println(name);
-//          System.out.println(surname);
-          
-  
-
     }
     
     @FXML
     private void comboprzedmiotAction(ActionEvent event) throws IOException {
         
-        int id = comboPrzedmiot.getSelectionModel().selectedIndexProperty().getValue()+1;
-         System.out.println(id);             
+                   
     }
     @FXML
     private void comboprowadzacyAction(ActionEvent event) throws IOException {
         
-        int id = comboProwadzacy.getSelectionModel().selectedIndexProperty().getValue()+1;
-         System.out.println(id);             
+                   
     }
     @FXML
     private void comboocenaAction(ActionEvent event) throws IOException {
         
         
-        Object ocena = comboOcena.getValue();
-        System.out.println(ocena);
+        
                       
     }
     
@@ -370,54 +280,7 @@ public class Oceny_AdminController implements Initializable {
     @FXML
     private void add_wykladowcaButtonAction(ActionEvent event) throws IOException {
         
-        String fullname = tf_student.getText();
-        String[] parts = fullname.split(" ");
-        String name = parts[0];
-        String surname = parts[1];
-        System.out.println(name);
-        System.out.println(surname);
         
-        Statement stmt = null;
-         try{
-        int id = comboPrzedmiot.getSelectionModel().selectedIndexProperty().getValue()+1;
-        int id2 = comboPrzedmiot.getSelectionModel().selectedIndexProperty().getValue()+1;
-
-        stmt = sesja.createStatement();
-        
-        
-          
-//        String query = "INSERT INTO OCENY (id_przedmiotu,id_studenta,id_pracownika,ocena) VALUES (" + "'" + comboPrzedmiot.getSelectionModel().selectedIndexProperty().getValue()+1+ 
-//                "'," + "'" + "SELECT id_studenta FROM studenci WHERE CONCAT (imie_s=name,' ',nazwisko_s=surname)"  + "'," + "'" + comboProwadzacy.getSelectionModel().selectedIndexProperty().getValue()+1 + "'," + "'" +
-//                comboOcena.getValue() + "');";
-        
-        
-          
-          String query=("INSERT INTO OCENY (id_przedmiotu,id_studenta,id_pracownika,ocena) VALUES (" + "'" + id+ 
-                "'," + "'" + "SELECT id_studenta FROM studenci WHERE CONCAT (imie_s= "+" '"+name+"'"+",' ',nazwisko_s="+"'"+surname+"'"+")"+ "," + "'" + id2 + "'," + "'" +
-                comboOcena.getValue() + "');");
-          
-          insertStatement(query);
-        
-
-        
-        Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("Oceny_Admin.fxml"));
-        Scene assessment_page_scene = new Scene(assessment_page_parent);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.hide();
-        app_stage.setScene(assessment_page_scene);
-        app_stage.show();
-        }
-        catch (IOException e)
-        {
-        Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("Oceny_Admin.fxml"));
-        Scene assessment_page_scene = new Scene(assessment_page_parent);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.hide();
-        app_stage.setScene(assessment_page_scene);
-        app_stage.show();
-        } catch (SQLException ex) {
-            Logger.getLogger(Oceny_AdminController.class.getName()).log(Level.SEVERE, null, ex);
-        }
 
     }
     private void insertStatement(String insert_query){

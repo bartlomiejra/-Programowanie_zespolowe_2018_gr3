@@ -341,5 +341,35 @@ public class UsersCRUD_windowController implements Initializable {
     private void clear_usersButtonAction(ActionEvent event) {
 
     }
+    
+    @FXML
+    private void search_usersButtonActionPrac(ActionEvent event) {
+
+    }
+    
+    @FXML
+    private void load_usersButonActionPrac(ActionEvent event) {
+
+    }
+    
+    @FXML
+    private void clear_usersButtonActionPrac(ActionEvent event) {
+
+    }
+    
+    @FXML
+    private void add_usersButtonActionPrac(ActionEvent event) {
+
+    }
+    
+    @FXML
+    private void edit_usersButtonActionPrac(ActionEvent event) {
+
+    }
+    
+    @FXML
+    private void delete_usersButtonActionPrac(ActionEvent event) {
+
+    }
 
 }

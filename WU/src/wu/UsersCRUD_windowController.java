@@ -270,7 +270,7 @@ public class UsersCRUD_windowController implements Initializable {
      * @param event
      */
     @FXML
-    private void add_usersButtonAction(ActionEvent event) {
+    private void add_usersButtonActionPrac(ActionEvent event) {
 
           Statement stmt = null;
 
@@ -278,7 +278,7 @@ public class UsersCRUD_windowController implements Initializable {
 
             stmt = sesja.createStatement();
             LocalDate value = data_ur_p.getValue();
-            stmt.executeUpdate("INSERT INTO `pracownicy` (`id_pracownika`, `imie_p`, `nazwisko_p`, `pesel_p`, `email_p`, `data_urodzenia_p`,`nr_tel_p`,`login_p`,`haslo_p`,`specjalizacja_p`) VALUES (null,'" + tf_Imie_p.getText() + "','" + tf_nazwisko_p.getText()  + "','" + tf_pesel_p.getText()  + "','" + tf_email_p.getText()+ "','" + value + "','" + tf_NumerTel_p.getText()+ "','" + tf_login_p.getText()+ "','" + tf_haslo_p.getText()+ "','" + tf_specjalizacja_p.getText()+  "');");
+            stmt.executeUpdate("INSERT INTO `pracownicy` (`id_pracownika`, `imie_p`, `nazwisko_p`, `pesel_p`, `email_p`, `data_urodzenia_p`,`nr_tel_p`,`login_p`,`haslo_p`,`specjalizacja_p`) VALUES (null,'" + tf_Imie_p.getText() + "','" + tf_nazwisko_p.getText()  + "','" + tf_pesel_p.getText()  + "','" + tf_email_p.getText()+ "','" + value + "','" + tf_NumerTel_p.getText()+ "','" + tf_login_p.getText()+ "','" + tf_haslo_p.getText()+ "','" + tf_specjalizacja_p.getText()+  "')");
 
             Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("usersCRUD_window.fxml"));
             Scene assessment_page_scene = new Scene(assessment_page_parent);
@@ -358,7 +358,7 @@ public class UsersCRUD_windowController implements Initializable {
     }
     
     @FXML
-    private void add_usersButtonActionPrac(ActionEvent event) {
+    private void add_usersButtonAction(ActionEvent event) {
 
     }
     

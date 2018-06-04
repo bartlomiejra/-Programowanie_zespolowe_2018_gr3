@@ -11,6 +11,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,7 +35,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
-
 
 /**
  * Klasa obsługująca oceny, scena admina
@@ -84,19 +84,18 @@ public class Oceny_AdminController implements Initializable {
     @FXML
     private Button clear_users;
     @FXML
-    private ComboBox comboProwadzacy;
+    private ComboBox<Pracownicy> comboProwadzacy;
     @FXML
-    private ComboBox comboPrzedmiot;
+    private ComboBox<Przedmioty> comboPrzedmiot;
     @FXML
     private ComboBox comboOcena;
     @FXML
-    private ComboBox comboStudent;
-    
-    
+    private ComboBox<Student> comboStudent;
+
     ObservableList<Pracownicy> dataPracownicy;
     ObservableList<Przedmioty> dataPrzedmioty;
     ObservableList<Student> dataStudent;
-    
+
     ConnectionClass PolaczenieDB = new ConnectionClass();
 
     Connection sesja = PolaczenieDB.getConnection();
@@ -105,14 +104,19 @@ public class Oceny_AdminController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        
+        // combox oceny
+        comboOcena.getItems().addAll(
+                "2",
+                "3",
+                "4",
+                "5"
+        );
         dataPracownicy = FXCollections.observableArrayList();
         dataPrzedmioty = FXCollections.observableArrayList();
         dataStudent = FXCollections.observableArrayList();
-        
-        
+
         data = FXCollections.observableArrayList();
-        
+
         Statement stmt = null;
 
         try {
@@ -137,9 +141,8 @@ public class Oceny_AdminController implements Initializable {
         } catch (Exception e) {
 
         }
-        
-         // wyswietlanie combox pracownicy
 
+        // wyswietlanie combox pracownicy
         Statement stmt2 = null;
 
         try {
@@ -201,7 +204,7 @@ public class Oceny_AdminController implements Initializable {
         });
 
         //KONIEC pracownicy
-         // wyswietlanie combox przedmioty
+        // wyswietlanie combox przedmioty
         Statement stmt3 = null;
 
         try {
@@ -263,7 +266,7 @@ public class Oceny_AdminController implements Initializable {
         });
 
         //KONIEC przedmioty
-         // wyswietlanie combox student
+        // wyswietlanie combox student
         Statement stmt4 = null;
 
         try {
@@ -298,7 +301,7 @@ public class Oceny_AdminController implements Initializable {
                         super.updateItem(t, bln);
 
                         if (t != null) {
-                          setText(t.getimie_s() + " " + t.getnazwisko_s());
+                            setText(t.getimie_s() + " " + t.getnazwisko_s());
                         } else {
                             setText(null);
                         }
@@ -314,7 +317,7 @@ public class Oceny_AdminController implements Initializable {
                 if (object == null) {
                     return "";
                 } else {
-                  return object.getimie_s() + " " + object.getnazwisko_s();
+                    return object.getimie_s() + " " + object.getnazwisko_s();
                 }
             }
 
@@ -325,34 +328,26 @@ public class Oceny_AdminController implements Initializable {
         });
 
         //KONIEC student
-        
-        
-        
-        
-        
     }
-    
+
     @FXML
     private void comboprzedmiotAction(ActionEvent event) throws IOException {
-        
-                   
+
     }
+
     @FXML
     private void comboprowadzacyAction(ActionEvent event) throws IOException {
-        
-                   
+
     }
+
     @FXML
     private void comboocenaAction(ActionEvent event) throws IOException {
-        
-        
-        
-                      
+
     }
-    
+
     @FXML
-    private void comboAdminStudent(ActionEvent event) throws IOException {   
-                      
+    private void comboAdminStudent(ActionEvent event) throws IOException {
+
     }
 
     /**
@@ -406,23 +401,21 @@ public class Oceny_AdminController implements Initializable {
      * @param event
      * @throws IOException
      */
-     @FXML  
-    private void generate_wykladowcaButtonAction(ActionEvent event) throws IOException, ClassNotFoundException, SQLException, DocumentException{
-        
-        Raporty rap=new Raporty();
-        Raporty.rs=Raporty.executeDefaultQuery();
+    @FXML
+    private void generate_wykladowcaButtonAction(ActionEvent event) throws IOException, ClassNotFoundException, SQLException, DocumentException {
+
+        Raporty rap = new Raporty();
+        Raporty.rs = Raporty.executeDefaultQuery();
         Raporty.rs.first();
         Raporty.savePdf();
-        Raporty.document=Raporty.setDocumentInfo( Raporty.document, "autor", "title ", "language", "creator") ;
+        Raporty.document = Raporty.setDocumentInfo(Raporty.document, "autor", "title ", "language", "creator");
         Raporty.document.open();
         Raporty.document.add(Raporty.setHeaderTab());
-        Raporty.document.add(Raporty.setInfoTable(Raporty.setInfoCell("Nadawca", "Grupa ", "Numer 3") ,Raporty.setInfoCell("Odbiorca","UR", "Wydział Matematyczno - Przyrodniczy")));
+        Raporty.document.add(Raporty.setInfoTable(Raporty.setInfoCell("Nadawca", "Grupa ", "Numer 3"), Raporty.setInfoCell("Odbiorca", "UR", "Wydział Matematyczno - Przyrodniczy")));
         Raporty.document.add(Raporty.setItemTable());
         Raporty.document.close();
 
-      
     }
-
 
     /**
      * Metoda wyszukująca użytkowników
@@ -489,22 +482,42 @@ public class Oceny_AdminController implements Initializable {
     private void add_wykladowcaButtonAction(ActionEvent event) throws IOException {
         
         
+         Statement stmt = null;
 
-    }
-    private void insertStatement(String insert_query){
+        try {
+
+            stmt = sesja.createStatement();
+ 
+            stmt.executeUpdate("INSERT INTO `oceny` (`id_oceny`, `id_przedmiotu`, `id_studenta`, `id_pracownika`,`ocena`) VALUES (null,'" + comboPrzedmiot.getSelectionModel().getSelectedItem().getid_przedmiotu() + "','" + comboStudent.getSelectionModel().getSelectedItem().getid_studenta() + "','" + comboProwadzacy.getSelectionModel().getSelectedItem().getid_pracownika() + "','" + comboOcena.getSelectionModel().getSelectedItem().toString() +  "');");
+
+            Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("Oceny_Admin.fxml"));
+            Scene assessment_page_scene = new Scene(assessment_page_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.hide();
+            app_stage.setScene(assessment_page_scene);
+            app_stage.show();
+            // cIPracownik.getSelectionModel().getSelectedItem().getid_pracownika()
+        } catch (Exception e) {
+
+        }
         
-    Connection c = null;
-    Statement stmt = null;
-    try {
-      
-      stmt = sesja.createStatement(); 
-      
-      stmt.executeUpdate(insert_query);
-      stmt.close();
-    }catch ( Exception e ) {
-                System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-                 
+        
+    }
+
+    private void insertStatement(String insert_query) {
+
+        Connection c = null;
+        Statement stmt = null;
+        try {
+
+            stmt = sesja.createStatement();
+
+            stmt.executeUpdate(insert_query);
+            stmt.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+
         }
 
-}
+    }
 }

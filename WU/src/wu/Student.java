@@ -16,6 +16,7 @@ import javafx.beans.property.StringProperty;
  */
 public class Student {
 
+    private IntegerProperty id_studenta;
     private StringProperty imie_s;
     private StringProperty nazwisko_s;
     private IntegerProperty pesel_s;
@@ -26,8 +27,8 @@ public class Student {
     private StringProperty haslo_s;
     private StringProperty nr_albumu_s;
 
-    public Student(String imie_s, String nazwisko_s, Integer pesel_s, String email_s, String data_urodzenia_s, Integer nr_tel_s, String login_s, String haslo_s, String nr_albumu_s) {
-
+    public Student(Integer id_studenta, String imie_s, String nazwisko_s, Integer pesel_s, String email_s, String data_urodzenia_s, Integer nr_tel_s, String login_s, String haslo_s, String nr_albumu_s) {
+        this.id_studenta = new SimpleIntegerProperty(id_studenta);
         this.imie_s = new SimpleStringProperty(imie_s);
         this.nazwisko_s = new SimpleStringProperty(nazwisko_s);
         this.pesel_s = new SimpleIntegerProperty(pesel_s);
@@ -38,6 +39,16 @@ public class Student {
         this.haslo_s = new SimpleStringProperty(haslo_s);
         this.nr_albumu_s = new SimpleStringProperty(nr_albumu_s);
 
+    }
+
+    public Student(Integer id_studenta, String imie_s, String nazwisko_s) {
+        this.id_studenta = new SimpleIntegerProperty(id_studenta);
+        this.imie_s = new SimpleStringProperty(imie_s);
+        this.nazwisko_s = new SimpleStringProperty(nazwisko_s);
+    }
+
+    public Integer getid_studenta() {
+        return id_studenta.get();
     }
 
     public String getimie_s() {
@@ -76,6 +87,10 @@ public class Student {
         return nr_albumu_s.get();
     }
 
+    public IntegerProperty pesel_sProperty() {
+        return pesel_s;
+    }
+
     public StringProperty imie_sProperty() {
         return imie_s;
     }
@@ -84,8 +99,8 @@ public class Student {
         return nazwisko_s;
     }
 
-    public IntegerProperty pesel_sProperty() {
-        return pesel_s;
+    public IntegerProperty id_studentaProperty() {
+        return id_studenta;
     }
 
     public StringProperty email_sProperty() {

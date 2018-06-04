@@ -90,7 +90,7 @@ public class Oceny_AdminController implements Initializable {
     @FXML
     private ComboBox comboOcena;
     @FXML
-    private ComboBox comboAdminStudent;
+    private ComboBox comboStudent;
     
     
     ObservableList<Pracownicy> dataPracownicy;
@@ -263,7 +263,68 @@ public class Oceny_AdminController implements Initializable {
         });
 
         //KONIEC przedmioty
-        
+         // wyswietlanie combox student
+        Statement stmt4 = null;
+
+        try {
+
+            stmt4 = sesja.createStatement();
+
+            ResultSet rs = stmt4.executeQuery("SELECT * from studenci;");
+
+            //System.out.println("Dane:"+ rs.getString(2));
+            while (rs.next()) {
+
+                dataStudent.add(new Student(rs.getInt(1), rs.getString(2), rs.getString(3)));
+
+            }
+
+        } catch (Exception e) {
+
+        }
+
+        comboStudent.setItems(null);
+        comboStudent.setItems(dataStudent);
+
+        comboStudent.setCellFactory(new Callback<ListView<Student>, ListCell<Student>>() {
+
+            @Override
+            public ListCell<Student> call(ListView<Student> p) {
+
+                final ListCell<Student> cell = new ListCell<Student>() {
+
+                    @Override
+                    protected void updateItem(Student t, boolean bln) {
+                        super.updateItem(t, bln);
+
+                        if (t != null) {
+                          setText(t.getimie_s() + " " + t.getnazwisko_s());
+                        } else {
+                            setText(null);
+                        }
+                    }
+                };
+                return cell;
+            }
+        });
+
+        comboStudent.setConverter(new StringConverter<Student>() {
+            @Override
+            public String toString(Student object) {
+                if (object == null) {
+                    return "";
+                } else {
+                  return object.getimie_s() + " " + object.getnazwisko_s();
+                }
+            }
+
+            @Override
+            public Student fromString(String string) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        });
+
+        //KONIEC student
         
         
         

@@ -166,9 +166,9 @@ public class UsersCRUD_windowController implements Initializable {
         try {
 
             stmt = sesja.createStatement();
-            ResultSet rs = stmt.executeQuery("select imie_s , nazwisko_s, pesel_s, email_s, data_urodzenia_s, nr_tel_s, login_s, haslo_s, nr_albumu_s from studenci;");
+            ResultSet rs = stmt.executeQuery("select id_studenta,imie_s , nazwisko_s, pesel_s, email_s, data_urodzenia_s, nr_tel_s, login_s, haslo_s, nr_albumu_s from studenci;");
             while (rs.next()) {
-                data.add(new Student(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5), rs.getInt(6), rs.getString(7), rs.getString(8), rs.getString(9)));
+                data.add(new Student(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getString(8), rs.getString(9), rs.getString(10)));
 
             }
             System.out.println(rs);

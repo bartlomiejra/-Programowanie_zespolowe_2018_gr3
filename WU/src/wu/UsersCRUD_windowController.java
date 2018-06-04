@@ -146,7 +146,7 @@ public class UsersCRUD_windowController implements Initializable {
     @FXML
     private DatePicker data_ur_p;
     @FXML
-    private DatePicker dataStudent;
+    private DatePicker dataStudent_s;
 
     ConnectionClass PolaczenieDB = new ConnectionClass();
 
@@ -364,7 +364,7 @@ public class UsersCRUD_windowController implements Initializable {
         System.out.println("Dodawanie studenta");
         
         try {
-            LocalDate value = dataStudent.getValue();
+            LocalDate value = dataStudent_s.getValue();
             //Statement stmt = sesja.createStatement();
             //System.out.println(data_ur_p.getEditor().getText());
             sesja.createStatement().executeUpdate("INSERT INTO studenci (id_studenta, imie_s, nazwisko_s, pesel_s, email_s, data_urodzenia_s,nr_tel_s,login_s,haslo_s,nr_albumu_s,ostatnie_logowanie_studenta,zalogowany_s) VALUES (null,'" + tf_Imie.getText() + "','" + tf_Nazwisko.getText() + "','" + tf_Pesel.getText() + "','" + tf_Email.getText() + "','" + value + "','" + tf_Numer_tel.getText() + "','" + tf_login.getText() + "','" + tf_haslo.getText() + "','" + tf_nr_albumu.getText() + "',null,null);");

@@ -25,11 +25,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.util.Callback;
+import javafx.util.StringConverter;
 
 
 /**
@@ -87,7 +91,12 @@ public class Oceny_AdminController implements Initializable {
     private ComboBox comboOcena;
     @FXML
     private ComboBox comboAdminStudent;
-
+    
+    
+    ObservableList<Pracownicy> dataPracownicy;
+    ObservableList<Przedmioty> dataPrzedmioty;
+    ObservableList<Student> dataStudent;
+    
     ConnectionClass PolaczenieDB = new ConnectionClass();
 
     Connection sesja = PolaczenieDB.getConnection();
@@ -96,6 +105,12 @@ public class Oceny_AdminController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
+        
+        dataPracownicy = FXCollections.observableArrayList();
+        dataPrzedmioty = FXCollections.observableArrayList();
+        dataStudent = FXCollections.observableArrayList();
+        
+        
         data = FXCollections.observableArrayList();
         
         Statement stmt = null;
@@ -122,6 +137,138 @@ public class Oceny_AdminController implements Initializable {
         } catch (Exception e) {
 
         }
+        
+         // wyswietlanie combox pracownicy
+
+        Statement stmt2 = null;
+
+        try {
+
+            stmt2 = sesja.createStatement();
+
+            ResultSet rs = stmt2.executeQuery("SELECT * from pracownicy;");
+
+            //System.out.println("Dane:"+ rs.getString(2));
+            while (rs.next()) {
+
+                dataPracownicy.add(new Pracownicy(rs.getInt(1), rs.getString(2), rs.getString(3)));
+
+            }
+
+        } catch (Exception e) {
+
+        }
+
+        comboProwadzacy.setItems(null);
+        comboProwadzacy.setItems(dataPracownicy);
+
+        comboProwadzacy.setCellFactory(new Callback<ListView<Pracownicy>, ListCell<Pracownicy>>() {
+
+            @Override
+            public ListCell<Pracownicy> call(ListView<Pracownicy> p) {
+
+                final ListCell<Pracownicy> cell = new ListCell<Pracownicy>() {
+
+                    @Override
+                    protected void updateItem(Pracownicy t, boolean bln) {
+                        super.updateItem(t, bln);
+
+                        if (t != null) {
+                            setText(t.getimie_p() + " " + t.getnazwisko_p());
+                        } else {
+                            setText(null);
+                        }
+                    }
+                };
+                return cell;
+            }
+        });
+
+        comboProwadzacy.setConverter(new StringConverter<Pracownicy>() {
+            @Override
+            public String toString(Pracownicy object) {
+                if (object == null) {
+                    return "";
+                } else {
+                    return object.getimie_p() + " " + object.getnazwisko_p();
+                }
+            }
+
+            @Override
+            public Pracownicy fromString(String string) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        });
+
+        //KONIEC pracownicy
+         // wyswietlanie combox przedmioty
+        Statement stmt3 = null;
+
+        try {
+
+            stmt3 = sesja.createStatement();
+
+            ResultSet rs = stmt3.executeQuery("SELECT * from przedmioty;");
+
+            //System.out.println("Dane:"+ rs.getString(2));
+            while (rs.next()) {
+
+                dataPrzedmioty.add(new Przedmioty(rs.getInt(1), rs.getString(2)));
+
+            }
+
+        } catch (Exception e) {
+
+        }
+
+        comboPrzedmiot.setItems(null);
+        comboPrzedmiot.setItems(dataPrzedmioty);
+
+        comboPrzedmiot.setCellFactory(new Callback<ListView<Przedmioty>, ListCell<Przedmioty>>() {
+
+            @Override
+            public ListCell<Przedmioty> call(ListView<Przedmioty> p) {
+
+                final ListCell<Przedmioty> cell = new ListCell<Przedmioty>() {
+
+                    @Override
+                    protected void updateItem(Przedmioty t, boolean bln) {
+                        super.updateItem(t, bln);
+
+                        if (t != null) {
+                            setText(t.getnazwa_przedmiotu());
+                        } else {
+                            setText(null);
+                        }
+                    }
+                };
+                return cell;
+            }
+        });
+
+        comboPrzedmiot.setConverter(new StringConverter<Przedmioty>() {
+            @Override
+            public String toString(Przedmioty object) {
+                if (object == null) {
+                    return "";
+                } else {
+                    return object.getnazwa_przedmiotu();
+                }
+            }
+
+            @Override
+            public Przedmioty fromString(String string) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        });
+
+        //KONIEC przedmioty
+        
+        
+        
+        
+        
+        
     }
     
     @FXML

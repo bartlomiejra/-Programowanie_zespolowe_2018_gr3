@@ -17,7 +17,7 @@
       <TextField fx:id="tf_Nazwisko" layoutX="14.0" layoutY="102.0" prefHeight="25.0" prefWidth="149.0" promptText="Nazwisko" />
       <TextField fx:id="tf_Pesel" layoutX="14.0" layoutY="127.0" prefHeight="29.0" prefWidth="149.0" promptText="Pesel (hasło)" />
       <TextField fx:id="tf_Email" layoutX="14.0" layoutY="156.0" prefHeight="25.0" prefWidth="149.0" promptText="Email" />
-      <DatePicker fx:id="dataStudent" layoutX="14.0" layoutY="181.0" prefHeight="25.0" prefWidth="149.0" promptText="Data urodzenia" />
+      <DatePicker fx:id="dataStudent_s" layoutX="14.0" layoutY="181.0" prefHeight="25.0" prefWidth="149.0" promptText="Data urodzenia" />
       <Text layoutX="2.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj Nowego studenta" textAlignment="CENTER" wrappingWidth="173.67578125">
          <font>
             <Font size="13.0" />

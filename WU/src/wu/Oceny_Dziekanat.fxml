@@ -25,13 +25,13 @@
          <children>
             <Label text="Dodaj oceny:" />
             <Label text="Prowadzący:" />
-            <ComboBox fx:id="comboPDziekanat" onAction="#comboPDziekanatBtn" prefWidth="150.0" />
+            <ComboBox fx:id="comboProwadzacy" onAction="#comboPDziekanatBtn" prefWidth="150.0" />
             <Label text="Przedmiot:" />
-            <ComboBox fx:id="comboPrzDziekanat" onAction="#comboPrzDziekanatBtn" prefWidth="150.0" />
+            <ComboBox fx:id="comboPrzedmiot" onAction="#comboPrzDziekanatBtn" prefWidth="150.0" />
             <Label text="Ocena:" />
-            <ComboBox fx:id="comboODziekanat" onAction="#comboODziekanatBtn" prefWidth="150.0" />
+            <ComboBox fx:id="comboOcena" onAction="#comboODziekanatBtn" prefWidth="150.0" />
             <Label text="Student:" />
-            <ComboBox fx:id="comboSDziekanat" onAction="#comboSDziekanatBtn" prefWidth="150.0" />
+            <ComboBox fx:id="comboStudent" onAction="#comboSDziekanatBtn" prefWidth="150.0" />
             <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="4.0">
                <children>
                   <Button fx:id="add_ocenaDziekanat" mnemonicParsing="false" onAction="#add_ocenaDziekanatBtn" text="Dodaj" />

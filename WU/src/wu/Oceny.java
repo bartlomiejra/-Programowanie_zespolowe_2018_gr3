@@ -15,14 +15,15 @@ import javafx.beans.property.StringProperty;
  * @author Jacek
  */
 public class Oceny {
-private final IntegerProperty id_oceny;
-    private final IntegerProperty ocena;
-    private final StringProperty nazwa_przedmiotu;
-    private final StringProperty student;
-    private final StringProperty prowadzacy;
 
-    public Oceny(Integer id_oceny,Integer ocena, String nazwa_przedmiotu, String student, String prowadzacy) {
-       this.id_oceny = new SimpleIntegerProperty(id_oceny);
+    private IntegerProperty id_oceny;
+    private IntegerProperty ocena;
+    private StringProperty nazwa_przedmiotu;
+    private StringProperty student;
+    private StringProperty prowadzacy;
+
+    public Oceny(Integer id_oceny, Integer ocena, String nazwa_przedmiotu, String student, String prowadzacy) {
+        this.id_oceny = new SimpleIntegerProperty(id_oceny);
         this.ocena = new SimpleIntegerProperty(ocena);
         this.nazwa_przedmiotu = new SimpleStringProperty(nazwa_przedmiotu);
         this.student = new SimpleStringProperty(student);
@@ -30,7 +31,7 @@ private final IntegerProperty id_oceny;
 
     }
     
- public Integer getid_oceny() {
+    public Integer getid_oceny() {
         return id_oceny.get();
     }
 

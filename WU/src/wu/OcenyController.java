@@ -66,7 +66,7 @@ public class OcenyController implements Initializable {
 
             stmt = sesja.createStatement();
 
-            ResultSet rs = stmt.executeQuery("Select id_oceny,CONCAT(imie_s,\" \",nazwisko_s),CONCAT(imie_p,\" \",nazwisko_p) as prowadzacy_student ,ocena as oceny_student, nazwa_przedmiotu as przedmiot_student from oceny,pracownicy,przedmioty,studenci where oceny.id_przedmiotu=przedmioty.id_przedmiotu and oceny.id_studenta=studenci.id_studenta and oceny.id_pracownika=pracownicy.id_pracownika;");
+            ResultSet rs = stmt.executeQuery("Select id_oceny,CONCAT(imie_s,\" \",nazwisko_s),CONCAT(imie_p,\" \",nazwisko_p) as prowadzacy ,ocena as ocena, nazwa_przedmiotu as nazwa_przedmiotu from oceny,pracownicy,przedmioty,studenci where oceny.id_przedmiotu=przedmioty.id_przedmiotu and oceny.id_studenta=studenci.id_studenta and oceny.id_pracownika=pracownicy.id_pracownika;");
 
             //System.out.println("Dane:"+ rs.getString(2));
             while (rs.next()) {
@@ -74,9 +74,9 @@ public class OcenyController implements Initializable {
 
             }
 
-            przedmiot_student.setCellValueFactory(new PropertyValueFactory<>("przedmiot_student"));
-            prowadzacy_student.setCellValueFactory(new PropertyValueFactory<>("prowadzacy_student"));
-            oceny_student.setCellValueFactory(new PropertyValueFactory<>("oceny_student"));
+            przedmiot_student.setCellValueFactory(new PropertyValueFactory<>("nazwa_przedmiotu"));
+            prowadzacy_student.setCellValueFactory(new PropertyValueFactory<>("prowadzacy"));
+            oceny_student.setCellValueFactory(new PropertyValueFactory<>("ocena"));
             
             table_oceny_student.setItems(null);
             table_oceny_student.setItems(data);

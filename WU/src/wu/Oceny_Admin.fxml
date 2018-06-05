@@ -22,25 +22,13 @@
          </image></ImageView>
       <TableView fx:id="table_oceny" layoutX="205.0" layoutY="55.0" prefHeight="343.0" prefWidth="518.0">
          <columns>
-            <TableColumn fx:id="columnProwadzacy" prefWidth="148.5" text="Prowadzący" />
-            <TableColumn fx:id="columnPrzedmiot" prefWidth="129.0" text="Przedmiot" />
+            <TableColumn fx:id="columnProwadzacy" prefWidth="121.0" text="Prowadzący" />
+            <TableColumn fx:id="columnPrzedmiot" prefWidth="157.0" text="Przedmiot" />
             <TableColumn fx:id="columnOcena" prefWidth="99.5" text="Ocena" />
             <TableColumn fx:id="columnStudent" prefWidth="140.0" text="Student" />
          </columns>
       </TableView>
-      <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zalogowany jako: " />
-      <HBox layoutX="416.0" layoutY="16.0" prefHeight="31.0" prefWidth="297.0" spacing="3.0">
-         <children>
-            <Button fx:id="generate_wykladowca" mnemonicParsing="false" onAction="#generate_wykladowcaButtonAction" text="Generuj do PDF" />
-            <Button fx:id="assesment_menu" mnemonicParsing="false" onAction="#assesmentAdmin_menuActionButton" text="Menu" />
-            <Button fx:id="assesment_logout" mnemonicParsing="false" onAction="#assesment_logoutActionButton" prefHeight="23.0" prefWidth="60.0" text="Wyloguj" />
-            <Button fx:id="close_users" mnemonicParsing="false" onAction="#close_usersButtonAction" prefHeight="25.0" prefWidth="64.0" text="Zamknij" />
-         </children>
-         <padding>
-            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-         </padding>
-      </HBox>
-      <VBox layoutX="14.0" layoutY="55.0" prefHeight="313.0" prefWidth="191.0" spacing="5.0">
+      <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="55.0" prefHeight="313.0" prefWidth="191.0" spacing="5.0">
          <children>
             <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj Oceny:" wrappingWidth="131.1171875" />
             <Label text="Prowadzący:" textFill="#fcfcfc" />
@@ -66,16 +54,18 @@
             <Insets bottom="3.0" left="3.0" right="3.0" top="2.0" />
          </padding>
       </VBox>
-      <HBox layoutX="262.0" layoutY="415.0" prefHeight="31.0" prefWidth="376.0" spacing="10.0">
+      <HBox layoutX="201.0" layoutY="407.0" prefHeight="31.0" prefWidth="510.0" spacing="10.0">
          <children>
             <TextField prefHeight="29.0" prefWidth="140.0" promptText="Szukaj" />
             <Button fx:id="search_users" mnemonicParsing="false" onAction="#search_usersButtonAction" text="Szukaj" />
             <Button fx:id="load_users" mnemonicParsing="false" onAction="#load_usersButonAction" text="Wczytaj " />
             <Button fx:id="clear_users" mnemonicParsing="false" onAction="#clear_usersButtonAction" text="Wyczyść" />
+            <Button fx:id="generate_wykladowca" mnemonicParsing="false" onAction="#generate_wykladowcaButtonAction" prefHeight="25.0" prefWidth="137.0" text="Generuj do PDF" />
          </children>
          <padding>
             <Insets top="3.0" />
          </padding>
       </HBox>
+      <Button fx:id="assesment_menu" layoutX="664.0" layoutY="18.0" mnemonicParsing="false" onAction="#assesmentAdmin_menuActionButton" text="Menu" />
    </children>
 </AnchorPane>

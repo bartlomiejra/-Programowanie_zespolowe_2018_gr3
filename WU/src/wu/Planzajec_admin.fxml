@@ -15,35 +15,24 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="436.0" prefWidth="771.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Planzajec_adminController">
+<AnchorPane id="AnchorPane" prefHeight="466.0" prefWidth="873.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Planzajec_adminController">
    <children>
-      <ImageView fitHeight="499.0" fitWidth="772.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="472.0" fitWidth="761.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@tlo2.jpg" />
          </image>
       </ImageView>
-      <TableView fx:id="tableHarmonogramAdmin" layoutX="205.0" layoutY="55.0" prefHeight="343.0" prefWidth="551.0">
+      <TableView fx:id="tableHarmonogramAdmin" layoutX="205.0" layoutY="55.0" prefHeight="343.0" prefWidth="552.0">
          <columns>
             <TableColumn fx:id="columnIdprzedmiotuAdmin" prefWidth="70.0" text="Przedmiot" />
-            <TableColumn fx:id="columnIdpracownikaAdmin" prefWidth="93.0" text="Prowadzący" />
-            <TableColumn fx:id="columnDataAdmin" text="Data" />
-            <TableColumn fx:id="columnGodzinaAdmin" minWidth="0.0" prefWidth="86.0" text="Godzina" />
-            <TableColumn fx:id="columnKierunekAdmin" prefWidth="91.0" text="Kierunek" />
-            <TableColumn fx:id="columnRokAdmin" prefWidth="94.0" text="Rok" />
+            <TableColumn fx:id="columnIdpracownikaAdmin" prefWidth="111.0" text="Prowadzący" />
+            <TableColumn fx:id="columnDataAdmin" prefWidth="68.0" text="Data" />
+            <TableColumn fx:id="columnGodzinaAdmin" minWidth="0.0" prefWidth="89.0" text="Godzina" />
+            <TableColumn fx:id="columnKierunekAdmin" prefWidth="100.0" text="Kierunek" />
+            <TableColumn fx:id="columnRokAdmin" minWidth="0.0" prefWidth="113.0" text="Rok" />
          </columns>
       </TableView>
-      <Text fill="WHITE" layoutX="17.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zalogowany jako: Administrator" wrappingWidth="184.9999958872795" />
-      <HBox layoutX="545.0" layoutY="15.0" prefHeight="31.0" prefWidth="204.0" spacing="3.0">
-         <children>
-            <Button fx:id="assesment_menu" mnemonicParsing="false" onAction="#assesmentAdmin_menuActionButton" text="Menu" />
-            <Button fx:id="assesment_logout" mnemonicParsing="false" onAction="#assesment_logoutActionButton" prefHeight="23.0" prefWidth="60.0" text="Wyloguj" />
-            <Button fx:id="close_users" mnemonicParsing="false" onAction="#close_usersButtonAction" prefHeight="25.0" prefWidth="64.0" text="Zamknij" />
-         </children>
-         <padding>
-            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-         </padding>
-      </HBox>
-      <VBox layoutX="14.0" layoutY="46.0" prefHeight="313.0" prefWidth="191.0" spacing="5.0">
+      <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="46.0" prefHeight="313.0" prefWidth="191.0" spacing="5.0">
          <children>
             <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj zajęcia do harmonogramu" wrappingWidth="178.1171875" />
             <Label text="Id przedmiotu:" textFill="WHITE" />
@@ -82,5 +71,6 @@
             <Insets top="3.0" />
          </padding>
       </HBox>
+      <Button fx:id="assesment_menu" layoutX="699.0" layoutY="24.0" mnemonicParsing="false" onAction="#assesmentAdmin_menuActionButton" text="Menu" />
    </children>
 </AnchorPane>

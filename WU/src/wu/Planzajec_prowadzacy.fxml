@@ -13,7 +13,6 @@
       <TableView fx:id="tableHarmonogramPracownik" layoutX="10.0" layoutY="60.0" prefHeight="280.0" prefWidth="683.0" AnchorPane.leftAnchor="10.0">
         <columns>
             <TableColumn fx:id="columnIdprzedmiotuPracownik" prefWidth="125.0" text="Przedmiot" />
-          <TableColumn fx:id="columnIdpracownikaPracownik" prefWidth="125.0" text="Prowadzący" />
             <TableColumn fx:id="columnDataPracownik" prefWidth="84.0" text="Data" />
             <TableColumn fx:id="columnGodzinaPracownik" prefWidth="98.0" text="Godzina" />
             <TableColumn fx:id="columnKierunekPracownik" prefWidth="129.0" text="Kierunek" />

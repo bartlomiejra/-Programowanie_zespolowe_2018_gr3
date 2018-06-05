@@ -9,20 +9,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="272.0" prefWidth="406.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="255.0" prefWidth="406.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.FXMLDocumentController">
     <children>
       <ImageView fitHeight="272.0" fitWidth="406.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@urz.jpg" />
+            <Image url="@tlo2.jpg" />
          </image>
       </ImageView>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-        <Button fx:id="loginB" layoutX="308.0" layoutY="200.0" onAction="#loginButtonAction" text="Zaloguj!" />
+        <Button fx:id="loginB" layoutX="308.0" layoutY="200.0" onAction="#loginButtonAction" style="-fx-background-color: #696969;" text="Zaloguj!" />
       <VBox layoutX="104.0" layoutY="65.0" prefHeight="93.0" prefWidth="223.0">
          <children>
-              <Label fx:id="login" prefHeight="17.0" prefWidth="98.0" text="Login:" />
+              <Label fx:id="login" prefHeight="17.0" prefWidth="98.0" text="Login:" textFill="WHITE" />
               <TextField fx:id="loginTekst" promptText="username" />
-              <Label fx:id="haslo" text="Hasło: " />
+              <Label fx:id="haslo" text="Hasło: " textFill="WHITE" />
               <PasswordField fx:id="hasloTekst" promptText="password" />
          </children>
       </VBox>

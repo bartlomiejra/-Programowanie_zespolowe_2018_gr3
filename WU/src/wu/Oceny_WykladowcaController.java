@@ -137,4 +137,24 @@ public class Oceny_WykladowcaController implements Initializable {
             
     }
     
+    @FXML
+    private void comboPWykladowcaBtn(ActionEvent event) throws IOException {
+            
+    }
+    
+    @FXML
+    private void comboPrzWykladowcaBtn(ActionEvent event) throws IOException {
+            
+    }
+    
+    @FXML
+    private void comboOWykladowcaBtn(ActionEvent event) throws IOException {
+            
+    }
+    
+    @FXML
+    private void comboSWykladowcaBtn(ActionEvent event) throws IOException {
+            
+    }
+    
 }

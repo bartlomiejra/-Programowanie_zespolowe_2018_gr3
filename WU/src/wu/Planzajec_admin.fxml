@@ -33,16 +33,6 @@
          </columns>
       </TableView>
       <Text fill="WHITE" layoutX="17.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zalogowany jako: Administrator" wrappingWidth="184.9999958872795" />
-      <HBox layoutX="545.0" layoutY="15.0" prefHeight="31.0" prefWidth="204.0" spacing="3.0">
-         <children>
-            <Button fx:id="assesment_menu" mnemonicParsing="false" onAction="#assesmentAdmin_menuActionButton" text="Menu" />
-            <Button fx:id="assesment_logout" mnemonicParsing="false" onAction="#assesment_logoutActionButton" prefHeight="23.0" prefWidth="60.0" text="Wyloguj" />
-            <Button fx:id="close_users" mnemonicParsing="false" onAction="#close_usersButtonAction" prefHeight="25.0" prefWidth="64.0" text="Zamknij" />
-         </children>
-         <padding>
-            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-         </padding>
-      </HBox>
       <VBox layoutX="14.0" layoutY="46.0" prefHeight="313.0" prefWidth="191.0" spacing="5.0">
          <children>
             <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj zajęcia do harmonogramu" wrappingWidth="178.1171875" />
@@ -82,5 +72,6 @@
             <Insets top="3.0" />
          </padding>
       </HBox>
+      <Button fx:id="assesment_menu" layoutX="699.0" layoutY="24.0" mnemonicParsing="false" onAction="#assesmentAdmin_menuActionButton" text="Menu" />
    </children>
 </AnchorPane>

@@ -167,6 +167,10 @@ public class UsersCRUD_windowController implements Initializable {
         InputConstraints.lettersOnly(tf_nazwisko_p);
         InputConstraints.numbersOnlyP(tf_pesel_p);
         InputConstraints.numbersOnly(tf_NumerTel_p);
+        InputConstraints.lettersOnly(tf_Imie);
+        InputConstraints.lettersOnly(tf_Nazwisko);
+        InputConstraints.numbersOnlyP(tf_Pesel);
+        InputConstraints.numbersOnly(tf_Numer_tel);
 
         data = FXCollections.observableArrayList();
         Statement stmt = null;

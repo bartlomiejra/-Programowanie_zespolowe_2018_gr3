@@ -30,7 +30,12 @@ public class Oceny {
         this.prowadzacy = new SimpleStringProperty(prowadzacy);
 
     }
-    
+
+    public Oceny(Integer id_oceny) {
+        this.id_oceny = new SimpleIntegerProperty(id_oceny);
+
+    }
+
     public Integer getid_oceny() {
         return id_oceny.get();
     }

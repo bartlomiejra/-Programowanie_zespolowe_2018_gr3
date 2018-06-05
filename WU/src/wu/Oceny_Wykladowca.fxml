@@ -12,28 +12,24 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Oceny_WykladowcaController">
+<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Oceny_WykladowcaController">
    <children>
-      <TableView layoutX="240.0" layoutY="65.0" prefHeight="343.0" prefWidth="518.0">
+      <TableView fx:id="table_oceny" layoutX="240.0" layoutY="65.0" prefHeight="343.0" prefWidth="518.0">
          <columns>
-            <TableColumn prefWidth="103.0" text="Prowadzący" />
-            <TableColumn prefWidth="109.0" text="Przedmiot" />
-            <TableColumn prefWidth="95.0" text="Liczba Godzin" />
-            <TableColumn prefWidth="58.0" text="Ocena" />
-            <TableColumn prefWidth="148.0" text="Student" />
+            <TableColumn fx:id="columnPrzedmiot" prefWidth="156.0" text="Przedmiot" />
+            <TableColumn fx:id="columnOcena" prefWidth="209.0" text="Ocena" />
+            <TableColumn fx:id="columnStudent" prefWidth="145.0" text="Student" />
          </columns>
       </TableView>
       <VBox alignment="TOP_CENTER" layoutX="26.0" layoutY="65.0" prefHeight="295.0" prefWidth="192.0" spacing="7.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj Oceny:" wrappingWidth="131.1171875" />
-            <Label text="Prowadzący:" />
-            <ComboBox fx:id="comboPWykladowca" onAction="#comboPWykladowcaBtn" prefWidth="150.0" />
             <Label text="Przedmiot:" />
-            <ComboBox fx:id="comboPrzWykladowca" onAction="#comboPrzWykladowcaBtn" prefWidth="150.0" />
+            <ComboBox fx:id="comboPrzedmiot" onAction="#comboPrzWykladowcaBtn" prefWidth="150.0" />
             <Label text="Ocena:" />
-            <ComboBox fx:id="comboOWykladowca" onAction="#comboOWykladowcaBtn" prefWidth="150.0" />
+            <ComboBox fx:id="comboOcena" onAction="#comboOWykladowcaBtn" prefWidth="150.0" />
             <Label text="Student:" />
-            <ComboBox fx:id="comboSWykladowca" onAction="#comboSWykladowcaBtn" prefWidth="150.0" />
+            <ComboBox fx:id="comboStudent" onAction="#comboSWykladowcaBtn" prefWidth="150.0" />
             <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Button fx:id="add_wykladowca" mnemonicParsing="false" onAction="#add_wykladowcaButtonAction" text="Dodaj" />
@@ -51,7 +47,7 @@
       </VBox>
       <HBox layoutX="252.0" layoutY="420.0" prefHeight="35.0" prefWidth="482.0" spacing="10.0">
          <children>
-            <TextField prefHeight="29.0" prefWidth="140.0" promptText="Szukaj" />
+            <TextField fx:id="tfSzukaj" prefHeight="29.0" prefWidth="140.0" promptText="Szukaj" />
             <Button fx:id="search_users" mnemonicParsing="false" onAction="#search_usersButtonAction" text="Szukaj" />
             <Button fx:id="load_users" mnemonicParsing="false" onAction="#load_usersButonAction" text="Wczytaj " />
             <Button fx:id="clear_users" mnemonicParsing="false" onAction="#clear_usersButtonAction" text="Wyczyść" />

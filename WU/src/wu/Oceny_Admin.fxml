@@ -28,7 +28,7 @@
             <TableColumn fx:id="columnStudent" prefWidth="140.0" text="Student" />
          </columns>
       </TableView>
-      <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zalogowany jako: " />
+      <Text fill="#f8f8f8" layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zalogowany jako: " />
       <HBox layoutX="416.0" layoutY="16.0" prefHeight="31.0" prefWidth="297.0" spacing="3.0">
          <children>
             <Button fx:id="generate_wykladowca" mnemonicParsing="false" onAction="#generate_wykladowcaButtonAction" text="Generuj do PDF" />

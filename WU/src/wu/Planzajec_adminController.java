@@ -324,7 +324,7 @@ public class Planzajec_adminController implements Initializable {
 
             stmt4 = sesja.createStatement();
 
-            ResultSet rs = stmt4.executeQuery("SELECT id_specjalizacji,kierunek,rok from specjalizacja_studenci;");
+            ResultSet rs = stmt4.executeQuery("SELECT id_specjalizacji,kierunek,rok from specjalizacja_studenci group by kierunek,rok;");
 
             //System.out.println("Dane:"+ rs.getString(2));
             while (rs.next()) {

@@ -22,14 +22,13 @@
          </image></ImageView>
       <TableView fx:id="table_oceny" layoutX="205.0" layoutY="55.0" prefHeight="343.0" prefWidth="518.0">
          <columns>
-            <TableColumn fx:id="columnProwadzacy" prefWidth="148.5" text="Prowadzący" />
-            <TableColumn fx:id="columnPrzedmiot" prefWidth="129.0" text="Przedmiot" />
+            <TableColumn fx:id="columnProwadzacy" prefWidth="121.0" text="Prowadzący" />
+            <TableColumn fx:id="columnPrzedmiot" prefWidth="157.0" text="Przedmiot" />
             <TableColumn fx:id="columnOcena" prefWidth="99.5" text="Ocena" />
             <TableColumn fx:id="columnStudent" prefWidth="140.0" text="Student" />
          </columns>
       </TableView>
-      <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zalogowany jako: " />
-      <VBox layoutX="14.0" layoutY="55.0" prefHeight="313.0" prefWidth="191.0" spacing="5.0">
+      <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="55.0" prefHeight="313.0" prefWidth="191.0" spacing="5.0">
          <children>
             <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj Oceny:" wrappingWidth="131.1171875" />
             <Label text="Prowadzący:" textFill="#fcfcfc" />

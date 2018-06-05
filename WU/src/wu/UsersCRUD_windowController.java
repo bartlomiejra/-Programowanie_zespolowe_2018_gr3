@@ -2,7 +2,10 @@ package wu;
 
 import Connection.ConnectionClass;
 import java.io.IOException;
+import java.math.BigInteger;
 import java.net.URL;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -167,6 +170,10 @@ public class UsersCRUD_windowController implements Initializable {
         InputConstraints.lettersOnly(tf_nazwisko_p);
         InputConstraints.numbersOnlyP(tf_pesel_p);
         InputConstraints.numbersOnly(tf_NumerTel_p);
+        InputConstraints.lettersOnly(tf_Imie);
+        InputConstraints.lettersOnly(tf_Nazwisko);
+        InputConstraints.numbersOnlyP(tf_Pesel);
+        InputConstraints.numbersOnly(tf_Numer_tel);
 
         data = FXCollections.observableArrayList();
         Statement stmt = null;
@@ -307,16 +314,20 @@ public class UsersCRUD_windowController implements Initializable {
      * @param event
      */
     @FXML
-    private void add_usersButtonActionPrac(ActionEvent event) {
+    private void add_usersButtonActionPrac(ActionEvent event) throws NoSuchAlgorithmException {
         System.out.println("Dodawanie pracownika");
         //System.out.println(data_ur_p.getEditor().getText());
-
+        
+           String s=tf_haslo_p.getText();
+           MessageDigest m=MessageDigest.getInstance("MD5");
+           m.update(s.getBytes(),0,s.length());
+        
         try {
             LocalDate value = data_ur_p.getValue();
             //Statement stmt = sesja.createStatement();
             //System.out.println(data_ur_p.getEditor().getText());
 
-            sesja.createStatement().executeUpdate("INSERT INTO pracownicy (id_pracownika, imie_p, nazwisko_p, pesel_p, email_p, data_urodzenia_p,nr_tel_p,login_p,haslo_p,specjalizacja_p,ostatnie_logowanie_pracownicy,zalogowany_p) VALUES (null,'" + tf_Imie_p.getText() + "','" + tf_nazwisko_p.getText() + "','" + tf_pesel_p.getText() + "','" + tf_email_p.getText() + "','" + value + "','" + tf_NumerTel_p.getText() + "','" + tf_login_p.getText() + "','" + tf_haslo_p.getText() + "','" + tf_specjalizacja_p.getText() + "',null,null);");
+            sesja.createStatement().executeUpdate("INSERT INTO pracownicy (id_pracownika, imie_p, nazwisko_p, pesel_p, email_p, data_urodzenia_p,nr_tel_p,login_p,haslo_p,specjalizacja_p,ostatnie_logowanie_pracownicy,zalogowany_p) VALUES (null,'" + tf_Imie_p.getText() + "','" + tf_nazwisko_p.getText() + "','" + tf_pesel_p.getText() + "','" + tf_email_p.getText() + "','" + value + "','" + tf_NumerTel_p.getText() + "','" + tf_login_p.getText() + "','" + new BigInteger(1,m.digest()).toString(16) + "','" + tf_specjalizacja_p.getText() + "',null,null);");
 
             Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("usersCRUD_window.fxml"));
             Scene assessment_page_scene = new Scene(assessment_page_parent);
@@ -420,14 +431,18 @@ public class UsersCRUD_windowController implements Initializable {
     @FXML
 
     //dodawanie studenta
-    private void add_usersButtonAction(ActionEvent event) {
+    private void add_usersButtonAction(ActionEvent event) throws NoSuchAlgorithmException {
         System.out.println("Dodawanie studenta");
-
+        
+        String s=tf_haslo.getText();
+           MessageDigest m=MessageDigest.getInstance("MD5");
+           m.update(s.getBytes(),0,s.length());
+        
         try {
             LocalDate value = dataStudent_s.getValue();
             //Statement stmt = sesja.createStatement();
             //System.out.println(data_ur_p.getEditor().getText());
-            sesja.createStatement().executeUpdate("INSERT INTO studenci (id_studenta, imie_s, nazwisko_s, pesel_s, email_s, data_urodzenia_s,nr_tel_s,login_s,haslo_s,nr_albumu_s,ostatnie_logowanie_studenta,zalogowany_s) VALUES (null,'" + tf_Imie.getText() + "','" + tf_Nazwisko.getText() + "','" + tf_Pesel.getText() + "','" + tf_Email.getText() + "','" + value + "','" + tf_Numer_tel.getText() + "','" + tf_login.getText() + "','" + tf_haslo.getText() + "','" + tf_nr_albumu.getText() + "',null,null);");
+            sesja.createStatement().executeUpdate("INSERT INTO studenci (id_studenta, imie_s, nazwisko_s, pesel_s, email_s, data_urodzenia_s,nr_tel_s,login_s,haslo_s,nr_albumu_s,ostatnie_logowanie_studenta,zalogowany_s) VALUES (null,'" + tf_Imie.getText() + "','" + tf_Nazwisko.getText() + "','" + tf_Pesel.getText() + "','" + tf_Email.getText() + "','" + value + "','" + tf_Numer_tel.getText() + "','" + tf_login.getText() + "','" + new BigInteger(1,m.digest()).toString(16) + "','" + tf_nr_albumu.getText() + "',null,null);");
             // INSERT INTO studenci (`id_studenta`,`imie_s`,`nazwisko_s`,`pesel_s`,`email_s`,`data_urodzenia_s`,`nr_tel_s`,`login_s`,`haslo_s`,`nr_albumu_s`,`ostatnie_logowanie_studenta`,`zalogowany_s`) VALUES (null,'ghjghgjg"','hjgjghj','43242','sdadasd','567567','6576767','fghhgfh','jhkhk','546 ',null,null)
             Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("usersCRUD_window.fxml"));
             Scene assessment_page_scene = new Scene(assessment_page_parent);

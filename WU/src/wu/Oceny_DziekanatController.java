@@ -150,5 +150,40 @@ public class Oceny_DziekanatController implements Initializable {
     private void delete_dziekanatButtonAction(ActionEvent event) throws IOException {
             
     }
+    
+    @FXML
+    private void add_ocenaDziekanatBtn(ActionEvent event) throws IOException {
+            
+    }
+    
+    @FXML
+    private void edit_ocenaDziekanatBtn(ActionEvent event) throws IOException {
+            
+    }
+    
+    @FXML
+    private void delete_ocenaDziekanatBtn(ActionEvent event) throws IOException {
+            
+    }
+    
+    @FXML
+    private void comboPDziekanatBtn(ActionEvent event) throws IOException {
+            
+    }
+    
+    @FXML
+    private void comboPrzDziekanatBtn(ActionEvent event) throws IOException {
+            
+    }
+    
+    @FXML
+    private void comboODziekanatBtn(ActionEvent event) throws IOException {
+            
+    }
+    
+    @FXML
+    private void comboSDziekanatBtn(ActionEvent event) throws IOException {
+            
+    }
        
 }

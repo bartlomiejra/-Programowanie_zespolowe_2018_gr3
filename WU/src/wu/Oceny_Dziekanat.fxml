@@ -2,16 +2,17 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Oceny_DziekanatController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Oceny_DziekanatController">
    <children>
-      <TableView fx:id="table_oceny" layoutX="2.0" layoutY="55.0" prefHeight="343.0" prefWidth="433.0">
+      <TableView fx:id="table_oceny" layoutX="209.0" layoutY="51.0" prefHeight="298.0" prefWidth="433.0">
          <columns>
             <TableColumn fx:id="columnProwadzacy" prefWidth="146.0" text="Prowadzący" />
             <TableColumn fx:id="columnPrzedmiot" prefWidth="84.0" text="Przedmiot" />
@@ -19,26 +20,33 @@
             <TableColumn fx:id="columnStudent" prefWidth="123.0" text="Student" />
          </columns>
       </TableView>
-      <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zalogowany jako: " />
-      <HBox layoutX="404.0" layoutY="15.0" prefHeight="31.0" prefWidth="220.0" spacing="3.0">
+      <Button fx:id="assesment_menu" layoutX="580.0" layoutY="18.0" mnemonicParsing="false" onAction="#assesmentDziekanat_menuActionButton" text="Menu" />
+      <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="64.0" prefHeight="298.0" prefWidth="169.0" spacing="5.0">
          <children>
-            <Button fx:id="assesment_menu" mnemonicParsing="false" onAction="#assesmentDziekanat_menuActionButton" text="Menu" />
-            <Button fx:id="generate_dziekanat" mnemonicParsing="false" onAction="#generate_dziekanatButtonAction" text="Generuj do PDF" />
-            <Button fx:id="assesment_logout" mnemonicParsing="false" onAction="#assesment_logoutActionButton" prefHeight="23.0" prefWidth="60.0" text="Wyloguj" />
+            <Label text="Dodaj oceny:" />
+            <Label text="Prowadzący:" />
+            <ComboBox fx:id="comboPDziekanat" onAction="#comboPDziekanatBtn" prefWidth="150.0" />
+            <Label text="Przedmiot:" />
+            <ComboBox fx:id="comboPrzDziekanat" onAction="#comboPrzDziekanatBtn" prefWidth="150.0" />
+            <Label text="Ocena:" />
+            <ComboBox fx:id="comboODziekanat" onAction="#comboODziekanatBtn" prefWidth="150.0" />
+            <Label text="Student:" />
+            <ComboBox fx:id="comboSDziekanat" onAction="#comboSDziekanatBtn" prefWidth="150.0" />
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="4.0">
+               <children>
+                  <Button fx:id="add_ocenaDziekanat" mnemonicParsing="false" onAction="#add_ocenaDziekanatBtn" text="Dodaj" />
+                  <Button fx:id="edit_ocenaDziekanat" mnemonicParsing="false" onAction="#edit_ocenaDziekanatBtn" text="Edytuj" />
+                  <Button fx:id="delete_ocenaDziekanat" mnemonicParsing="false" onAction="#delete_ocenaDziekanatBtn" text="Usuń" />
+               </children>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding>
+            </HBox>
          </children>
          <padding>
-            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-         </padding>
-      </HBox>
-      <VBox alignment="CENTER" layoutX="514.0" layoutY="155.0" prefHeight="109.0" prefWidth="89.0" spacing="10.0">
-         <children>
-            <Button fx:id="add_dziekanat" mnemonicParsing="false" onAction="#add_dziekanatButtonAction" text="Dodaj" />
-            <Button fx:id="edit_dziekanat" mnemonicParsing="false" onAction="#edit_dziekanatButtonAction" text="Edytuj" />
-            <Button fx:id="delete_dziekanat" mnemonicParsing="false" onAction="#delete_dziekanatButtonAction" text="Usuń" />
-         </children>
-         <padding>
-            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
          </padding>
       </VBox>
+      <Button fx:id="generate_dziekanat" layoutX="364.0" layoutY="362.0" mnemonicParsing="false" onAction="#generate_dziekanatButtonAction" text="Generuj do PDF" />
    </children>
 </AnchorPane>

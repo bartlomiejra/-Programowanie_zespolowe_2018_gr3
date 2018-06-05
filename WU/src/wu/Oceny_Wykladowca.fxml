@@ -2,6 +2,8 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -21,26 +23,17 @@
             <TableColumn prefWidth="148.0" text="Student" />
          </columns>
       </TableView>
-      <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zalogowany jako: " />
-      <HBox layoutX="436.0" layoutY="16.0" prefHeight="29.0" prefWidth="304.0" spacing="3.0">
-         <children>
-            <Button fx:id="generate_wykladowca" mnemonicParsing="false" onAction="#generate_wykladowcaButtonAction" text="Generuj do PDF" />
-            <Button fx:id="assesment_menu" mnemonicParsing="false" onAction="#assesmentWykladowca_menuActionButton" text="Menu" />
-            <Button fx:id="assesment_logout" mnemonicParsing="false" onAction="#assesment_logoutActionButton" prefHeight="23.0" prefWidth="60.0" text="Wyloguj" />
-            <Button fx:id="close_users" mnemonicParsing="false" onAction="#close_usersButtonAction" prefHeight="25.0" prefWidth="76.0" text="Zamknij" />
-         </children>
-         <padding>
-            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-         </padding>
-      </HBox>
-      <VBox layoutX="26.0" layoutY="65.0" prefHeight="295.0" prefWidth="192.0" spacing="15.0">
+      <VBox alignment="TOP_CENTER" layoutX="26.0" layoutY="65.0" prefHeight="295.0" prefWidth="192.0" spacing="7.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj Oceny:" wrappingWidth="131.1171875" />
-            <TextField prefHeight="25.0" prefWidth="169.0" promptText="Prowadzący" />
-            <TextField prefHeight="25.0" prefWidth="169.0" promptText="przedmiot" />
-            <TextField prefHeight="25.0" prefWidth="169.0" promptText="Liczba godzin" />
-            <TextField prefHeight="25.0" prefWidth="169.0" promptText="Ocena" />
-            <TextField prefHeight="25.0" prefWidth="169.0" promptText="Imie nazwisko studenta (id)" />
+            <Label text="Prowadzący:" />
+            <ComboBox fx:id="comboPWykladowca" onAction="#comboPWykladowcaBtn" prefWidth="150.0" />
+            <Label text="Przedmiot:" />
+            <ComboBox fx:id="comboPrzWykladowca" onAction="#comboPrzWykladowcaBtn" prefWidth="150.0" />
+            <Label text="Ocena:" />
+            <ComboBox fx:id="comboOWykladowca" onAction="#comboOWykladowcaBtn" prefWidth="150.0" />
+            <Label text="Student:" />
+            <ComboBox fx:id="comboSWykladowca" onAction="#comboSWykladowcaBtn" prefWidth="150.0" />
             <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Button fx:id="add_wykladowca" mnemonicParsing="false" onAction="#add_wykladowcaButtonAction" text="Dodaj" />
@@ -56,16 +49,18 @@
             <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
          </padding>
       </VBox>
-      <HBox layoutX="252.0" layoutY="420.0" prefHeight="16.0" prefWidth="409.0" spacing="10.0">
+      <HBox layoutX="252.0" layoutY="420.0" prefHeight="35.0" prefWidth="482.0" spacing="10.0">
          <children>
             <TextField prefHeight="29.0" prefWidth="140.0" promptText="Szukaj" />
             <Button fx:id="search_users" mnemonicParsing="false" onAction="#search_usersButtonAction" text="Szukaj" />
             <Button fx:id="load_users" mnemonicParsing="false" onAction="#load_usersButonAction" text="Wczytaj " />
             <Button fx:id="clear_users" mnemonicParsing="false" onAction="#clear_usersButtonAction" text="Wyczyść" />
+            <Button fx:id="generate_wykladowca" mnemonicParsing="false" onAction="#generate_wykladowcaButtonAction" text="Generuj do PDF" />
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </HBox>
+      <Button fx:id="assesment_menu" layoutX="703.0" layoutY="22.0" mnemonicParsing="false" onAction="#assesmentWykladowca_menuActionButton" text="Menu" />
    </children>
 </AnchorPane>

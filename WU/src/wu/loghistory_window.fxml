@@ -10,8 +10,8 @@
    <children>
       <TableView fx:id="table_logHistory" layoutX="81.0" layoutY="58.0" prefHeight="269.0" prefWidth="500.0">
         <columns>
-          <TableColumn fx:id="Columnlogin" prefWidth="120.0" text="Login" />
-            <TableColumn fx:id="ColumnLastLogin" prefWidth="379.0" text="Ostatnie Logowanie" />
+          <TableColumn fx:id="Columnlogin" prefWidth="179.0" resizable="false" text="Login" />
+            <TableColumn fx:id="ColumnLastLogin" prefWidth="320.0" resizable="false" text="Ostatnie Logowanie" />
         </columns>
       </TableView>
       <Button fx:id="menuLogHistory" layoutX="520.0" layoutY="21.0" mnemonicParsing="false" onAction="#menuAdminButtonAction" prefHeight="25.0" prefWidth="61.0" text="Menu" />

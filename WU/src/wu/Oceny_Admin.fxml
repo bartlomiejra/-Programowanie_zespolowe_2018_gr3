@@ -6,7 +6,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -54,18 +53,7 @@
             <Insets bottom="3.0" left="3.0" right="3.0" top="2.0" />
          </padding>
       </VBox>
-      <HBox layoutX="201.0" layoutY="407.0" prefHeight="31.0" prefWidth="510.0" spacing="10.0">
-         <children>
-            <TextField prefHeight="29.0" prefWidth="140.0" promptText="Szukaj" />
-            <Button fx:id="search_users" mnemonicParsing="false" onAction="#search_usersButtonAction" text="Szukaj" />
-            <Button fx:id="load_users" mnemonicParsing="false" onAction="#load_usersButonAction" text="Wczytaj " />
-            <Button fx:id="clear_users" mnemonicParsing="false" onAction="#clear_usersButtonAction" text="Wyczyść" />
-            <Button fx:id="generate_wykladowca" mnemonicParsing="false" onAction="#generate_wykladowcaButtonAction" prefHeight="25.0" prefWidth="137.0" text="Generuj do PDF" />
-         </children>
-         <padding>
-            <Insets top="3.0" />
-         </padding>
-      </HBox>
       <Button fx:id="assesment_menu" layoutX="664.0" layoutY="18.0" mnemonicParsing="false" onAction="#assesmentAdmin_menuActionButton" text="Menu" />
+      <Button fx:id="generate_wykladowca" layoutX="362.0" layoutY="413.0" mnemonicParsing="false" onAction="#generate_wykladowcaButtonAction" prefHeight="25.0" prefWidth="137.0" text="Generuj do PDF" />
    </children>
 </AnchorPane>

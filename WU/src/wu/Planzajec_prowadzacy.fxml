@@ -8,14 +8,16 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Planzajec_prowadzacyController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Planzajec_prowadzacyController">
    <children>
-      <TableView layoutX="10.0" layoutY="60.0" prefHeight="280.0" prefWidth="683.0" AnchorPane.leftAnchor="10.0">
+      <TableView fx:id="tableHarmonogramPracownik" layoutX="10.0" layoutY="60.0" prefHeight="280.0" prefWidth="683.0" AnchorPane.leftAnchor="10.0">
         <columns>
-          <TableColumn prefWidth="184.0" text="Przedmiot" />
-            <TableColumn prefWidth="197.0" text="Data zajęć" />
-            <TableColumn prefWidth="133.0" text="Godzina Zajęć" />
-            <TableColumn prefWidth="168.0" text="Sala?" />
+            <TableColumn fx:id="columnIdprzedmiotuPracownik" prefWidth="125.0" text="Przedmiot" />
+          <TableColumn fx:id="columnIdpracownikaPracownik" prefWidth="125.0" text="Prowadzący" />
+            <TableColumn fx:id="columnDataPracownik" prefWidth="84.0" text="Data" />
+            <TableColumn fx:id="columnGodzinaPracownik" prefWidth="98.0" text="Godzina" />
+            <TableColumn fx:id="columnKierunekPracownik" prefWidth="129.0" text="Kierunek" />
+            <TableColumn fx:id="columnRokPracownik" prefWidth="119.0" text="Rok" />
         </columns>
       </TableView>
       <Button layoutX="179.0" layoutY="355.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="72.0" text="Poprzedni" />

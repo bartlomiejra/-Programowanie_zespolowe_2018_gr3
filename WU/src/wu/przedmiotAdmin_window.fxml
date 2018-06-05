@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="691.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.PrzedmiotAdmin_windowController">
+   <children>
+      <TableView fx:id="table_przedmioty" layoutX="210.0" layoutY="61.0" prefHeight="258.0" prefWidth="467.0">
+        <columns>
+          <TableColumn prefWidth="96.0" text="Id przemiotu" />
+          <TableColumn prefWidth="283.0" text="Nazwa przedmiotu" />
+        </columns>
+      </TableView>
+      <VBox layoutX="4.0" layoutY="35.0" prefHeight="167.0" prefWidth="190.0" spacing="10.0">
+         <children>
+            <Label text="Dodaj nowy przedmiot:" />
+            <TextField fx:id="tf_NazwaPrzedmiotu" promptText="Nazwa przedmiotu" />
+            <HBox alignment="TOP_CENTER" prefHeight="53.0" prefWidth="184.0" spacing="15.0">
+               <children>
+                  <Button fx:id="addPrzedmiotAdmin" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#addPrzedmiotAdminButtonAction" text="Dodaj" />
+                  <Button fx:id="editPrzedmiotAdmin" mnemonicParsing="false" onAction="#editPrzedmiotButtonAction" text="Edytuj" />
+                  <Button fx:id="deletePrzedmiotAdmin" mnemonicParsing="false" onAction="#deletePrzedmiotButtonAction" text="Usuń" />
+               </children>
+               <padding>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </padding>
+      </VBox>
+      <HBox layoutX="553.0" layoutY="19.0" prefHeight="33.0" prefWidth="124.0" spacing="10.0">
+         <children>
+            <Button fx:id="przedmiotyMenu" mnemonicParsing="false" onAction="#przedmiotyMenuButtonAction" text="Menu" />
+            <Button fx:id="close_users" mnemonicParsing="false" onAction="#close_app" text="Zamknij" />
+         </children>
+         <padding>
+            <Insets top="3.0" />
+         </padding>
+      </HBox>
+      <HBox layoutX="330.0" layoutY="326.0" prefHeight="33.0" prefWidth="347.0" spacing="8.0">
+         <children>
+            <TextField fx:id="tf_SzukajPrzedmioty" prefHeight="25.0" prefWidth="141.0" promptText="Szukaj" />
+            <Button fx:id="szukajPrzedmiot" mnemonicParsing="false" onAction="#szukajPrzedmiotButtonAction" text="Szukaj" />
+            <Button fx:id="wczytajPrzedmiot" mnemonicParsing="false" onAction="#wczytajPrzedmiotButtonAction" text="Wczytaj" />
+            <Button fx:id="wyczyscPrzedmiot" mnemonicParsing="false" onAction="#wyczyscPrzedmiotButtonAction" text="Wyczyść" />
+         </children>
+         <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

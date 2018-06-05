@@ -1,7 +1,11 @@
 package wu;
 
+import Connection.ConnectionClass;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -76,8 +80,9 @@ public class Student_windowController implements Initializable {
      * @throws IOException 
      */
     @FXML
-    private void logout_studentButtonAction(ActionEvent event) throws IOException {
+    private void logout_studentButtonAction(ActionEvent event) throws IOException, SQLException {
 
+        loggedout_s();
         Parent logout_page_parent = FXMLLoader.load(getClass().getResource("Login_window.fxml"));
         Scene logout_page_scene = new Scene(logout_page_parent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -101,5 +106,26 @@ public class Student_windowController implements Initializable {
         app_stage.setScene(logout_page_scene);
         app_stage.show();             
     }
+    public void loggedout_s() throws SQLException {
+        
+        ConnectionClass connectionClass=new ConnectionClass();
+        Connection connection=connectionClass.getConnection();
+        Statement statement=connection.createStatement();  
+        
+        try {
+            
+
+            String query1 = "Update studenci set zalogowany_s='0'";
+            statement.executeUpdate(query1);
+            statement.close();
+
+            connection.close();
+
+        } catch (SQLException e) {
+            System.err.println("Nie można wykonać tego zapytania: " + e.getMessage());
+
+        }
     
+    
+}
 }

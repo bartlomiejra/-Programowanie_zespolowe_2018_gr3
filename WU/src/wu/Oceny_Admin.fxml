@@ -14,13 +14,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Oceny_AdminController">
+<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Oceny_AdminController">
    <children>
       <ImageView fitHeight="452.0" fitWidth="772.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@urz2.jpg" />
+            <Image url="@tlo2.jpg" />
          </image></ImageView>
-      <TableView fx:id="table_oceny" layoutX="240.0" layoutY="65.0" prefHeight="343.0" prefWidth="518.0">
+      <TableView fx:id="table_oceny" layoutX="205.0" layoutY="55.0" prefHeight="343.0" prefWidth="518.0">
          <columns>
             <TableColumn fx:id="columnProwadzacy" prefWidth="148.5" text="Prowadzący" />
             <TableColumn fx:id="columnPrzedmiot" prefWidth="129.0" text="Przedmiot" />
@@ -29,7 +29,7 @@
          </columns>
       </TableView>
       <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zalogowany jako: " />
-      <HBox layoutX="450.0" layoutY="15.0" prefHeight="31.0" prefWidth="297.0" spacing="3.0">
+      <HBox layoutX="416.0" layoutY="16.0" prefHeight="31.0" prefWidth="297.0" spacing="3.0">
          <children>
             <Button fx:id="generate_wykladowca" mnemonicParsing="false" onAction="#generate_wykladowcaButtonAction" text="Generuj do PDF" />
             <Button fx:id="assesment_menu" mnemonicParsing="false" onAction="#assesmentAdmin_menuActionButton" text="Menu" />
@@ -40,7 +40,7 @@
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
          </padding>
       </HBox>
-      <VBox layoutX="31.0" layoutY="65.0" prefHeight="313.0" prefWidth="191.0" spacing="5.0">
+      <VBox layoutX="14.0" layoutY="55.0" prefHeight="313.0" prefWidth="191.0" spacing="5.0">
          <children>
             <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj Oceny:" wrappingWidth="131.1171875" />
             <Label text="Prowadzący:" textFill="#fcfcfc" />

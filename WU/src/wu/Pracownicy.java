@@ -16,7 +16,7 @@ import javafx.beans.property.StringProperty;
  */
 public class Pracownicy {
 
-    private IntegerProperty id_pracownika;
+    private  IntegerProperty id_pracownika;
     private  StringProperty imie_p;
     private  StringProperty nazwisko_p;
     private  IntegerProperty pesel_p;
@@ -29,6 +29,7 @@ public class Pracownicy {
     
 
     public Pracownicy( String imie_p, String nazwisko_p, Integer pesel_p, String email_p, String data_urodzenia_p, Integer nr_tel_p, String login_p,  String haslo_p, String specjalizacja_p) {
+       
         this.imie_p = new SimpleStringProperty(imie_p);
         this.nazwisko_p = new SimpleStringProperty(nazwisko_p);
         this.pesel_p = new SimpleIntegerProperty(pesel_p);
@@ -48,8 +49,23 @@ public class Pracownicy {
         
 
     }
+    public Pracownicy( Integer id_pracownika) {
+        this.id_pracownika = new SimpleIntegerProperty(id_pracownika);
+    }
+    // Konstruktor pracownicy admin 
+    public Pracownicy( Integer id_pracownika, String imie_p, String nazwisko_p, Integer pesel_p, String email_p, String data_urodzenia_p, Integer nr_tel_p, String login_p,  String haslo_p, String specjalizacja_p) {
+        this.id_pracownika = new SimpleIntegerProperty(id_pracownika);
+        this.imie_p = new SimpleStringProperty(imie_p);
+        this.nazwisko_p = new SimpleStringProperty(nazwisko_p);
+        this.pesel_p = new SimpleIntegerProperty(pesel_p);
+        this.email_p = new SimpleStringProperty(email_p);
+        this.data_urodzenia_p = new SimpleStringProperty(data_urodzenia_p);
+        this.nr_tel_p = new SimpleIntegerProperty(nr_tel_p);
+        this.login_p = new SimpleStringProperty(login_p);
+        this.haslo_p = new SimpleStringProperty(haslo_p);
+        this.specjalizacja_p = new SimpleStringProperty(specjalizacja_p);
 
-    
+    }
 
     public String getimie_p() {
         return imie_p.get();

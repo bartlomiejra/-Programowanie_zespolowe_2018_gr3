@@ -4,6 +4,7 @@ import Connection.ConnectionClass;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
@@ -320,7 +321,24 @@ public class Oceny_WykladowcaController implements Initializable {
      */
     @FXML
     private void delete_wykładowcaButtonAction(ActionEvent event) throws IOException {
+        
+        int id = (table_oceny.getSelectionModel().getSelectedItem().getid_oceny());
 
+        try {
+
+            PreparedStatement statement = sesja.prepareStatement("DELETE FROM oceny WHERE id_oceny = ?");
+            statement.setInt(1, id);
+            statement.executeUpdate();
+
+            Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("Oceny_Wykladowca.fxml"));
+            Scene assessment_page_scene = new Scene(assessment_page_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.hide();
+            app_stage.setScene(assessment_page_scene);
+            app_stage.show();
+        } catch (Exception e) {
+
+        }
     }
 
     /**

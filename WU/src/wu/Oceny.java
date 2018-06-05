@@ -29,6 +29,7 @@ private final IntegerProperty id_oceny;
         this.prowadzacy = new SimpleStringProperty(prowadzacy);
 
     }
+    
  public Integer getid_oceny() {
         return id_oceny.get();
     }

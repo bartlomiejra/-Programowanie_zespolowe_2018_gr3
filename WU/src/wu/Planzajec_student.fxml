@@ -10,12 +10,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Planzajec_studentController">
    <children>
-      <TableView layoutX="10.0" layoutY="60.0" prefHeight="280.0" prefWidth="683.0" AnchorPane.leftAnchor="10.0">
+      <TableView fx:id="tableHarmonogramStudent" layoutX="10.0" layoutY="60.0" prefHeight="280.0" prefWidth="683.0" AnchorPane.leftAnchor="10.0">
         <columns>
-          <TableColumn prefWidth="146.0" text="Przedmiot" />
-            <TableColumn prefWidth="171.0" text="Prowadzący" />
-            <TableColumn prefWidth="106.0" text="Data zajęć" />
-            <TableColumn prefWidth="130.0" text="Godzina Zajęć" />
+          <TableColumn fx:id="columnIdprzedmiotuStudent" prefWidth="146.0" text="Przedmiot" />
+            <TableColumn fx:id="columnIdpracownikaStudent" prefWidth="171.0" text="Prowadzący" />
+            <TableColumn fx:id="columnDataStudent" prefWidth="106.0" text="Data zajęć" />
+            <TableColumn fx:id="columnGodzinaStudent" prefWidth="130.0" text="Godzina Zajęć" />
         </columns>
       </TableView>
       <Button layoutX="179.0" layoutY="355.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="72.0" text="Poprzedni" />

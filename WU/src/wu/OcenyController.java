@@ -66,7 +66,7 @@ public class OcenyController implements Initializable {
 
             stmt = sesja.createStatement();
 
-            ResultSet rs = stmt.executeQuery("Select id_oceny,CONCAT(imie_s,\" \",nazwisko_s),CONCAT(imie_p,\" \",nazwisko_p) as prowadzacy ,ocena as ocena, nazwa_przedmiotu as nazwa_przedmiotu from oceny,pracownicy,przedmioty,studenci where oceny.id_przedmiotu=przedmioty.id_przedmiotu and oceny.id_studenta=studenci.id_studenta and oceny.id_pracownika=pracownicy.id_pracownika;");
+            ResultSet rs = stmt.executeQuery("Select id_oceny,CONCAT(imie_s,\" \",nazwisko_s),CONCAT(imie_p,\" \",nazwisko_p) as prowadzacy ,ocena as ocena, nazwa_przedmiotu as nazwa_przedmiotu from oceny,pracownicy,przedmioty,studenci where zalogowany_s='1' and oceny.id_przedmiotu=przedmioty.id_przedmiotu and oceny.id_studenta=studenci.id_studenta and oceny.id_pracownika=pracownicy.id_pracownika;");
 
             //System.out.println("Dane:"+ rs.getString(2));
             while (rs.next()) {

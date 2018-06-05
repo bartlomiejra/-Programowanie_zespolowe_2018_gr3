@@ -4,9 +4,13 @@ import Connection.ConnectionClass;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -55,18 +59,23 @@ public class Planzajec_dziekanatController implements Initializable {
         // select oceny pracownik
          data = FXCollections.observableArrayList();
 
-        Statement stmt = null;
+        ConnectionClass PolaczenieDB2 = new ConnectionClass();
+
+    Connection sesja2 = PolaczenieDB2.getConnection();
+  
 
         try {
 
-            stmt = sesja.createStatement();
+            //stmt = sesja.createStatement();
 
-            ResultSet rs = stmt.executeQuery("SELECT id_harmonogramu as idHarmonogramu, nazwa_przedmiotu as idPrzedmiotu, CONCAT(imie_p,\" \",nazwisko_p) as idPracownika, data_zajec_h as Data , godzina_h as Godzina, kierunek , rok from harmonogram, pracownicy, przedmioty, specjalizacja_studenci where harmonogram.id_przedmiotu=przedmioty.id_przedmiotu AND harmonogram.id_pracownika=pracownicy.id_pracownika and harmonogram.id_specjalizacji=specjalizacja_studenci.id_specjalizacji and pracownicy.zalogowany_p='1';");
-
+            ResultSet rs = sesja2.createStatement().executeQuery("SELECT id_harmonogramu as idHarmonogramu, nazwa_przedmiotu as idPrzedmiotu, CONCAT(imie_p,\" \",nazwisko_p) as idPracownika, data_zajec_h as Data , godzina_h as Godzina, kierunek , rok from harmonogram, pracownicy, przedmioty, specjalizacja_studenci where harmonogram.id_przedmiotu=przedmioty.id_przedmiotu AND harmonogram.id_pracownika=pracownicy.id_pracownika and harmonogram.id_specjalizacji=specjalizacja_studenci.id_specjalizacji and pracownicy.zalogowany_p='1';");
+            ResultSet rs2 = sesja2.createStatement().executeQuery("SELECT id_harmonogramu as idHarmonogramu, nazwa_przedmiotu as idPrzedmiotu, CONCAT(imie_p,\" \",nazwisko_p) as idPracownika, data_zajec_h as Data , godzina_h as Godzina, kierunek , rok from harmonogram, pracownicy, przedmioty, specjalizacja_studenci where harmonogram.id_przedmiotu=przedmioty.id_przedmiotu AND harmonogram.id_pracownika=pracownicy.id_pracownika and harmonogram.id_specjalizacji=specjalizacja_studenci.id_specjalizacji and pracownicy.zalogowany_p='1';");
+         
             //System.out.println("Dane:"+ rs.getString(2));
-            while (rs.next()) {
-
-                data.add(new Harmonogram(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7)));
+            while (rs2.next()) {
+                System.out.println("1");
+                 System.out.println( rs2.getString(2) + " " + rs2.getString(3));
+                //data.add(new Harmonogram(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7)));
 
             }
 
@@ -81,6 +90,7 @@ public class Planzajec_dziekanatController implements Initializable {
             tableHarmonogramPracownik.setItems(null);
             tableHarmonogramPracownik.setItems(data);
 
+            rs.close();
         } catch (Exception e) {
 
         }

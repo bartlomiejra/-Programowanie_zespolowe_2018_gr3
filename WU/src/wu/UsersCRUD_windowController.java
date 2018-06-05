@@ -6,11 +6,15 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+import java.util.function.Predicate;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,6 +28,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
@@ -68,8 +73,6 @@ public class UsersCRUD_windowController implements Initializable {
     private TextField tf_Pesel;
     @FXML
     private TextField tf_Email;
-    @FXML
-    private DatePicker data_urodzenia;
     @FXML
     private TableView<Student> table_student;
     @FXML
@@ -125,8 +128,6 @@ public class UsersCRUD_windowController implements Initializable {
     @FXML
     private TextField tf_nr_albumu;
     @FXML
-    private TableView<?> table_pracownicy;
-    @FXML
     private TextField tf_Imie_p;
     @FXML
     private TextField tf_nazwisko_p;
@@ -143,8 +144,6 @@ public class UsersCRUD_windowController implements Initializable {
     @FXML
     private TextField tf_specjalizacja_p;
     @FXML
-    private TableColumn<Student, String> columnDataUrStudent;
-    @FXML
     private DatePicker data_ur_p;
     @FXML
     private DatePicker dataStudent_s;
@@ -154,6 +153,9 @@ public class UsersCRUD_windowController implements Initializable {
     Connection sesja = PolaczenieDB.getConnection();
     private ObservableList<Student> data;
     private ObservableList<Pracownicy> data1;
+    @FXML
+    private TextField tfSzukaj;
+    private Student s = null;
 
     /**
      * Initializes the controller class.
@@ -223,6 +225,35 @@ public class UsersCRUD_windowController implements Initializable {
         } catch (Exception e) {
 
         }
+        
+        // filtrowanie tabeli student
+        
+        FilteredList<Student> filteredProdukt = new FilteredList<>(table_student.getItems(), e -> true);
+        tfSzukaj.setOnKeyReleased(e -> {
+            tfSzukaj.textProperty().addListener((observableValue, oldValue, newValue) -> {
+                filteredProdukt.setPredicate((Predicate<? super Student>) k -> {
+                    if (newValue == null || newValue.isEmpty()) {
+                        return true;
+                    }
+                    String lcFilter = newValue.toLowerCase();
+                    if (k.getimie_s().toLowerCase().contains(lcFilter) || k.getnazwisko_s().toString().toLowerCase().contains(lcFilter) || k.getpesel_s().toString().contains(lcFilter)) {
+                        return true;
+                    }
+                    return false;
+                });
+            });
+            SortedList<Student> sortedProdukty = new SortedList<>(filteredProdukt);
+            table_student.setItems(sortedProdukty);
+        });
+        
+        // filtrowanie tabeli student koniec
+        
+        
+        
+        
+        
+        
+        
     }
 
     /**
@@ -300,13 +331,17 @@ public class UsersCRUD_windowController implements Initializable {
     }
 
     /**
-     * metoda odpowiedzalna za edycje użytkowników
+     * metoda odpowiedzalna za edycje studentow
      *
      * @param event
      */
     @FXML
-    private void edit_usersButtonAction(ActionEvent event) {
-
+    private void edit_usersButtonAction(ActionEvent event) throws SQLException {
+   if (s != null){
+            
+            sesja.createStatement().executeUpdate("UPDATE studenci SET imie_s='"+tf_Imie.getText()+"', nazwisko_s='"+tf_Nazwisko.getText()+"', pesel_s='"+tf_Pesel.getText()+"', email_s='"+tf_Email.getText()+"', nr_tel_s='"+tf_Numer_tel.getText()+"', login_s='"+tf_login.getText()+"', haslo_s='"+tf_haslo.getText()+"', data_urodzenia_s='"+dataStudent_s.getValue()+"', nr_albumu_s='"+tf_nr_albumu.getText()+"' WHERE id_studenta="+s.getid_studenta()+";");
+        }
+        
     }
 
     /**
@@ -408,8 +443,9 @@ public class UsersCRUD_windowController implements Initializable {
     }
 
     @FXML
-    private void edit_usersButtonActionPrac(ActionEvent event) {
-
+    private void edit_usersButtonActionPrac(ActionEvent event) throws SQLException {
+     
+     
     }
 
     @FXML
@@ -433,5 +469,23 @@ public class UsersCRUD_windowController implements Initializable {
 
         }
     }
+            // edycja studenta uzupelnianie pol
+    @FXML
+    private void edytujStudenta(MouseEvent event) {
+        if (table_student.getSelectionModel().getSelectedItem() != null){
+            s = table_student.getSelectionModel().getSelectedItem();
+            tf_Imie.setText(s.getimie_s());
+            tf_Nazwisko.setText(s.getnazwisko_s());
+            tf_Email.setText(s.getemail_s());
+            tf_Pesel.setText(s.getpesel_s().toString());
+            dataStudent_s.getEditor().setText(s.getdata_urodzenia_s());
+            tf_login.setText(s.getlogin_s());
+            tf_haslo.setText(s.gethaslo_s());
+            tf_nr_albumu.setText(s.getnr_albumu_s());
+            tf_Numer_tel.setText(s.getnr_tel_s().toString());
+        }
+    }
+    
+    // edycja studenta uzupelnianie pol koniec
 
 }

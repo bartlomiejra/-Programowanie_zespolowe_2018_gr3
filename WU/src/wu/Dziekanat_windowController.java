@@ -93,6 +93,17 @@ public class Dziekanat_windowController implements Initializable {
         app_stage.show();             
     }
     
+    @FXML
+    private void kieriRokDzBtn(ActionEvent event) throws IOException {
+
+        Parent logout_page_parent = FXMLLoader.load(getClass().getResource("KierRokDziekanat.fxml"));
+        Scene logout_page_scene = new Scene(logout_page_parent);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.hide();
+        app_stage.setScene(logout_page_scene);
+        app_stage.show();             
+    }
+    
     /**
      * Metoda odpowiedzialna za zamkniecie programu po nacisnieciu przycisku
      * @param event

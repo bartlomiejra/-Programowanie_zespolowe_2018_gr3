@@ -12,13 +12,13 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="691.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.PrzedmiotAdmin_windowController">
    <children>
-      <TableView fx:id="table_przedmioty" layoutX="210.0" layoutY="61.0" prefHeight="258.0" prefWidth="467.0">
+      <TableView fx:id="table_przedmioty" layoutX="14.0" layoutY="61.0" prefHeight="217.0" prefWidth="663.0">
         <columns>
-          <TableColumn prefWidth="96.0" text="Id przemiotu" />
-          <TableColumn prefWidth="283.0" text="Nazwa przedmiotu" />
+          <TableColumn prefWidth="107.0" resizable="false" text="Id przemiotu" />
+          <TableColumn prefWidth="272.0" resizable="false" text="Nazwa przedmiotu" />
         </columns>
       </TableView>
-      <VBox layoutX="4.0" layoutY="35.0" prefHeight="167.0" prefWidth="190.0" spacing="10.0">
+      <VBox layoutX="208.0" layoutY="287.0" prefHeight="135.0" prefWidth="325.0" spacing="10.0">
          <children>
             <Label text="Dodaj nowy przedmiot:" />
             <TextField fx:id="tf_NazwaPrzedmiotu" promptText="Nazwa przedmiotu" />
@@ -36,7 +36,7 @@
             <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
          </padding>
       </VBox>
-      <TextField fx:id="tf_SzukajPrzedmioty" layoutX="367.0" layoutY="330.0" prefHeight="25.0" prefWidth="141.0" promptText="Szukaj" />
+      <TextField fx:id="tf_SzukajPrzedmioty" layoutX="31.0" layoutY="23.0" prefHeight="25.0" prefWidth="141.0" promptText="Szukaj" />
       <Button fx:id="przedmiotyMenu" layoutX="617.0" layoutY="23.0" mnemonicParsing="false" onAction="#przedmiotyMenuButtonAction" text="Menu" />
    </children>
 </AnchorPane>

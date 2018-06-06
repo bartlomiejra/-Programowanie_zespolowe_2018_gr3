@@ -41,7 +41,6 @@
             <HBox alignment="TOP_CENTER" prefHeight="46.0" prefWidth="191.0" spacing="10.0" VBox.vgrow="NEVER">
                <children>
                   <Button fx:id="add_wykladowca" mnemonicParsing="false" onAction="#add_wykladowcaButtonAction" text="Dodaj" />
-                  <Button fx:id="edit_wykladowca" mnemonicParsing="false" onAction="#edit_wykladowcaButtonAction" text="Edytuj" />
                   <Button fx:id="delete_wykładowca" mnemonicParsing="false" onAction="#delete_wykładowcaButtonAction" text="Usuń" />
                </children>
                <padding>

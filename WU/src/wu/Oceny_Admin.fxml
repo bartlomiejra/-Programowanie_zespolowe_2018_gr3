@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Oceny_AdminController">
+<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Oceny_AdminController">
    <children>
       <ImageView fitHeight="452.0" fitWidth="772.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -21,10 +21,10 @@
          </image></ImageView>
       <TableView fx:id="table_oceny" layoutX="205.0" layoutY="55.0" prefHeight="343.0" prefWidth="518.0">
          <columns>
-            <TableColumn fx:id="columnProwadzacy" prefWidth="121.0" text="Prowadzący" />
-            <TableColumn fx:id="columnPrzedmiot" prefWidth="157.0" text="Przedmiot" />
-            <TableColumn fx:id="columnOcena" prefWidth="99.5" text="Ocena" />
-            <TableColumn fx:id="columnStudent" prefWidth="140.0" text="Student" />
+            <TableColumn fx:id="columnProwadzacy" prefWidth="132.0" resizable="false" text="Prowadzący" />
+            <TableColumn fx:id="columnPrzedmiot" prefWidth="173.0" resizable="false" text="Przedmiot" />
+            <TableColumn fx:id="columnOcena" prefWidth="60.0" resizable="false" text="Ocena" />
+            <TableColumn fx:id="columnStudent" prefWidth="153.0" resizable="false" text="Student" />
          </columns>
       </TableView>
       <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="55.0" prefHeight="313.0" prefWidth="191.0" spacing="5.0">
@@ -40,8 +40,8 @@
             <ComboBox fx:id="comboStudent" onAction="#comboAdminStudent" prefWidth="150.0" />
             <HBox alignment="TOP_CENTER" prefHeight="46.0" prefWidth="191.0" spacing="10.0" VBox.vgrow="NEVER">
                <children>
-                  <Button fx:id="add_wykladowca" mnemonicParsing="false" onAction="#add_wykladowcaButtonAction" text="Dodaj" />
-                  <Button fx:id="delete_wykładowca" mnemonicParsing="false" onAction="#delete_wykładowcaButtonAction" text="Usuń" />
+                  <Button fx:id="add_wykladowca" mnemonicParsing="false" onAction="#add_wykladowcaButtonAction" style="-fx-background-color: #4ca3ba;" text="Dodaj" textFill="WHITE" />
+                  <Button fx:id="delete_wykładowca" mnemonicParsing="false" onAction="#delete_wykładowcaButtonAction" style="-fx-background-color: #4ca3ba;" text="Usuń" textFill="WHITE" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -52,7 +52,7 @@
             <Insets bottom="3.0" left="3.0" right="3.0" top="2.0" />
          </padding>
       </VBox>
-      <Button fx:id="assesment_menu" layoutX="664.0" layoutY="18.0" mnemonicParsing="false" onAction="#assesmentAdmin_menuActionButton" text="Menu" />
-      <Button fx:id="generate_wykladowca" layoutX="362.0" layoutY="413.0" mnemonicParsing="false" onAction="#generate_wykladowcaButtonAction" prefHeight="25.0" prefWidth="137.0" text="Generuj do PDF" />
+      <Button fx:id="assesment_menu" layoutX="664.0" layoutY="18.0" mnemonicParsing="false" onAction="#assesmentAdmin_menuActionButton" style="-fx-background-color: #4ca3ba;" text="Menu" textFill="WHITE" />
+      <Button fx:id="generate_wykladowca" layoutX="362.0" layoutY="413.0" mnemonicParsing="false" onAction="#generate_wykladowcaButtonAction" prefHeight="25.0" prefWidth="137.0" style="-fx-background-color: #4ca3ba;" text="Generuj do PDF" textFill="WHITE" />
    </children>
 </AnchorPane>

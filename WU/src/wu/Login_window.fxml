@@ -17,7 +17,7 @@
          </image>
       </ImageView>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-        <Button fx:id="loginB" layoutX="308.0" layoutY="200.0" onAction="#loginButtonAction" style="-fx-background-color: #696969;" text="Zaloguj!" />
+        <Button fx:id="loginB" layoutX="308.0" layoutY="200.0" onAction="#loginButtonAction" style="-fx-background-color: #4ca3ba;" text="Zaloguj!" textFill="WHITE" />
       <VBox layoutX="104.0" layoutY="65.0" prefHeight="93.0" prefWidth="223.0">
          <children>
               <Label fx:id="login" prefHeight="17.0" prefWidth="98.0" text="Login:" textFill="WHITE" />

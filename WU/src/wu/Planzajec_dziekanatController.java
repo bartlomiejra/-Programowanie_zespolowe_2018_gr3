@@ -209,5 +209,30 @@ public class Planzajec_dziekanatController implements Initializable {
     private void close_usersButtonAction(ActionEvent event) throws IOException {
         System.exit(0);
     }
+    
+    @FXML
+    private void comboDziekanatPrzedmiot(ActionEvent event) throws IOException {
+
+    }
+    
+    @FXML
+    private void comboDziekanatProwadzacy(ActionEvent event) throws IOException {
+
+    }
+    
+    @FXML
+    private void dataAdminBtn(ActionEvent event) throws IOException {
+
+    }
+    
+    @FXML
+    private void comboDziekanatGodzina(ActionEvent event) throws IOException {
+
+    }
+    
+    @FXML
+    private void comboDziekanatKiR(ActionEvent event) throws IOException {
+
+    }
 
 }

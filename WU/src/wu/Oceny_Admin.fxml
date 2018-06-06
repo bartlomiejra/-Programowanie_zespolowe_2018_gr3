@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Oceny_AdminController">
+<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="711.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Oceny_AdminController">
    <children>
       <ImageView fitHeight="452.0" fitWidth="772.0" pickOnBounds="true" preserveRatio="true">
          <image>

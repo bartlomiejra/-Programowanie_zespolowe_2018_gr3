@@ -61,9 +61,9 @@
             <TextField fx:id="tf_nr_albumu" prefHeight="29.0" prefWidth="149.0" promptText="Nr albumu" />
             <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="149.0" spacing="2.0">
                <children>
-                  <Button fx:id="add_users" mnemonicParsing="false" onAction="#add_usersButtonAction" text="Dodaj" />
-                  <Button fx:id="edit_users" mnemonicParsing="false" onAction="#edit_usersButtonAction" text="Edytuj" />
-                  <Button fx:id="delete_users" mnemonicParsing="false" onAction="#delete_usersButtonAction" text="Usuń" />
+                  <Button fx:id="add_users" mnemonicParsing="false" onAction="#add_usersButtonAction" style="-fx-background-color: #4ca3ba;" text="Dodaj" textFill="WHITE" />
+                  <Button fx:id="edit_users" mnemonicParsing="false" onAction="#edit_usersButtonAction" style="-fx-background-color: #4ca3ba;" text="Edytuj" textFill="WHITE" />
+                  <Button fx:id="delete_users" mnemonicParsing="false" onAction="#delete_usersButtonAction" style="-fx-background-color: #4ca3ba;" text="Usuń" textFill="WHITE" />
                </children>
                <padding>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
@@ -92,9 +92,9 @@
             <TextField fx:id="tf_specjalizacja_p" alignment="TOP_LEFT" prefHeight="29.0" prefWidth="149.0" promptText="Specjalizacja" />
             <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="149.0" spacing="2.0">
                <children>
-                  <Button fx:id="add_usersp" mnemonicParsing="false" onAction="#add_usersButtonActionPrac" onMouseClicked="#edytujStudenta" text="Dodaj" />
-                  <Button fx:id="edit_usersp" mnemonicParsing="false" onAction="#edit_usersButtonActionPrac" text="Edytuj" />
-                  <Button fx:id="delete_usersp" mnemonicParsing="false" onAction="#delete_usersButtonActionPrac" onMouseClicked="#edytujStudenta" text="Usuń" />
+                  <Button fx:id="add_usersp" mnemonicParsing="false" onAction="#add_usersButtonActionPrac" onMouseClicked="#edytujStudenta" style="-fx-background-color: #4ca3ba;" text="Dodaj" textFill="WHITE" />
+                  <Button fx:id="edit_usersp" mnemonicParsing="false" onAction="#edit_usersButtonActionPrac" style="-fx-background-color: #4ca3ba;" text="Edytuj" textFill="WHITE" />
+                  <Button fx:id="delete_usersp" mnemonicParsing="false" onAction="#delete_usersButtonActionPrac" onMouseClicked="#edytujStudenta" style="-fx-background-color: #4ca3ba;" text="Usuń" textFill="WHITE" />
                </children>
                <padding>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />

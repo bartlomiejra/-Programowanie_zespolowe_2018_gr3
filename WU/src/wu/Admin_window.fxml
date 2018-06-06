@@ -85,7 +85,14 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button fx:id="kierIrok" mnemonicParsing="false" onAction="#kierIRokBtn" prefHeight="48.0" prefWidth="167.0" style="-fx-background-color: #4ca3ba;" text="Kierunek i rok" textFill="WHITE" GridPane.columnIndex="1" />
+            <Button fx:id="kierIrok" mnemonicParsing="false" onAction="#kierIRokBtn" prefHeight="48.0" prefWidth="167.0" style="-fx-background-color: #4ca3ba;" text="Kierunek i rok" textFill="WHITE" GridPane.columnIndex="1">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@student.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
          </children>
       </GridPane>
    </children>

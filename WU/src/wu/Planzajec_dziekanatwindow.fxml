@@ -14,35 +14,36 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Planzajec_dziekanatController">
+<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Planzajec_dziekanatController">
    <children>
       <ImageView fitHeight="452.0" fitWidth="726.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@tlo2.jpg" />
          </image>
       </ImageView>
-      <TableView layoutX="201.0" layoutY="65.0" prefHeight="343.0" prefWidth="524.0">
+      <TableView fx:id="tableHarmonogramAdmin" layoutX="201.0" layoutY="65.0" prefHeight="343.0" prefWidth="524.0">
          <columns>
-            <TableColumn prefWidth="111.0" resizable="false" text="Id Harmonogramu" />
-            <TableColumn prefWidth="90.0" resizable="false" text="Id przedmiotu" />
-            <TableColumn prefWidth="106.0" resizable="false" text="Id Pracownika" />
-            <TableColumn prefWidth="86.0" resizable="false" text="Data" />
-            <TableColumn prefWidth="129.0" resizable="false" text="Godzina" />
+            <TableColumn fx:id="columnIdprzedmiotuAdmin" prefWidth="111.0" resizable="false" text="Przedmiot" />
+            <TableColumn fx:id="columnIdpracownikaAdmin" prefWidth="90.0" resizable="false" text="Prowadzacy" />
+            <TableColumn fx:id="columnDataAdmin" prefWidth="54.0" resizable="false" text="Data" />
+            <TableColumn fx:id="columnGodzinaAdmin" prefWidth="78.0" resizable="false" text="Godzina" />
+            <TableColumn fx:id="columnKierunekAdmin" prefWidth="117.0" resizable="false" text="Kierunek" />
+            <TableColumn fx:id="columnRokAdmin" prefWidth="70.0" resizable="false" text="Rok" />
          </columns>
       </TableView>
       <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="46.0" prefHeight="313.0" prefWidth="191.0" spacing="8.0">
          <children>
             <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj zajęcia do harmonogramu" wrappingWidth="178.1171875" />
             <Label text="Przedmiot:" textFill="WHITE" />
-            <ComboBox fx:id="cAPrzedmiot" onAction="#comboDziekanatPrzedmiot" prefWidth="150.0" />
+            <ComboBox fx:id="cAPrzedmiot" onAction="#comboAdminPrzedmiot" prefWidth="150.0" />
             <Label text="Prowadzący:" textFill="WHITE" />
-            <ComboBox fx:id="cIPracownik" onAction="#comboDziekanatProwadzacy" prefWidth="150.0" />
+            <ComboBox fx:id="cIPracownik" onAction="#comboAdminPracownik" prefWidth="150.0" />
             <Label text="Data:" textFill="WHITE" />
-            <DatePicker fx:id="dataAdmin" onAction="#dataAdminBtn" />
+            <DatePicker fx:id="dataAdmin" onAction="#dataAdmin" />
             <Label text="Godzina zajęć:" textFill="WHITE" />
-            <ComboBox fx:id="cGAdmin" onAction="#comboDziekanatGodzina" prefWidth="150.0" />
+            <ComboBox fx:id="cGAdmin" onAction="#comboAdminGodziny" prefWidth="150.0" />
             <Label text="Kierunek i rok:" textFill="WHITE" />
-            <ComboBox fx:id="cISpec" onAction="#comboDziekanatKiR" prefWidth="150.0" />
+            <ComboBox fx:id="cISpec" onAction="#comboAdminSpec" prefWidth="150.0" />
             <HBox alignment="TOP_CENTER" prefHeight="46.0" prefWidth="191.0" spacing="10.0" VBox.vgrow="NEVER">
                <children>
                   <Button fx:id="add_wykladowca" mnemonicParsing="false" onAction="#add_wykladowcaButtonAction" style="-fx-background-color: #4ca3ba;" text="Dodaj" textFill="WHITE" />

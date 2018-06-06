@@ -138,7 +138,24 @@ public class KierRokController implements Initializable {
 
     @FXML
     private void delete_kierunekBtn(ActionEvent event) {
-  
+        
+        int id = (table_kierunek.getSelectionModel().getSelectedItem().getid_specjalizacji());
+
+        try {
+
+            PreparedStatement statement = sesja.prepareStatement("DELETE FROM specjalizacja_studenci WHERE id_specjalizacji = ?");
+            statement.setInt(1, id);
+            statement.executeUpdate();
+
+            Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("KierRok.fxml"));
+            Scene assessment_page_scene = new Scene(assessment_page_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.hide();
+            app_stage.setScene(assessment_page_scene);
+            app_stage.show();
+        } catch (Exception e) {
+
+        }
     }
     
 }

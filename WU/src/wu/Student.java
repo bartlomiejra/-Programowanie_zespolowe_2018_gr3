@@ -6,7 +6,9 @@
 package wu;
 
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.LongProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -19,7 +21,7 @@ public class Student {
     private IntegerProperty id_studenta;
     private StringProperty imie_s;
     private StringProperty nazwisko_s;
-    private IntegerProperty pesel_s;
+    private LongProperty pesel_s;
     private StringProperty email_s;
     private StringProperty data_urodzenia_s;
     private IntegerProperty nr_tel_s;
@@ -27,11 +29,11 @@ public class Student {
     private StringProperty haslo_s;
     private StringProperty nr_albumu_s;
 
-    public Student(Integer id_studenta, String imie_s, String nazwisko_s, Integer pesel_s, String email_s, String data_urodzenia_s, Integer nr_tel_s, String login_s, String haslo_s, String nr_albumu_s) {
+    public Student(Integer id_studenta, String imie_s, String nazwisko_s,  Long pesel_s, String email_s, String data_urodzenia_s, Integer nr_tel_s, String login_s, String haslo_s, String nr_albumu_s) {
         this.id_studenta = new SimpleIntegerProperty(id_studenta);
         this.imie_s = new SimpleStringProperty(imie_s);
         this.nazwisko_s = new SimpleStringProperty(nazwisko_s);
-        this.pesel_s = new SimpleIntegerProperty(pesel_s);
+        this.pesel_s = new SimpleLongProperty(pesel_s);
         this.email_s = new SimpleStringProperty(email_s);
         this.data_urodzenia_s = new SimpleStringProperty(data_urodzenia_s);
         this.nr_tel_s = new SimpleIntegerProperty(nr_tel_s);
@@ -59,7 +61,7 @@ public class Student {
         return nazwisko_s.get();
     }
 
-    public Integer getpesel_s() {
+    public  Long getpesel_s() {
         return pesel_s.get();
     }
 
@@ -87,7 +89,7 @@ public class Student {
         return nr_albumu_s.get();
     }
 
-    public IntegerProperty pesel_sProperty() {
+    public  LongProperty pesel_sProperty() {
         return pesel_s;
     }
 

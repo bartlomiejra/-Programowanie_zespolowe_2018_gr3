@@ -171,7 +171,7 @@ public class UsersCRUD_windowController implements Initializable {
             stmt = sesja.createStatement();
             ResultSet rs = stmt.executeQuery("select id_studenta,imie_s , nazwisko_s, pesel_s, email_s, data_urodzenia_s, nr_tel_s, login_s, haslo_s, nr_albumu_s from studenci;");
             while (rs.next()) {
-                data.add(new Student(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getString(8), rs.getString(9), rs.getString(10)));
+                data.add(new Student(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getLong(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getString(8), rs.getString(9), rs.getString(10)));
 
             }
             System.out.println(rs);
@@ -200,7 +200,7 @@ public class UsersCRUD_windowController implements Initializable {
             stmt1 = sesja.createStatement();
             ResultSet rs = stmt1.executeQuery("select id_pracownika,imie_p , nazwisko_p, pesel_p, email_p, data_urodzenia_p, nr_tel_p, login_p, haslo_p,specjalizacja_p from pracownicy;");
             while (rs.next()) {
-                data1.add(new Pracownicy(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getString(8), rs.getString(9), rs.getString(10)));
+                data1.add(new Pracownicy(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getLong(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getString(8), rs.getString(9), rs.getString(10)));
 
             }
             System.out.println(rs);

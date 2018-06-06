@@ -6,7 +6,9 @@
 package wu;
 
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.LongProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -19,7 +21,7 @@ public class Pracownicy {
     private  IntegerProperty id_pracownika;
     private  StringProperty imie_p;
     private  StringProperty nazwisko_p;
-    private  IntegerProperty pesel_p;
+    private  LongProperty pesel_p;
     private  StringProperty email_p;
     private  StringProperty data_urodzenia_p;
     private  IntegerProperty nr_tel_p;
@@ -28,11 +30,11 @@ public class Pracownicy {
     private  StringProperty specjalizacja_p;
     
 
-    public Pracownicy( String imie_p, String nazwisko_p, Integer pesel_p, String email_p, String data_urodzenia_p, Integer nr_tel_p, String login_p,  String haslo_p, String specjalizacja_p) {
+    public Pracownicy( String imie_p, String nazwisko_p,  Long pesel_p, String email_p, String data_urodzenia_p, Integer nr_tel_p, String login_p,  String haslo_p, String specjalizacja_p) {
        
         this.imie_p = new SimpleStringProperty(imie_p);
         this.nazwisko_p = new SimpleStringProperty(nazwisko_p);
-        this.pesel_p = new SimpleIntegerProperty(pesel_p);
+        this.pesel_p = new SimpleLongProperty(pesel_p);
         this.email_p = new SimpleStringProperty(email_p);
         this.data_urodzenia_p = new SimpleStringProperty(data_urodzenia_p);
         this.nr_tel_p = new SimpleIntegerProperty(nr_tel_p);
@@ -53,11 +55,11 @@ public class Pracownicy {
         this.id_pracownika = new SimpleIntegerProperty(id_pracownika);
     }
     // Konstruktor pracownicy admin 
-    public Pracownicy( Integer id_pracownika, String imie_p, String nazwisko_p, Integer pesel_p, String email_p, String data_urodzenia_p, Integer nr_tel_p, String login_p,  String haslo_p, String specjalizacja_p) {
+    public Pracownicy( Integer id_pracownika, String imie_p, String nazwisko_p,  Long pesel_p, String email_p, String data_urodzenia_p, Integer nr_tel_p, String login_p,  String haslo_p, String specjalizacja_p) {
         this.id_pracownika = new SimpleIntegerProperty(id_pracownika);
         this.imie_p = new SimpleStringProperty(imie_p);
         this.nazwisko_p = new SimpleStringProperty(nazwisko_p);
-        this.pesel_p = new SimpleIntegerProperty(pesel_p);
+        this.pesel_p = new SimpleLongProperty(pesel_p);
         this.email_p = new SimpleStringProperty(email_p);
         this.data_urodzenia_p = new SimpleStringProperty(data_urodzenia_p);
         this.nr_tel_p = new SimpleIntegerProperty(nr_tel_p);
@@ -73,7 +75,7 @@ public class Pracownicy {
     public String getnazwisko_p() {
         return nazwisko_p.get();
     }
-    public Integer getpesel_p() {
+    public Long getpesel_p() {
         return pesel_p.get();
     }
     public String getemail_p() {
@@ -108,7 +110,7 @@ public class Pracownicy {
         return nazwisko_p;
     }
 
-    public IntegerProperty pesel_pProperty() {
+    public  LongProperty pesel_pProperty() {
         return pesel_p;
     }
     

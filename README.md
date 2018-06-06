@@ -8,7 +8,6 @@ Dzięki aplikacji będziemy mieli możliwość :
 - przydzielać studentom prowadzących zajęcia
 - przydzielać przedmioty do prowadzącego
 - generować PDF z ocenami dla ucznia i prowadzącego
-- generowanie listy studentów danego roku do PDF
 - wyświetlenia planu zajęć przy użyciu kalendarza oraz tabeli
 ## Aplikacja będzie posiadać 4 grupy użytkowników :
 - student : z dostępem do sprawdzania ocen, planu zajęć, danych osobowych oraz

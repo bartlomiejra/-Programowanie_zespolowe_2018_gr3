@@ -58,8 +58,7 @@ public class Personaldetals_windowController implements Initializable {
     private Label numer_label;
     @FXML 
     private Label login_label;
-    @FXML 
-    private Label haslo_label;
+   
     @FXML 
     private Label kierunek_label;
     @FXML 
@@ -86,7 +85,7 @@ public class Personaldetals_windowController implements Initializable {
             ResultSet rs = stmt.executeQuery("select studenci.id_studenta, imie_s, nazwisko_s, pesel_s, email_s, data_urodzenia_s, nr_tel_s, login_s, haslo_s, nr_albumu_s, kierunek, rok from studenci, specjalizacja_studenci  where zalogowany_s='1' and studenci.id_studenta=specjalizacja_studenci.id_studenta");
  
             while (rs.next()) {
-                id_label.setText(rs.getString("studenci.id_studenta"));
+                
                 imie_label.setText(rs.getString("imie_s"));
                 nazwisko_label.setText(rs.getString("nazwisko_s"));
                 pesel_label.setText(rs.getString("pesel_s"));
@@ -96,7 +95,7 @@ public class Personaldetals_windowController implements Initializable {
                 login_label.setText(rs.getString("login_s"));
                 rok_label.setText(rs.getString("rok"));              
                 kierunek_label.setText(rs.getString("kierunek"));
-                haslo_label.setText(rs.getString("haslo_s"));
+                
  
                 
             }

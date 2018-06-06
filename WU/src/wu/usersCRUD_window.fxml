@@ -8,22 +8,13 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="757.0" prefWidth="1067.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.UsersCRUD_windowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="757.0" prefWidth="1067.0" style="-fx-background-color: #0C1563;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.UsersCRUD_windowController">
    <children>
-      <TextField fx:id="tf_Imie" layoutX="14.0" layoutY="73.0" prefHeight="29.0" prefWidth="149.0" promptText="Imię" />
-      <TextField fx:id="tf_Nazwisko" layoutX="14.0" layoutY="102.0" prefHeight="25.0" prefWidth="149.0" promptText="Nazwisko" />
-      <TextField fx:id="tf_Pesel" layoutX="14.0" layoutY="127.0" prefHeight="29.0" prefWidth="149.0" promptText="Pesel (hasło)" />
-      <TextField fx:id="tf_Email" layoutX="14.0" layoutY="156.0" prefHeight="25.0" prefWidth="149.0" promptText="Email" />
-      <DatePicker fx:id="dataStudent_s" layoutX="14.0" layoutY="181.0" prefHeight="25.0" prefWidth="149.0" promptText="Data urodzenia" />
-      <Text layoutX="2.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj Nowego studenta" textAlignment="CENTER" wrappingWidth="173.67578125">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Text>
-      <TableView fx:id="table_student" layoutX="173.0" layoutY="46.0" onMouseClicked="#edytujStudenta" prefHeight="300.0" prefWidth="890.0" AnchorPane.leftAnchor="173.0">
+      <TableView fx:id="table_student" layoutX="180.0" layoutY="46.0" onMouseClicked="#edytujStudenta" prefHeight="300.0" prefWidth="883.0" AnchorPane.leftAnchor="180.0">
         <columns>
           <TableColumn fx:id="columnImieStudent" prefWidth="94.0" text="Imie" />
             <TableColumn fx:id="columntNazwiskoStudent" prefWidth="96.0" text="Nazwisko" />
@@ -37,22 +28,8 @@
         </columns>
       </TableView>
       <TextField fx:id="tfSzukaj" layoutX="885.0" layoutY="360.0" prefHeight="29.0" prefWidth="159.0" promptText="Szukaj" />
-      <HBox layoutX="14.0" layoutY="326.0" prefHeight="40.0" prefWidth="149.0" spacing="2.0">
-         <children>
-            <Button fx:id="add_users" mnemonicParsing="false" onAction="#add_usersButtonAction" text="Dodaj" />
-            <Button fx:id="edit_users" mnemonicParsing="false" onAction="#edit_usersButtonAction" text="Edytuj" />
-            <Button fx:id="delete_users" mnemonicParsing="false" onAction="#delete_usersButtonAction" text="Usuń" />
-         </children>
-         <padding>
-            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-         </padding>
-      </HBox>
-      <Button fx:id="usersMenu" layoutX="984.0" layoutY="12.0" mnemonicParsing="false" onAction="#usersMenuActionButton" prefHeight="25.0" prefWidth="60.0" text="Menu" />
-      <TextField fx:id="tf_Numer_tel" layoutX="14.0" layoutY="206.0" prefHeight="29.0" prefWidth="149.0" promptText="Nr telefonu" />
-      <TextField fx:id="tf_login" layoutX="14.0" layoutY="235.0" prefHeight="29.0" prefWidth="149.0" promptText="Login" />
-      <TextField fx:id="tf_haslo" layoutX="14.0" layoutY="264.0" prefHeight="29.0" prefWidth="149.0" promptText="Hasło" />
-      <TextField fx:id="tf_nr_albumu" layoutX="14.0" layoutY="293.0" prefHeight="29.0" prefWidth="149.0" promptText="Nr albumu" />
-      <TableView fx:id="table_pracownik" layoutX="173.0" layoutY="401.0" onMouseClicked="#edytujPracownika" prefHeight="269.0" prefWidth="890.0">
+      <Button fx:id="usersMenu" layoutX="984.0" layoutY="12.0" mnemonicParsing="false" onAction="#usersMenuActionButton" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #4ca3ba;" text="Menu" textFill="WHITE" />
+      <TableView fx:id="table_pracownik" layoutX="180.0" layoutY="401.0" onMouseClicked="#edytujPracownika" prefHeight="269.0" prefWidth="883.0">
          <columns>
             <TableColumn fx:id="columnImiePracownik" prefWidth="94.0" text="Imie" />
             <TableColumn fx:id="columntNazwiskoPracownik" prefWidth="96.0" text="Nazwisko" />
@@ -65,30 +42,68 @@
             <TableColumn fx:id="Columnspecjalizacja_pPracownik" prefWidth="99.0" text="Specjalizacja" />
          </columns>
       </TableView>
-      <TextField fx:id="tf_Imie_p" layoutX="14.0" layoutY="430.0" prefHeight="29.0" prefWidth="149.0" promptText="Imię" />
-      <TextField fx:id="tf_nazwisko_p" layoutX="14.0" layoutY="459.0" prefHeight="29.0" prefWidth="149.0" promptText="Nazwisko" />
-      <TextField fx:id="tf_pesel_p" layoutX="14.0" layoutY="488.0" prefHeight="29.0" prefWidth="149.0" promptText="Pesel" />
-      <TextField fx:id="tf_email_p" layoutX="14.0" layoutY="517.0" prefHeight="29.0" prefWidth="149.0" promptText="Email" />
-      <TextField fx:id="tf_haslo_p" layoutX="14.0" layoutY="629.0" prefHeight="29.0" prefWidth="149.0" promptText="Hasło" />
-      <TextField fx:id="tf_NumerTel_p" layoutX="14.0" layoutY="571.0" prefHeight="29.0" prefWidth="149.0" promptText="Numer Telefonu" />
-      <TextField fx:id="tf_login_p" layoutX="14.0" layoutY="600.0" prefHeight="29.0" prefWidth="149.0" promptText="Login" />
-      <Text layoutX="2.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj Nowego pracownika" textAlignment="CENTER" wrappingWidth="173.67578125">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Text>
-      <DatePicker fx:id="data_ur_p" layoutX="14.0" layoutY="546.0" prefHeight="25.0" prefWidth="149.0" promptText="Data urodzenia" />
       <TextField fx:id="tfSzukaj_p" layoutX="885.0" layoutY="679.0" prefHeight="29.0" prefWidth="159.0" promptText="Szukaj" />
-      <HBox layoutX="14.0" layoutY="693.0" prefHeight="40.0" prefWidth="149.0" spacing="2.0">
+      <VBox layoutX="2.0" layoutY="34.0" prefHeight="332.0" prefWidth="174.0" spacing="3.0">
          <children>
-            <Button fx:id="add_usersp" mnemonicParsing="false" onAction="#add_usersButtonActionPrac" onMouseClicked="#edytujStudenta" text="Dodaj" />
-            <Button fx:id="edit_usersp" mnemonicParsing="false" onAction="#edit_usersButtonActionPrac" text="Edytuj" />
-            <Button fx:id="delete_usersp" mnemonicParsing="false" onAction="#delete_usersButtonActionPrac" onMouseClicked="#edytujStudenta" text="Usuń" />
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj Nowego studenta" textAlignment="CENTER" wrappingWidth="173.67578125">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+            <TextField fx:id="tf_Imie" prefHeight="29.0" prefWidth="149.0" promptText="Imię" />
+            <TextField fx:id="tf_Nazwisko" prefHeight="25.0" prefWidth="149.0" promptText="Nazwisko" />
+            <TextField fx:id="tf_Pesel" prefHeight="29.0" prefWidth="149.0" promptText="Pesel (hasło)" />
+            <TextField fx:id="tf_Email" prefHeight="25.0" prefWidth="149.0" promptText="Email" />
+            <DatePicker fx:id="dataStudent_s" prefHeight="25.0" prefWidth="149.0" promptText="Data urodzenia" />
+            <TextField fx:id="tf_Numer_tel" prefHeight="29.0" prefWidth="149.0" promptText="Nr telefonu" />
+            <TextField fx:id="tf_login" prefHeight="29.0" prefWidth="149.0" promptText="Login" />
+            <TextField fx:id="tf_haslo" prefHeight="29.0" prefWidth="149.0" promptText="Hasło" />
+            <TextField fx:id="tf_nr_albumu" prefHeight="29.0" prefWidth="149.0" promptText="Nr albumu" />
+            <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="149.0" spacing="2.0">
+               <children>
+                  <Button fx:id="add_users" mnemonicParsing="false" onAction="#add_usersButtonAction" text="Dodaj" />
+                  <Button fx:id="edit_users" mnemonicParsing="false" onAction="#edit_usersButtonAction" text="Edytuj" />
+                  <Button fx:id="delete_users" mnemonicParsing="false" onAction="#delete_usersButtonAction" text="Usuń" />
+               </children>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding>
+            </HBox>
          </children>
          <padding>
-            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
          </padding>
-      </HBox>
-      <TextField fx:id="tf_specjalizacja_p" layoutX="14.0" layoutY="656.0" prefHeight="29.0" prefWidth="149.0" promptText="Specjalizacja" />
+      </VBox>
+      <VBox layoutX="3.0" layoutY="401.0" prefHeight="300.0" prefWidth="174.0" spacing="3.0">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj Nowego pracownika" textAlignment="CENTER" wrappingWidth="173.67578125">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+            <TextField fx:id="tf_Imie_p" prefHeight="29.0" prefWidth="149.0" promptText="Imię" />
+            <TextField fx:id="tf_nazwisko_p" prefHeight="29.0" prefWidth="149.0" promptText="Nazwisko" />
+            <TextField fx:id="tf_pesel_p" prefHeight="29.0" prefWidth="149.0" promptText="Pesel" />
+            <TextField fx:id="tf_email_p" prefHeight="29.0" prefWidth="149.0" promptText="Email" />
+            <DatePicker fx:id="data_ur_p" prefHeight="25.0" prefWidth="149.0" promptText="Data urodzenia" />
+            <TextField fx:id="tf_NumerTel_p" prefHeight="29.0" prefWidth="149.0" promptText="Numer Telefonu" />
+            <TextField fx:id="tf_login_p" prefHeight="29.0" prefWidth="149.0" promptText="Login" />
+            <TextField fx:id="tf_haslo_p" prefHeight="29.0" prefWidth="149.0" promptText="Hasło" />
+            <TextField fx:id="tf_specjalizacja_p" alignment="TOP_LEFT" prefHeight="29.0" prefWidth="149.0" promptText="Specjalizacja" />
+            <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="149.0" spacing="2.0">
+               <children>
+                  <Button fx:id="add_usersp" mnemonicParsing="false" onAction="#add_usersButtonActionPrac" onMouseClicked="#edytujStudenta" text="Dodaj" />
+                  <Button fx:id="edit_usersp" mnemonicParsing="false" onAction="#edit_usersButtonActionPrac" text="Edytuj" />
+                  <Button fx:id="delete_usersp" mnemonicParsing="false" onAction="#delete_usersButtonActionPrac" onMouseClicked="#edytujStudenta" text="Usuń" />
+               </children>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets top="1.0" />
+         </padding>
+      </VBox>
    </children>
 </AnchorPane>

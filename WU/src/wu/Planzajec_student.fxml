@@ -1,35 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Planzajec_studentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="641.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.Planzajec_studentController">
    <children>
-      <TableView fx:id="tableHarmonogramStudent" layoutX="10.0" layoutY="60.0" prefHeight="280.0" prefWidth="683.0" AnchorPane.leftAnchor="10.0">
+      <ImageView fitHeight="400.0" fitWidth="702.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@tlo2.jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tableHarmonogramStudent" layoutX="10.0" layoutY="60.0" prefHeight="280.0" prefWidth="631.0" AnchorPane.leftAnchor="10.0">
         <columns>
-          <TableColumn fx:id="columnIdprzedmiotuStudent" prefWidth="146.0" text="Przedmiot" />
-            <TableColumn fx:id="columnIdpracownikaStudent" prefWidth="171.0" text="Prowadzący" />
-            <TableColumn fx:id="columnDataStudent" prefWidth="106.0" text="Data zajęć" />
-            <TableColumn fx:id="columnGodzinaStudent" prefWidth="130.0" text="Godzina Zajęć" />
+          <TableColumn fx:id="columnIdprzedmiotuStudent" prefWidth="231.0" resizable="false" text="Przedmiot" />
+            <TableColumn fx:id="columnIdpracownikaStudent" prefWidth="153.0" resizable="false" text="Prowadzący" />
+            <TableColumn fx:id="columnDataStudent" prefWidth="109.0" resizable="false" text="Data zajęć" />
+            <TableColumn fx:id="columnGodzinaStudent" prefWidth="137.0" resizable="false" text="Godzina Zajęć" />
         </columns>
       </TableView>
-      <Button layoutX="179.0" layoutY="355.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="72.0" text="Poprzedni" />
-      <Button layoutX="424.0" layoutY="355.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" text="Następny" />
-      <Text layoutX="258.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="od: 07.05.2018 do: 13.05.2018" wrappingWidth="185.13671875" />
-      <HBox layoutX="477.0" layoutY="14.0" prefHeight="35.0" prefWidth="211.0" spacing="5.0">
-         <children>
-            <Button fx:id="scheduleSMenu" mnemonicParsing="false" onAction="#scheduleSMenuActionButton" prefHeight="25.0" prefWidth="60.0" text="Menu" />
-            <Button fx:id="logout_admin" mnemonicParsing="false" onAction="#logout_adminButtonAction" text="Wyloguj" />
-            <Button fx:id="close_admin" mnemonicParsing="false" onAction="#close_adminButtonAction" text="Zamknij" />
-         </children>
-         <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-         </padding>
-      </HBox>
+      <Button fx:id="scheduleSMenu" layoutX="565.0" layoutY="22.0" mnemonicParsing="false" onAction="#scheduleSMenuActionButton" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #4ca3ba;" text="Menu" textFill="WHITE" />
    </children>
 </AnchorPane>

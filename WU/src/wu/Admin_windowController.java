@@ -150,6 +150,17 @@ public class Admin_windowController implements Initializable {
         app_stage.show();             
     }
     
+     @FXML
+    private void kierIRokBtn(ActionEvent event) throws IOException {
+
+        Parent logout_page_parent = FXMLLoader.load(getClass().getResource("KierRok.fxml"));
+        Scene logout_page_scene = new Scene(logout_page_parent);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.hide();
+        app_stage.setScene(logout_page_scene);
+        app_stage.show();             
+    }
+    
     @FXML
     public void loggedout_p() throws SQLException {
         

@@ -81,9 +81,9 @@
       <TextField fx:id="tfSzukaj_p" layoutX="885.0" layoutY="679.0" prefHeight="29.0" prefWidth="159.0" promptText="Szukaj" />
       <HBox layoutX="14.0" layoutY="693.0" prefHeight="40.0" prefWidth="149.0" spacing="2.0">
          <children>
-            <Button fx:id="add_usersp" mnemonicParsing="false" onAction="#add_usersButtonActionPrac" onMouseClicked="#edytujStudenta" text="Dodaj" />
+            <Button fx:id="add_usersp" mnemonicParsing="false" onAction="#add_usersButtonActionPrac" text="Dodaj" />
             <Button fx:id="edit_usersp" mnemonicParsing="false" onAction="#edit_usersButtonActionPrac" text="Edytuj" />
-            <Button fx:id="delete_usersp" mnemonicParsing="false" onAction="#delete_usersDButtonActionPrac" onMouseClicked="#edytujStudenta" text="Usuń" />
+            <Button fx:id="delete_usersp" mnemonicParsing="false" onAction="#delete_usersButtonActionPrac" text="Usuń" />
          </children>
          <padding>
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />

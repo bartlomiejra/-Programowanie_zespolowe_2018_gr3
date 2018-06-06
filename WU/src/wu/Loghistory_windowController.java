@@ -7,8 +7,11 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
+import java.util.function.Predicate;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +22,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -51,7 +55,9 @@ public class Loghistory_windowController implements Initializable {
     private Button assesment_logout;
     @FXML
     private Button close_history;
-
+    @FXML
+    private TextField tfSzukaj;
+    
     ConnectionClass PolaczenieDB = new ConnectionClass();
 
     Connection sesja = PolaczenieDB.getConnection();
@@ -93,6 +99,9 @@ public class Loghistory_windowController implements Initializable {
 
         }
 
+        
+        
+        
     }
 
     /**
@@ -172,6 +181,10 @@ public class Loghistory_windowController implements Initializable {
     @FXML
     private void searchButtonAction(ActionEvent event) throws IOException {
 
+       
+        // filtrowanie tabeli student koniec
+        
+        
     }
 
 }

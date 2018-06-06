@@ -18,6 +18,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -42,20 +43,18 @@ public class Planzajec_prowadzacyController implements Initializable {
     private TableColumn<Harmonogram, String> columnKierunekPracownik;
     @FXML
     private TableColumn<Harmonogram, Integer> columnRokPracownik;
+    @FXML
+    private TextField tfSzukaj;
 
-    
-    
     ConnectionClass PolaczenieDB = new ConnectionClass();
 
     Connection sesja = PolaczenieDB.getConnection();
     private ObservableList<Harmonogram> data;
-    
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+
         //wyswietlanie select plan zajec
-        
         data = FXCollections.observableArrayList();
 
         Statement stmt = null;
@@ -75,7 +74,7 @@ public class Planzajec_prowadzacyController implements Initializable {
 
             //columnIdharmonogramuAdmin.setCellValueFactory(new PropertyValueFactory<>("idHarmonogramu"));
             columnIdprzedmiotuPracownik.setCellValueFactory(new PropertyValueFactory<>("idPrzedmiotu"));
-           // columnIdpracownikaPracownik.setCellValueFactory(new PropertyValueFactory<>("idPracownika"));
+            // columnIdpracownikaPracownik.setCellValueFactory(new PropertyValueFactory<>("idPracownika"));
             columnDataPracownik.setCellValueFactory(new PropertyValueFactory<>("Data"));
             columnGodzinaPracownik.setCellValueFactory(new PropertyValueFactory<>("Godzina"));
             columnKierunekPracownik.setCellValueFactory(new PropertyValueFactory<>("kierunek"));
@@ -87,9 +86,8 @@ public class Planzajec_prowadzacyController implements Initializable {
         } catch (Exception e) {
 
         }
-        
+
         // koniec wyswietlania select wykladowca
-        
     }
 
     /**

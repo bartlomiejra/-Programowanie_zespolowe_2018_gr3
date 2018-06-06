@@ -35,9 +35,9 @@
       </HBox>
       <GridPane alignment="TOP_CENTER" layoutX="59.0" layoutY="146.0" prefHeight="189.0" prefWidth="458.0">
         <columnConstraints>
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="133.0" minWidth="10.0" prefWidth="133.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="174.0" minWidth="10.0" prefWidth="161.0" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="177.0" minWidth="10.0" prefWidth="89.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="160.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="217.0" minWidth="10.0" prefWidth="132.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="177.0" minWidth="10.0" prefWidth="145.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
@@ -62,7 +62,7 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button fx:id="users_dziekanat" mnemonicParsing="false" onAction="#users_dziekanatButtonAction" prefHeight="42.0" prefWidth="189.0" style="-fx-background-color: #4ca3ba;" text="Użytkownicy" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Button fx:id="users_dziekanat" mnemonicParsing="false" onAction="#users_dziekanatButtonAction" prefHeight="42.0" prefWidth="167.0" style="-fx-background-color: #4ca3ba;" text="Użytkownicy" textFill="WHITE" GridPane.rowIndex="3">
                <graphic>
                   <ImageView fitHeight="29.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -70,6 +70,7 @@
                      </image>
                   </ImageView>
                </graphic></Button>
+            <Button fx:id="kierIrokDz" mnemonicParsing="false" onAction="#kieriRokDzBtn" prefHeight="42.0" prefWidth="167.0" style="-fx-background-color: #4ca3ba;" text="Kierunek i rok" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </children>

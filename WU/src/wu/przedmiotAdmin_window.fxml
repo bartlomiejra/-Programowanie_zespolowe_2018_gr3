@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="609.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.PrzedmiotAdmin_windowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="609.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wu.PrzedmiotAdmin_windowController">
    <children>
       <TableView fx:id="table_przedmioty" layoutX="14.0" layoutY="61.0" prefHeight="217.0" prefWidth="583.0">
         <columns>
-          <TableColumn prefWidth="582.0" resizable="false" text="Nazwa przedmiotu" />
+          <TableColumn fx:id="tf_NazwaPrzedmiotu_table" prefWidth="582.0" resizable="false" text="Nazwa przedmiotu" />
         </columns>
       </TableView>
       <VBox alignment="TOP_CENTER" layoutX="158.0" layoutY="288.0" prefHeight="135.0" prefWidth="325.0" spacing="10.0">

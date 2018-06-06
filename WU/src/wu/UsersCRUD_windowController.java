@@ -345,11 +345,18 @@ public class UsersCRUD_windowController implements Initializable {
      * @param event
      */
     @FXML
-    private void edit_usersButtonAction(ActionEvent event) throws SQLException {
+    private void edit_usersButtonAction(ActionEvent event) throws SQLException, IOException {
         if (s != null) {
 
             sesja.createStatement().executeUpdate("UPDATE studenci SET imie_s='" + tf_Imie.getText() + "', nazwisko_s='" + tf_Nazwisko.getText() + "', pesel_s='" + tf_Pesel.getText() + "', email_s='" + tf_Email.getText() + "', nr_tel_s='" + tf_Numer_tel.getText() + "', login_s='" + tf_login.getText() + "', haslo_s='" + tf_haslo.getText() + "', data_urodzenia_s='" + dataStudent_s.getValue() + "', nr_albumu_s='" + tf_nr_albumu.getText() + "' WHERE id_studenta=" + s.getid_studenta() + ";");
+            Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("usersCRUD_Dziekanatwindow.fxml"));
+            Scene assessment_page_scene = new Scene(assessment_page_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.hide();
+            app_stage.setScene(assessment_page_scene);
+            app_stage.show();
         }
+        
 
     }
 
@@ -411,13 +418,18 @@ public class UsersCRUD_windowController implements Initializable {
     }
 
     @FXML
-    private void edit_usersButtonActionPrac(ActionEvent event) throws SQLException {
+    private void edit_usersButtonActionPrac(ActionEvent event) throws SQLException, IOException {
         System.out.println("Dziala");
         if (p != null) {
 
             sesja.createStatement().executeUpdate("UPDATE pracownicy SET imie_p='" + tf_Imie_p.getText() + "', nazwisko_p='" + tf_nazwisko_p.getText() + "', pesel_p='" + tf_pesel_p.getText() + "', email_p='" + tf_email_p.getText() + "', nr_tel_p='" + tf_NumerTel_p.getText() + "', login_p='" + tf_login_p.getText() + "', haslo_p='" + tf_haslo_p.getText() + "', data_urodzenia_p='" + data_ur_p.getValue() + "', specjalizacja_p='" + tf_specjalizacja_p.getText() + "' WHERE id_pracownika=" + p.getid_pracownika() + ";");
             //      sesja.createStatement().executeUpdate("UPDATE studenci SET imie_s='"+tf_Imie.getText()+"', nazwisko_s='"+tf_Nazwisko.getText()+"', pesel_s='"+tf_Pesel.getText()+"', email_s='"+tf_Email.getText()+"', nr_tel_s='"+tf_Numer_tel.getText()+"', login_s='"+tf_login.getText()+"', haslo_s='"+tf_haslo.getText()+"', data_urodzenia_s='"+dataStudent_s.getValue()+"', nr_albumu_s='"+tf_nr_albumu.getText()+"' WHERE id_studenta="+s.getid_studenta()+";");
-
+            Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("usersCRUD_Dziekanatwindow.fxml"));
+            Scene assessment_page_scene = new Scene(assessment_page_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.hide();
+            app_stage.setScene(assessment_page_scene);
+            app_stage.show();
         }
 
     }

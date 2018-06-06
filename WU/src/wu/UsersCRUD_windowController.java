@@ -464,7 +464,7 @@ public class UsersCRUD_windowController implements Initializable {
 
     //  edycja studenta uzupelnianie pol koniec
     //   edycja praconicy uzupelnianie pol
-    //edycja pracownicy uzupelnianie pol koniec
+  
     @FXML
     private void edytujPracownika(MouseEvent event) {
 
@@ -481,5 +481,5 @@ public class UsersCRUD_windowController implements Initializable {
             tf_NumerTel_p.setText(p.getnr_tel_p().toString());
         }
     }
-
+  //edycja pracownicy uzupelnianie pol koniec
 }

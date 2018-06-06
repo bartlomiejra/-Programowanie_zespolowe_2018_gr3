@@ -6,6 +6,7 @@ import java.math.BigInteger;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDate;
@@ -165,6 +166,26 @@ public class PrzedmiotAdmin_windowController implements Initializable {
 
     @FXML
     private void deletePrzedmiotButtonAction(ActionEvent event) {
+        
+        int id = (table_przedmioty.getSelectionModel().getSelectedItem().getid_przedmiotu());
+
+        try {
+
+            PreparedStatement statement = sesja.prepareStatement("DELETE FROM przedmioty WHERE id_przedmiotu = ?");
+            statement.setInt(1, id);
+            statement.executeUpdate();
+
+            Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("przedmiotAdmin_window.fxml"));
+            Scene assessment_page_scene = new Scene(assessment_page_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.hide();
+            app_stage.setScene(assessment_page_scene);
+            app_stage.show();
+        } catch (Exception e) {
+
+        }
+        
+        
     }
 
     @FXML

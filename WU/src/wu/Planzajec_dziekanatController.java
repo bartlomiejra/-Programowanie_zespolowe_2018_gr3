@@ -400,7 +400,7 @@ public class Planzajec_dziekanatController implements Initializable {
             LocalDate value = dataAdmin.getValue();
             stmt.executeUpdate("INSERT INTO `harmonogram` (`id_harmonogramu`, `id_przedmiotu`, `id_pracownika`, `data_zajec_h`, `godzina_h`, `id_specjalizacji`) VALUES (null,'" + cAPrzedmiot.getSelectionModel().getSelectedItem().getid_przedmiotu() + "','" + cIPracownik.getSelectionModel().getSelectedItem().getid_pracownika() + "','" + value + "','" + cGAdmin.getSelectionModel().getSelectedItem().toString() + "','" + cISpec.getSelectionModel().getSelectedItem().getid_specjalizacji() + "');");
 
-            Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("Planzajec_admin.fxml"));
+            Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("Planzajec_dziekanatwindow.fxml"));
             Scene assessment_page_scene = new Scene(assessment_page_parent);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             app_stage.hide();
@@ -431,7 +431,7 @@ public class Planzajec_dziekanatController implements Initializable {
             statement.setInt(1, id);
             statement.executeUpdate();
 
-            Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("Planzajec_admin.fxml"));
+            Parent assessment_page_parent = FXMLLoader.load(getClass().getResource("Planzajec_dziekanatwindow.fxml"));
             Scene assessment_page_scene = new Scene(assessment_page_parent);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             app_stage.hide();
